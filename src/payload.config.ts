@@ -230,53 +230,53 @@ export default buildConfig({
       },
       token: process.env.BLOB_READ_WRITE_TOKEN || '',
     }),
-    // OAuth2Plugin({
-    //   enabled: googleAuthActive,
-    //   strategyName: 'google',
-    //   useEmailAsIdentity: true,
-    //   serverURL: NEXT_PUBLIC_SERVER_URL || 'http://localhost:3000',
-    //   authCollection: 'users',
-    //   clientId: process.env.GOOGLE_LOGIN_CLIENT_ID || '',
-    //   subFieldName: 'sub',
-    //   clientSecret: process.env.GOOGLE_LOGIN_CLIENT_SECRET || '',
-    //   tokenEndpoint: 'https://oauth2.googleapis.com/token',
-    //   scopes: [
-    //     'https://www.googleapis.com/auth/userinfo.email',
-    //     'https://www.googleapis.com/auth/userinfo.profile',
-    //     'openid',
-    //   ],
-    //   providerAuthorizationUrl: 'https://accounts.google.com/o/oauth2/v2/auth',
-    //   getUserInfo: async (accessToken: string) => {
-    //     const response = await fetch('https://www.googleapis.com/oauth2/v3/userinfo', {
-    //       headers: { Authorization: `Bearer ${accessToken}` },
-    //     })
-    //     const user = await response.json()
-    //     if (!user.email_verified) {
-    //       throw new Error('Email not verified')
-    //     }
-    //     /**
-    //      * Set your own allowed email domains here if needed to limit access
-    //      * to payload for specific email domains
-    //      */
-    //     const allowedDomains = process.env.ALLOWED_EMAIL_DOMAINS?.split(',')
-    //     if (allowedDomains && !allowedDomains.includes(user.email.split('@')?.[1])) {
-    //       throw new Error('Email domain not allowed')
-    //     }
+    OAuth2Plugin({
+      enabled: googleAuthActive,
+      strategyName: 'google',
+      useEmailAsIdentity: true,
+      serverURL: NEXT_PUBLIC_SERVER_URL || 'http://localhost:3000',
+      authCollection: 'users',
+      clientId: process.env.GOOGLE_LOGIN_CLIENT_ID || '',
+      subFieldName: 'sub',
+      clientSecret: process.env.GOOGLE_LOGIN_CLIENT_SECRET || '',
+      tokenEndpoint: 'https://oauth2.googleapis.com/token',
+      scopes: [
+        'https://www.googleapis.com/auth/userinfo.email',
+        'https://www.googleapis.com/auth/userinfo.profile',
+        'openid',
+      ],
+      providerAuthorizationUrl: 'https://accounts.google.com/o/oauth2/v2/auth',
+      getUserInfo: async (accessToken: string) => {
+        const response = await fetch('https://www.googleapis.com/oauth2/v3/userinfo', {
+          headers: { Authorization: `Bearer ${accessToken}` },
+        })
+        const user = await response.json()
+        if (!user.email_verified) {
+          throw new Error('Email not verified')
+        }
+        /**
+         * Set your own allowed email domains here if needed to limit access
+         * to payload for specific email domains
+         */
+        const allowedDomains = process.env.ALLOWED_EMAIL_DOMAINS?.split(',')
+        if (allowedDomains && !allowedDomains.includes(user.email.split('@')?.[1])) {
+          throw new Error('Email domain not allowed')
+        }
 
-    //     return {
-    //       email: user.email,
-    //       sub: user.sub,
-    //       name: user.name,
-    //     }
-    //   },
-    //   successRedirect: (_) => {
-    //     return '/admin'
-    //   },
-    //   failureRedirect: (_, error) => {
-    //     console.error(error)
-    //     return '/login'
-    //   },
-    // }),
+        return {
+          email: user.email,
+          sub: user.sub,
+          name: user.name,
+        }
+      },
+      successRedirect: (_) => {
+        return '/admin'
+      },
+      failureRedirect: (_, error) => {
+        console.error(error)
+        return '/login'
+      },
+    }),
   ],
   /**
    * Use the Resend adapter or switch to your own email service here: https://payloadcms.com/docs/email/overview
