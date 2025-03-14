@@ -91,6 +91,9 @@ const Users: CollectionConfig = {
           en: 'User roles. Admin has full access. Editor is the most common role, with limited access. First user is always admin.',
           de: 'Benutzerrollen. Admin hat vollständigen Zugriff. Editor ist der allgemeine Benutzer, mit begrenztem Zugriff. Erster Benutzer ist immer Admin.',
         },
+        // This field will be hidden in the create first user dialog
+        // but visible when editing users or creating subsequent users
+        condition: (_, __, ctx) => ctx.user?.id !== null,
       },
     },
     {
