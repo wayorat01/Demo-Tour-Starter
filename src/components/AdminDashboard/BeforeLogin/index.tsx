@@ -15,6 +15,8 @@ const BeforeLogin: React.FC = () => {
             <br />
             <b>Password:</b> {process.env.NEXT_PUBLIC_DEMO_DASHBOARD_CREDENTIALS?.split(':')?.[1]}
             <br />
+            The demo environment gets reset daily at 12:00 UTC and 00:00 UTC.
+            <br />
             <br />
           </>
         ) : (
