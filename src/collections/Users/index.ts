@@ -102,7 +102,7 @@ const Users: CollectionConfig = {
         },
         // This field will be hidden in the create first user dialog
         // but visible when editing users or creating subsequent users
-        condition: (_, __, ctx) => ctx.user?.id !== null,
+        condition: (_, __, ctx) => !!ctx.user?.id,
       },
     },
     {
