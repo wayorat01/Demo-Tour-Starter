@@ -1,5 +1,17 @@
 # payblocks
 
+## 1.6.0
+
+### Minor Changes
+
+- 31f7132: Adding functionality to the permissions system. This allows fine-granular access to certain payload functionality on group level.
+
+### Patch Changes
+
+- 1df4fcb: Hide the roles field in the create user screen
+- 59c5706: Version bump of all packages
+- 1fdbf1e: upgrading all packages, next, payload and deps to the most recent version
+
 ## 1.5.0
 
 ### Minor Changes
