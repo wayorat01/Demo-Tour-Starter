@@ -16,6 +16,7 @@ async function findRole(payload: any, slug: string) {
   return docs[0] || null
 }
 
+
 const Users: CollectionConfig = {
   slug: 'users',
   auth: true,
@@ -60,7 +61,7 @@ const Users: CollectionConfig = {
             const role = await findRole(req.payload, isAdmin ? 'admin' : 'editor')
 
             if (role?.id) {
-              req.payload.logger.info(`Assigning ${role.name} role to new user`)
+              req.payload.logger.info(`Assigning ${role.name}, id: ${role.id} role to new user`)
               return {
                 ...data,
                 roles: [role.id],
@@ -91,6 +92,7 @@ const Users: CollectionConfig = {
       access: {
         create: () => true,
         update: isAdminFieldLevel,
+        read: () => true,
       },
       admin: {
         position: 'sidebar',

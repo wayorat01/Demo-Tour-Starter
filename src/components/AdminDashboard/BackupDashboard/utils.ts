@@ -1,5 +1,3 @@
-import { CodeSquare } from "lucide-react";
-
 export function getCurrentDbName() {
   try {
     const { hostname, pathname } = new URL(process.env.MONGODB_URI!);

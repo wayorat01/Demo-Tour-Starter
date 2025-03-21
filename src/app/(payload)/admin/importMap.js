@@ -37,6 +37,7 @@ import { ReindexButton as ReindexButton_aead06e4cbf6b2620c5c51c9ab283634 } from 
 import { default as default_0a2ba52d3c78797a6b0937e7611782e5 } from '@/components/AdminDashboard/BackupDashboard'
 import { default as default_2f704de5e6c59b8917a26e353bdf0747 } from '@/components/AdminDashboard/BeforeDashboard'
 import { default as default_5abc63c3cf3fe7a656266cc0318fce13 } from '@/components/AdminDashboard/BeforeLogin'
+import { VercelBlobClientUploadHandler as VercelBlobClientUploadHandler_16c82c5e25f430251a3e3ba57219ff4e } from '@payloadcms/storage-vercel-blob/client'
 
 export const importMap = {
   "@/components/AdminDashboard/IconSelect#default": default_9d2d71c3c9804a7eac9f5a33fe39c4ed,
@@ -77,5 +78,6 @@ export const importMap = {
   "@payloadcms/plugin-search/client#ReindexButton": ReindexButton_aead06e4cbf6b2620c5c51c9ab283634,
   "@/components/AdminDashboard/BackupDashboard#default": default_0a2ba52d3c78797a6b0937e7611782e5,
   "@/components/AdminDashboard/BeforeDashboard#default": default_2f704de5e6c59b8917a26e353bdf0747,
-  "@/components/AdminDashboard/BeforeLogin#default": default_5abc63c3cf3fe7a656266cc0318fce13
+  "@/components/AdminDashboard/BeforeLogin#default": default_5abc63c3cf3fe7a656266cc0318fce13,
+  "@payloadcms/storage-vercel-blob/client#VercelBlobClientUploadHandler": VercelBlobClientUploadHandler_16c82c5e25f430251a3e3ba57219ff4e
 }
