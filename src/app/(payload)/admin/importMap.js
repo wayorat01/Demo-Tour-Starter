@@ -35,7 +35,6 @@ import { BlocksFeatureClient as BlocksFeatureClient_e70f5e05f09f93e00b997edb1ef0
 import { LinkToDoc as LinkToDoc_aead06e4cbf6b2620c5c51c9ab283634 } from '@payloadcms/plugin-search/client'
 import { ReindexButton as ReindexButton_aead06e4cbf6b2620c5c51c9ab283634 } from '@payloadcms/plugin-search/client'
 import { default as default_0a2ba52d3c78797a6b0937e7611782e5 } from '@/components/AdminDashboard/BackupDashboard'
-import { default as default_8e5a5a130d676dd8877220438eebccb4 } from '@/components/AdminDashboard/LoginButton'
 import { default as default_2f704de5e6c59b8917a26e353bdf0747 } from '@/components/AdminDashboard/BeforeDashboard'
 import { default as default_5abc63c3cf3fe7a656266cc0318fce13 } from '@/components/AdminDashboard/BeforeLogin'
 
@@ -77,7 +76,6 @@ export const importMap = {
   "@payloadcms/plugin-search/client#LinkToDoc": LinkToDoc_aead06e4cbf6b2620c5c51c9ab283634,
   "@payloadcms/plugin-search/client#ReindexButton": ReindexButton_aead06e4cbf6b2620c5c51c9ab283634,
   "@/components/AdminDashboard/BackupDashboard#default": default_0a2ba52d3c78797a6b0937e7611782e5,
-  "@/components/AdminDashboard/LoginButton#default": default_8e5a5a130d676dd8877220438eebccb4,
   "@/components/AdminDashboard/BeforeDashboard#default": default_2f704de5e6c59b8917a26e353bdf0747,
   "@/components/AdminDashboard/BeforeLogin#default": default_5abc63c3cf3fe7a656266cc0318fce13
 }

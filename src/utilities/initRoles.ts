@@ -9,6 +9,7 @@ const defaultRoles = [
       canManageContent: true,
       canPublish: true,
       canManageUsers: true,
+      canManageRedirects: true,
     },
   },
   {
@@ -19,6 +20,7 @@ const defaultRoles = [
       canManageContent: true,
       canPublish: false,
       canManageUsers: false,
+      canManageRedirects: false,
     },
   },
 ]
@@ -31,7 +33,6 @@ const initRoleCreation = async (payload: Payload) => {
         collection: 'roles',
         data: role,
       })
-      payload.logger.info(`Created role: ${role.name}`)
     } catch (error) {
       payload.logger.error(`Error creating role ${role.name}: ${error}`)
     }

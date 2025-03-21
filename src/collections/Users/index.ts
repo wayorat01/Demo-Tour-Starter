@@ -38,12 +38,19 @@ const Users: CollectionConfig = {
       async ({ req, data = {}, operation }) => {
         if (operation === 'create') {
           try {
+            // If roles are already set in the data (e.g., from admin dashboard), don't override them
+            if (data.roles && Array.isArray(data.roles) && data.roles.length > 0) {
+              req.payload.logger.info('User already has roles assigned, keeping existing roles')
+              return data
+            }
+
             const { totalDocs } = await req.payload.find({
               collection: 'users',
               limit: 0,
             })
 
-            // Determine which role to assign. First user should be admin
+            // Determine which role to assign. First user should be admin. Emails with domain
+            // in ALLOWED_EMAIL_DOMAINS will be assigned admin as well
             const isAdmin =
               totalDocs === 0 ||
               (data.email &&

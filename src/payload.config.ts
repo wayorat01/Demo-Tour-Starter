@@ -47,6 +47,7 @@ import { serverUrl as NEXT_PUBLIC_SERVER_URL } from '@/config/server'
 import localization from './localization.config'
 import { initializeRoles } from './utilities/initRoles'
 import { isAdminHidden } from './access/isAdmin'
+import { hasPermission } from './utilities/checkPermission'
 import { PageConfig } from './globals/PageConfig/config'
 
 const filename = fileURLToPath(import.meta.url)
@@ -165,6 +166,12 @@ export default buildConfig({
         },
         hooks: {
           afterChange: [revalidateRedirects],
+        },
+        access: {
+          create: hasPermission('canManageRedirects'),
+          read: () => true,
+          update: hasPermission('canManageRedirects'),
+          delete: hasPermission('canManageRedirects'),
         },
       },
     }),

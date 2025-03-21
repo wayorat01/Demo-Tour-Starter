@@ -108,6 +108,20 @@ const Roles: CollectionConfig = {
             },
           },
         },
+        {
+          /**
+           * Redirects can be misused, so we adding a separate permission for it.
+           */
+          name: 'canManageRedirects',
+          type: 'checkbox',
+          defaultValue: false,
+          admin: {
+            description: {
+              en: 'Can manage redirects',
+              de: 'Kann Redirects verwalten.',
+            },
+          },
+        },
       ],
     },
   ],
