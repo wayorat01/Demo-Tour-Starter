@@ -101,10 +101,13 @@ import Feature117 from '@/blocks/Feature/feature117'
 import Feature126 from '@/blocks/Feature/feature126'
 
 import { Page } from '@/payload-types'
-import { FeatureDesignVersion } from './config'
+import { FeatureDesignVersion, allFeatureDesignVersions } from './config'
+
+// Extract just the value property from FeatureDesignVersion for use as keys
+type FeatureDesignVersionValue = FeatureDesignVersion['value']
 
 // Enforce required features but allow additional ones
-type Feature<T extends string = string> = Required<Record<FeatureDesignVersion, React.FC<any>>> & Record<T, React.FC<any>>;
+type Feature<T extends string = string> = Required<Record<FeatureDesignVersionValue, React.FC<any>>> & Record<T, React.FC<any>>;
 
 const features: Feature = {
   FEATURE1: Feature1,

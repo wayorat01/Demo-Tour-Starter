@@ -1,0 +1,202 @@
+"use client"
+import * as React from 'react';
+import { useField, Modal, useModal, Button } from '@payloadcms/ui';
+import { useState, useEffect, useMemo } from 'react';
+import { DesignVersionPreviewOptions } from './config';
+import './index.scss';
+
+type DesignVersionPreviewProps = {
+  path: string;
+  options: DesignVersionPreviewOptions;
+};
+
+const DesignVersionPreviewClient: React.FC<DesignVersionPreviewProps> = ({ 
+  path, 
+  options = [] 
+}) => {
+  const { setValue, value } = useField<string>({ path });
+  const [imageLoadErrors, setImageLoadErrors] = useState<Record<string, boolean>>({});
+  const [imagePaths, setImagePaths] = useState<Record<string, string>>({});
+  
+  // Use the useModal hook instead of local state
+  const { toggleModal } = useModal();
+  const modalSlug = 'design-version-preview-modal';
+
+  // Ensure options is always an array using useMemo
+  const safeOptions = useMemo(() => {
+    return Array.isArray(options) ? options : [];
+  }, [options]);
+
+  // Load images when component mounts
+  useEffect(() => {
+    // Create a mapping of design version values to their image paths
+    const paths: Record<string, string> = {};
+    
+    safeOptions.forEach(option => {
+      if (option.image) {
+        // For images in the public directory
+        paths[option.value] = option.image;
+      }
+    });
+    
+    setImagePaths(paths);
+  }, [safeOptions]);
+
+  const handleSelectVersion = (version: string) => {
+    setValue(version);
+    toggleModal(modalSlug);
+  };
+
+  const handleImageError = (version: string) => {
+    setImageLoadErrors(prev => ({
+      ...prev,
+      [version]: true
+    }));
+  };
+
+  // Find the currently selected option
+  const selectedOption = safeOptions && safeOptions.length > 0 
+    ? safeOptions.find(opt => opt.value === value) || safeOptions[0]
+    : { label: 'Default', value: '', image: '' };
+
+  const getImageUrl = (imagePath: string | undefined): string | undefined => {
+    if (!imagePath) return undefined;
+    
+    // If it's already an absolute URL, return as is
+    if (imagePath.startsWith('http')) return imagePath;
+    
+    // For relative paths, ensure they start with a slash
+    const path = imagePath.startsWith('/') ? imagePath : `/${imagePath}`;
+    
+    // Return the full URL for the image
+    return `${window.location.origin}${path}`;
+  };
+
+  const handleOpenModal = () => {
+    toggleModal(modalSlug);
+  };
+
+  return (
+    <div className="field-type design-version-preview">
+      <div className="field-label-wrapper">
+        <label className="field-label">Design Version</label>
+      </div>
+
+      <div className="design-version-preview__container">
+        {/* Selected design version name */}
+        {value && selectedOption && (
+          <div className="design-version-preview__selected-name">
+            {selectedOption.label}
+          </div>
+        )}
+        
+        {/* Button to open modal */}
+        <Button 
+          className="design-version-preview__button"
+          onClick={handleOpenModal}
+          buttonStyle="secondary"
+          size="small"
+        >
+          <div className="design-version-preview__button-content">
+            <span>Preview All</span>
+            <svg xmlns="http://www.w3.org/2000/svg" className="design-version-preview__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </div>
+        </Button>
+      </div>
+
+      {/* Preview of selected design */}
+      {value && selectedOption?.image && !imageLoadErrors[value] && safeOptions && safeOptions.length > 0 && (
+        <div className="design-version-preview__selected">
+          <div className="design-version-preview__selected-image-container">
+            <img 
+              src={getImageUrl(imagePaths[value])} 
+              alt={selectedOption.label} 
+              className="design-version-preview__selected-image"
+              onError={() => handleImageError(value)}
+            />
+          </div>
+          <div className="design-version-preview__selected-label">
+            {selectedOption.label}
+          </div>
+        </div>
+      )}
+
+      {/* Modal for selecting design versions */}
+      <Modal
+        className="design-version-preview-modal"
+        slug={modalSlug}
+      >
+        <div className="design-version-preview-modal__content">
+          <div className="design-version-preview-modal__body">
+            <div className="design-version-preview-modal__header">
+              <h1 className="design-version-preview-modal__title">Select Design Version</h1>
+              <Button 
+                onClick={() => toggleModal(modalSlug)}
+                buttonStyle="none"
+                className="design-version-preview-modal__close"
+              >
+                <svg viewBox="0 0 25 25" fill="currentColor" className="design-version-preview-modal__close-icon">
+                  <path d="M18.5 6.5l-12 12M6.5 6.5l12 12" stroke="currentColor" strokeWidth="2" />
+                </svg>
+              </Button>
+            </div>
+            
+            <div className="design-version-preview-modal__grid">
+              {safeOptions && safeOptions.length > 0 ? safeOptions.map((option) => (
+                <div 
+                  key={option.value}
+                  className={`design-version-preview-modal__item ${value === option.value ? 'design-version-preview-modal__item--selected' : ''}`}
+                  onClick={() => handleSelectVersion(option.value)}
+                >
+                  <div className="design-version-preview-modal__item-image-container">
+                    {option.image && !imageLoadErrors[option.value] ? (
+                      <img 
+                        src={getImageUrl(imagePaths[option.value])} 
+                        alt={option.label} 
+                        className="design-version-preview-modal__item-image"
+                        onError={() => handleImageError(option.value)}
+                      />
+                    ) : (
+                      <div className="design-version-preview-modal__item-placeholder">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor" fill="none">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        </svg>
+                      </div>
+                    )}
+                    {value === option.value && (
+                      <div className="design-version-preview-modal__item-selected-indicator">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                          <path fillRule="evenodd" d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z" clipRule="evenodd" />
+                        </svg>
+                      </div>
+                    )}
+                  </div>
+                  <div className="design-version-preview-modal__item-name">
+                    {option.label}
+                  </div>
+                </div>
+              )) : (
+                <div className="design-version-preview-modal__empty">
+                  No design versions available
+                </div>
+              )}
+            </div>
+            
+            <div className="design-version-preview-modal__help-text">
+              Click on a design version to select it and close this dialog
+            </div>
+          </div>
+          
+        </div>
+      </Modal>
+
+      <div className="field-description">
+        Choose a design version to customize the appearance of this block on your website. Click &quot;Preview All&quot; to explore all available design options.
+      </div>
+    </div>
+  );
+};
+
+export default DesignVersionPreviewClient;

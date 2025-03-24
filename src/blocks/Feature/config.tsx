@@ -13,10 +13,11 @@ import {
 } from '@payloadcms/richtext-lexical'
 import { Block } from 'payload'
 import { designVersionDescription } from '@/components/AdminDashboard/DesignVersionDescription'
+import { designVersionPreview } from '@/components/AdminDashboard/DesignVersionPreview/config'
 import { backgroundColor } from '@/fields/color'
 
 export const allFeatureDesignVersions = [
-  'FEATURE1',
+  { label: 'FEATURE1', value: 'FEATURE1', image: '/admin/previews/feature/feature1.jpeg' },
   // 'FEATURE2',
   // 'FEATURE3',
   // 'FEATURE4',
@@ -40,7 +41,7 @@ export const allFeatureDesignVersions = [
   // 'FEATURE22',
   // 'FEATURE23',
   // 'FEATURE24',
-  'FEATURE25',
+  { label: 'FEATURE25', value: 'FEATURE25', image: '/admin/previews/feature/feature25.jpeg' },
   // 'FEATURE26',
   // 'FEATURE27',
   // 'FEATURE28',
@@ -59,10 +60,10 @@ export const allFeatureDesignVersions = [
   // 'FEATURE42',
   // 'FEATURE43',
   // 'FEATURE44',
-  'FEATURE50',
+  { label: 'FEATURE50', value: 'FEATURE50', image: '/admin/previews/feature/feature50.jpeg' },
   // 'FEATURE51',
   // 'FEATURE52',
-  'FEATURE53',
+  { label: 'FEATURE53', value: 'FEATURE53', image: '/admin/previews/feature/feature53.jpeg' },
   // 'FEATURE54',
   // 'FEATURE55',
   // 'FEATURE56',
@@ -79,9 +80,9 @@ export const allFeatureDesignVersions = [
   // 'FEATURE67',
   // 'FEATURE68',
   // 'FEATURE69',
-  'FEATURE70',
+  { label: 'FEATURE70', value: 'FEATURE70', image: '/admin/previews/feature/feature70.jpeg' },
   // 'FEATURE71',
-  'FEATURE72',
+  { label: 'FEATURE72', value: 'FEATURE72', image: '/admin/previews/feature/feature72.jpeg' },
   // 'FEATURE73',
   // 'FEATURE74',
   // 'FEATURE75',
@@ -98,34 +99,29 @@ export const allFeatureDesignVersions = [
   // 'FEATURE87',
   // 'FEATURE89',
   // 'FEATURE90',
-  'FEATURE91',
+  { label: 'FEATURE91', value: 'FEATURE91', image: '/admin/previews/feature/feature91.jpeg' },
   // 'FEATURE92',
   // 'FEATURE93',
   // 'FEATURE94',
   // 'FEATURE95',
-  'FEATURE97',
+  { label: 'FEATURE97', value: 'FEATURE97', image: '/admin/previews/feature/feature97.jpeg' },
   // 'FEATURE98',
-  'FEATURE99',
+  { label: 'FEATURE99', value: 'FEATURE99', image: '/admin/previews/feature/feature99.jpeg' },
   // 'FEATURE101',
-  'FEATURE102',
-  'FEATURE103',
+  { label: 'FEATURE102', value: 'FEATURE102', image: '/admin/previews/feature/feature102.jpeg' },
+  { label: 'FEATURE103', value: 'FEATURE103', image: '/admin/previews/feature/feature103.jpeg' },
   // 'FEATURE104',
   // 'FEATURE105',
   // 'FEATURE106',
   // 'FEATURE107',
   // 'FEATURE108',
   // 'FEATURE109',
-  'FEATURE117',
-  'FEATURE126',
+  { label: 'FEATURE117', value: 'FEATURE117', image: '/admin/previews/feature/feature117.jpeg' },
+  { label: 'FEATURE126', value: 'FEATURE126', image: '/admin/previews/feature/feature126.jpeg' },
 ] as const
 
 export type FeatureDesignVersion = (typeof allFeatureDesignVersions)[number]
 
-/**
- * mutable copy of allFeatureDesignVersions as payload needs this type and
- * we need a const for other purposes
- */
-const mutableFeatureDesignVersions = [...allFeatureDesignVersions]
 
 /**
  * The Feature block is the shadcnblocks.com feature block integrated in payload.
@@ -136,19 +132,7 @@ export const FeatureBlock: Block = {
   interfaceName: 'FeatureBlock',
   fields: [
     backgroundColor,
-    {
-      name: 'designVersion',
-      type: 'select',
-      options: mutableFeatureDesignVersions,
-      defaultValue: 'FEATURE1',
-      required: true,
-      // admin: {
-      //   description: {
-      //     en: 'Choose your block design version. Naming and grouping is the same as here: https://www.shadcnblocks.com/blocks. If you want to use a block that is not integrated yet in the CMS, check out the docs: TODO add link for docs of how to add data/cms binding to existing blocks',
-      //     de: 'Wählen Sie die Hintergrundfarbe für diese Sektion. Bei einem leeren Feld wird die Standardfarbe verwendet.'
-      //   }
-      // }
-    },
+    designVersionPreview(allFeatureDesignVersions),
     {
       name: 'badge',
       type: 'text',
