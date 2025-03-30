@@ -5,9 +5,12 @@ import Gallery4 from '@/blocks/Gallery/gallery4'
 import Gallery5 from '@/blocks/Gallery/gallery5'
 import Gallery6 from '@/blocks/Gallery/gallery6'
 import { Page } from '@/payload-types'
-import { GalleryDesignVersion } from './config'
+import { allGalleryDesignVersions } from './config'
 
-type Gallery<T extends string = string> = Required<Record<GalleryDesignVersion, React.FC<any>>> & Record<T, React.FC<any>>;
+// Extract just the value property from the design version objects
+type GalleryDesignVersionValue = typeof allGalleryDesignVersions[number]['value']
+
+type Gallery<T extends string = string> = Required<Record<GalleryDesignVersionValue, React.FC<any>>> & Record<T, React.FC<any>>;
 
 const galleries: Gallery = {
   GALLERY1: Gallery1,

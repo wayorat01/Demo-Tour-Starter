@@ -31,18 +31,10 @@ const SectionSelect: React.FC<CustomSelectProps> = ({ path, options }) => {
   }, [formState?.reference?.value])
 
   if (!formState?.reference?.value) {
-    return (
-      <div className="field-description">
-        Make parent selection first
-      </div>
-    )
+    return <></>
   }
   if (!options[formState?.reference?.value]) {
-    return (
-      <div className="field-description">
-        No options for sublink available. Create a block on this page first.
-      </div>
-    )
+    return <></>
   }
 
   return (

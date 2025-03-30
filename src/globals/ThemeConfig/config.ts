@@ -58,7 +58,7 @@ export const ThemeConfig: GlobalConfig = {
       name: "radius",
       type: "text",
       validate: validateCssSize,
-      defaultValue: "0.2rem",
+      defaultValue: "0.6rem",
     },
     {
       name: 'regularColors',
