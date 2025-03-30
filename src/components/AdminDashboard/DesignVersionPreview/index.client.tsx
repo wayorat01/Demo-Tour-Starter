@@ -1,6 +1,6 @@
 "use client"
 import * as React from 'react';
-import { useField, Modal, useModal, Button } from '@payloadcms/ui';
+import { useField, useModal, Button, Drawer, XIcon } from '@payloadcms/ui';
 import { useState, useEffect, useMemo } from 'react';
 import { DesignVersionPreviewOptions } from './config';
 import './index.scss';
@@ -20,7 +20,7 @@ const DesignVersionPreviewClient: React.FC<DesignVersionPreviewProps> = ({
   
   // Use the useModal hook instead of local state
   const { toggleModal } = useModal();
-  const modalSlug = 'design-version-preview-modal';
+  const drawerSlug = 'design-version-preview-drawer';
 
   // Ensure options is always an array using useMemo
   const safeOptions = useMemo(() => {
@@ -44,7 +44,7 @@ const DesignVersionPreviewClient: React.FC<DesignVersionPreviewProps> = ({
 
   const handleSelectVersion = (version: string) => {
     setValue(version);
-    toggleModal(modalSlug);
+    toggleModal(drawerSlug);
   };
 
   const handleImageError = (version: string) => {
@@ -72,8 +72,8 @@ const DesignVersionPreviewClient: React.FC<DesignVersionPreviewProps> = ({
     return `${window.location.origin}${path}`;
   };
 
-  const handleOpenModal = () => {
-    toggleModal(modalSlug);
+  const handleOpenDrawer = () => {
+    toggleModal(drawerSlug);
   };
 
   return (
@@ -90,10 +90,10 @@ const DesignVersionPreviewClient: React.FC<DesignVersionPreviewProps> = ({
           </div>
         )}
         
-        {/* Button to open modal */}
+        {/* Button to open drawer */}
         <Button 
           className="design-version-preview__button"
-          onClick={handleOpenModal}
+          onClick={handleOpenDrawer}
           buttonStyle="secondary"
           size="small"
         >
@@ -123,74 +123,71 @@ const DesignVersionPreviewClient: React.FC<DesignVersionPreviewProps> = ({
         </div>
       )}
 
-      {/* Modal for selecting design versions */}
-      <Modal
-        className="design-version-preview-modal"
-        slug={modalSlug}
+      {/* Drawer for selecting design versions */}
+      <Drawer
+        className="design-version-preview-drawer"
+        slug={drawerSlug}
+        Header={null}
       >
-        <div className="design-version-preview-modal__content">
-          <div className="design-version-preview-modal__body">
-            <div className="design-version-preview-modal__header">
-              <h1 className="design-version-preview-modal__title">Select Design Version</h1>
-              <Button 
-                onClick={() => toggleModal(modalSlug)}
-                buttonStyle="none"
-                className="design-version-preview-modal__close"
+        <div className="drawer__header">
+          <h2 className="drawer__header__title">Select Design Version</h2>
+          <button
+            aria-label="Close"
+            className="drawer__header__close"
+            id={`close-drawer__${drawerSlug}`}
+            onClick={() => toggleModal(drawerSlug)}
+            type="button"
+          >
+            <XIcon />
+          </button>
+        </div>
+        <div className="drawer__content">
+          <div className="design-version-preview-drawer__grid">
+            {safeOptions && safeOptions.length > 0 ? safeOptions.map((option) => (
+              <div 
+                key={option.value}
+                className={`design-version-preview-drawer__item ${value === option.value ? 'design-version-preview-drawer__item--selected' : ''}`}
+                onClick={() => handleSelectVersion(option.value)}
               >
-                <svg viewBox="0 0 25 25" fill="currentColor" className="design-version-preview-modal__close-icon">
-                  <path d="M18.5 6.5l-12 12M6.5 6.5l12 12" stroke="currentColor" strokeWidth="2" />
-                </svg>
-              </Button>
-            </div>
-            
-            <div className="design-version-preview-modal__grid">
-              {safeOptions && safeOptions.length > 0 ? safeOptions.map((option) => (
-                <div 
-                  key={option.value}
-                  className={`design-version-preview-modal__item ${value === option.value ? 'design-version-preview-modal__item--selected' : ''}`}
-                  onClick={() => handleSelectVersion(option.value)}
-                >
-                  <div className="design-version-preview-modal__item-image-container">
-                    {option.image && !imageLoadErrors[option.value] ? (
-                      <img 
-                        src={getImageUrl(imagePaths[option.value])} 
-                        alt={option.label} 
-                        className="design-version-preview-modal__item-image"
-                        onError={() => handleImageError(option.value)}
-                      />
-                    ) : (
-                      <div className="design-version-preview-modal__item-placeholder">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor" fill="none">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                        </svg>
-                      </div>
-                    )}
-                    {value === option.value && (
-                      <div className="design-version-preview-modal__item-selected-indicator">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                          <path fillRule="evenodd" d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z" clipRule="evenodd" />
-                        </svg>
-                      </div>
-                    )}
-                  </div>
-                  <div className="design-version-preview-modal__item-name">
-                    {option.label}
-                  </div>
+                <div className="design-version-preview-drawer__item-image-container">
+                  {option.image && !imageLoadErrors[option.value] ? (
+                    <img 
+                      src={getImageUrl(imagePaths[option.value])} 
+                      alt={option.label} 
+                      className="design-version-preview-drawer__item-image"
+                      onError={() => handleImageError(option.value)}
+                    />
+                  ) : (
+                    <div className="design-version-preview-drawer__item-placeholder">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor" fill="none">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                      </svg>
+                    </div>
+                  )}
+                  {value === option.value && (
+                    <div className="design-version-preview-drawer__item-selected-indicator">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" strokeWidth="1">
+                        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z" />
+                      </svg>
+                    </div>
+                  )}
                 </div>
-              )) : (
-                <div className="design-version-preview-modal__empty">
-                  No design versions available
+                <div className="design-version-preview-drawer__item-name">
+                  {option.label}
                 </div>
-              )}
-            </div>
-            
-            <div className="design-version-preview-modal__help-text">
-              Click on a design version to select it and close this dialog
-            </div>
+              </div>
+            )) : (
+              <div className="design-version-preview-drawer__empty">
+                No design versions available
+              </div>
+            )}
           </div>
           
+          <div className="design-version-preview-drawer__help-text">
+            Click on a design version to select it and close this drawer
+          </div>
         </div>
-      </Modal>
+      </Drawer>
 
       <div className="field-description">
         Choose a design version to customize the appearance of this block on your website. Click &quot;Preview All&quot; to explore all available design options.
