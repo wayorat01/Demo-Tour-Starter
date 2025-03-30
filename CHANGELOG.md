@@ -1,5 +1,13 @@
 # payblocks
 
+## 1.7.0
+
+### Minor Changes
+
+- 2fb41fc: A new custom component to select the block design version in a visual way in a modal
+- 3ef049b: Adding Gallery5
+- d55d305: Moving design version preview to a drawer + using more official payload CSS classes to better support dark mode
+
 ## 1.6.0
 
 ### Minor Changes
