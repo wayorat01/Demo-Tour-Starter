@@ -110,9 +110,9 @@ const Navbar5: React.FC<{ header: HeaderType; publicContext: PublicContextProps 
           {/* Right Button Group */}
           <div className="hidden lg:flex gap-2 z-50">
             {header?.buttons?.map((btn) => (
-              <CMSLink publicContext={publicContext} key={btn.id} {...btn.link} />
+              <CMSLink publicContext={publicContext} key={btn.id} {...btn.link} size="sm" />
             ))}
-            <LanguageSwitcher publicContext={publicContext} />
+            <LanguageSwitcher publicContext={publicContext} size="sm" />
           </div>
 
           {/* Mobile Menu Button */}

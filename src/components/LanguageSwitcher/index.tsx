@@ -13,14 +13,19 @@ import { cn } from "@/utilities";
 import { AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion"
 import { CMSLink } from "../Link";
 
-export const LanguageSwitcher: React.FC<{ publicContext: PublicContextProps }> = ({ publicContext }) => {
+export const LanguageSwitcher: React.FC<{ publicContext: PublicContextProps, size?: 'default' | 'sm' | 'lg' | 'icon' | 'clear' }> = ({ publicContext, size = 'default' }) => {
   const { cleanSlugs, locale: currentLocale } = publicContext;
   return (
     <NavigationMenu>
       <NavigationMenuList>
         <NavigationMenuItem className="text-muted-foreground hover:bg-card hover:text-accent-foreground rounded-md">
-          <NavigationMenuTrigger>
-            <Globe className={"h-4"} />
+          <NavigationMenuTrigger className={cn(
+            size === 'sm' && "h-9 rounded-md px-3 text-sm font-medium",
+            size === 'lg' && "h-11 rounded-md px-8",
+            size === 'icon' && "h-10 w-10",
+            size === 'clear' && "h-auto px-0 py-0"
+          )}>
+            <Globe className={cn("mr-2", size === 'sm' ? "h-4 w-4" : "h-4")} />
             {localeLabels[currentLocale]}
           </NavigationMenuTrigger>
           <NavigationMenuContent>

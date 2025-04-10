@@ -105,8 +105,8 @@ export const Navbar1: React.FC<{ header: HeaderType, publicContext: PublicContex
           </div>
           {/* Right Button Group */}
           <div className="flex gap-2 z-50">
-            {header?.buttons?.map((btn) => <CMSLink publicContext={publicContext} key={btn.id} {...btn.link} />)}
-            <LanguageSwitcher publicContext={publicContext} />
+            {header?.buttons?.map((btn) => <CMSLink publicContext={publicContext} key={btn.id} {...btn.link} size="sm" />)}
+            <LanguageSwitcher publicContext={publicContext} size="sm" />
           </div>
         </nav>
 
