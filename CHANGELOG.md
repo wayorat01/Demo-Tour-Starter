@@ -1,5 +1,16 @@
 # payblocks
 
+## 1.8.0
+
+### Minor Changes
+
+- 74d3634: Adding hero112 and the new design version preview for all existing heros
+
+### Patch Changes
+
+- fbb2aeb: Fixing the language switcher sizing by allowing it to be set similar to the button sizes
+- 70dc4c6: version bump to payload 3.32
+
 ## 1.7.0
 
 ### Minor Changes
