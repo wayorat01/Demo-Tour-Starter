@@ -44,6 +44,7 @@ import Hero51 from '@/heros/PageHero/hero51';
 import Hero53 from '@/heros/PageHero/hero53';
 import Hero55 from '@/heros/PageHero/hero55';
 import Hero57 from '@/heros/PageHero/hero57';
+import Hero112 from '@/heros/PageHero/hero112';
 import { PublicContextProps } from '@/utilities/publicContextProps'
 
 const heroes = {
@@ -89,6 +90,7 @@ const heroes = {
   53: Hero53,
   55: Hero55,
   57: Hero57,
+  112: Hero112,
 }
 
 export const RenderHero: React.FC<Page['hero'] & { publicContext: PublicContextProps }> = (props) => {

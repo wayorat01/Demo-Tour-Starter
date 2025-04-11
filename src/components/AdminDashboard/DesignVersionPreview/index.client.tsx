@@ -57,7 +57,7 @@ const DesignVersionPreviewClient: React.FC<DesignVersionPreviewProps> = ({
   // Find the currently selected option
   const selectedOption = safeOptions && safeOptions.length > 0 
     ? safeOptions.find(opt => opt.value === value) || safeOptions[0]
-    : { label: 'Default', value: '', image: '' };
+    : { label: 'Default', value: '', image: undefined };
 
   const getImageUrl = (imagePath: string | undefined): string | undefined => {
     if (!imagePath) return undefined;

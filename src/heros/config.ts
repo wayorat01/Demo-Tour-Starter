@@ -12,6 +12,8 @@ import { link } from '@/fields/link'
 import { icon } from '@/components/Icon/config'
 import { customHeroFields } from './CustomHero/config'
 import { backgroundColor } from '@/fields/color'
+import { designVersionDescription } from '@/components/AdminDashboard/DesignVersionDescription'
+import { designVersionPreview } from '@/components/AdminDashboard/DesignVersionPreview/config'
 
 /* TODO:
 13 -> X
@@ -50,199 +52,34 @@ What should happen with the two big boxes? Image or Tex?
 
 */
 
+export const allHeroDesignVersions = [
+  { label: 'no Hero', value: 'none' },
+  { label: 'HERO1', value: '1', image: '/admin/previews/hero/hero1.jpeg' },
+  { label: 'HERO2', value: '2', image: '/admin/previews/hero/hero2.jpeg' },
+  { label: 'HERO3', value: '3', image: '/admin/previews/hero/hero3.jpeg' },
+  { label: 'HERO4', value: '4', image: '/admin/previews/hero/hero4.jpeg' },
+  { label: 'HERO5', value: '5', image: '/admin/previews/hero/hero5.jpeg' },
+  { label: 'HERO6', value: '6', image: '/admin/previews/hero/hero6.jpeg' },
+  { label: 'HERO12', value: '12', image: '/admin/previews/hero/hero12.jpeg' },
+  { label: 'HERO112', value: '112', image: '/admin/previews/hero/hero112.jpeg' },
+] as const
+
+export type HeroDesignVersion = (typeof allHeroDesignVersions)[number]
+
 export const hero: Field = {
   name: 'hero',
   type: 'group',
   interfaceName: 'Hero',
   fields: [
     backgroundColor,
-    {
-      name: 'designVersion',
-      type: 'select',
-      options: [
-        {
-          label: 'no Hero',
-          value: 'none',
-        },
-        {
-          label: 'HERO1',
-          value: '1',
-        },
-        {
-          label: 'HERO2',
-          value: '2',
-        },
-        {
-          label: 'HERO3',
-          value: '3',
-        },
-        {
-          label: 'HERO4',
-          value: '4',
-        },
-        {
-          label: 'HERO5',
-          value: '5',
-        },
-        {
-          label: 'HERO6',
-          value: '6',
-        },
-        // {
-        //   label: 'HERO7',
-        //   value: '7',
-        // },
-        // {
-        //   label: 'HERO8',
-        //   value: '8',
-        // },
-        // {
-        //   label: 'HERO9',
-        //   value: '9',
-        // },
-        // {
-        //   label: 'HERO10',
-        //   value: '10',
-        // },
-        // {
-        //   label: 'HERO11',
-        //   value: '11',
-        // },
-        {
-          label: 'HERO12',
-          value: '12',
-        },
-        // {
-        //   label: 'HERO13',
-        //   value: '13',
-        // },
-        // {
-        //   label: 'HERO14',
-        //   value: '14',
-        // },
-        // {
-        //   label: 'HERO15',
-        //   value: '15',
-        // },
-        // {
-        //   label: 'HERO16',
-        //   value: '16',
-        // },
-        // {
-        //   label: 'HERO18',
-        //   value: '18',
-        // },
-        // {
-        //   label: 'HERO20',
-        //   value: '20',
-        // },
-        // {
-        //   label: 'HERO21',
-        //   value: '21',
-        // },
-        // {
-        //   label: 'HERO24',
-        //   value: '24',
-        // },
-        // {
-        //   label: 'HERO25',
-        //   value: '25',
-        // },
-        // {
-        //   label: 'HERO26',
-        //   value: '26',
-        // },
-        // {
-        //   label: 'HERO27',
-        //   value: '27',
-        // },
-        // {
-        //   label: 'HERO28',
-        //   value: '28',
-        // },
-        // {
-        //   label: 'HERO29',
-        //   value: '29',
-        // },
-        // {
-        //   label: 'HERO30',
-        //   value: '30',
-        // },
-        {
-          label: 'HERO31',
-          value: '31',
-        },
-        // {
-        //   label: 'HERO32',
-        //   value: '32',
-        // },
-        // {
-        //   label: 'HERO33',
-        //   value: '33',
-        // },
-        // {
-        //   label: 'HERO34',
-        //   value: '34',
-        // },
-        // {
-        //   label: 'HERO35',
-        //   value: '35',
-        // },
-        // {
-        //   label: 'HERO36',
-        //   value: '36',
-        // },
-        // {
-        //   label: 'HERO37',
-        //   value: '37',
-        // },
-        // {
-        //   label: 'HERO38',
-        //   value: '38',
-        // },
-        // {
-        //   label: 'HERO39',
-        //   value: '39',
-        // },
-        // {
-        //   label: 'HERO40',
-        //   value: '40',
-        // },
-        // {
-        //   label: 'HERO45',
-        //   value: '45',
-        // },
-        // {
-        //   label: 'HERO50',
-        //   value: '50',
-        // },
-        // {
-        //   label: 'HERO51',
-        //   value: '51',
-        // },
-        // {
-        //   label: 'HERO53',
-        //   value: '53',
-        // },
-        // {
-        //   label: 'HERO55',
-        //   value: '55',
-        // },
-        // {
-        //   label: 'HERO57',
-        //   value: '57',
-        // },
-      ],
-      defaultValue: '1',
-      required: true,
-    },
+    designVersionPreview(allHeroDesignVersions),
     {
       name: 'badge',
       type: 'text',
       localized: true,
       admin: {
         condition: (_, { designVersion = "" } = {}) =>
-          ['1', '2', '3', '4', '5', '6', '12'].includes(designVersion),
+          ['1', '2', '3', '4', '5', '6', '12', '112'].includes(designVersion),
       },
     },
     icon({
@@ -258,7 +95,7 @@ export const hero: Field = {
       localized: true,
       admin: {
         condition: (_, { designVersion = "" } = {}) =>
-          ['3', '27', '26', '55', '21', '53', '12', '51', '57'].includes(designVersion),
+          ['3', '27', '26', '55', '21', '53', '12', '51', '57', '112'].includes(designVersion),
       },
     },
     link({
@@ -278,7 +115,7 @@ export const hero: Field = {
       localized: true,
       admin: {
         condition: (_, { designVersion = "" } = {}) =>
-          ['1', '2', '3', '4', '5', '6', '12'].includes(designVersion),
+          ['1', '2', '3', '4', '5', '6', '12', '112'].includes(designVersion),
       },
       editor: lexicalEditor({
         features: ({ rootFeatures }) => {
@@ -297,7 +134,7 @@ export const hero: Field = {
         maxRows: 2,
         admin: {
           condition: (_, { designVersion = "" } = {}) =>
-            ['1', '2', '3', '4', '5', '6', '12'].includes(designVersion),
+            ['1', '2', '3', '4', '5', '6', '12', '112'].includes(designVersion),
         },
       },
     }),
@@ -306,18 +143,22 @@ export const hero: Field = {
       type: 'upload',
       admin: {
         condition: (_, { designVersion = "" } = {}) =>
-          ['1', '2', '3', '4', '5', '6', '12', '31', '37', '38', '18'].includes(designVersion),
+          ['1', '2', '3', '4', '5', '6', '12', '31', '37', '38', '18', '112'].includes(designVersion),
       },
       relationTo: 'media',
       hasMany: true,
       maxRows: 3,
     },
+    designVersionDescription('description112', (_, { designVersion } = {}) => ['112'].includes(designVersion), {
+      en: 'Just use a single image here as background image',
+      de: 'Nur ein Bild hier als Hintergrund-Bild verwenden',
+    }),
     {
       name: 'icons',
       type: 'upload',
       admin: {
         condition: (_, { designVersion = "" } = {}) =>
-          ['3', '53', '28', '32', '12', '51', '57', '50', '18'].includes(designVersion),
+          ['3', '53', '28', '32', '12', '51', '57', '50', '18', '112'].includes(designVersion),
       },
       relationTo: 'media',
       hasMany: true,
@@ -325,7 +166,7 @@ export const hero: Field = {
     },
     {
       name: 'USPs',
-      type: 'group',
+      type: 'array',
       admin: {
         condition: (_, { designVersion = "" } = {}) => ['24', '25', '20', '45'].includes(designVersion),
       },
@@ -350,6 +191,41 @@ export const hero: Field = {
             },
           }),
           label: false,
+        },
+      ],
+    },
+    {
+      name: 'statsItems',
+      label: 'Stats Items',
+      type: 'array',
+      admin: {
+        condition: (_, { designVersion = "" } = {}) => ['112'].includes(designVersion),
+      },
+      maxRows: 3,
+      defaultValue: [
+        {
+          title: 'Courses by Experts',
+          value: '87',
+        },
+        {
+          title: 'Hours of Content',
+          value: '200+',
+        },
+        {
+          title: 'User Satisfaction Rating',
+          value: '100%',
+        }
+      ],
+      fields: [
+        {
+          name: 'title',
+          type: 'text',
+          localized: true,
+        },
+        {
+          name: 'value',
+          type: 'text',
+          localized: true,
         },
       ],
     },
@@ -386,7 +262,28 @@ export const hero: Field = {
         condition: (_, { designVersion = "" } = {}) => ['3', '4', '7', '15'].includes(designVersion),
       },
     },
-    ...customHeroFields
+    ...customHeroFields,
+    {
+      name: 'presentationVideo',
+      type: 'group',
+      admin: {
+        condition: (_, { designVersion = "" } = {}) =>
+          ['112'].includes(designVersion),
+      },
+      fields: [
+        {
+          name: 'label',
+          type: 'text',
+          localized: true,
+          defaultValue: 'Presentation Video',
+        },
+        {
+          name: 'videoUrl',
+          type: 'text',
+          localized: true,
+        }
+      ]
+    }
   ],
   label: false,
 }

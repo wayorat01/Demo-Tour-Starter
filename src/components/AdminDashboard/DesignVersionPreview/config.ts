@@ -1,6 +1,6 @@
 import { Field } from 'payload';
 
-export type DesignVersionPreviewOptions = readonly{ label: string, value: string, image: string }[]
+export type DesignVersionPreviewOptions = readonly{ label: string, value: string, image?: string }[]
 
 /**
  * Creates a custom design version field with preview capabilities

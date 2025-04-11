@@ -1,3 +1,4 @@
+import { default as default_28c6b4c5fe9e7f7a49f6b0b5266d1eb6 } from '@/components/AdminDashboard/DesignVersionPreview'
 import { default as default_9d2d71c3c9804a7eac9f5a33fe39c4ed } from '@/components/AdminDashboard/IconSelect'
 import { default as default_bc962d55f0af68ec096c47ac2954eebd } from '@/components/AdminDashboard/SectionSelect'
 import { RscEntryLexicalCell as RscEntryLexicalCell_44fe37237e0ebf4470c9990d8cb7b07e } from '@payloadcms/richtext-lexical/rsc'
@@ -10,7 +11,6 @@ import { BoldFeatureClient as BoldFeatureClient_e70f5e05f09f93e00b997edb1ef0c864
 import { ItalicFeatureClient as ItalicFeatureClient_e70f5e05f09f93e00b997edb1ef0c864 } from '@payloadcms/richtext-lexical/client'
 import { ParagraphFeatureClient as ParagraphFeatureClient_e70f5e05f09f93e00b997edb1ef0c864 } from '@payloadcms/richtext-lexical/client'
 import { LinkFeatureClient as LinkFeatureClient_e70f5e05f09f93e00b997edb1ef0c864 } from '@payloadcms/richtext-lexical/client'
-import { default as default_28c6b4c5fe9e7f7a49f6b0b5266d1eb6 } from '@/components/AdminDashboard/DesignVersionPreview'
 import { default as default_2dec34e64291130f2645bbbd18e4cf00 } from '@/components/AdminDashboard/DesignVersionDescription'
 import { UnorderedListFeatureClient as UnorderedListFeatureClient_e70f5e05f09f93e00b997edb1ef0c864 } from '@payloadcms/richtext-lexical/client'
 import { OrderedListFeatureClient as OrderedListFeatureClient_e70f5e05f09f93e00b997edb1ef0c864 } from '@payloadcms/richtext-lexical/client'
@@ -42,6 +42,7 @@ import { default as default_5abc63c3cf3fe7a656266cc0318fce13 } from '@/component
 import { VercelBlobClientUploadHandler as VercelBlobClientUploadHandler_16c82c5e25f430251a3e3ba57219ff4e } from '@payloadcms/storage-vercel-blob/client'
 
 export const importMap = {
+  "@/components/AdminDashboard/DesignVersionPreview#default": default_28c6b4c5fe9e7f7a49f6b0b5266d1eb6,
   "@/components/AdminDashboard/IconSelect#default": default_9d2d71c3c9804a7eac9f5a33fe39c4ed,
   "@/components/AdminDashboard/SectionSelect#default": default_bc962d55f0af68ec096c47ac2954eebd,
   "@payloadcms/richtext-lexical/rsc#RscEntryLexicalCell": RscEntryLexicalCell_44fe37237e0ebf4470c9990d8cb7b07e,
@@ -54,7 +55,6 @@ export const importMap = {
   "@payloadcms/richtext-lexical/client#ItalicFeatureClient": ItalicFeatureClient_e70f5e05f09f93e00b997edb1ef0c864,
   "@payloadcms/richtext-lexical/client#ParagraphFeatureClient": ParagraphFeatureClient_e70f5e05f09f93e00b997edb1ef0c864,
   "@payloadcms/richtext-lexical/client#LinkFeatureClient": LinkFeatureClient_e70f5e05f09f93e00b997edb1ef0c864,
-  "@/components/AdminDashboard/DesignVersionPreview#default": default_28c6b4c5fe9e7f7a49f6b0b5266d1eb6,
   "@/components/AdminDashboard/DesignVersionDescription#default": default_2dec34e64291130f2645bbbd18e4cf00,
   "@payloadcms/richtext-lexical/client#UnorderedListFeatureClient": UnorderedListFeatureClient_e70f5e05f09f93e00b997edb1ef0c864,
   "@payloadcms/richtext-lexical/client#OrderedListFeatureClient": OrderedListFeatureClient_e70f5e05f09f93e00b997edb1ef0c864,
