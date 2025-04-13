@@ -74,7 +74,7 @@ const Feature102: React.FC<FeatureBlock & { publicContext: PublicContextProps }>
                     )}
                   </div>
                 </div>
-                {usp.image ? <Media resource={usp.image} imgClassName="z-10 aspect-video w-full rounded-xl border object-cover min-[960px]:max-h-56 min-[960px]:w-auto" className="z-10 aspect-video w-full rounded-xl border object-cover min-[960px]:max-h-56 min-[960px]:w-auto" /> : (
+                {usp.image ? <Media resource={usp.image} imgClassName="z-10 aspect-video w-full rounded-xl border object-contain min-[960px]:max-h-56 min-[960px]:w-auto" className="z-10 aspect-video w-full rounded-xl border object-contain min-[960px]:max-h-56 min-[960px]:w-auto" /> : (
                   <div className="text-red-500">USP image is required</div>
                 )}
               </div>
@@ -104,7 +104,7 @@ const Feature102: React.FC<FeatureBlock & { publicContext: PublicContextProps }>
               </div>
             </div>
 
-            {USPs?.[0].image && <Media resource={USPs?.[0].image} imgClassName="z-10 aspect-video w-full rounded-xl border object-cover min-[960px]:max-h-56 min-[960px]:w-auto" className="z-10 aspect-video w-full rounded-xl border object-cover min-[960px]:max-h-56 min-[960px]:w-auto" />}
+            {USPs?.[0].image && <Media resource={USPs?.[0].image} imgClassName="z-10 aspect-video w-full rounded-xl border object-contain min-[960px]:max-h-56 min-[960px]:w-auto" className="z-10 aspect-video w-full rounded-xl border object-contain min-[960px]:max-h-56 min-[960px]:w-auto" />}
           </div>
           <div className="flex flex-col items-center justify-between min-[960px]:flex-row min-[960px]:gap-10">
             <div className="flex gap-4 min-[960px]:max-w-md">
@@ -126,7 +126,7 @@ const Feature102: React.FC<FeatureBlock & { publicContext: PublicContextProps }>
                 </p>
               </div>
             </div>
-            {USPs?.[0].image && <Media resource={USPs?.[0].image} imgClassName="z-10 aspect-video w-full rounded-xl border object-cover min-[960px]:max-h-56 min-[960px]:w-auto" className="z-10 aspect-video w-full rounded-xl border object-cover min-[960px]:max-h-56 min-[960px]:w-auto" />}
+            {USPs?.[0].image && <Media resource={USPs?.[0].image} imgClassName="z-10 aspect-video w-full rounded-xl border object-contain min-[960px]:max-h-56 min-[960px]:w-auto" className="z-10 aspect-video w-full rounded-xl border object-contain min-[960px]:max-h-56 min-[960px]:w-auto" />}
           </div>
           */}
 
