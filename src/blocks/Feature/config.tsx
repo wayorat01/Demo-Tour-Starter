@@ -116,6 +116,7 @@ export const allFeatureDesignVersions = [
   // 'FEATURE107',
   // 'FEATURE108',
   // 'FEATURE109',
+  { label: 'FEATURE114', value: 'FEATURE114', image: '/admin/previews/feature/feature114.jpeg' },
   { label: 'FEATURE117', value: 'FEATURE117', image: '/admin/previews/feature/feature117.jpeg' },
   { label: 'FEATURE126', value: 'FEATURE126', image: '/admin/previews/feature/feature126.jpeg' },
 ] as const
@@ -227,6 +228,7 @@ export const FeatureBlock: Block = {
               'FEATURE97',
               'FEATURE98',
               'FEATURE109',
+              'FEATURE114',
               'FEATURE126',
             ].includes(designVersion),
         },
@@ -272,6 +274,45 @@ export const FeatureBlock: Block = {
         de: 'Du musst genau zwei USPs haben, damit dieser Block funktioniert',
       },
     ),
+
+    /**
+     * multiple images
+     */
+    {
+      name: 'images',
+      label: 'Images / Avatars',
+      type: 'upload',
+      admin: {
+        condition: (_, { designVersion = "" } = {}) =>
+          ['FEATURE114'].includes(designVersion),
+      },
+      relationTo: 'media',
+      hasMany: true,
+    },
+
+    /**
+     * Metrics with optional subline
+     */
+    {
+      name: 'metrics',
+      type: 'array',
+      admin: {
+        condition: (_, { designVersion = "" } = {}) =>
+          ['FEATURE114', 'FEATURE120', 'FEATURE136'].includes(designVersion),
+      },
+      fields: [
+        {
+          name: 'title',
+          type: 'text',
+          localized: true,
+        },
+        {
+          name: 'subline',
+          type: 'text',
+          localized: true,
+        },
+      ],
+    },
 
     {
       name: 'USPs',
@@ -326,6 +367,7 @@ export const FeatureBlock: Block = {
                 'FEATURE106',
                 'FEATURE107',
                 'FEATURE108',
+                'FEATURE114',
                 'FEATURE117',
               ].includes(designVersion)
             },
