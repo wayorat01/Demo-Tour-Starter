@@ -1,5 +1,15 @@
 # payblocks
 
+## 1.9.0
+
+### Minor Changes
+
+- 28b9ea5: Feature114 added
+
+### Patch Changes
+
+- 920ab7c: upgrade payload to 3.34.0 and nextjs to 15.3.0
+
 ## 1.8.0
 
 ### Minor Changes
