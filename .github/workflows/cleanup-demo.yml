@@ -14,8 +14,12 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Set demo token as environment variable
+        run: echo "DEMO_RESTORE_TOKEN=${{ secrets.DEMO_RESTORE_TOKEN }}" >> $GITHUB_ENV
+
       - name: Restore Demo Environment
+        if: env.DEMO_RESTORE_TOKEN != ''
         run: |
           curl https://demo-payblocks.trieb.work/next/backup/restore \
-            -H "Authorization: Bearer ${{ secrets.DEMO_RESTORE_TOKEN }}" \
-            --data '{"url":"https://demo-payblocks.trieb.work/seed/demo-payblocks---demo-payblocks.trieb.work---1739813600714.json"}'
+            -H "Authorization: Bearer $DEMO_RESTORE_TOKEN" \
+            --data '{"url":"https://p3mqqryrdkxnvazk.public.blob.vercel-storage.com/backups/manual---cluster0.2v84v.mongodb.net%252Fdemo-payblocks---demo-payblocks.trieb.work---1746779540383.tar-hXhm6LmE0pRLvpZUQ4K0A67BZOwGaD.gz"}'
