@@ -41,7 +41,8 @@ const Navbar4: React.FC<{ header: HeaderType, publicContext: PublicContextProps 
             >
               <Media 
                 resource={header.logo} 
-                className="max-h-8" 
+                className="h-9" 
+                imgClassName="h-full w-auto"
                 priority
               />
             </CMSLink>
