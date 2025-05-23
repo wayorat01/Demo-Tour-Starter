@@ -30,9 +30,9 @@ const Navbar4: React.FC<{ header: HeaderType, publicContext: PublicContextProps 
   const navItems = header.richItems || []
   
   return (
-    <section className="inset-x-0 top-0 z-20 bg-background">
+    <section className="inset-x-0 top-0 z-50 bg-background">
       <div className="container">
-        <NavigationMenu className="min-w-full">
+        <NavigationMenu className="min-w-full relative z-50">
           <div className="flex w-full justify-between gap-2 py-4">
             <CMSLink
               publicContext={publicContext}
@@ -67,7 +67,7 @@ const Navbar4: React.FC<{ header: HeaderType, publicContext: PublicContextProps 
                           {item.icon && <Icon icon={item.icon} className="mr-2 h-4 w-4" />}
                           {item.label}
                         </NavigationMenuTrigger>
-                        <NavigationMenuContent className="min-w-[calc(100vw-4rem)] p-12 2xl:min-w-[calc(1400px-4rem)]">
+                        <NavigationMenuContent className="min-w-[calc(100vw-4rem)] p-12 2xl:min-w-[calc(1400px-4rem)] z-50">
                           <BlockRenderer blocks={item.blocks} publicContext={publicContext} />
                         </NavigationMenuContent>
                       </NavigationMenuItem>
