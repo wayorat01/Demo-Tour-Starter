@@ -1,5 +1,11 @@
 # payblocks
 
+## 1.10.0
+
+### Minor Changes
+
+- 3153929: Adding a fully dynamic navbar4 component that can be configured with a dynamic block structure
+
 ## 1.9.0
 
 ### Minor Changes
