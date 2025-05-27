@@ -5,7 +5,7 @@ import configPromise from '@payload-config'
 import { getPayload } from 'payload'
 import React from 'react'
 
-import type { Page as PageType } from '@/payload-types'
+import type { Page as PageType, Post as PostType } from '@/payload-types'
 
 import { RenderBlocks } from '@/blocks/RenderBlocks'
 import { RenderHero } from '@/heros/RenderHero'
@@ -14,10 +14,11 @@ import PageClient from './page.client'
 import { notFound } from 'next/navigation'
 import { resolveSlugs } from '@/utilities/resolveSlugs'
 import localization, { locales } from '@/localization.config'
-import { queryPageBySlug } from './data'
+import { queryCollectionData, queryPageBySlug } from './data'
 import { PublicContextProps } from '@/utilities/publicContextProps'
 import { Breadcrumbs } from '@/components/Breadcrumbs'
 import { Breadcrumb } from '@payloadcms/plugin-nested-docs/types'
+import { RenderPostDetailPage } from '@/blocks/RenderPostDetailPage'
 
 type Params = {
   slugs?: Array<string>
@@ -45,7 +46,7 @@ export async function generateStaticParams(): Promise<Array<Params>> {
     select: {
       slug: true,
       breadcrumbs: true,
-    }
+    },
   })
 
   if (pages.docs.length === 0) {
@@ -93,31 +94,47 @@ export default async function Page(props: Args) {
 
   const url = generateUrl(locale, cleanSlugs)
 
-  let page: PageType | null
+  const collection = cleanSlugs[0] === 'posts' ? 'posts' : 'pages'
 
-  page = await queryPageBySlug({
+
+  let page = await queryCollectionData({
     cleanSlugs,
     locale,
+    collection,
   })
 
   if (!page) {
     return <PayloadRedirects url={url} />
   }
 
-  const { hero, layout, breadcrumbs: breadcrumbData, enableBreadcrumbs } = page
+  if (page.type === 'page') {
+    const { hero, layout, breadcrumbs: breadcrumbData, enableBreadcrumbs } = page
 
-  return (
-    <article className="">
-      <PageClient />
-      {/* Allows redirects for valid pages too */}
-      <PayloadRedirects disableNotFound url={url} />
-      <RenderHero {...hero} publicContext={publicContext} />
-      {enableBreadcrumbs && breadcrumbData && (
-        <Breadcrumbs items={breadcrumbData} publicContext={publicContext} />
-      )}
-      <RenderBlocks blocks={layout} publicContext={publicContext} />
-    </article>
-  )
+    return (
+      <article className="">
+        <PageClient />
+        {/* Allows redirects for valid pages too */}
+        <PayloadRedirects disableNotFound url={url} />
+        <RenderHero {...hero} publicContext={publicContext} />
+        {enableBreadcrumbs && breadcrumbData && (
+          <Breadcrumbs items={breadcrumbData} publicContext={publicContext} />
+        )}
+        <RenderBlocks blocks={layout} publicContext={publicContext} />
+      </article>
+    )
+  } else if (page.type === 'post') {
+    const { designVersion } = page
+    
+    // Dynamically render the blog post based on its design version
+    return (
+      <article className="blog-post">
+        <PayloadRedirects disableNotFound url={url} />
+        
+        {/* Render the appropriate blog post layout based on design version */}
+        <RenderPostDetailPage post={page} publicContext={publicContext} />
+      </article>
+    )
+  }
 }
 
 export async function generateMetadata(props: Args): Promise<Metadata> {
@@ -128,9 +145,10 @@ export async function generateMetadata(props: Args): Promise<Metadata> {
   }
   const { locale, cleanSlugs } = res
 
-  const page = await queryPageBySlug({
+  const page = await queryCollectionData({
     cleanSlugs,
     locale,
+    collection: 'pages'
   })
   const url = generateUrl(locale, cleanSlugs)
   if (page) {

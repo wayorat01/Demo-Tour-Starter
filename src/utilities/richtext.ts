@@ -1,4 +1,5 @@
-import { DefaultNodeTypes } from '@payloadcms/richtext-lexical';
+import { DefaultNodeTypes, SerializedHeadingNode } from '@payloadcms/richtext-lexical';
+import { Serializable } from 'child_process';
 
 export type RichTextNode<T = DefaultNodeTypes> = {
   type?: string;
@@ -102,6 +103,88 @@ export const splitRichText = <T extends { root?: { children?: any[] } }>(
       : null,
   };
 };
+
+/**
+ * Extracts text content from a node and its children recursively
+ */
+const extractTextContent = (node: any): string => {
+  if (!node) return '';
+  
+  // If it's a text node, return its text content
+  if (node.type === 'text') {
+    return node.text || '';
+  }
+  
+  // If it has children, recursively extract text from them
+  if (node.children && node.children.length > 0) {
+    return node.children.map(extractTextContent).join('');
+  }
+  
+  return '';
+};
+
+/**
+ * Generates a consistent id for a headline based on the text content of the node
+ * Allows to use an additional index to handle duplicates.
+ */
+export const getHeadlineId = (node: SerializedHeadingNode, additionalIndex?: string): string => {
+  // Extract all text from the heading node and its children
+  const text = extractTextContent(node);
+  
+  // Create slug in a consistent way
+  return `text-${text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '')}${additionalIndex ? `-${additionalIndex}` : ''}`;
+}
+
+/**
+ * Interface for the menu item returned by getSideMenuStructure
+ */
+export interface SideMenuItem {
+  id: string;
+  text: string;
+  level: string;
+}
+
+/**
+ * Take a regular rich text content and generates the side menu with headline class, text and anchor id.
+ * Allows filtering for certain headline levels.
+ * 
+ * @param content - The rich text content to generate the side menu from
+ * @param options - Configuration options for the side menu
+ * @param options.headlineLevels - Array of headline levels to include in the side menu
+ * @returns An array of objects containing the headline class, text and anchor id
+ */
+export const getSideMenuStructure = (content: any, options?: { headlineLevels?: ('h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6')[] }): SideMenuItem[] => {
+  // Handle the case where options is undefined
+  const headlineLevels = options?.headlineLevels ?? ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'];
+
+  if (!content?.root?.children?.length) {
+    return [];
+  }
+
+  const children = content.root.children;
+  const menuItems: SideMenuItem[] = [];
+
+  // Function to recursively search for heading nodes
+  const processNodes = (nodes: any[]): void => {
+    nodes.forEach((node, index) => {
+      if (node.type === 'heading' && headlineLevels.includes(node.tag)) {
+        menuItems.push({
+          id: getHeadlineId(node, index.toString()),
+          text: extractTextContent(node),
+          level: node.tag,
+        });
+      }
+      
+      // Process child nodes if they exist
+      if (node.children && node.children.length > 0) {
+        processNodes(node.children);
+      }
+    })
+  };
+
+  processNodes(children);
+  return menuItems;
+}
 
 /**
  * Example usage:

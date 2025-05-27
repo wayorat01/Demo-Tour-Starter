@@ -1,6 +1,11 @@
-import { Field } from 'payload';
+import deepMerge from '@/utilities/deepMerge'
+import { SelectField, Field } from 'payload'
 
-export type DesignVersionPreviewOptions = readonly{ label: string, value: string, image?: string }[]
+export type DesignVersionPreviewOptions = readonly {
+  label: string
+  value: string
+  image?: string
+}[]
 
 /**
  * Creates a custom design version field with preview capabilities
@@ -10,21 +15,26 @@ export type DesignVersionPreviewOptions = readonly{ label: string, value: string
  * @returns A field configuration object for Payload CMS
  */
 export const designVersionPreview = (
-  options: DesignVersionPreviewOptions
-): Field => ({
-  type: 'select',
-  name: 'designVersion',
-  defaultValue: options[0].value,
-  required: true,
-  options: options.map(({ label, value }) => ({ label, value })),
-  admin: {
-    components: {
-      Field: {
-        path: '@/components/AdminDashboard/DesignVersionPreview',
-        serverProps: {
-          options
-        }
-      }
-    }
-  }
-});
+  options: DesignVersionPreviewOptions,
+  overrides?: Partial<SelectField>,
+): Field =>
+  deepMerge(
+    {
+      type: 'select',
+      name: 'designVersion',
+      defaultValue: options[0].value,
+      required: true,
+      options: options.map(({ label, value }) => ({ label, value })),
+      admin: {
+        components: {
+          Field: {
+            path: '@/components/AdminDashboard/DesignVersionPreview',
+            serverProps: {
+              options,
+            },
+          },
+        },
+      },
+    },
+    overrides,
+  )

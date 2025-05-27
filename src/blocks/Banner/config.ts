@@ -2,10 +2,12 @@ import type { Block } from 'payload'
 
 import {
   FixedToolbarFeature,
+  HeadingFeature,
   InlineToolbarFeature,
   lexicalEditor,
 } from '@payloadcms/richtext-lexical'
 import { backgroundColor } from '@/fields/color'
+import { icon } from '@/components/Icon/config'
 
 export const Banner: Block = {
   slug: 'banner',
@@ -23,13 +25,25 @@ export const Banner: Block = {
       ],
       required: true,
     },
+    icon({
+      required: false,
+    }),
+    {
+      name: 'title',
+      type: 'text',
+      required: false,
+    },
     {
       name: 'content',
       type: 'richText',
       localized: true,
       editor: lexicalEditor({
         features: ({ rootFeatures }) => {
-          return [...rootFeatures, FixedToolbarFeature(), InlineToolbarFeature()]
+          return [
+            ...rootFeatures,
+            FixedToolbarFeature(),
+            InlineToolbarFeature(),
+          ]
         },
       }),
       label: false,

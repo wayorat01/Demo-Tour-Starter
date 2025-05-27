@@ -18,6 +18,7 @@ import {
 import type { Page } from '@/payload-types'
 import { cn } from '@/utilities/cn'
 import { PublicContextProps } from '@/utilities/publicContextProps'
+import { getHeadlineId } from '@/utilities/richtext'
 
 export type NodeTypes =
   | DefaultNodeTypes
@@ -195,7 +196,10 @@ export function serializeLexical({
                 className = cn(className, 'text-right')
               }
               return (
-                <Tag className={className} key={index}>
+                /**
+                 * Set a unique headline id for side menu navigation and general anchor links
+                 */
+                <Tag className={className} key={index} id={getHeadlineId(node, index.toString())}>
                   {serializedChildren}
                 </Tag>
               )

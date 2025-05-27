@@ -7,6 +7,9 @@ import {
   HorizontalRuleFeature,
   InlineToolbarFeature,
   lexicalEditor,
+  OrderedListFeature,
+  UnorderedListFeature,
+  BlockquoteFeature,
 } from '@payloadcms/richtext-lexical'
 
 import { authenticated } from '../../access/authenticated'
@@ -28,6 +31,21 @@ import {
 import { slugField } from '@/fields/slug'
 import { serverUrl as NEXT_PUBLIC_SERVER_URL } from '@/config/server'
 import { Breadcrumb } from '@payloadcms/plugin-nested-docs/types'
+import { designVersionPreview } from '@/components/AdminDashboard/DesignVersionPreview/config'
+import { calculateReadTime } from './hooks/calculcateReadTime'
+
+export const allPostDesignVersions = [
+  {
+    label: 'BLOG18',
+    value: 'BLOG18',
+    image: '/admin/previews/blog/blog18.jpeg',
+  },
+  {
+    label: 'BLOG20',
+    value: 'BLOG20',
+    image: '/admin/previews/blog/blog20.jpeg',
+  },
+]
 
 export const Posts: CollectionConfig = {
   slug: 'posts',
@@ -40,12 +58,12 @@ export const Posts: CollectionConfig = {
   admin: {
     defaultColumns: ['title', 'slug', 'updatedAt'],
     livePreview: {
-      url: ({ data }) => {
+      url: ({ data, locale }) => {
         const path = generatePreviewPath({
           slug: typeof data?.slug === 'string' ? data.slug : '',
           breadcrumbs: data?.breadcrumbs,
           collection: 'posts',
-          locale: data.locale.code,
+          locale: locale.code,
         })
 
         return `${NEXT_PUBLIC_SERVER_URL}${path}`
@@ -75,6 +93,16 @@ export const Posts: CollectionConfig = {
         {
           fields: [
             {
+              name: 'bannerImage',
+              type: 'upload',
+              relationTo: 'media',
+              admin: {
+                description: 'Banner image displayed at the top of the blog post',
+                condition: (data) => data?.designVersion === 'BLOG20',
+                position: 'sidebar',
+              },
+            },
+            {
               name: 'content',
               type: 'richText',
               localized: true,
@@ -87,6 +115,9 @@ export const Posts: CollectionConfig = {
                     FixedToolbarFeature(),
                     InlineToolbarFeature(),
                     HorizontalRuleFeature(),
+                    OrderedListFeature(),
+                    UnorderedListFeature(),
+                    BlockquoteFeature(),
                   ]
                 },
               }),
@@ -155,6 +186,11 @@ export const Posts: CollectionConfig = {
         },
       ],
     },
+    designVersionPreview(allPostDesignVersions, {
+      admin: {
+        position: 'sidebar',
+      },
+    }),
     {
       name: 'publishedAt',
       type: 'date',
@@ -208,9 +244,19 @@ export const Posts: CollectionConfig = {
         },
       ],
     },
+    // This is an internal, hidden field to store the average read time. We calculate this in a hook
+    {
+      name: 'readTime',
+      type: 'number',
+      admin: {
+        disabled: true,
+        readOnly: true,
+      },
+    },
     ...slugField(),
   ],
   hooks: {
+    beforeChange: [calculateReadTime],
     afterChange: [revalidatePost],
     afterRead: [populateAuthors],
   },
