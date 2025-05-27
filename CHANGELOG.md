@@ -1,5 +1,15 @@
 # payblocks
 
+## 2.0.0
+
+### Major Changes
+
+- df2e714: Upgraded Tailwind to v4.1.6
+
+### Minor Changes
+
+- 97c3148: Adding blogContent 20+18 and dynamic rendering structure to support posts. This is the first of several updates coming for blogs
+
 ## 1.10.0
 
 ### Minor Changes
