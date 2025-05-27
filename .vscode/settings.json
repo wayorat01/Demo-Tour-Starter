@@ -1,4 +1,9 @@
 {
+  "tailwindCSS.experimental.classRegex": [
+    "\\/\\*Tailwind\\*\\/ \"([^\"]*)",
+    "\\/\\*Tailwind\\*\\/ '([^']*)",
+    "\\/\\*Tailwind\\*\\/ `([^`]*)"
+  ],
   "cSpell.words": [
     "akku",
     "AUTOLOGIN",

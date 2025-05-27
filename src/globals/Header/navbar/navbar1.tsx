@@ -74,7 +74,7 @@ export const Navbar1: React.FC<{ header: HeaderType, publicContext: PublicContex
                                   <li key={subitem.id}>
                                     <CMSLink
                                       publicContext={publicContext}
-                                      className={cn('flex select-none gap-4 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground',)}
+                                      className={cn('flex select-none gap-4 rounded-md p-3 leading-none no-underline outline-hidden transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground',)}
                                       {...subitem.link}
                                       label=""
                                       iconBefore={undefined}
@@ -153,7 +153,7 @@ export const Navbar1: React.FC<{ header: HeaderType, publicContext: PublicContex
                                 <CMSLink
                                   publicContext={publicContext}
                                   key={subitem.id}
-                                  className={cn('flex select-none gap-4 rounded-md p-3 leading-none outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground',)}
+                                  className={cn('flex select-none gap-4 rounded-md p-3 leading-none outline-hidden transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground',)}
                                   {...subitem.link}
                                   label=""
                                   iconBefore={undefined}
@@ -183,7 +183,7 @@ export const Navbar1: React.FC<{ header: HeaderType, publicContext: PublicContex
                                 {item.subitems.map((subitem) => (
                                   <li key={subitem.id}>
                                     <CMSLink
-                                      className={cn('flex select-none gap-4 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground',)}
+                                      className={cn('flex select-none gap-4 rounded-md p-3 leading-none no-underline outline-hidden transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground',)}
                                       {...subitem.link}
                                       label=""
                                       iconBefore={undefined}

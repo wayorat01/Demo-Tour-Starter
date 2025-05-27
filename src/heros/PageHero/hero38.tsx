@@ -27,7 +27,7 @@ const Hero38 = () => {
               </Button>
             </div>
           </div>
-          <div className="relative aspect-[3/4]">
+          <div className="relative aspect-3/4">
             <div className="absolute inset-0 flex items-center justify-center">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -53,9 +53,9 @@ const Hero38 = () => {
                 })}
               </svg>
             </div>
-            <div className="absolute left-[8%] top-[10%] flex aspect-[5/6] w-[38%] justify-center rounded-lg border border-border bg-accent"></div>
+            <div className="absolute left-[8%] top-[10%] flex aspect-5/6 w-[38%] justify-center rounded-lg border border-border bg-accent"></div>
             <div className="absolute right-[12%] top-[20%] flex aspect-square w-1/5 justify-center rounded-lg border border-border bg-accent"></div>
-            <div className="absolute bottom-[24%] right-[24%] flex aspect-[5/6] w-[38%] justify-center rounded-lg border border-border bg-accent"></div>
+            <div className="absolute bottom-[24%] right-[24%] flex aspect-5/6 w-[38%] justify-center rounded-lg border border-border bg-accent"></div>
           </div>
         </div>
       </div>

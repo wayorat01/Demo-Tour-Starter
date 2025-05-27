@@ -32,9 +32,9 @@ const Feature109 = () => {
               alt="placeholder"
               className="rounded-xl object-cover md:aspect-video lg:aspect-auto"
             />
-            <div className="absolute inset-0 rounded-xl bg-gradient-to-t from-primary via-transparent to-transparent"></div>
+            <div className="absolute inset-0 rounded-xl bg-linear-to-t from-primary via-transparent to-transparent"></div>
             <div className="absolute top-0 flex size-full flex-col justify-between p-7">
-              <span className="ml-auto flex w-fit items-center gap-2 rounded-full bg-background/30 px-4 py-2.5 text-sm font-semibold backdrop-blur-sm">
+              <span className="ml-auto flex w-fit items-center gap-2 rounded-full bg-background/30 px-4 py-2.5 text-sm font-semibold backdrop-blur-xs">
                 <Avatar className="size-7 rounded-full">
                   <AvatarImage
                     src="/images/block/avatar-1.webp"

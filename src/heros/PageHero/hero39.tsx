@@ -26,10 +26,10 @@ const Hero39 = () => {
               </div>
             </div>
             <div className="flex flex-col items-center justify-center">
-              <div className="relative aspect-[7/8] size-full">
+              <div className="relative aspect-7/8 size-full">
                 <div className="absolute right-[50%] top-[12%] flex aspect-square w-[24%] justify-center rounded-lg border border-border bg-accent"></div>
-                <div className="absolute right-[50%] top-[36%] flex aspect-[5/6] w-2/5 justify-center rounded-lg border border-border bg-accent"></div>
-                <div className="absolute bottom-[36%] left-[54%] flex aspect-[5/6] w-2/5 justify-center rounded-lg border border-border bg-accent"></div>
+                <div className="absolute right-[50%] top-[36%] flex aspect-5/6 w-2/5 justify-center rounded-lg border border-border bg-accent"></div>
+                <div className="absolute bottom-[36%] left-[54%] flex aspect-5/6 w-2/5 justify-center rounded-lg border border-border bg-accent"></div>
                 <div className="absolute bottom-[12%] left-[54%]  flex aspect-square w-[24%] justify-center rounded-lg border border-border bg-accent"></div>
               </div>
             </div>

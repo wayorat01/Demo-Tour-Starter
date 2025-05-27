@@ -4,9 +4,9 @@ const Feature89 = () => {
   return (
     <section className="overflow-hidden py-32">
       <div className="container relative">
-        <div className="pointer-events-none absolute inset-0 -top-20 -z-10 mx-auto hidden size-[500px] bg-[radial-gradient(hsl(from_var(--muted-foreground)_h_s_l)_1px,transparent_1px)] opacity-25 [background-size:6px_6px] [mask-image:radial-gradient(circle_at_center,white_250px,transparent_250px)] lg:block"></div>
+        <div className="pointer-events-none absolute inset-0 -top-20 -z-10 mx-auto hidden size-[500px] bg-[radial-gradient(hsl(from_var(--muted-foreground)_h_s_l)_1px,transparent_1px)] opacity-25 bg-size-[6px_6px] mask-[radial-gradient(circle_at_center,white_250px,transparent_250px)] lg:block"></div>
         <div className="relative flex justify-between gap-16">
-          <div className="pointer-events-none absolute inset-0 hidden bg-gradient-to-t from-background via-transparent to-transparent lg:block"></div>
+          <div className="pointer-events-none absolute inset-0 hidden bg-linear-to-t from-background via-transparent to-transparent lg:block"></div>
 
           <div className="w-full max-w-96 shrink-0 justify-between">
             <p className="font-mono text-xs text-muted-foreground">

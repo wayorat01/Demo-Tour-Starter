@@ -14,7 +14,7 @@ const Feature75 = () => {
             consequatur. Explicabo.
           </p>
         </div>
-        <div className="grid gap-y-5 md:col-span-6 md:gap-y-[1.875rem] lg:col-start-7">
+        <div className="grid gap-y-5 md:col-span-6 md:gap-y-7.5 lg:col-start-7">
           <a
             href="#"
             className="group flex flex-col justify-center text-clip rounded-2xl bg-accent px-6 py-8 md:px-8 md:py-10 lg:px-10 lg:py-12"

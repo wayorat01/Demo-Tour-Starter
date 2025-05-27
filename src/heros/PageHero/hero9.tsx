@@ -19,7 +19,7 @@ export const Hero9: React.FC<Page['hero']> = ({ }) => {
       {/* Background gradient */}
       <div className="pointer-events-none absolute -inset-y-20 inset-x-0 bg-[radial-gradient(ellipse_60%_60%_at_65%_50%,hsl(from_var(--accent)_h_s_l)_0%,transparent_80%)]"></div>
       {/* Background pattern */}
-      <div className="pointer-events-none absolute -inset-y-20 inset-x-0 bg-[radial-gradient(hsl(from_var(--accent-foreground)_h_s_l/0.1)_1px,transparent_1px)] [background-size:8px_8px] [mask-image:radial-gradient(ellipse_60%_60%_at_65%_50%,#000_0%,transparent_80%)]"></div>
+      <div className="pointer-events-none absolute -inset-y-20 inset-x-0 bg-[radial-gradient(hsl(from_var(--accent-foreground)_h_s_l/0.1)_1px,transparent_1px)] bg-size-[8px_8px] mask-[radial-gradient(ellipse_60%_60%_at_65%_50%,#000_0%,transparent_80%)]"></div>
       {/* Content */}
       <div className="container relative">
         <div className="flex flex-col items-start text-left">
@@ -52,7 +52,7 @@ export const Hero9: React.FC<Page['hero']> = ({ }) => {
             <div className="grid h-full grid-cols-12 md:gap-12">
               <div className="col-span-10 col-start-2 -mt-6 grid translate-y-0 items-start justify-center sm:translate-y-0 sm:items-center md:col-span-6 md:col-end-12 lg:-mt-12 lg:items-start">
                 <div className="absolute h-[140px] w-full rounded-lg bg-primary p-4 shadow-lg">
-                  <pre className="font-mono text-xs leading-normal text-accent [mask-image:linear-gradient(to_right,#000_80%,transparent_100%)]">
+                  <pre className="font-mono text-xs leading-normal text-accent mask-[linear-gradient(to_right,#000_80%,transparent_100%)]">
                     <code>{codeSample}</code>
                   </pre>
                 </div>

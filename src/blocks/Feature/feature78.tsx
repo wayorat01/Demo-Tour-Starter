@@ -71,11 +71,11 @@ const Feature78 = () => {
               {features.map((feature) => (
                 <TabsContent key={feature.id} value={feature.id}>
                   <div className="mt-12 flex flex-col md:col-span-2 md:mt-20 md:grid md:grid-cols-2 md:gap-6 lg:gap-8">
-                    <div className="text-clip rounded-3xl md:min-h-96 lg:min-h-[28rem] xl:min-h-[32rem]">
+                    <div className="text-clip rounded-3xl md:min-h-96 lg:min-h-112 xl:min-h-128">
                       <img
                         src={feature.image}
                         alt={feature.tabLabel}
-                        className="aspect-[16/9] size-full object-cover object-center"
+                        className="aspect-video size-full object-cover object-center"
                       />
                     </div>
                     <div className="flex flex-col justify-center py-8 md:px-8 md:py-10 lg:px-10 lg:py-12">

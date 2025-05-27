@@ -200,5 +200,5 @@ export const FormBlock: React.FC<
     )}
   </FormProvider>
   );
-  return disableContainer ? form : <div className="container lg:max-w-[48rem] pb-20">{form}</div>;
+  return disableContainer ? form : <div className="container lg:max-w-3xl pb-20">{form}</div>;
 }

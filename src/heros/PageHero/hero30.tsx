@@ -104,7 +104,7 @@ const Hero30 = () => {
             />
             <div className="hidden flex-col gap-4 sm:flex lg:hidden 2xl:flex">
               <div className="w-[256px] flex-1 text-clip rounded-lg border border-border bg-background"></div>
-              <div className="aspect-[2/1] w-[256px] text-clip rounded-lg border border-border bg-background"></div>
+              <div className="aspect-2/1 w-[256px] text-clip rounded-lg border border-border bg-background"></div>
             </div>
           </div>
         </div>

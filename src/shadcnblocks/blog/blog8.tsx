@@ -58,7 +58,7 @@ const Blog8 = () => {
                 </div>
               </div>
               <div className="order-first sm:order-last sm:col-span-5">
-                <div className="aspect-[16/9] text-clip rounded-lg border border-border">
+                <div className="aspect-video text-clip rounded-lg border border-border">
                   <img
                     src={webinar.image}
                     alt={webinar.title}

@@ -7,7 +7,7 @@ const Stat6 = () => {
     <section className="bg-accent py-32">
       <div className="container flex flex-col items-start text-left">
         <div className="mb-12 w-full md:mb-16">
-          <h2 className="mb-8 w-full max-w-[24rem] text-pretty text-3xl font-bold sm:text-4xl md:max-w-[30rem] lg:max-w-[37rem] lg:text-5xl">
+          <h2 className="mb-8 w-full max-w-[24rem] text-pretty text-3xl font-bold sm:text-4xl md:max-w-120 lg:max-w-148 lg:text-5xl">
             Here are some stats to look at
           </h2>
           <div className="flex flex-col justify-start gap-2 sm:flex-row">

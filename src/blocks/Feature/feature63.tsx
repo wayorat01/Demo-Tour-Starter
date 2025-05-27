@@ -60,7 +60,7 @@ const Feature63 = () => {
               <img
                 src="https://www.shadcnblocks.com/images/block/placeholder-1.svg"
                 alt="placeholder"
-                className="mb-6 aspect-[16/9] md:mb-8 lg:w-full"
+                className="mb-6 aspect-video md:mb-8 lg:w-full"
               />
               <div className="flex flex-col">
                 <p className="mb-2 text-sm font-semibold md:text-base">

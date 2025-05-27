@@ -195,12 +195,12 @@ const Hero40 = () => {
                 {integrations.map((line, i) => (
                   <div
                     key={i}
-                    className="flex gap-x-8 odd:pl-[calc(theme(spacing.32)+16px)]"
+                    className="flex gap-x-8 odd:pl-[calc(--spacing(32)+16px)]"
                   >
                     {line.map((integration) => (
                       <div
                         key={integration.title}
-                        className="flex w-64 gap-x-3 rounded-xl border border-background bg-background p-4 shadow"
+                        className="flex w-64 gap-x-3 rounded-xl border border-background bg-background p-4 shadow-sm"
                       >
                         <div className="flex size-7 shrink-0 items-center justify-center rounded bg-accent">
                           <integration.icon className="size-4" />
@@ -219,7 +219,7 @@ const Hero40 = () => {
                 ))}
               </div>
             </div>
-            <div className="relative flex aspect-[3/6] w-[240px] justify-center rounded-lg border border-border bg-background sm:w-[300px]"></div>
+            <div className="relative flex aspect-3/6 w-[240px] justify-center rounded-lg border border-border bg-background sm:w-[300px]"></div>
           </div>
         </div>
       </div>

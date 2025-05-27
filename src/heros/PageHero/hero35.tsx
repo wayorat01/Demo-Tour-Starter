@@ -27,21 +27,21 @@ const Hero35 = () => {
               </Button>
             </div>
           </div>
-          <div className="grid aspect-[3/4] grid-cols-[1fr_10fr_1fr] grid-rows-[2fr_10fr_2fr] bg-accent">
+          <div className="grid aspect-3/4 grid-cols-[1fr_10fr_1fr] grid-rows-[2fr_10fr_2fr] bg-accent">
             <div className="border-b border-r border-border"></div>
             <div className="border-b border-border"></div>
             <div className="relative border-b border-l border-border">
-              <div className="absolute -bottom-[6px] -left-[6px] size-[12px] rounded-full border-[3px] border-[theme(colors.accent-foreground))] bg-accent-foreground ring-8 ring-accent"></div>
+              <div className="absolute -bottom-[6px] -left-[6px] size-[12px] rounded-full border-[3px] border-accent-foreground bg-accent-foreground ring-8 ring-accent"></div>
             </div>
             <div className="border-r"></div>
             <div className="relative">
-              <div className="absolute left-[12%] top-[8%] flex aspect-[3/4] w-3/5 justify-center rounded-lg border border-border bg-background"></div>
+              <div className="absolute left-[12%] top-[8%] flex aspect-3/4 w-3/5 justify-center rounded-lg border border-border bg-background"></div>
               <div className="absolute right-[10%] top-[20%] flex aspect-square w-[30%] justify-center rounded-lg border border-border bg-background"></div>
-              <div className="absolute bottom-[8%] left-[36%] flex aspect-[4/3] w-[50%] justify-center rounded-lg border border-border bg-background"></div>
+              <div className="absolute bottom-[8%] left-[36%] flex aspect-4/3 w-[50%] justify-center rounded-lg border border-border bg-background"></div>
             </div>
             <div className="border-l"></div>
             <div className="relative border-r border-t border-border">
-              <div className="absolute -right-[6px] -top-[6px] size-[12px] rounded-full border-[3px] border-[theme(colors.accent-foreground))] bg-accent-foreground ring-8 ring-accent"></div>
+              <div className="absolute -right-[6px] -top-[6px] size-[12px] rounded-full border-[3px] border-accent-foreground bg-accent-foreground ring-8 ring-accent"></div>
             </div>
             <div className="border-t border-border"></div>
             <div className="border-l border-t border-border"></div>

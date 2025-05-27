@@ -21,7 +21,7 @@ const Feature77 = () => {
             className="group relative flex flex-col items-center border-border py-8 text-center transition-all duration-200 md:border-t md:px-8 md:py-12 lg:px-12 lg:pb-20 lg:pt-16"
           >
             <div className="absolute top-0 h-px w-full bg-border md:hidden" />
-            <div className="mb-8 flex aspect-[1/1] w-16 items-center justify-center md:w-[6.25rem] lg:mb-[3.25rem]">
+            <div className="mb-8 flex aspect-square w-16 items-center justify-center md:w-25 lg:mb-13">
               <img
                 src="https://www.shadcnblocks.com/images/block/block-2.svg"
                 alt="Product"
@@ -45,7 +45,7 @@ const Feature77 = () => {
             className="group relative flex flex-col items-center border-border py-8 text-center transition-all duration-200 md:border-t md:px-8 md:py-12 lg:px-12 lg:pb-20 lg:pt-16"
           >
             <div className="absolute top-0 h-px w-full bg-border md:hidden" />
-            <div className="mb-8 flex aspect-[1/1] w-16 items-center justify-center md:w-[6.25rem] lg:mb-[3.25rem]">
+            <div className="mb-8 flex aspect-square w-16 items-center justify-center md:w-25 lg:mb-13">
               <img
                 src="https://www.shadcnblocks.com/images/block/block-3.svg"
                 alt="Product"

@@ -1,7 +1,7 @@
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Textarea } from '@/components/ui/textarea';
+import { Button } from '@/components/ui/button'
+import { Input } from '@/components/ui/input'
+import { Label } from '@/components/ui/label'
+import { Textarea } from '@/components/ui/textarea'
 
 const Contact2 = () => {
   return (
@@ -10,12 +10,10 @@ const Contact2 = () => {
         <div className="mx-auto flex max-w-screen-xl flex-col justify-between gap-10 lg:flex-row lg:gap-20">
           <div className="mx-auto flex max-w-sm flex-col justify-between gap-10">
             <div className="text-center lg:text-left">
-              <h1 className="mb-2 text-5xl font-semibold lg:mb-1 lg:text-6xl">
-                Contact Us
-              </h1>
+              <h1 className="mb-2 text-5xl font-semibold lg:mb-1 lg:text-6xl">Contact Us</h1>
               <p className="text-muted-foreground">
-                We are available for questions, feedback, or collaboration
-                opportunities. Let us know how we can help!
+                We are available for questions, feedback, or collaboration opportunities. Let us
+                know how we can help!
               </p>
             </div>
             <div className="mx-auto w-fit lg:mx-0">
@@ -64,7 +62,7 @@ const Contact2 = () => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Contact2;
+export default Contact2

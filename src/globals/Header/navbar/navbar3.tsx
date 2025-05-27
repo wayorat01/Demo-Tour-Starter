@@ -503,7 +503,7 @@ export const Navbar3: React.FC<{ header: HeaderType }> = ({ header }) => {
                   <img
                     src="https://www.shadcnblocks.com/images/block/placeholder-1.svg"
                     alt="Placeholder image"
-                    className="aspect-[2/1] size-full object-cover object-center"
+                    className="aspect-2/1 size-full object-cover object-center"
                   />
                 </div>
                 <div>
@@ -566,7 +566,7 @@ export const Navbar3: React.FC<{ header: HeaderType }> = ({ header }) => {
                     <img
                       src="https://www.shadcnblocks.com/images/block/placeholder-1.svg"
                       alt="Placeholder image"
-                      className="aspect-[2/1] size-full object-cover object-center"
+                      className="aspect-2/1 size-full object-cover object-center"
                     />
                   </div>
                   <div>
@@ -590,7 +590,7 @@ export const Navbar3: React.FC<{ header: HeaderType }> = ({ header }) => {
                   <img
                     src="https://www.shadcnblocks.com/images/block/placeholder-1.svg"
                     alt="Placeholder image"
-                    className="aspect-[2/1] size-full object-cover object-center"
+                    className="aspect-2/1 size-full object-cover object-center"
                   />
                 </div>
                 <div>
@@ -609,7 +609,7 @@ export const Navbar3: React.FC<{ header: HeaderType }> = ({ header }) => {
                   <img
                     src="https://www.shadcnblocks.com/images/block/placeholder-1.svg"
                     alt="Placeholder image"
-                    className="aspect-[2/1] size-full object-cover object-center"
+                    className="aspect-2/1 size-full object-cover object-center"
                   />
                 </div>
                 <div>
@@ -673,7 +673,7 @@ export const Navbar3: React.FC<{ header: HeaderType }> = ({ header }) => {
                     <img
                       src="https://www.shadcnblocks.com/images/block/placeholder-1.svg"
                       alt="Placeholder image"
-                      className="aspect-[2/1] size-full object-cover object-center"
+                      className="aspect-2/1 size-full object-cover object-center"
                     />
                   </div>
                   <div>

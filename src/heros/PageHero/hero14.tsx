@@ -96,7 +96,7 @@ const Hero14 = () => {
           opts={{
             loop: true,
           }}
-          className="relative mx-auto w-full max-w-screen-md before:absolute before:inset-y-0 before:left-0 before:z-10 before:w-36 before:bg-gradient-to-r before:from-background before:to-transparent after:absolute after:inset-y-0 after:right-0 after:z-10 after:w-36 after:bg-gradient-to-l after:from-background after:to-transparent"
+          className="relative mx-auto w-full max-w-screen-md before:absolute before:inset-y-0 before:left-0 before:z-10 before:w-36 before:bg-linear-to-r before:from-background before:to-transparent after:absolute after:inset-y-0 after:right-0 after:z-10 after:w-36 after:bg-linear-to-l after:from-background after:to-transparent"
           onMouseEnter={plugin.current.stop}
           onMouseLeave={plugin.current.reset}
         >

@@ -22,7 +22,7 @@ const r = "radius"
 //     "destructive-foreground",
 //     "border",
 //     "input",
-//     "ring",
+//     "ring-3",
 //     "success",
 //     "warning",
 //     "error",

@@ -9,7 +9,7 @@ const CTA5 = () => {
             <img
               src="https://www.shadcnblocks.com/images/block/placeholder-1.svg"
               alt="placeholder hero"
-              className="aspect-[3/2] w-full rounded-md object-cover"
+              className="aspect-3/2 w-full rounded-md object-cover"
             />
           </div>
           <div className="w-full shrink-0 px-4 py-6 md:p-8 lg:w-1/2 lg:px-16">

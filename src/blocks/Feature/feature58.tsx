@@ -30,7 +30,7 @@ const Feature58 = () => {
       <div className="container">
         <div className="grid gap-x-20 rounded-lg border border-border bg-accent p-6 md:grid-cols-2 md:p-8 lg:p-16">
           <div className="mb-8 flex justify-center lg:justify-start xl:mb-0">
-            <div className="relative aspect-[6/5] h-min w-full max-w-[15.75rem] md:max-w-[16.75rem] xl:max-w-sm">
+            <div className="relative aspect-6/5 h-min w-full max-w-63 md:max-w-67 xl:max-w-sm">
               <img
                 src="https://www.shadcnblocks.com/images/block/placeholder-dark-1.svg"
                 alt="placeholder"

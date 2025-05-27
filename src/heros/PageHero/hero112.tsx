@@ -32,7 +32,7 @@ const Hero112: React.FC<Page['hero'] & { publicContext: PublicContextProps }> = 
 
   return (
     <section className="bg-background py-12 md:py-32">
-      <div className="container max-w-[60rem]">
+      <div className="container max-w-240">
         <div className="flex flex-col gap-4 md:flex-row">
           <div className="flex flex-col gap-6">
             {richText && <RichText 
@@ -67,8 +67,8 @@ const Hero112: React.FC<Page['hero'] & { publicContext: PublicContextProps }> = 
             </div>
           </div>
           <div>
-            <div className="relative mx-auto mt-28 h-[21.25rem] w-[21.25rem] rounded-full bg-orange-300 md:mx-0 md:mt-0 lg:h-[25rem] lg:w-[25rem]">
-              <div className="absolute bottom-0 left-1/2 w-[21.25rem] -translate-x-1/2 overflow-hidden rounded-b-full lg:w-[25rem]">
+            <div className="relative mx-auto mt-28 h-85 w-85 rounded-full bg-orange-300 md:mx-0 md:mt-0 lg:h-100 lg:w-100">
+              <div className="absolute bottom-0 left-1/2 w-85 -translate-x-1/2 overflow-hidden rounded-b-full lg:w-100">
                 {images && images.length > 0 && (
                   <Media
                     imgClassName="w-full translate-y-14 scale-90 object-cover object-center"
@@ -77,13 +77,13 @@ const Hero112: React.FC<Page['hero'] & { publicContext: PublicContextProps }> = 
                   />
                 )}
               </div>
-              <div className="absolute -right-5 bottom-10 flex w-[17.5rem] items-center justify-center gap-1 rounded-full bg-white px-4 py-3 shadow-md">
-                <div className="flex -space-x-[0.875rem]">
+              <div className="absolute -right-5 bottom-10 flex w-70 items-center justify-center gap-1 rounded-full bg-white px-4 py-3 shadow-md">
+                <div className="flex -space-x-3.5">
                   {icons && icons.length > 0 ? (
                     icons.slice(0, 3).map((icon, i) => (
                       <Avatar
                         key={i}
-                        className="flex h-12 w-12 flex-shrink-0 rounded-full border-4 border-white object-cover"
+                        className="flex h-12 w-12 shrink-0 rounded-full border-4 border-white object-cover"
                       >
                         <AvatarImage alt="" />
                         <Media resource={icon} />
@@ -94,7 +94,7 @@ const Hero112: React.FC<Page['hero'] & { publicContext: PublicContextProps }> = 
                     [0, 1, 2].map((_, i) => (
                       <Avatar
                         key={i}
-                        className="flex h-12 w-12 flex-shrink-0 rounded-full border-4 border-white object-cover"
+                        className="flex h-12 w-12 shrink-0 rounded-full border-4 border-white object-cover"
                       >
                         <AvatarFallback>{String.fromCharCode(65 + i) + String.fromCharCode(66 + i)}</AvatarFallback>
                       </Avatar>
@@ -105,11 +105,11 @@ const Hero112: React.FC<Page['hero'] & { publicContext: PublicContextProps }> = 
                   {tagline || "7000+ people already joined"}
                 </div>
               </div>
-              <div className="absolute top-0 right-0 flex h-[6.25rem] w-[6.25rem] rotate-12 rounded-3xl border-8 border-white bg-primary lg:h-[6.875rem] lg:w-[6.875rem]">
-                <BookOpen className="m-auto h-[2.5rem] w-[2.5rem] stroke-white lg:h-[3.125rem] lg:w-[3.125rem]" />
+              <div className="absolute top-0 right-0 flex h-25 w-25 rotate-12 rounded-3xl border-8 border-white bg-primary lg:h-27.5 lg:w-27.5">
+                <BookOpen className="m-auto h-10 w-10 stroke-white lg:h-12.5 lg:w-12.5" />
               </div>
-              <div className="absolute top-1/3 -left-10 flex h-[6.25rem] w-[6.25rem] -rotate-12 rounded-3xl border-8 border-white bg-primary lg:h-[6.875rem] lg:w-[6.875rem]">
-                <PenTool className="m-auto h-[3.5rem] w-[3.5rem] -rotate-90 fill-white lg:h-[4.5rem] lg:w-[4.5rem]" />
+              <div className="absolute top-1/3 -left-10 flex h-25 w-25 -rotate-12 rounded-3xl border-8 border-white bg-primary lg:h-27.5 lg:w-27.5">
+                <PenTool className="m-auto h-14 w-14 -rotate-90 fill-white lg:h-18 lg:w-18" />
               </div>
             </div>
           </div>
@@ -121,7 +121,7 @@ const Hero112: React.FC<Page['hero'] & { publicContext: PublicContextProps }> = 
                 <div 
                   key={index} 
                   className={`flex flex-1 flex-col gap-3 p-6 ${
-                    index < statsItems.length - 1 ? 'border-b-[1px] md:border-r-[1px] md:border-b-0' : ''
+                    index < statsItems.length - 1 ? 'border-b md:border-r md:border-b-0' : ''
                   }`}
                 >
                   <div className="text-2xl font-medium text-primary lg:text-4xl">

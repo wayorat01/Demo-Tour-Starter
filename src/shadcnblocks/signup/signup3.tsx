@@ -13,7 +13,7 @@ const Signup3 = () => {
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 200 200"
-              className="absolute top-10 -z-10 h-full w-[1250px] [mask-image:radial-gradient(circle,red,transparent,transparent,transparent)]"
+              className="absolute top-10 -z-10 h-full w-[1250px] mask-[radial-gradient(circle,red,transparent,transparent,transparent)]"
             >
               <defs>
                 <pattern
@@ -50,7 +50,7 @@ const Signup3 = () => {
               Start your 30-day free trial.
             </p>
           </div>
-          <div className="z-10 mx-auto w-full max-w-sm rounded-md bg-background p-6 shadow">
+          <div className="z-10 mx-auto w-full max-w-sm rounded-md bg-background p-6 shadow-sm">
             <div>
               <div className="grid gap-4">
                 <div className="grid w-full max-w-sm items-center gap-1.5">

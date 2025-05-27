@@ -29,7 +29,7 @@ const Logos2: React.FC<LogosBlock & { publicContext: PublicContextProps }> = ({ 
             {Array.isArray(logos) && logos.map((logo: MediaType) => (
               <div
                 key={logo.id}
-                className="-mb-px flex items-center justify-center border-b border-r border-border p-5 sm:p-6 [&:nth-child(3n)]:border-r-0"
+                className="-mb-px flex items-center justify-center border-b border-r border-border p-5 sm:p-6 nth-[3n]:border-r-0"
               >
                 <Media imgClassName="size-12 object-contain object-center sm:size-16 lg:size-24" priority resource={logo} />
               </div>

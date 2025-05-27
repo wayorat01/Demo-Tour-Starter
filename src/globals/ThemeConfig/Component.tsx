@@ -35,7 +35,7 @@ export async function ThemeConfig() {
 
   --border: ${themeConfig.regularColors?.border};
   --input: ${themeConfig.regularColors?.input};
-  --ring: ${themeConfig.regularColors?.ring};
+  --ring: ${themeConfig.regularColors?.['ring-3']};
 
   --success: ${themeConfig.regularColors?.success};
   --warning: ${themeConfig.regularColors?.warning};
@@ -80,7 +80,7 @@ export async function ThemeConfig() {
 
   --border: ${themeConfig.darkmodeColors?.border};
   --input: ${themeConfig.darkmodeColors?.input};
-  --ring: ${themeConfig.darkmodeColors?.ring};
+  --ring: ${themeConfig.darkmodeColors?.['ring-3']};
 
   --success: ${themeConfig.darkmodeColors?.success};
   --warning: ${themeConfig.darkmodeColors?.warning};

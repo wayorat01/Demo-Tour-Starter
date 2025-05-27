@@ -7,7 +7,7 @@ const Hero53 = () => {
   return (
     <section className="relative py-32">
       <div className="container">
-        <div className="absolute inset-0 -z-10 size-full bg-[radial-gradient(hsl(from_var(--muted-foreground)_h_s_l)_1px,transparent_1px)] opacity-35 [background-size:14px_14px]"></div>
+        <div className="absolute inset-0 -z-10 size-full bg-[radial-gradient(hsl(from_var(--muted-foreground)_h_s_l)_1px,transparent_1px)] opacity-35 bg-size-[14px_14px]"></div>
         <h1 className="text-5xl font-bold md:text-6xl lg:text-8xl">
           Simplifying maintenance for efficient code management.
         </h1>

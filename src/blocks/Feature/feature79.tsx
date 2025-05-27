@@ -20,13 +20,13 @@ const Feature79 = () => {
         <div className="flex flex-col gap-y-12 md:col-span-2 md:grid md:grid-cols-2 md:gap-x-6 lg:gap-8">
           <a
             href="#"
-            className="group text-clip rounded-t-xl  border border-border transition-shadow hover:shadow-lg md:min-h-96 lg:min-h-[28rem] xl:min-h-[32rem]"
+            className="group text-clip rounded-t-xl  border border-border transition-shadow hover:shadow-lg md:min-h-96 lg:min-h-112 xl:min-h-128"
           >
             <div>
               <img
                 src="https://www.shadcnblocks.com/images/block/placeholder-1.svg"
                 alt="placeholder"
-                className="aspect-[16/9] size-full object-cover object-center"
+                className="aspect-video size-full object-cover object-center"
               />
             </div>
             <div className="px-6 py-8 md:px-8 md:py-10 lg:px-10 lg:py-12">

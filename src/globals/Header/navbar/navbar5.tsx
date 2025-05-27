@@ -74,7 +74,7 @@ const Navbar5: React.FC<{ header: HeaderType; publicContext: PublicContextProps 
                               <li>
                                 <CMSLink
                                   publicContext={publicContext}
-                                  className="flex select-none gap-4 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                                  className="flex select-none gap-4 rounded-md p-3 leading-none no-underline outline-hidden transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
                                   {...subitem.link}
                                   label=""
                                   iconBefore={undefined}
@@ -171,7 +171,7 @@ const Navbar5: React.FC<{ header: HeaderType; publicContext: PublicContextProps 
                                   publicContext={publicContext}
                                   key={subitem.id}
                                   className={cn(
-                                    'flex select-none gap-4 rounded-md p-3 leading-none outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground',
+                                    'flex select-none gap-4 rounded-md p-3 leading-none outline-hidden transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground',
                                   )}
                                   {...subitem.link}
                                   label=""

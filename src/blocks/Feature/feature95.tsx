@@ -23,7 +23,7 @@ const Feature95 = () => {
               >
                 <div className="flex gap-4 rounded-md px-8 py-4 text-left hover:bg-muted lg:block lg:px-4">
                   <div className="flex flex-col items-center lg:contents">
-                    <span className="flex size-7 shrink-0 items-center justify-center rounded-full border bg-background font-mono text-xs font-medium lg:group-data-[state=active]:bg-primary lg:group-data-[state=active]:text-background lg:group-data-[state=active]:ring lg:group-data-[state=active]:ring-muted-foreground/40">
+                    <span className="flex size-7 shrink-0 items-center justify-center rounded-full border bg-background font-mono text-xs font-medium lg:group-data-[state=active]:bg-primary lg:group-data-[state=active]:text-background lg:group-data-[state=active]:ring-3 lg:group-data-[state=active]:ring-muted-foreground/40">
                       1
                     </span>
                     <span className="h-full w-px bg-input lg:hidden"></span>
@@ -43,7 +43,7 @@ const Feature95 = () => {
                     <img
                       src="https://www.shadcnblocks.com/images/block/placeholder-dark-1.svg"
                       alt="placeholder"
-                      className="size-full rounded-md border object-cover shadow"
+                      className="size-full rounded-md border object-cover shadow-sm"
                     />
                   </div>
                 </div>
@@ -54,7 +54,7 @@ const Feature95 = () => {
               >
                 <div className="flex gap-4 rounded-md px-8 py-4 text-left hover:bg-muted lg:block lg:px-4">
                   <div className="flex flex-col items-center lg:contents">
-                    <span className="flex size-7 shrink-0 items-center justify-center rounded-full border bg-background font-mono text-xs font-medium group-data-[state=active]:bg-primary group-data-[state=active]:text-background group-data-[state=active]:ring group-data-[state=active]:ring-muted-foreground/40">
+                    <span className="flex size-7 shrink-0 items-center justify-center rounded-full border bg-background font-mono text-xs font-medium group-data-[state=active]:bg-primary group-data-[state=active]:text-background group-data-[state=active]:ring-3 group-data-[state=active]:ring-muted-foreground/40">
                       2
                     </span>
                     <span className="h-full w-px bg-input lg:hidden"></span>
@@ -74,7 +74,7 @@ const Feature95 = () => {
                     <img
                       src="https://www.shadcnblocks.com/images/block/placeholder-dark-2.svg"
                       alt="placeholder"
-                      className="size-full rounded-md border object-cover shadow"
+                      className="size-full rounded-md border object-cover shadow-sm"
                     />
                   </div>
                 </div>
@@ -85,7 +85,7 @@ const Feature95 = () => {
               >
                 <div className="flex gap-4 rounded-md px-8 py-4 text-left hover:bg-muted lg:block lg:px-4">
                   <div className="flex flex-col items-center lg:contents">
-                    <span className="flex size-7 shrink-0 items-center justify-center rounded-full border bg-background font-mono text-xs font-medium group-data-[state=active]:bg-primary group-data-[state=active]:text-background group-data-[state=active]:ring group-data-[state=active]:ring-muted-foreground/40">
+                    <span className="flex size-7 shrink-0 items-center justify-center rounded-full border bg-background font-mono text-xs font-medium group-data-[state=active]:bg-primary group-data-[state=active]:text-background group-data-[state=active]:ring-3 group-data-[state=active]:ring-muted-foreground/40">
                       3
                     </span>
                     <span className="h-full w-px bg-input lg:hidden"></span>
@@ -105,7 +105,7 @@ const Feature95 = () => {
                     <img
                       src="https://www.shadcnblocks.com/images/block/placeholder-dark-3.svg"
                       alt="placeholder"
-                      className="size-full rounded-md border object-cover shadow"
+                      className="size-full rounded-md border object-cover shadow-sm"
                     />
                   </div>
                 </div>
@@ -116,7 +116,7 @@ const Feature95 = () => {
               >
                 <div className="flex gap-4 rounded-md px-8 py-4 text-left hover:bg-muted lg:block lg:px-4">
                   <div className="flex flex-col items-center lg:contents">
-                    <span className="flex size-7 shrink-0 items-center justify-center rounded-full border bg-background font-mono text-xs font-medium group-data-[state=active]:bg-primary group-data-[state=active]:text-background group-data-[state=active]:ring group-data-[state=active]:ring-muted-foreground/40">
+                    <span className="flex size-7 shrink-0 items-center justify-center rounded-full border bg-background font-mono text-xs font-medium group-data-[state=active]:bg-primary group-data-[state=active]:text-background group-data-[state=active]:ring-3 group-data-[state=active]:ring-muted-foreground/40">
                       4
                     </span>
                     <span className="h-full w-px bg-input lg:hidden"></span>
@@ -136,7 +136,7 @@ const Feature95 = () => {
                     <img
                       src="https://www.shadcnblocks.com/images/block/placeholder-dark-1.svg"
                       alt="placeholder"
-                      className="size-full rounded-md border object-cover shadow"
+                      className="size-full rounded-md border object-cover shadow-sm"
                     />
                   </div>
                 </div>
@@ -147,28 +147,28 @@ const Feature95 = () => {
                 <img
                   src="https://www.shadcnblocks.com/images/block/placeholder-dark-1.svg"
                   alt="placeholder"
-                  className="size-full rounded-xl border object-cover shadow"
+                  className="size-full rounded-xl border object-cover shadow-sm"
                 />
               </TabsContent>
               <TabsContent value="tab-2" className="aspect-video">
                 <img
                   src="https://www.shadcnblocks.com/images/block/placeholder-dark-2.svg"
                   alt="placeholder"
-                  className="size-full rounded-xl border object-cover shadow"
+                  className="size-full rounded-xl border object-cover shadow-sm"
                 />
               </TabsContent>
               <TabsContent value="tab-3" className="aspect-video">
                 <img
                   src="https://www.shadcnblocks.com/images/block/placeholder-dark-3.svg"
                   alt="placeholder"
-                  className="size-full rounded-xl border object-cover shadow"
+                  className="size-full rounded-xl border object-cover shadow-sm"
                 />
               </TabsContent>
               <TabsContent value="tab-4" className="aspect-video">
                 <img
                   src="https://www.shadcnblocks.com/images/block/placeholder-dark-1.svg"
                   alt="placeholder"
-                  className="size-full rounded-xl border object-cover shadow"
+                  className="size-full rounded-xl border object-cover shadow-sm"
                 />
               </TabsContent>
             </div>

@@ -90,7 +90,7 @@ const Feature126: React.FC<FeatureBlock & { publicContext: PublicContextProps }>
                       setActiveImage(tab.image)
                       setActiveTabId(tab.id)
                     }}
-                    className={`cursor-pointer py-5 !no-underline transition`}
+                    className={`cursor-pointer py-5 no-underline! transition`}
                   >
                     {tab.headline && (
                       <RichText
@@ -126,7 +126,7 @@ const Feature126: React.FC<FeatureBlock & { publicContext: PublicContextProps }>
             </Accordion>
           </div>
           <div className="relative m-auto hidden w-[calc(100%-100px)] max-w-[1266px] overflow-hidden md:block">
-            <div className="absolute bottom-0 left-0 right-0 z-[2] h-[100px] bg-[linear-gradient(to_top,white_0%,rgba(255,255,255,0)_100%)]"></div>
+            <div className="absolute bottom-0 left-0 right-0 z-2 h-[100px] bg-[linear-gradient(to_top,white_0%,rgba(255,255,255,0)_100%)]"></div>
             <Media
               resource={activeImage}
               imgClassName="max-h-[490px] w-full rounded-md object-cover transition-opacity duration-300"

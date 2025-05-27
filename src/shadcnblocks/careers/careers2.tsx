@@ -27,7 +27,7 @@ const Careers2 = () => {
       <div className="container px-1">
         <div className="border-x border-dashed">
           <div className="relative flex flex-col gap-6 border-b border-dashed px-4 py-10 sm:items-center md:pb-20">
-            <div className="absolute inset-0 -z-10 size-full bg-[linear-gradient(to_right,hsl(from_var(--muted)_h_s_l)_1px,transparent_1px),linear-gradient(to_bottom,hsl(from_var(--muted)_h_s_l)_1px,transparent_1px)] bg-[size:64px_64px] [mask-image:radial-gradient(ellipse_50%_100%_at_50%_50%,transparent_60%,#000_100%)]"></div>
+            <div className="absolute inset-0 -z-10 size-full bg-[linear-gradient(to_right,hsl(from_var(--muted)_h_s_l)_1px,transparent_1px),linear-gradient(to_bottom,hsl(from_var(--muted)_h_s_l)_1px,transparent_1px)] bg-size-[64px_64px] mask-[radial-gradient(ellipse_50%_100%_at_50%_50%,transparent_60%,#000_100%)]"></div>
             <Badge variant="outline" className="w-fit">
               Job openings
             </Badge>

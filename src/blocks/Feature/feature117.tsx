@@ -33,7 +33,7 @@ const Feature117: React.FC<FeatureBlock & { publicContext: PublicContextProps }>
                   className="h-full max-h-[450px] w-full rounded-xl object-cover object-center"
                 />
               )}
-              <div className="absolute bottom-0 left-0 right-0 top-0 translate-y-20 rounded-xl bg-gradient-to-t from-primary to-transparent transition-transform duration-300 group-hover:translate-y-0"></div>
+              <div className="absolute bottom-0 left-0 right-0 top-0 translate-y-20 rounded-xl bg-linear-to-t from-primary to-transparent transition-transform duration-300 group-hover:translate-y-0"></div>
               <div className="absolute top-0 flex h-full w-full flex-col justify-between p-7">
                 <span className="ml-auto flex w-fit items-center gap-1 rounded-full bg-primary px-4 py-2.5 text-sm font-semibold text-background">
                   {uspIcon && <Icon icon={uspIcon} className="h-auto w-6 fill-background" />}

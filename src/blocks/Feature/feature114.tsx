@@ -232,7 +232,7 @@ const Feature114: React.FC<FeatureBlock & { publicContext: PublicContextProps }>
                   </CarouselItem>
                 ))}
               </CarouselContent>
-              <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background"></div>
+              <div className="absolute inset-0 bg-linear-to-t from-background via-transparent to-background"></div>
             </Carousel>
             <Carousel
               opts={{
@@ -264,7 +264,7 @@ const Feature114: React.FC<FeatureBlock & { publicContext: PublicContextProps }>
                     </CarouselItem>
                   ))}
               </CarouselContent>
-              <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background"></div>
+              <div className="absolute inset-0 bg-linear-to-t from-background via-transparent to-background"></div>
             </Carousel>
             <Carousel
               opts={{
@@ -294,7 +294,7 @@ const Feature114: React.FC<FeatureBlock & { publicContext: PublicContextProps }>
                   </CarouselItem>
                 ))}
               </CarouselContent>
-              <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background"></div>
+              <div className="absolute inset-0 bg-linear-to-t from-background via-transparent to-background"></div>
             </Carousel>
           </div>
         </div>

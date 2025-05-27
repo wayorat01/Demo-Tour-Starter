@@ -27,7 +27,7 @@ const Feature81 = () => {
               alt="placeholder"
               className="absolute size-full object-cover object-center"
             />
-            <div className="relative flex size-full flex-col items-start justify-between gap-4 bg-primary/60 px-4 py-5 text-primary-foreground transition-colors hover:bg-primary/70 sm:aspect-[3/2] md:p-6 lg:p-8">
+            <div className="relative flex size-full flex-col items-start justify-between gap-4 bg-primary/60 px-4 py-5 text-primary-foreground transition-colors hover:bg-primary/70 sm:aspect-3/2 md:p-6 lg:p-8">
               <img
                 src="https://www.shadcnblocks.com/images/block/logos/shadcn-ui.svg"
                 alt="placeholder logo"
@@ -45,7 +45,7 @@ const Feature81 = () => {
               alt="placeholder"
               className="absolute size-full object-cover object-center"
             />
-            <div className="relative flex size-full flex-col items-start justify-between gap-4 bg-primary/60 px-4 py-5 text-primary-foreground transition-colors hover:bg-primary/70 sm:aspect-[3/2] md:p-6 lg:p-8">
+            <div className="relative flex size-full flex-col items-start justify-between gap-4 bg-primary/60 px-4 py-5 text-primary-foreground transition-colors hover:bg-primary/70 sm:aspect-3/2 md:p-6 lg:p-8">
               <img
                 src="https://www.shadcnblocks.com/images/block/logos/astro.svg"
                 alt="placeholder logo"
@@ -63,7 +63,7 @@ const Feature81 = () => {
               alt="placeholder"
               className="absolute size-full object-cover object-center"
             />
-            <div className="relative flex size-full flex-col items-start justify-between gap-4 bg-primary/50 px-4 py-5 text-primary-foreground transition-colors hover:bg-primary/70 sm:aspect-[2/1] sm:justify-end md:flex-row md:items-end md:justify-between md:gap-0 md:p-6 lg:p-8">
+            <div className="relative flex size-full flex-col items-start justify-between gap-4 bg-primary/50 px-4 py-5 text-primary-foreground transition-colors hover:bg-primary/70 sm:aspect-2/1 sm:justify-end md:flex-row md:items-end md:justify-between md:gap-0 md:p-6 lg:p-8">
               <div>
                 <img
                   src="https://www.shadcnblocks.com/images/block/logos/vercel.svg"

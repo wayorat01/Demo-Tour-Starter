@@ -23,7 +23,7 @@ const Feature64 = () => {
               <img
                 src="https://www.shadcnblocks.com/images/block/placeholder-1.svg"
                 alt="placeholder"
-                className="mb-6 aspect-[4/3] sm:max-h-64 md:mb-8 lg:w-full"
+                className="mb-6 aspect-4/3 sm:max-h-64 md:mb-8 lg:w-full"
               />
             </div>
             <div className="mt-auto flex flex-col">
@@ -38,7 +38,7 @@ const Feature64 = () => {
               <img
                 src="https://www.shadcnblocks.com/images/block/placeholder-2.svg"
                 alt="placeholder"
-                className="mb-6 aspect-[4/3] sm:max-h-64 md:mb-8 lg:w-full"
+                className="mb-6 aspect-4/3 sm:max-h-64 md:mb-8 lg:w-full"
               />
             </div>
             <div className="mt-auto flex flex-col">

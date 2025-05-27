@@ -138,7 +138,7 @@ const Blog3 = () => {
           href="#"
           className="group relative mb-8 block md:mb-14 md:text-clip md:rounded-xl lg:mb-16"
         >
-          <div className="mb-4 aspect-[4/3] text-clip rounded-xl md:mb-0 md:aspect-[8/5] lg:rounded-2xl">
+          <div className="mb-4 aspect-4/3 text-clip rounded-xl md:mb-0 md:aspect-8/5 lg:rounded-2xl">
             <div className="size-full transition duration-300 group-hover:scale-105">
               <img
                 src="https://www.shadcnblocks.com/images/block/placeholder-1.svg"
@@ -147,7 +147,7 @@ const Blog3 = () => {
               />
             </div>
           </div>
-          <div className="flex flex-col gap-6 md:absolute md:inset-x-0 md:bottom-0 md:bg-gradient-to-t md:from-primary/80 md:to-transparent md:p-8 md:pt-24 md:text-primary-foreground">
+          <div className="flex flex-col gap-6 md:absolute md:inset-x-0 md:bottom-0 md:bg-linear-to-t md:from-primary/80 md:to-transparent md:p-8 md:pt-24 md:text-primary-foreground">
             <div>
               <div className="mb-4 md:hidden">
                 <Badge>Design</Badge>
@@ -240,7 +240,7 @@ const Blog3 = () => {
                     <img
                       src={post.image}
                       alt={post.title}
-                      className="aspect-[3/2] size-full object-cover object-center"
+                      className="aspect-3/2 size-full object-cover object-center"
                     />
                   </div>
                 </div>

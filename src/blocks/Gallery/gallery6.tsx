@@ -112,7 +112,7 @@ const Gallery6: React.FC<GalleryBlock & { publicContext: PublicContextProps }> =
                   <CarouselItem key={item.id} className="pl-[20px] md:max-w-[452px]">
                     <a href={item.link.url || '#'} className="group flex flex-col justify-between">
                       <div>
-                        <div className="flex aspect-[3/2] text-clip rounded-xl">
+                        <div className="flex aspect-3/2 text-clip rounded-xl">
                           <div className="flex-1">
                             <div className="relative size-full origin-bottom transition duration-300 group-hover:scale-105">
                               {item.image && (

@@ -110,7 +110,7 @@ export const Hero31: React.FC<Page['hero'] & { publicContext: PublicContextProps
           {images && images.length > 0 && (
             <>
               <Media
-                imgClassName="aspect-[3/5] w-[320px] rounded-lg border border-border bg-background object-cover"
+                imgClassName="aspect-3/5 w-[320px] rounded-lg border border-border bg-background object-cover"
                 priority
                 resource={images[0]}
               />

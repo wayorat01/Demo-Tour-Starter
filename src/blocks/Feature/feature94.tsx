@@ -1,4 +1,4 @@
-import { Button } from '@/components/ui/button';
+import { Button } from '@/components/ui/button'
 
 const Feature94 = () => {
   return (
@@ -28,9 +28,7 @@ const Feature94 = () => {
                   className="h-auto w-16"
                 />
               </div>
-              <h4 className="mb-4 text-xl font-semibold md:text-2xl">
-                Insights
-              </h4>
+              <h4 className="mb-4 text-xl font-semibold md:text-2xl">Insights</h4>
               <p className="text-lg text-muted-foreground">
                 Leverage your existing data to gain user-specific insights.
               </p>
@@ -48,9 +46,7 @@ const Feature94 = () => {
                   className="h-auto w-16"
                 />
               </div>
-              <h4 className="mb-4 text-xl font-semibold md:text-2xl">
-                Metrics
-              </h4>
+              <h4 className="mb-4 text-xl font-semibold md:text-2xl">Metrics</h4>
               <p className="text-lg text-muted-foreground">
                 Understand the reasons behind key performance metrics.
               </p>
@@ -68,9 +64,7 @@ const Feature94 = () => {
                   className="h-auto w-16"
                 />
               </div>
-              <h4 className="mb-4 text-xl font-semibold md:text-2xl">
-                Testing
-              </h4>
+              <h4 className="mb-4 text-xl font-semibold md:text-2xl">Testing</h4>
               <p className="text-lg text-muted-foreground">
                 Validate your testing results using real-time data insights.
               </p>
@@ -88,9 +82,7 @@ const Feature94 = () => {
                   className="h-auto w-16"
                 />
               </div>
-              <h4 className="mb-4 text-xl font-semibold md:text-2xl">
-                Teamwork
-              </h4>
+              <h4 className="mb-4 text-xl font-semibold md:text-2xl">Teamwork</h4>
               <p className="text-lg text-muted-foreground">
                 Share relevant insights with your team for better collaboration.
               </p>
@@ -99,7 +91,7 @@ const Feature94 = () => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Feature94;
+export default Feature94

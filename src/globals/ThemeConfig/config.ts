@@ -343,14 +343,14 @@ export const ThemeConfig: GlobalConfig = {
           validate: validateCssColor,
           defaultValue: "hsl(214.3, 31.8%, 91.4%)",
         }, {
-          name: "ring",
+          name: "ring-3",
           label: {
             en: "Ring Color",
             de: "Ringfarbe"
           },
           admin: {
             description: {
-              en: "Used for ring or glow effects around interactive elements. Provides visual feedback and emphasis.",
+              en: "Used for ring-3 or glow effects around interactive elements. Provides visual feedback and emphasis.",
               de: "Verwendet für Ring- oder Glowe-Effekte um interaktive Elemente. Bietet visuelles Feedback und Betonung."
             },
           },
@@ -818,7 +818,7 @@ export const ThemeConfig: GlobalConfig = {
           validate: validateCssColor,
           defaultValue: "hsl(217.2 32.6%, 17.5%)",
         }, {
-          name: "ring",
+          name: "ring-3",
           label: {
             en: "Ring Color",
             de: "Ringfarbe"
@@ -826,7 +826,7 @@ export const ThemeConfig: GlobalConfig = {
           admin: {
             condition: (_, { enableDarkMode } = {}) => enableDarkMode,
             description: {
-              en: "Used for ring or glow effects around interactive elements. Provides visual feedback and emphasis.",
+              en: "Used for ring-3 or glow effects around interactive elements. Provides visual feedback and emphasis.",
               de: "Verwendet für Ring- oder Glowe-Effekte um interaktive Elemente. Bietet visuelles Feedback und Betonung."
             },
           },

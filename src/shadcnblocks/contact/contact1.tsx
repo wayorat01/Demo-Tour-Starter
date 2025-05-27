@@ -18,11 +18,11 @@ const Contact1 = () => {
       <div className="pointer-events-none absolute -inset-y-20 inset-x-0 bg-[radial-gradient(ellipse_35%_15%_at_40%_55%,hsl(from_var(--accent)_h_s_l)_0%,transparent_100%)] lg:bg-[radial-gradient(ellipse_12%_20%_at_60%_45%,hsl(from_var(--accent)_h_s_l)_0%,transparent_100%)]"></div>
       <div className="pointer-events-none absolute -inset-y-20 inset-x-0 bg-[radial-gradient(ellipse_35%_20%_at_70%_75%,hsl(from_var(--accent)_h_s_l)_0%,transparent_80%)] lg:bg-[radial-gradient(ellipse_15%_30%_at_70%_65%,hsl(from_var(--accent)_h_s_l)_0%,transparent_80%)]"></div>
       {/* Background pattern */}
-      <div className="pointer-events-none absolute -inset-y-20 inset-x-0 bg-[radial-gradient(hsl(from_var(--accent-foreground)_h_s_l/0.1)_1px,transparent_1px)] [background-size:8px_8px] [mask-image:radial-gradient(ellipse_60%_60%_at_65%_50%,#000_0%,transparent_80%)]"></div>
+      <div className="pointer-events-none absolute -inset-y-20 inset-x-0 bg-[radial-gradient(hsl(from_var(--accent-foreground)_h_s_l/0.1)_1px,transparent_1px)] bg-size-[8px_8px] mask-[radial-gradient(ellipse_60%_60%_at_65%_50%,#000_0%,transparent_80%)]"></div>
       {/*
       <div className="container grid w-full grid-cols-1 gap-x-32 overflow-hidden lg:grid-cols-2">
         <div className="w-full pb-10 md:space-y-10 md:pb-0">
-          <div className="space-y-4 md:max-w-[40rem]">
+          <div className="space-y-4 md:max-w-160">
             <h1 className="text-4xl font-medium lg:text-5xl">
               Book free demo now
             </h1>
@@ -86,9 +86,9 @@ const Contact1 = () => {
           </div>
         </div>
         <div className="flex w-full justify-center lg:mt-2.5">
-          <div className="relative flex w-full min-w-80 max-w-[30rem] flex-col items-center overflow-visible md:min-w-96">
+          <div className="relative flex w-full min-w-80 max-w-120 flex-col items-center overflow-visible md:min-w-96">
             <form className="z-10 space-y-6">
-              <div className="w-full space-y-6 rounded-xl border border-border bg-background px-6 py-10 shadow-sm">
+              <div className="w-full space-y-6 rounded-xl border border-border bg-background px-6 py-10 shadow-xs">
                 <div>
                   <div className="mb-2.5 text-sm font-medium">
                     <label htmlFor="fullName">Full name</label>

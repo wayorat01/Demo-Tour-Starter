@@ -1,19 +1,17 @@
-import { Globe } from 'lucide-react';
+import { Globe } from 'lucide-react'
 
-import { Button } from '@/components/ui/button';
+import { Button } from '@/components/ui/button'
 
 const Hero51 = () => {
   return (
     <section className="py-32">
       <div className="">
         <div className="container relative mx-auto max-w-screen-sm py-10 text-center">
-          <div className="absolute inset-0 -z-10 size-full bg-[linear-gradient(to_right,hsl(from_var(--muted)_h_s_l)_1px,transparent_1px),linear-gradient(to_bottom,hsl(from_var(--muted)_h_s_l)_1px,transparent_1px)] bg-[size:64px_64px] [mask-image:radial-gradient(ellipse_50%_100%_at_50%_50%,#000_60%,transparent_100%)]"></div>
-          <h1 className="mb-3 text-4xl lg:text-7xl">
-            Explore a World of Digital Assets
-          </h1>
+          <div className="absolute inset-0 -z-10 size-full bg-[linear-gradient(to_right,hsl(from_var(--muted)_h_s_l)_1px,transparent_1px),linear-gradient(to_bottom,hsl(from_var(--muted)_h_s_l)_1px,transparent_1px)] bg-size-[64px_64px] mask-[radial-gradient(ellipse_50%_100%_at_50%_50%,#000_60%,transparent_100%)]"></div>
+          <h1 className="mb-3 text-4xl lg:text-7xl">Explore a World of Digital Assets</h1>
           <p className="mb-5 text-sm text-muted-foreground md:text-base">
-            Discover the future of asset management, tokenization, and liquidity
-            with our comprehensive marketplace.
+            Discover the future of asset management, tokenization, and liquidity with our
+            comprehensive marketplace.
           </p>
           <Button>Marketplace</Button>
           <div className="mt-7 flex items-start justify-center gap-2 font-medium md:text-xl">
@@ -52,7 +50,7 @@ const Hero51 = () => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Hero51;
+export default Hero51

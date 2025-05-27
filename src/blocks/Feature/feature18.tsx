@@ -55,8 +55,8 @@ const features = [
 
 const Feature18 = () => {
   return (
-    <section className="relative py-32 before:absolute before:inset-0 before:bg-primary/10 before:[mask-image:url(/images/block/waves.svg)] before:[mask-repeat:repeat] before:[mask-size:_64px_32px]">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-transparent to-background"></div>
+    <section className="relative py-32 before:absolute before:inset-0 before:bg-primary/10 before:mask-[url(/images/block/waves.svg)] before:mask-repeat before:mask-size-[64px_32px]">
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,var(--tw-gradient-stops))] from-transparent to-background"></div>
       <div className="container relative">
         <h2 className="mb-8 max-w-screen-sm text-balance text-2xl font-semibold lg:text-4xl">
           Build your own website with our UI blocks

@@ -42,7 +42,7 @@ const Feature70: React.FC<FeatureBlock & { publicContext: PublicContextProps }> 
     <section className="py-32">
       <div className="container">
         <div className="flex flex-col gap-8 md:flex-row">
-          <div className="aspect-[5/6] text-clip rounded-3xl bg-accent">
+          <div className="aspect-5/6 text-clip rounded-3xl bg-accent">
             <Carousel
               setApi={setCarouselApi}
               className="size-full [&>div]:h-full"
@@ -94,7 +94,7 @@ const Feature70: React.FC<FeatureBlock & { publicContext: PublicContextProps }> 
                 return (
                   <li
                     key={usp.id}
-                    className="group relative w-full cursor-pointer px-6 py-3 transition data-[open]:bg-accent"
+                    className="group relative w-full cursor-pointer px-6 py-3 transition data-open:bg-accent"
                     data-open={selection === i ? 'true' : undefined}
                     onClick={() => setSelection(i)}
                   >
@@ -102,11 +102,11 @@ const Feature70: React.FC<FeatureBlock & { publicContext: PublicContextProps }> 
                       <div className="text-sm font-semibold text-accent-foreground">
                         {firstNode.root.children?.[0]?.children?.[0]?.text}
                       </div>
-                      <div className="flex size-8 items-center justify-center rounded-full bg-accent text-accent-foreground group-hover:bg-primary group-hover:text-primary-foreground group-data-[open]:bg-primary group-data-[open]:text-primary-foreground">
-                        <ChevronDown className="size-4 shrink-0 transition-transform duration-200 group-data-[open]:rotate-180" />
+                      <div className="flex size-8 items-center justify-center rounded-full bg-accent text-accent-foreground group-hover:bg-primary group-hover:text-primary-foreground group-data-open:bg-primary group-data-open:text-primary-foreground">
+                        <ChevronDown className="size-4 shrink-0 transition-transform duration-200 group-data-open:rotate-180" />
                       </div>
                     </div>
-                    <div className="hidden text-sm font-medium group-data-[open]:block">
+                    <div className="hidden text-sm font-medium group-data-open:block">
                       <RichText publicContext={publicContext}
                         withWrapper={false}
                         content={rest}

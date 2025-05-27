@@ -27,7 +27,7 @@ export const color: ColorType = ({ overrides = {} } = {}) => {
       "destructive-foreground",
       "border",
       "input",
-      "ring",
+      "ring-3",
       "success",
       "warning",
       "error",

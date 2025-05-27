@@ -9,7 +9,7 @@ const Hero28 = () => {
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 1400 520"
-            className="-mx-[theme(container.padding)] w-[calc(100%+2*theme(container.padding))]"
+            className="-mx-8 w-[calc(100%+2*theme(container.padding))]"
           >
             <defs>
               <radialGradient id="text-backgroud" cx="50%" cy="50%" r={0.6}>
@@ -48,7 +48,7 @@ const Hero28 = () => {
                   fill="url(#text-backgroud)"
                 />
               </mask>
-              <filter id="blur" x="-50%" y="-50%" width="200%" height="200%">
+              <filter id="blur-sm" x="-50%" y="-50%" width="200%" height="200%">
                 <feGaussianBlur in="SourceGraphic" stdDeviation="40" />
               </filter>
             </defs>

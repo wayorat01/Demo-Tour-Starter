@@ -7,7 +7,7 @@ const Feature80 = () => {
     <section className="py-32">
       <div className="container">
         <div className="flex flex-col gap-8 md:flex-row">
-          <div className="aspect-[5/6] text-clip rounded-3xl bg-accent">
+          <div className="aspect-5/6 text-clip rounded-3xl bg-accent">
             <img
               src="https://www.shadcnblocks.com/images/block/placeholder-1.svg"
               alt="placeholder"

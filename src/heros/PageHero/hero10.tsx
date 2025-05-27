@@ -13,7 +13,7 @@ const Hero10 = () => {
             height="1080"
             viewBox="0 0 1920 1080"
             fill="none"
-            className="absolute hidden opacity-25 [mask-image:linear-gradient(to_right,white,transparent,transparent,white)] lg:block"
+            className="absolute hidden opacity-25 mask-[linear-gradient(to_right,white,transparent,transparent,white)] lg:block"
           >
             <g clipPath="url(#clip0_4_5)">
               <rect width="1920" height="1080" />

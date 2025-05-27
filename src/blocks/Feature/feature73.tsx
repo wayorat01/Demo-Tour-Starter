@@ -23,11 +23,11 @@ const Feature73 = () => {
         </div>
         <div className="grid gap-6 md:grid-cols-2 lg:gap-8">
           <div className="flex flex-col text-clip rounded-xl border border-border md:col-span-2 md:grid md:grid-cols-2 md:gap-6 lg:gap-8">
-            <div className="md:min-h-96 lg:min-h-[28rem] xl:min-h-[32rem]">
+            <div className="md:min-h-96 lg:min-h-112 xl:min-h-128">
               <img
                 src="https://www.shadcnblocks.com/images/block/placeholder-1.svg"
                 alt="Feature 1"
-                className="aspect-[16/9] size-full object-cover object-center"
+                className="aspect-video size-full object-cover object-center"
               />
             </div>
             <div className="flex flex-col justify-center px-6 py-8 md:px-8 md:py-10 lg:px-10 lg:py-12">
@@ -45,7 +45,7 @@ const Feature73 = () => {
               <img
                 src="https://www.shadcnblocks.com/images/block/placeholder-2.svg"
                 alt="Feature 2"
-                className="aspect-[16/9] size-full object-cover object-center"
+                className="aspect-video size-full object-cover object-center"
               />
             </div>
             <div className="px-6 py-8 md:px-8 md:py-10 lg:px-10 lg:py-12">
@@ -63,7 +63,7 @@ const Feature73 = () => {
               <img
                 src="https://www.shadcnblocks.com/images/block/placeholder-3.svg"
                 alt="Feature 3"
-                className="aspect-[16/9] size-full object-cover object-center"
+                className="aspect-video size-full object-cover object-center"
               />
             </div>
             <div className="px-6 py-8 md:px-8 md:py-10 lg:px-10 lg:py-12">

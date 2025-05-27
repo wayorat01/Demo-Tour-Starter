@@ -67,7 +67,7 @@ const Feature85 = () => {
         <div>
           <div className="container relative overflow-hidden border-x border-muted-foreground/20 py-32">
             <div className="isolate mx-auto flex max-w-screen-md flex-col gap-20">
-              <div className="bg absolute -left-px -top-1 -z-10 size-full bg-[linear-gradient(to_right,hsl(from_var(--muted-foreground)_h_s_l)_1px,transparent_1px),linear-gradient(to_bottom,hsl(from_var(--muted-foreground)_h_s_l)_1px,transparent_1px)] bg-[size:64px_64px] opacity-20 [clip-path:inset(0px_0px_50%_0px)] [mask-image:radial-gradient(ellipse_100%_120%_at_50%_50%,transparent_20%,#000_100%)]"></div>
+              <div className="bg absolute -left-px -top-1 -z-10 size-full bg-[linear-gradient(to_right,hsl(from_var(--muted-foreground)_h_s_l)_1px,transparent_1px),linear-gradient(to_bottom,hsl(from_var(--muted-foreground)_h_s_l)_1px,transparent_1px)] bg-size-[64px_64px] opacity-20 [clip-path:inset(0px_0px_50%_0px)] mask-[radial-gradient(ellipse_100%_120%_at_50%_50%,transparent_20%,#000_100%)]"></div>
               <h2 className="text-center text-3xl md:text-5xl">
                 A Project Management App You&apos;ll Love Using
               </h2>

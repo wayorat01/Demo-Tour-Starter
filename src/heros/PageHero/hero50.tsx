@@ -35,12 +35,12 @@ const Hero50 = () => {
         </div>
       </div>
       <div className="relative px-8">
-        <div className="absolute inset-0 top-1/2 size-full bg-gradient-to-b from-muted to-transparent to-50%"></div>
+        <div className="absolute inset-0 top-1/2 size-full bg-linear-to-b from-muted to-transparent to-50%"></div>
         <div className="relative mx-auto max-w-screen-lg">
           <img
             src="https://www.shadcnblocks.com/images/block/placeholder-1.svg"
             alt="placeholder"
-            className="mt-20 max-h-[580px] w-full rounded-lg object-cover shadow-[0px_0px_0px_1px_rgba(0,0,0,0.06),0px_1px_1px_-0.5px_rgba(0,0,0,0.06),0px_3px_3px_-1.5px_rgba(0,0,0,0.06),_0px_6px_6px_-3px_rgba(0,0,0,0.06),0px_12px_12px_-6px_rgba(0,0,0,0.06),0px_24px_24px_-12px_rgba(0,0,0,0.06)]"
+            className="mt-20 max-h-[580px] w-full rounded-lg object-cover shadow-[0px_0px_0px_1px_rgba(0,0,0,0.06),0px_1px_1px_-0.5px_rgba(0,0,0,0.06),0px_3px_3px_-1.5px_rgba(0,0,0,0.06),0px_6px_6px_-3px_rgba(0,0,0,0.06),0px_12px_12px_-6px_rgba(0,0,0,0.06),0px_24px_24px_-12px_rgba(0,0,0,0.06)]"
           />
           <img
             src="https://www.shadcnblocks.com/images/block/placeholder-dark-2.svg"

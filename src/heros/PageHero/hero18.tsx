@@ -123,8 +123,8 @@ const Hero18 = () => {
           </div>
           {/* Hero images */}
           <div className="container mx-auto">
-            <div className="mt-2 flex aspect-[21/5] max-h-[156px] w-full flex-col items-center text-clip rounded-md border border-border bg-accent shadow-sm sm:rounded-xl"></div>
-            <div className="mt-6 flex aspect-[27/10] max-h-[300px] w-full flex-col items-center text-clip rounded-xl border border-border bg-accent shadow-sm"></div>
+            <div className="mt-2 flex aspect-21/5 max-h-[156px] w-full flex-col items-center text-clip rounded-md border border-border bg-accent shadow-xs sm:rounded-xl"></div>
+            <div className="mt-6 flex aspect-27/10 max-h-[300px] w-full flex-col items-center text-clip rounded-xl border border-border bg-accent shadow-xs"></div>
           </div>
         </div>
       </div>

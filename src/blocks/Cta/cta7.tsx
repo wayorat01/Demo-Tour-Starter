@@ -14,7 +14,7 @@ const CTA7 = () => {
               height={384}
               viewBox="0 0 404 384"
               aria-hidden="true"
-              className="absolute left-full top-full -translate-x-2/3 -translate-y-1/2 rotate-[60deg]"
+              className="absolute left-full top-full -translate-x-2/3 -translate-y-1/2 rotate-60"
             >
               <defs>
                 <pattern

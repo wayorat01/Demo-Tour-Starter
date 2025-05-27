@@ -38,7 +38,7 @@ const Feature72: React.FC<FeatureBlock & { publicContext: PublicContextProps }> 
                   {usp.image && (
                     <Media
                       resource={usp.image}
-                      imgClassName="aspect-[16/9] size-full object-cover object-center"
+                      imgClassName="aspect-video size-full object-cover object-center"
                     />
                   )}
                 </div>

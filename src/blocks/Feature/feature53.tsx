@@ -12,7 +12,7 @@ const Feature53: React.FC<FeatureBlock> = ({ USPs }) => {
           {USPs?.map((usp, i) => (
             <div
               key={i}
-              className="border-b border-l border-border py-4 even:border-r md:border-b-0 md:even:border-r-0 md:[&:nth-child(4n)]:border-r"
+              className="border-b border-l border-border py-4 even:border-r md:border-b-0 md:even:border-r-0 md:nth-[4n]:border-r"
             >
               <div className="relative flex min-h-[150px] flex-col md:mx-4 lg:min-h-[280px] lg:pl-8">
                 <p className="text-center font-mono text-xs md:text-left">

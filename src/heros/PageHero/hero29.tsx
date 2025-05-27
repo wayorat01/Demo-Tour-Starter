@@ -10,7 +10,7 @@ const Hero29 = () => {
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 1400 900"
-            className="-mx-[theme(container.padding)] h-full w-[calc(100%+2*theme(container.padding))]"
+            className="-mx-8 h-full w-[calc(100%+2*theme(container.padding))]"
           >
             <defs>
               <filter id="blur1" x="-20%" y="-20%" width="140%" height="140%">
@@ -93,7 +93,7 @@ const Hero29 = () => {
             </div>
             <Button>Book a demo</Button>
           </div>
-          <div className="flex w-full items-center justify-between rounded-full bg-background px-4 py-2 shadow">
+          <div className="flex w-full items-center justify-between rounded-full bg-background px-4 py-2 shadow-sm">
             <div className="flex items-center">
               <span className="flex items-center gap-x-0.5">
                 <Star className="size-3 fill-accent-foreground stroke-accent-foreground" />
@@ -109,7 +109,7 @@ const Hero29 = () => {
         </div>
       </div>
       <div className="container relative -mb-48 overflow-hidden">
-        <div className="mx-auto aspect-[4/3] max-w-3xl rounded-xl border border-background/40 bg-background/20 p-4">
+        <div className="mx-auto aspect-4/3 max-w-3xl rounded-xl border border-background/40 bg-background/20 p-4">
           <img
             src="https://www.shadcnblocks.com/images/block/placeholder-1.svg"
             alt="placeholder hero"

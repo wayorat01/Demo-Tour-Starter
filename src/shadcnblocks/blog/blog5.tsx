@@ -55,7 +55,7 @@ const Blog5 = () => {
                   <img
                     src={post.image}
                     alt={post.title}
-                    className="aspect-[3/2] size-full object-cover object-center"
+                    className="aspect-3/2 size-full object-cover object-center"
                   />
                 </div>
               </div>

@@ -14,7 +14,7 @@ const Hero36 = () => {
           href="#"
           className="group flex flex-col items-center rounded-lg bg-background px-6 py-10 text-center lg:px-8 lg:py-16"
         >
-          <div className="mb-8 flex aspect-[1/1] w-16 items-center justify-center md:w-[6.25rem] lg:mb-[3.25rem]">
+          <div className="mb-8 flex aspect-square w-16 items-center justify-center md:w-25 lg:mb-13">
             <img
               src="https://www.shadcnblocks.com/images/block/block-1.svg"
               alt="Product"
@@ -37,7 +37,7 @@ const Hero36 = () => {
           href="#"
           className="group flex flex-col items-center rounded-lg bg-background px-6 py-10 text-center lg:px-8 lg:py-16"
         >
-          <div className="mb-8 flex aspect-[1/1] w-16 items-center justify-center md:w-[6.25rem] lg:mb-[3.25rem]">
+          <div className="mb-8 flex aspect-square w-16 items-center justify-center md:w-25 lg:mb-13">
             <img
               src="https://www.shadcnblocks.com/images/block/block-2.svg"
               alt="Product"
@@ -60,7 +60,7 @@ const Hero36 = () => {
           href="#"
           className="group flex flex-col items-center rounded-lg bg-background px-6 py-10 text-center lg:px-8 lg:py-16"
         >
-          <div className="mb-8 flex aspect-[1/1] w-16 items-center justify-center md:w-[6.25rem] lg:mb-[3.25rem]">
+          <div className="mb-8 flex aspect-square w-16 items-center justify-center md:w-25 lg:mb-13">
             <img
               src="https://www.shadcnblocks.com/images/block/block-3.svg"
               alt="Product"

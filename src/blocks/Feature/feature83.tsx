@@ -28,7 +28,7 @@ const Feature83 = () => {
                 management and communication.
               </p>
             </div>
-            <div className="absolute -bottom-28 -z-10 size-full opacity-25 [background-size:12px_12px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_20%,transparent_100%)] sm:bg-[radial-gradient(hsl(from_var(--muted-foreground)_h_s_l)_1px,transparent_1px)]"></div>
+            <div className="absolute -bottom-28 -z-10 size-full opacity-25 bg-size-[12px_12px] mask-[radial-gradient(ellipse_50%_50%_at_50%_50%,#000_20%,transparent_100%)] sm:bg-[radial-gradient(hsl(from_var(--muted-foreground)_h_s_l)_1px,transparent_1px)]"></div>
           </div>
           <div className="order-1 mx-auto flex max-w-screen-md flex-col items-center gap-5 text-center lg:order-none lg:items-start lg:text-left">
             <Badge variant="outline" className="w-fit">

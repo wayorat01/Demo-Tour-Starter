@@ -1,4 +1,4 @@
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@radix-ui/react-tabs';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@radix-ui/react-tabs'
 import {
   FileSpreadsheet,
   Flag,
@@ -8,19 +8,16 @@ import {
   Target,
   Timer,
   Wand,
-} from 'lucide-react';
+} from 'lucide-react'
 
-import { Badge } from '@/components/ui/badge';
+import { Badge } from '@/components/ui/badge'
 
 const Feature105 = () => {
   return (
     <section className="py-32">
       <div className="container">
         <div className="mx-auto flex max-w-screen-md flex-col items-center gap-4">
-          <Badge
-            variant="outline"
-            className="flex items-center gap-1 px-2.5 py-1.5 text-sm"
-          >
+          <Badge variant="outline" className="flex items-center gap-1 px-2.5 py-1.5 text-sm">
             <Flag className="h-auto w-4" />
             Highlights
           </Badge>
@@ -28,9 +25,8 @@ const Feature105 = () => {
             Steps to Achieve Your Goals
           </h2>
           <p className="text-center text-muted-foreground lg:text-lg">
-            Discover effective strategies to maximize your potential and enhance
-            performance. Our platform is designed to help you achieve your
-            goals.
+            Discover effective strategies to maximize your potential and enhance performance. Our
+            platform is designed to help you achieve your goals.
           </p>
         </div>
         <div className="mx-auto mt-14 max-w-screen-xl">
@@ -157,7 +153,7 @@ const Feature105 = () => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Feature105;
+export default Feature105

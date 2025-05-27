@@ -7,7 +7,7 @@ const Cta3 = () => {
   return (
     <section className="py-32">
       <div className="container">
-        <div className="grid grid-cols-1 flex-col gap-10 rounded-lg border p-6 shadow-sm lg:grid-cols-2 lg:px-20 lg:py-16">
+        <div className="grid grid-cols-1 flex-col gap-10 rounded-lg border p-6 shadow-xs lg:grid-cols-2 lg:px-20 lg:py-16">
           <div>
             <h4 className="mb-2 text-2xl font-bold lg:text-4xl">
               Integrations

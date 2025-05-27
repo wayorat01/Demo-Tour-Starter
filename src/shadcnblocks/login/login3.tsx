@@ -9,7 +9,7 @@ const Login3 = () => {
     <section className="py-32">
       <div className="container">
         <div className="flex flex-col gap-4">
-          <div className="mx-auto w-full max-w-sm rounded-md p-6 shadow">
+          <div className="mx-auto w-full max-w-sm rounded-md p-6 shadow-sm">
             <div className="mb-6 flex flex-col items-center">
               <img
                 src="https://www.shadcnblocks.com/images/block/block-1.svg"

@@ -34,7 +34,7 @@ const Feature102: React.FC<FeatureBlock & { publicContext: PublicContextProps }>
                       <span className="flex size-10 shrink-0 items-center justify-center rounded-full border bg-muted/50 font-mono text-lg">
                         {i + 1}
                       </span>
-                      <span className="h-20 w-[3px] shrink-0 bg-gradient-to-b from-transparent to-primary opacity-70"></span>
+                      <span className="h-20 w-[3px] shrink-0 bg-linear-to-b from-transparent to-primary opacity-70"></span>
                     </div>)}
 
                   {i > 0 && (
@@ -50,7 +50,7 @@ const Feature102: React.FC<FeatureBlock & { publicContext: PublicContextProps }>
                       </div>
                     ) : (
                       <div className="flex flex-col items-center justify-between gap-1">
-                        <span className="h-20 w-[3px] shrink-0 bg-gradient-to-t from-transparent to-primary opacity-70"></span>
+                        <span className="h-20 w-[3px] shrink-0 bg-linear-to-t from-transparent to-primary opacity-70"></span>
                         <span className="flex size-10 shrink-0 items-center justify-center rounded-full border bg-muted/50 font-mono text-lg">
                           {i + 1}
                         </span>
@@ -109,7 +109,7 @@ const Feature102: React.FC<FeatureBlock & { publicContext: PublicContextProps }>
           <div className="flex flex-col items-center justify-between min-[960px]:flex-row min-[960px]:gap-10">
             <div className="flex gap-4 min-[960px]:max-w-md">
               <div className="flex flex-col items-center justify-between gap-1">
-                <span className="h-20 w-[3px] shrink-0 bg-gradient-to-t from-transparent to-primary opacity-70"></span>
+                <span className="h-20 w-[3px] shrink-0 bg-linear-to-t from-transparent to-primary opacity-70"></span>
                 <span className="flex size-10 shrink-0 items-center justify-center rounded-full border bg-muted/50 font-mono text-lg">
                   3
                 </span>

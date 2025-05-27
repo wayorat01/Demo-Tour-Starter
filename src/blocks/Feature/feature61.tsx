@@ -8,7 +8,7 @@ const Feature61 = () => {
               <img
                 src="https://www.shadcnblocks.com/images/block/placeholder-1.svg"
                 alt="placeholder hero"
-                className="aspect-[4/3] w-full rounded-md border border-border object-cover"
+                className="aspect-4/3 w-full rounded-md border border-border object-cover"
               />
             </div>
           </div>

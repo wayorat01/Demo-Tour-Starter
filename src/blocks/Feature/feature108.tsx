@@ -1,8 +1,8 @@
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@radix-ui/react-tabs';
-import { CreditCard, Layout, Menu, Pointer, Zap } from 'lucide-react';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@radix-ui/react-tabs'
+import { CreditCard, Layout, Menu, Pointer, Zap } from 'lucide-react'
 
-import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge'
+import { Button } from '@/components/ui/button'
 
 const Feature108 = () => {
   return (
@@ -11,9 +11,7 @@ const Feature108 = () => {
         <div className="container flex flex-col items-center gap-4 text-center">
           <Badge variant="outline">Top-notch Craft</Badge>
           <h2 className="text-3xl font-semibold md:text-4xl">Shape tomorrow</h2>
-          <p className="text-muted-foreground">
-            Join us to build flawless web solutions.
-          </p>
+          <p className="text-muted-foreground">Join us to build flawless web solutions.</p>
         </div>
         <div>
           <Tabs defaultValue="tab-1" className="mt-14">
@@ -52,9 +50,8 @@ const Feature108 = () => {
                     Make your site a true standout.
                   </h3>
                   <p className="text-muted-foreground lg:text-lg">
-                    Discover new web trends that help you craft sleek, highly
-                    functional sites that drive traffic and convert leads into
-                    customers.
+                    Discover new web trends that help you craft sleek, highly functional sites that
+                    drive traffic and convert leads into customers.
                   </p>
                   <Button className="mt-2.5 w-fit gap-2" size="lg">
                     See Plans
@@ -79,9 +76,8 @@ const Feature108 = () => {
                     Boost your site with top-tier design.
                   </h3>
                   <p className="text-muted-foreground lg:text-lg">
-                    Use stellar design to easily engage users and strengthen
-                    their loyalty. Create a seamless experience that keeps them
-                    coming back for more.
+                    Use stellar design to easily engage users and strengthen their loyalty. Create a
+                    seamless experience that keeps them coming back for more.
                   </p>
                   <Button className="mt-2.5 w-fit gap-2" size="lg">
                     See Tools
@@ -106,9 +102,8 @@ const Feature108 = () => {
                     Build an advanced web experience.
                   </h3>
                   <p className="text-muted-foreground lg:text-lg">
-                    Lift your brand with modern tech that grabs attention and
-                    drives action. Create a digital experience that stands out
-                    from the crowd.
+                    Lift your brand with modern tech that grabs attention and drives action. Create
+                    a digital experience that stands out from the crowd.
                   </p>
                   <Button className="mt-2.5 w-fit gap-2" size="lg">
                     See Options
@@ -126,7 +121,7 @@ const Feature108 = () => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Feature108;
+export default Feature108

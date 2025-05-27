@@ -74,12 +74,12 @@ const Pricing1 = () => {
               <span className="text-6xl font-semibold">0</span>
             </div>
           </div>
-          <div className="p-6 lg:order-[13]">
+          <div className="p-6 lg:order-13">
             <Button variant="outline" className="w-full">
               Get Started
             </Button>
           </div>
-          <div className="border-b p-6 text-left lg:order-[17] lg:border-b-0 lg:border-t">
+          <div className="border-b p-6 text-left lg:order-17 lg:border-b-0 lg:border-t">
             <div className="hidden lg:block">
               <p className="mb-2 text-lg font-semibold">Features</p>
               <ul className="mb-4 space-y-4">
@@ -126,7 +126,7 @@ const Pricing1 = () => {
               $34 billed monthly
             </p>
           </div>
-          <div className="bg-muted p-6 lg:order-[13]">
+          <div className="bg-muted p-6 lg:order-13">
             <Button className="w-full">Try for free</Button>
             <p className="mt-4 text-muted-foreground">
               or
@@ -135,7 +135,7 @@ const Pricing1 = () => {
               </a>
             </p>
           </div>
-          <div className="border-b bg-muted p-6 text-left lg:order-[18] lg:border-b-0 lg:border-t">
+          <div className="border-b bg-muted p-6 text-left lg:order-18 lg:border-b-0 lg:border-t">
             <div className="hidden lg:block">
               <p className="mb-2 text-lg font-semibold">
                 Everything in Free, and:
@@ -184,7 +184,7 @@ const Pricing1 = () => {
               $69 billed monthly
             </p>
           </div>
-          <div className="p-6 lg:order-[14]">
+          <div className="p-6 lg:order-14">
             <Button variant="outline" className="w-full">
               Try for free
             </Button>
@@ -195,7 +195,7 @@ const Pricing1 = () => {
               </a>
             </p>
           </div>
-          <div className="border-b p-6 text-left lg:order-[19] lg:border-b-0 lg:border-t">
+          <div className="border-b p-6 text-left lg:order-19 lg:border-b-0 lg:border-t">
             <div className="hidden lg:block">
               <p className="mb-2 text-lg font-semibold">
                 Everything in Pro, and:
@@ -236,12 +236,12 @@ const Pricing1 = () => {
             account manager
           </p>
           <div className="lg:order-12"></div>
-          <div className="p-6 lg:order-[15]">
+          <div className="p-6 lg:order-15">
             <Button variant="outline" className="w-full">
               Contact sales
             </Button>
           </div>
-          <div className="p-6 text-left lg:order-[20] lg:border-t">
+          <div className="p-6 text-left lg:order-20 lg:border-t">
             <div className="hidden lg:block">
               <p className="mb-2 text-lg font-semibold">
                 Everything in Premium, and:

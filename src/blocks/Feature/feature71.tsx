@@ -38,7 +38,7 @@ const Feature71 = () => {
               alt="placeholder"
               className="absolute size-full object-cover object-center"
             />
-            <div className="relative flex size-full flex-col items-start justify-between bg-primary/60 p-4 text-primary-foreground transition-colors hover:bg-primary/70 sm:aspect-[3/2] md:p-6 lg:p-10">
+            <div className="relative flex size-full flex-col items-start justify-between bg-primary/60 p-4 text-primary-foreground transition-colors hover:bg-primary/70 sm:aspect-3/2 md:p-6 lg:p-10">
               <img
                 src="https://www.shadcnblocks.com/images/block/logos/astro.svg"
                 alt="placeholder logo"
@@ -75,7 +75,7 @@ const Feature71 = () => {
               alt="placeholder"
               className="absolute size-full object-cover object-center"
             />
-            <div className="relative flex size-full flex-col items-start justify-between gap-4 bg-primary/50 p-4 text-primary-foreground transition-colors hover:bg-primary/70 sm:aspect-[2/1] md:flex-row md:items-end md:p-6 lg:p-10">
+            <div className="relative flex size-full flex-col items-start justify-between gap-4 bg-primary/50 p-4 text-primary-foreground transition-colors hover:bg-primary/70 sm:aspect-2/1 md:flex-row md:items-end md:p-6 lg:p-10">
               <div>
                 <img
                   src="https://www.shadcnblocks.com/images/block/logos/shadcn-ui.svg"

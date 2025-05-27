@@ -106,7 +106,7 @@ const Blog1 = () => {
               className="group flex flex-col justify-between rounded-xl border border-border bg-accent p-6"
             >
               <div>
-                <div className="flex aspect-[3/2] text-clip rounded-xl">
+                <div className="flex aspect-3/2 text-clip rounded-xl">
                   <div className="flex-1">
                     <div className="relative size-full origin-bottom transition duration-300 group-hover:scale-105">
                       <img

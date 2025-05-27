@@ -16,7 +16,7 @@ const Hero16 = () => {
         </div>
       </div>
       <div className="container">
-        <div className="aspect-video [mask-image:linear-gradient(#000_80%,transparent_100%)]">
+        <div className="aspect-video mask-[linear-gradient(#000_80%,transparent_100%)]">
           <img
             src="https://www.shadcnblocks.com/images/block/placeholder-1.svg"
             alt="placeholder hero"

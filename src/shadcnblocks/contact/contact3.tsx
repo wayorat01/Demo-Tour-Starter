@@ -1,11 +1,6 @@
-import {
-  MessageCircleDashed,
-  MessagesSquare,
-  ScanFace,
-  Users,
-} from 'lucide-react';
+import { MessageCircleDashed, MessagesSquare, ScanFace, Users } from 'lucide-react'
 
-import { Button } from '@/components/ui/button';
+import { Button } from '@/components/ui/button'
 
 const Contact3 = () => {
   return (
@@ -19,17 +14,15 @@ const Contact3 = () => {
               Start your free trial
             </Button>
           </div>
-          <p className="mt-4 text-sm text-muted-foreground">
-            No payment details needed
-          </p>
+          <p className="mt-4 text-sm text-muted-foreground">No payment details needed</p>
         </div>
         <div className="mt-28 grid gap-16 md:grid-cols-2">
           <div>
             <MessagesSquare className="mb-5 h-8 w-auto" />
             <p className="mb-2 font-bold md:text-xl">Support</p>
             <p className="mb-6 text-sm text-muted-foreground md:text-base">
-              Need help or have questions? Our support team is here for you
-              24/7. Feel free to reach out via email or live chat.
+              Need help or have questions? Our support team is here for you 24/7. Feel free to reach
+              out via email or live chat.
             </p>
             <a href="#" className="font-semibold hover:underline">
               Contact support
@@ -39,8 +32,8 @@ const Contact3 = () => {
             <Users className="mb-5 h-8 w-auto" />
             <p className="mb-2 font-bold md:text-xl">Sales</p>
             <p className="mb-6 text-sm text-muted-foreground md:text-base">
-              Have questions about our services or need a demo? Our sales team
-              can assist you with personalized solutions.
+              Have questions about our services or need a demo? Our sales team can assist you with
+              personalized solutions.
             </p>
             <a href="#" className="font-semibold hover:underline">
               Talk to sales
@@ -50,8 +43,8 @@ const Contact3 = () => {
             <MessageCircleDashed className="mb-5 h-8 w-auto" />
             <p className="mb-2 font-bold md:text-xl">Inquiries</p>
             <p className="mb-6 text-sm text-muted-foreground md:text-base">
-              For any general inquiries, partnership requests, or media
-              questions, fill out the form and we’ll get back to you shortly.
+              For any general inquiries, partnership requests, or media questions, fill out the form
+              and we’ll get back to you shortly.
             </p>
             <a href="#" className="font-semibold hover:underline">
               Contact us
@@ -61,8 +54,8 @@ const Contact3 = () => {
             <ScanFace className="mb-5 h-8 w-auto" />
             <p className="mb-2 font-bold md:text-xl">Verification</p>
             <p className="mb-6 text-sm text-muted-foreground md:text-base">
-              To verify employment or confirm income, please reach out to our
-              third-party verification provider.
+              To verify employment or confirm income, please reach out to our third-party
+              verification provider.
             </p>
             <a href="#" className="font-semibold hover:underline">
               Get verified
@@ -70,9 +63,7 @@ const Contact3 = () => {
           </div>
         </div>
         <div className="mt-28">
-          <h1 className="mb-16 text-center text-2xl font-bold md:text-4xl">
-            Our Global Offices
-          </h1>
+          <h1 className="mb-16 text-center text-2xl font-bold md:text-4xl">Our Global Offices</h1>
           <div className="mx-auto grid max-w-screen-xl gap-7 sm:grid-cols-2 md:grid-cols-3 lg:px-14">
             <div className="rounded-lg border p-5">
               <div className="mb-2 flex items-center">
@@ -113,9 +104,7 @@ const Contact3 = () => {
             <div className="rounded-lg border p-5">
               <div className="mb-2 flex items-center">
                 <div className="mr-2 h-5 w-7 rounded-sm bg-purple-500"></div>
-                <p className="font-bold leading-3 sm:text-lg">
-                  Berlin, Germany
-                </p>
+                <p className="font-bold leading-3 sm:text-lg">Berlin, Germany</p>
               </div>
               <p className="text-sm text-muted-foreground sm:text-base">
                 Unter den Linden 52, 10117 Berlin, Germany
@@ -125,7 +114,7 @@ const Contact3 = () => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Contact3;
+export default Contact3

@@ -25,8 +25,8 @@ const Hero37 = () => {
         </div>
       </div>
       <div className="mt-16 flex flex-col items-center justify-center lg:mt-32">
-        <div className="b relative mx-auto aspect-square w-[95%] max-w-[31.25rem] sm:w-full">
-          <div className="absolute inset-x-1/2 top-full z-0 flex w-[120rem] -translate-x-1/2 -translate-y-16 md:-translate-y-8">
+        <div className="b relative mx-auto aspect-square w-[95%] max-w-125 sm:w-full">
+          <div className="absolute inset-x-1/2 top-full z-0 flex w-480 -translate-x-1/2 -translate-y-16 md:-translate-y-8">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               version="1.1"
@@ -51,9 +51,9 @@ const Hero37 = () => {
               })}
             </svg>
           </div>
-          <div className="z-5 absolute inset-0 m-auto flex aspect-[29/36] w-4/5 max-w-64 -translate-x-3/4 translate-y-[10%] rotate-[-15deg] scale-[0.85] justify-center rounded-lg border border-border bg-accent opacity-60 md:w-[21.25rem] md:max-w-[21.25rem]"></div>
-          <div className="absolute inset-0 z-10 m-auto flex aspect-[29/36] w-4/5 max-w-64 justify-center rounded-lg border border-border bg-accent md:w-[21.25rem] md:max-w-[21.25rem]"></div>
-          <div className="z-5 absolute inset-0 m-auto flex aspect-[29/36] w-4/5 max-w-64 translate-x-3/4 translate-y-[10%] rotate-[15deg] scale-[0.85] justify-center rounded-lg border border-border bg-accent opacity-60 md:w-[21.25rem] md:max-w-[21.25rem]"></div>
+          <div className="z-5 absolute inset-0 m-auto flex aspect-29/36 w-4/5 max-w-64 -translate-x-3/4 translate-y-[10%] rotate-[-15deg] scale-[0.85] justify-center rounded-lg border border-border bg-accent opacity-60 md:w-85 md:max-w-85"></div>
+          <div className="absolute inset-0 z-10 m-auto flex aspect-29/36 w-4/5 max-w-64 justify-center rounded-lg border border-border bg-accent md:w-85 md:max-w-85"></div>
+          <div className="z-5 absolute inset-0 m-auto flex aspect-29/36 w-4/5 max-w-64 translate-x-3/4 translate-y-[10%] rotate-15 scale-[0.85] justify-center rounded-lg border border-border bg-accent opacity-60 md:w-85 md:max-w-85"></div>
         </div>
       </div>
     </section>

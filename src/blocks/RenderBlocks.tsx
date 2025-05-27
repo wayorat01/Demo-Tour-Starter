@@ -121,7 +121,7 @@ export const RenderBlocks: React.FC<{
                 case 'input':
                   className = 'bg-input';
                   break;
-                case 'ring':
+                case 'ring-3':
                   className = 'bg-ring';
                   break;
                 case 'success':

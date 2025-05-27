@@ -68,7 +68,7 @@ const About3: React.FC<AboutBlock & { publicContext: PublicContextProps }> = ({ 
                 h2: 'text-4xl font-semibold',
                 h3: 'text-2xl font-semibold',
                 h4: 'text-xl font-semibold',
-                p: 'max-w-screen-sm text-muted-foreground',
+                p: /*Tailwind*/ 'max-w-screen-sm text-muted-foreground',
               }}
             />}
           </div>
@@ -80,7 +80,7 @@ const About3: React.FC<AboutBlock & { publicContext: PublicContextProps }> = ({ 
               </div>
             ))}
           </div>
-          <div className="pointer-events-none absolute -top-1 right-1 z-10 hidden size-full bg-[linear-gradient(to_right,hsl(from_var(--muted-foreground)_h_s_l)_1px,transparent_1px),linear-gradient(to_bottom,hsl(from_var(--muted-foreground)_h_s_l)_1px,transparent_1px)] bg-[size:80px_80px] opacity-15 [mask-image:linear-gradient(to_bottom_right,#000,transparent,transparent)] md:block"></div>
+          <div className="pointer-events-none absolute -top-1 right-1 z-10 hidden size-full bg-[linear-gradient(to_right,hsl(from_var(--muted-foreground)_h_s_l)_1px,transparent_1px),linear-gradient(to_bottom,hsl(from_var(--muted-foreground)_h_s_l)_1px,transparent_1px)] bg-size-[80px_80px] opacity-15 mask-[linear-gradient(to_bottom_right,#000,transparent,transparent)] md:block"></div>
         </div>
       </div>
     </section>

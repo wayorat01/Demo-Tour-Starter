@@ -102,7 +102,7 @@ const Testimonial11: React.FC<TestimonialBlock & { publicContext: PublicContextP
           ))}
         </div>
       </div>
-      <div className="pointer-events-none absolute bottom-0 left-0 hidden w-full sm:block sm:h-[16.875rem] sm:bg-[linear-gradient(transparent_0%,hsl(from_var(--accent)_h_s_l)_100%)] lg:h-56"></div>
+      <div className="pointer-events-none absolute bottom-0 left-0 hidden w-full sm:block sm:h-67.5 sm:bg-[linear-gradient(transparent_0%,hsl(from_var(--accent)_h_s_l)_100%)] lg:h-56"></div>
     </section>
   );
 };
