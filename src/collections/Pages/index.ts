@@ -35,6 +35,7 @@ import {
 import { serverUrl as NEXT_PUBLIC_SERVER_URL } from '@/config/server'
 import { ContactBlock } from '@/blocks/Contact/config'
 import { Breadcrumb } from '@payloadcms/plugin-nested-docs/types'
+import { Blog } from '@/blocks/Blog/config'
 
 export const Pages: CollectionConfig = {
   slug: 'pages',
@@ -115,6 +116,7 @@ export const Pages: CollectionConfig = {
                 MediaBlock,
                 CustomBlock,
                 ChangelogBlock,
+                Blog,
               ],
               required: true,
             },

@@ -186,29 +186,29 @@ export const getSideMenuStructure = (content: any, options?: { headlineLevels?: 
   return menuItems;
 }
 
-/**
- * Example usage:
- * 
- * // Split on first node (default behavior)
- * const { firstNode, rest } = splitRichText(richTextContent);
- * 
- * // Split on first heading
- * const { firstNode, rest } = splitRichText(richTextContent, {
- *   splitOn: 'heading',
- *   takeFirst: true
- * });
- * 
- * // Split on specific heading levels
- * const { firstNode, rest } = splitRichText(richTextContent, {
- *   splitOn: ['h1', 'h2'],
- *   takeFirst: true
- * });
- * 
- * // With custom node types
- * interface MyCustomNodes extends DefaultNodeTypes {
- *   customNode: {
- *     myProp: string;
- *   }
- * }
- * const { firstNode, rest } = splitRichText<MyCustomNodes>(richTextContent);
+ /**
+ * Extract plain text from rich text content
  */
+ export function extractPlainText(content: any, maxLength: number = 200): string {
+  if (!content || !content.root || !content.root.children) return ""
+  
+  let text = ""
+  const traverse = (nodes: any[]) => {
+    for (const node of nodes) {
+      if (node.type === "text" && typeof node.text === "string") {
+        text += node.text
+      } else if (node.children && Array.isArray(node.children)) {
+        traverse(node.children)
+      }
+    }
+  }
+  
+  try {
+    traverse(content.root.children)
+  } catch (error) {
+    console.error('Error parsing rich text content:', error)
+    return ''
+  }
+  
+  return text.length > maxLength ? text.substring(0, maxLength) + "..." : text
+}

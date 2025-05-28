@@ -16,6 +16,11 @@ const blog: BlogContent = {
   BLOG20: Blog20,
 }
 
+/**
+ * Blog Content is the Blog Detail Page. 
+ * @param props 
+ * @returns 
+ */
 export const BlogContentBlock: React.FC<Post & { publicContext: PublicContextProps }> = (props) => {
   if (!props.content) return null
 
