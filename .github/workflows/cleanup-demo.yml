@@ -19,10 +19,14 @@ jobs:
 
       - name: Set demo restore URL as environment variable
         run: echo "DEMO_RESTORE_URL=${{ secrets.DEMO_RESTORE_URL }}" >> $GITHUB_ENV
+      
+      - name: Debug restore URL
+        run: |
+          echo "Running cleanup-demo workflow with DEMO_RESTORE_URL: ${{ env.DEMO_RESTORE_URL }}"
 
       - name: Restore Demo Environment
         if: env.DEMO_RESTORE_TOKEN != ''
         run: |
           curl https://demo-payblocks.trieb.work/next/backup/restore \
-            -H "Authorization: Bearer $DEMO_RESTORE_TOKEN" \
-            --data '{"url":"$DEMO_RESTORE_URL"}'
+            -H "Authorization: Bearer ${{ env.DEMO_RESTORE_TOKEN }}" \
+            --data '{"url":"${{ env.DEMO_RESTORE_URL }}"}'
