@@ -1,6 +1,7 @@
 import { icon } from '@/components/Icon/config'
 import { linkGroup } from '@/fields/linkGroup'
 import { link } from '@/fields/link'
+import { createBlockItemCondition } from '@/utilities/findParentFeatureVersion'
 
 import {
   FixedToolbarFeature,
@@ -67,7 +68,7 @@ export const allFeatureDesignVersions = [
   // 'FEATURE54',
   // 'FEATURE55',
   // 'FEATURE56',
-  // 'FEATURE57',
+  { label: 'FEATURE57', value: 'FEATURE57', image: '/admin/previews/feature/feature57.jpg' },
   // 'FEATURE58',
   // 'FEATURE59',
   // 'FEATURE60',
@@ -140,7 +141,7 @@ export const FeatureBlock: Block = {
       localized: true,
       admin: {
         condition: (_, { designVersion = "" } = {}) =>
-          ['FEATURE1', 'FEATURE2', 'FEATURE3', 'FEATURE4', 'FEATURE5', 'FEATURE6', 'FEATURE126'].includes(
+          ['FEATURE1', 'FEATURE2', 'FEATURE3', 'FEATURE4', 'FEATURE5', 'FEATURE6','FEATURE57', 'FEATURE126'].includes(
             designVersion,
           ),
       },
@@ -184,7 +185,6 @@ export const FeatureBlock: Block = {
             'FEATURE52',
             'FEATURE53',
             'FEATURE56',
-            'FEATURE57',
             'FEATURE58',
             'FEATURE59',
             'FEATURE62',
@@ -501,25 +501,21 @@ export const FeatureBlock: Block = {
           name: 'image',
           type: 'upload',
           admin: {
-            condition: (data, _) => {
-              const designVersion = data.layout.find(
-                (block) => block.blockType === 'feature',
-              ).designVersion
-              return [
-                'FEATURE3',
-                'FEATURE50',
-                'FEATURE51',
-                'FEATURE53',
-                'FEATURE102',
-                'FEATURE66',
-                'FEATURE70',
-                'FEATURE72',
-                'FEATURE78',
-                'FEATURE81',
-                'FEATURE117',
-                'FEATURE126',
-              ].includes(designVersion)
-            },
+            condition: createBlockItemCondition([
+              'FEATURE3',
+              'FEATURE50',
+              'FEATURE51',
+              'FEATURE53',
+              'FEATURE57',
+              'FEATURE102',
+              'FEATURE66',
+              'FEATURE70',
+              'FEATURE72',
+              'FEATURE78',
+              'FEATURE81',
+              'FEATURE117',
+              'FEATURE126',
+            ])
           },
           relationTo: 'media',
           hasMany: false,

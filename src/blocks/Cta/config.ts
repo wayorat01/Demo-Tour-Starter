@@ -18,7 +18,7 @@ export const allCtaDesignVersions = [
   // 'CTA3',
   // 'CTA4',
   // 'CTA5',
-  // 'CTA6',
+  'CTA6',
   // 'CTA7',
   'CTA10',
   // 'CTA11',
