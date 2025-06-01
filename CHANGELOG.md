@@ -1,5 +1,16 @@
 # payblocks
 
+## 2.1.0
+
+### Minor Changes
+
+- b51a0fb: integrated cta6 and feature57 with payload cms
+- 23a2d4c: Adding blog29 with dynamic data fetching
+
+### Patch Changes
+
+- 062a94f: Version bump nextjs and payload cms
+
 ## 2.0.0
 
 ### Major Changes
