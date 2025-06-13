@@ -76,6 +76,10 @@ export default buildConfig({
       afterLogin: googleAuthActive ? ['@/components/AdminDashboard/LoginButton'] : [],
       beforeDashboard: ['@/components/AdminDashboard/BeforeDashboard'],
       afterDashboard: ['@/components/AdminDashboard/BackupDashboard'],
+      graphics: {
+        Icon: '@/components/AdminDashboard/PayblocksIcon',
+        Logo: '@/components/AdminDashboard/PayblocksLogo',
+      },
     },
     importMap: {
       baseDir: path.resolve(dirname),
