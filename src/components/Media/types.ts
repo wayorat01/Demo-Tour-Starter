@@ -16,6 +16,7 @@ export interface Props {
   onLoad?: () => void
   priority?: boolean // for NextImage only
   ref?: Ref<HTMLImageElement | HTMLVideoElement | null>
+  loading?: 'eager' | 'lazy'
   /**
    * for Payload media
    */

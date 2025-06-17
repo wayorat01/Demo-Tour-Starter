@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 
-import { Geist_Mono, Geist } from 'next/font/google'
+import { Inter, Roboto_Serif, Roboto_Mono, Playfair_Display, Caveat } from 'next/font/google'
 import React from 'react'
 import { mergeOpenGraph } from '@/utilities/mergeOpenGraph'
 import { serverUrl as NEXT_PUBLIC_SERVER_URL } from '@/config/server'
@@ -25,8 +25,12 @@ import './globals.css'
 
 // Change fonts by changing class Geist_Mono or Geist. 
 // No change in tailwind.config.mjs needed (Because it's already synced via --font-mono and --font-sans variables). Just make sure, that these variables stay.
-const mono = Geist_Mono({ subsets: ['latin'], variable: '--font-mono' })
-const sans = Geist({ subsets: ['latin'], variable: '--font-sans' })
+const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
+const robotoSerif = Roboto_Serif({ subsets: ['latin'], variable: '--font-serif' });
+const robotoMono = Roboto_Mono({ subsets: ['latin'], variable: '--font-mono' });
+const playfair = Playfair_Display({ subsets: ['latin'], variable: '--font-playfair' });
+const caveat = Caveat({ subsets: ['latin'], variable: '--font-caveat' });
+
 
 export const metadata: Metadata = {
   metadataBase: new URL(NEXT_PUBLIC_SERVER_URL || 'https://trieb.work'),
@@ -48,7 +52,7 @@ export default async function RootLayout({ children, params }: { children: React
   }
 
   return (
-    <html className={cn(mono.variable, sans.variable)} lang={slugData.locale || localization.defaultLocale} suppressHydrationWarning>
+    <html className={cn(inter.variable, robotoSerif.variable, robotoMono.variable, playfair.variable, caveat.variable)} lang={slugData.locale || localization.defaultLocale} suppressHydrationWarning>
       <head>
         <ThemeConfig />
         <InitTheme />

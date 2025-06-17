@@ -1,65 +1,25 @@
-import type { BannerBlock as BannerBlockProps } from 'src/payload-types'
+import { BannerDesignVersion, allBannerDesignVersions } from './config'
+import Banner5 from './banner5'
 
-import { cn } from 'src/utilities/cn'
-import React from 'react'
-import RichText from '@/components/RichText'
-import { PublicContextProps } from '@/utilities/publicContextProps'
-import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
-import { Icon } from '@/components/Icon'
-import { splitRichText } from '@/utilities/richtext'
+// Extract the value property from BannerDesignVersion for use as keys
+type BannerVersionValue = BannerDesignVersion['value'];
 
-type Props = {
-  className?: string
-} & BannerBlockProps
+type Banner<T extends string = string> = Required<Record<BannerVersionValue, React.FC<any>>> & Record<T, React.FC<any>>;
 
-export const BannerBlock: React.FC<Props & { publicContext: PublicContextProps }> = ({ 
-  className, 
-  content,
-  title,
-  style, 
-  icon, 
-  publicContext 
-}) => {
-  // Map banner style to alert variant
-  const getAlertVariant = () => {
-    switch (style) {
-      case 'error':
-        return 'destructive'
-      default:
-        return 'default'
-    }
-  }
-
-  // Get appropriate CSS classes based on style
-  const getAlertClasses = () => {
-    switch (style) {
-      case 'info':
-        return 'border-border'
-      case 'error':
-        return 'border-destructive/50 text-destructive dark:border-destructive'
-      case 'success':
-        return 'border-success bg-success/30'
-      case 'warning':
-        return 'border-warning bg-warning/30'
-      default:
-        return ''
-    }
-  }
-
-  return (
-    <div className={cn('mx-auto my-8 w-full', className)}>
-      <Alert className={cn(getAlertClasses())} variant={getAlertVariant()}>
-        {icon && <Icon icon={icon} className="h-4 w-4" />}
-        {title && <AlertTitle>{title}</AlertTitle>}
-        <AlertDescription>
-          {content && <RichText 
-            publicContext={publicContext} 
-            overrideStyle={{p: 'm-0 text-muted-foreground'}}
-            content={content} 
-            withWrapper={false}
-          />}
-        </AlertDescription>
-      </Alert>
-    </div>
-  )
+const banner: Banner = {
+  BANNER5: Banner5,
 }
+
+export const BannerBlock: React.FC<any> = (props) => {
+  const { designVersion } = props || {}
+  if (props.blockType !== 'banner') return null
+  if (!designVersion) return null
+
+  const BannerToRender = banner[designVersion as BannerVersionValue]
+
+  if (!BannerToRender) return null
+
+  return <BannerToRender {...props} />
+}
+
+export default BannerBlock

@@ -1,5 +1,7 @@
 'use client'
 
+import { useEffect, useState, useMemo } from 'react'
+
 import {
   ArrowUp,
   Clock,
@@ -10,7 +12,6 @@ import {
   Linkedin,
   Twitter,
 } from 'lucide-react'
-import { useEffect, useRef, useState } from 'react'
 
 import { cn } from '@/utilities'
 import { DateFormatter } from '@/components/DateFormatter'
@@ -38,12 +39,13 @@ const Blog18: React.FC<Post & { publicContext: PublicContextProps }> = (props) =
 
   const author = getAuthorObject(authors?.[0])
   // Get side menu structure from content if it exists
-  const sideMenuStructure = content ? getSideMenuStructure(content, { headlineLevels: ['h2', 'h3'] }) : []
-
+  const sideMenuStructure = useMemo(() => {
+    return content ? getSideMenuStructure(content, { headlineLevels: ['h2', 'h3'] }) : []
+  }, [content])
 
   useEffect(() => {
     // Only set up observer if we have side menu items
-    if (sideMenuStructure.length === 0) return;
+    if (sideMenuStructure.length === 0) return
 
     const observerCallback = (entries: IntersectionObserverEntry[]) => {
       entries.forEach((entry) => {
@@ -93,9 +95,7 @@ const Blog18: React.FC<Post & { publicContext: PublicContextProps }> = (props) =
             </BreadcrumbItem>
           </BreadcrumbList>
         </Breadcrumb>
-        <h1 className="mt-7 mb-6 max-w-3xl text-3xl font-semibold md:text-5xl">
-          {title}
-        </h1>
+        <h1 className="mt-7 mb-6 max-w-3xl text-3xl font-semibold md:text-5xl">{title}</h1>
         <div className="flex items-center gap-3 text-sm">
           {author && (
             <>
@@ -125,9 +125,9 @@ const Blog18: React.FC<Post & { publicContext: PublicContextProps }> = (props) =
           <div className="col-span-12 lg:col-span-8">
             {content && (
               <div className="prose max-w-none">
-                <RichText 
-                  content={content} 
-                  publicContext={props.publicContext} 
+                <RichText
+                  content={content}
+                  publicContext={props.publicContext}
                   withWrapper={false}
                 />
               </div>
@@ -150,7 +150,7 @@ const Blog18: React.FC<Post & { publicContext: PublicContextProps }> = (props) =
                             item.level === 'h4' && 'pl-5',
                             activeSection === item.id
                               ? 'text-primary'
-                              : 'text-muted-foreground hover:text-primary'
+                              : 'text-muted-foreground hover:text-primary',
                           )}
                         >
                           {item.text}

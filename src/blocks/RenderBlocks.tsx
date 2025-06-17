@@ -20,6 +20,9 @@ import { CustomBlock} from '@/blocks/CustomBlock'
 import { PublicContextProps } from '@/utilities/publicContextProps'
 import ContactBlock from './Contact/Component'
 import { BlogBlock } from './Blog/Component'
+import { BannerBlock } from './Banner/Component'
+import { CasestudiesBlock } from './Casestudies/Component'
+import { TimelineBlock } from './Timeline/Component'
 
 const blockComponents: Partial<Record<Page['layout'][0]['blockType'], React.FC<any>>> = {
   archive: ArchiveBlock,
@@ -39,6 +42,9 @@ const blockComponents: Partial<Record<Page['layout'][0]['blockType'], React.FC<a
   contact: ContactBlock,
   blog: BlogBlock,
   customblock: CustomBlock,
+  banner: BannerBlock,
+  casestudies: CasestudiesBlock,
+  timeline: TimelineBlock,
 }
 
 export const RenderBlocks: React.FC<{

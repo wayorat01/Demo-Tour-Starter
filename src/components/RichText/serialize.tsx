@@ -1,4 +1,4 @@
-import { BannerBlock } from '@/blocks/Banner/Component'
+import { BannerBlock } from '@/blocks/LexicalBlocks/Banner/Component'
 import { CodeBlock, CodeBlockProps } from '@/blocks/Code/Component'
 import { MediaBlock } from '@/blocks/MediaBlock/Component'
 import React, { Fragment, JSX } from 'react'

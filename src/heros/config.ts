@@ -62,6 +62,7 @@ export const allHeroDesignVersions = [
   { label: 'HERO6', value: '6', image: '/admin/previews/hero/hero6.jpeg' },
   { label: 'HERO12', value: '12', image: '/admin/previews/hero/hero12.jpeg' },
   { label: 'HERO112', value: '112', image: '/admin/previews/hero/hero112.jpeg' },
+  { label: 'HERO195', value: '195', image: '/admin/previews/hero/hero195.webp' },
 ] as const
 
 export type HeroDesignVersion = (typeof allHeroDesignVersions)[number]
@@ -115,7 +116,7 @@ export const hero: Field = {
       localized: true,
       admin: {
         condition: (_, { designVersion = "" } = {}) =>
-          ['1', '2', '3', '4', '5', '6', '12', '112'].includes(designVersion),
+          ['1', '2', '3', '4', '5', '6', '12', '112', '195'].includes(designVersion),
       },
       editor: lexicalEditor({
         features: ({ rootFeatures }) => {
@@ -134,7 +135,7 @@ export const hero: Field = {
         maxRows: 2,
         admin: {
           condition: (_, { designVersion = "" } = {}) =>
-            ['1', '2', '3', '4', '5', '6', '12', '112'].includes(designVersion),
+            ['1', '2', '3', '4', '5', '6', '12', '112', '195'].includes(designVersion),
         },
       },
     }),
@@ -283,6 +284,41 @@ export const hero: Field = {
           localized: true,
         }
       ]
+    },
+    {
+      name: 'tabs',
+      type: 'array',
+      admin: {
+        condition: (_, { designVersion = "" } = {}) =>
+          ['195'].includes(designVersion),
+      },
+      fields: [
+        {
+          name: 'title',
+          type: 'text',
+          localized: true,
+          required: true,
+        },
+        {
+          name: 'icon',
+          type: 'select',
+          options: [
+            { label: 'Square Kanban', value: 'SquareKanban' },
+            { label: 'Bar Chart', value: 'BarChart' },
+            { label: 'Pie Chart', value: 'PieChart' },
+            { label: 'Database', value: 'Database' },
+            { label: 'Layers', value: 'Layers' },
+          ],
+          required: true,
+        },
+        {
+          name: 'image',
+          type: 'upload',
+          relationTo: 'media',
+          required: true,
+        }
+      ],
+      maxRows: 5,
     }
   ],
   label: false,

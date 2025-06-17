@@ -36,6 +36,9 @@ import { serverUrl as NEXT_PUBLIC_SERVER_URL } from '@/config/server'
 import { ContactBlock } from '@/blocks/Contact/config'
 import { Breadcrumb } from '@payloadcms/plugin-nested-docs/types'
 import { Blog } from '@/blocks/Blog/config'
+import { BannerBlock } from '@/blocks/Banner/config'
+import { CasestudiesBlock } from '@/blocks/Casestudies/config'
+import { TimelineBlock } from '@/blocks/Timeline/config'
 
 export const Pages: CollectionConfig = {
   slug: 'pages',
@@ -117,6 +120,9 @@ export const Pages: CollectionConfig = {
                 CustomBlock,
                 ChangelogBlock,
                 Blog,
+                BannerBlock,
+                CasestudiesBlock,
+                TimelineBlock,
               ],
               required: true,
             },

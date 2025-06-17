@@ -46,6 +46,8 @@ type WithWrapperProps = BaseRichTextProps & {
 type WithoutWrapperProps = BaseRichTextProps & {
   /** Set to false to render content without a wrapper div */
   withWrapper?: false
+  /** Optional className for the fragment wrapper */
+  className?: string
 }
 
 type RichTextProps = WithWrapperProps | WithoutWrapperProps
@@ -66,7 +68,11 @@ const RichText: React.FC<RichTextProps> = (props) => {
     })
 
   if (!props.withWrapper) {
-    return <>{content}</>
+    // If className is provided, wrap in a span for styling
+    if (props.className) {
+      return <span className={props.className}>{content}</span>;
+    }
+    return <>{content}</>;
   }
 
   return (
