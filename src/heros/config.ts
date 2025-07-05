@@ -63,6 +63,7 @@ export const allHeroDesignVersions = [
   { label: 'HERO12', value: '12', image: '/admin/previews/hero/hero12.jpeg' },
   { label: 'HERO112', value: '112', image: '/admin/previews/hero/hero112.jpeg' },
   { label: 'HERO195', value: '195', image: '/admin/previews/hero/hero195.webp' },
+  { label: 'HERO220', value: '220', image: '/admin/previews/hero/hero220.jpeg' },
 ] as const
 
 export type HeroDesignVersion = (typeof allHeroDesignVersions)[number]
@@ -96,7 +97,7 @@ export const hero: Field = {
       localized: true,
       admin: {
         condition: (_, { designVersion = "" } = {}) =>
-          ['3', '27', '26', '55', '21', '53', '12', '51', '57', '112'].includes(designVersion),
+          ['3', '27', '26', '55', '21', '53', '12', '51', '57', '112', '220'].includes(designVersion),
       },
     },
     link({
@@ -144,7 +145,7 @@ export const hero: Field = {
       type: 'upload',
       admin: {
         condition: (_, { designVersion = "" } = {}) =>
-          ['1', '2', '3', '4', '5', '6', '12', '31', '37', '38', '18', '112'].includes(designVersion),
+          ['1', '2', '3', '4', '5', '6', '12', '31', '37', '38', '18', '112', '220'].includes(designVersion),
       },
       relationTo: 'media',
       hasMany: true,
@@ -269,7 +270,7 @@ export const hero: Field = {
       type: 'group',
       admin: {
         condition: (_, { designVersion = "" } = {}) =>
-          ['112'].includes(designVersion),
+          ['112', '220'].includes(designVersion),
       },
       fields: [
         {
@@ -282,6 +283,7 @@ export const hero: Field = {
           name: 'videoUrl',
           type: 'text',
           localized: true,
+          defaultValue: 'https://library.shadcnblocks.com/videos/block/landscape.mp4',
         }
       ]
     },
