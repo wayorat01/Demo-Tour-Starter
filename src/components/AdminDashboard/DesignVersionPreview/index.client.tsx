@@ -20,7 +20,7 @@ const DesignVersionPreviewClient: React.FC<DesignVersionPreviewProps> = ({
   
   // Use the useModal hook instead of local state
   const { toggleModal } = useModal();
-  const drawerSlug = 'design-version-preview-drawer';
+  const drawerSlug = `design-version-preview-drawer-${path}`;
 
   // Ensure options is always an array using useMemo
   const safeOptions = useMemo(() => {
