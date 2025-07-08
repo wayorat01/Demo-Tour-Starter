@@ -25,7 +25,7 @@ import {
 } from '@payloadcms/richtext-lexical'
 import sharp from 'sharp' // editor-import
 import path from 'path'
-import { buildConfig } from 'payload'
+import { buildConfig, PayloadRequest } from 'payload'
 import { fileURLToPath } from 'url'
 
 import Categories from './collections/Categories'
@@ -280,7 +280,11 @@ export default buildConfig({
           name: user.name,
         }
       },
-      successRedirect: (_) => {
+      successRedirect: (req: PayloadRequest) => {
+        // redirect to state
+        if (req.query.state && (req.query.state as string).startsWith('/')) {
+          return `${req.query.state}`
+        }
         return '/admin'
       },
       failureRedirect: (_, error) => {

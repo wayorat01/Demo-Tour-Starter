@@ -74,7 +74,7 @@
     "next": "15.3.2",
     "payload": "3.40.0",
     "payload-admin-bar": "1.0.7",
-    "payload-oauth2": "1.0.13",
+    "payload-oauth2": "1.0.18",
     "prism-react-renderer": "^2.4.1",
     "react": "19.1.0",
     "react-dom": "19.1.0",

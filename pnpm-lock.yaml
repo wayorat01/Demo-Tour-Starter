@@ -169,8 +169,8 @@ importers:
         specifier: 1.0.7
         version: 1.0.7(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       payload-oauth2:
-        specifier: 1.0.13
-        version: 1.0.13(payload@3.40.0(graphql@16.10.0)(typescript@5.6.3))
+        specifier: 1.0.18
+        version: 1.0.18(payload@3.40.0(graphql@16.10.0)(typescript@5.6.3))
       prism-react-renderer:
         specifier: ^2.4.1
         version: 2.4.1(react@19.1.0)
@@ -4390,8 +4390,9 @@ packages:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
       react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
 
-  payload-oauth2@1.0.13:
-    resolution: {integrity: sha512-8E+If0/952DQNmmB8dbBBLa7IFK3/ivyp1QFkVuP+cdOFDQuNgf081E+xN7XGSqmNU1KlnJXItJ76GfEobb0fg==}
+  payload-oauth2@1.0.18:
+    resolution: {integrity: sha512-ynI0ma5p783vfORp22gBDNACzmhWF6JzXETs3Fp4y8uA8luiTkrez3hgHGtjvT7eMK5ymR7qbWY+qf55Y28cqQ==}
+    hasBin: true
     peerDependencies:
       payload: ^3
 
@@ -10154,7 +10155,7 @@ snapshots:
       react: 19.1.0
       react-dom: 19.1.0(react@19.1.0)
 
-  payload-oauth2@1.0.13(payload@3.40.0(graphql@16.10.0)(typescript@5.6.3)):
+  payload-oauth2@1.0.18(payload@3.40.0(graphql@16.10.0)(typescript@5.6.3)):
     dependencies:
       payload: 3.40.0(graphql@16.10.0)(typescript@5.6.3)
 
