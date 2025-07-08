@@ -67,7 +67,7 @@ const Blog29: React.FC<Blog29Props> = (props) => {
     if (props.posts && Array.isArray(props.posts) && props.posts.length > 0) {
       return props.posts as Post[]
     }
-  }, [featuredPosts, props.posts, populateBy])
+  }, [featuredPosts, props.posts])
 
   return (
     <section className="bg-background py-16">

@@ -85,7 +85,7 @@ const Gallery4: React.FC<GalleryBlock & { publicContext: PublicContextProps }> =
             {elements &&
               elements.map((item) => (
                 <CarouselItem key={item.id} className="max-w-[320px] pl-[20px] lg:max-w-[360px]">
-                  <a href={item.link?.url || '#'} className="group rounded-xl" target={item.link.newTab ? '_blank' : '_self'}>
+                  <a href={item.link?.url || '#'} className="group rounded-xl" target={item?.link?.newTab ? '_blank' : '_self'}>
                     <div className="group relative h-full min-h-108 max-w-full overflow-hidden rounded-xl bg-red-200 md:aspect-5/4 lg:aspect-video">
                       {item.image && (
                         <Media

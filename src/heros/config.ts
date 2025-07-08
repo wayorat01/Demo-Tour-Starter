@@ -64,6 +64,7 @@ export const allHeroDesignVersions = [
   { label: 'HERO112', value: '112', image: '/admin/previews/hero/hero112.jpeg' },
   { label: 'HERO195', value: '195', image: '/admin/previews/hero/hero195.webp' },
   { label: 'HERO220', value: '220', image: '/admin/previews/hero/hero220.jpeg' },
+  { label: 'HERO214', value: '214', image: '/admin/previews/hero/hero214.webp' },
 ] as const
 
 export type HeroDesignVersion = (typeof allHeroDesignVersions)[number]
@@ -111,13 +112,25 @@ export const hero: Field = {
         },
       },
     }),
+    link({
+      appearances: false,
+      disableIcon: true,
+      overrides: {
+        name: 'buttonLink',
+        label: 'Button Link',
+        admin: {
+          condition: (_, { designVersion } = { designVersion: '' }) =>
+            ['214'].includes(designVersion),
+        },
+      },
+    }),
     {
       name: 'richText',
       type: 'richText',
       localized: true,
       admin: {
         condition: (_, { designVersion = "" } = {}) =>
-          ['1', '2', '3', '4', '5', '6', '12', '112', '195'].includes(designVersion),
+          ['1', '2', '3', '4', '5', '6', '12', '112', '195', '214'].includes(designVersion),
       },
       editor: lexicalEditor({
         features: ({ rootFeatures }) => {
@@ -145,7 +158,7 @@ export const hero: Field = {
       type: 'upload',
       admin: {
         condition: (_, { designVersion = "" } = {}) =>
-          ['1', '2', '3', '4', '5', '6', '12', '31', '37', '38', '18', '112', '220'].includes(designVersion),
+          ['1', '2', '3', '4', '5', '6', '12', '31', '37', '38', '18', '112', '220', '214'].includes(designVersion),
       },
       relationTo: 'media',
       hasMany: true,
