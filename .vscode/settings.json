@@ -16,5 +16,6 @@
     "payblocks",
     "payloadcms",
     "subline"
-  ]
+  ],
+  "typescript.tsdk": "node_modules/typescript/lib"
 }

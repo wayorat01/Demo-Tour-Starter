@@ -4,7 +4,8 @@ import { MediaBlock } from '@/blocks/MediaBlock/Component'
 import React, { Fragment, JSX } from 'react'
 import { CMSLink } from '@/components/Link'
 import { DefaultNodeTypes, SerializedBlockNode } from '@payloadcms/richtext-lexical'
-import type { BannerBlock as BannerBlockProps } from '@/payload-types'
+import type { BannerBlock as BannerBlockProps, Media as MediaType } from '@/payload-types'
+import Image from 'next/image'
 
 import {
   IS_BOLD,
@@ -133,18 +134,15 @@ export function serializeLexical({
           switch (blockType) {
             // case 'cta':
             //   return <CallToActionBlock key={index} {...block} />
-            // case 'mediaBlock':
-            //   return (
-            //     <MediaBlock
-            //       className="col-start-1 col-span-3"
-            //       imgClassName="m-0"
-            //       key={index}
-            //       {...block}
-            //       captionClassName="mx-auto max-w-3xl"
-            //       enableGutter={false}
-            //       disableInnerContainer={true}
-            //     />
-            //   )
+            case 'mediaBlock':
+              return (
+                <MediaBlock
+                disableContainer
+                  key={index}
+                  {...block}
+                  captionClassName="mx-auto max-w-3xl"
+                />
+              )
             case 'banner':
               return (
                 <BannerBlock
@@ -269,6 +267,42 @@ export function serializeLexical({
                 >
                   {serializedChildren}
                 </CMSLink>
+              )
+            }
+            
+            case 'upload': {
+              const media = node.value as MediaType
+              
+              if (!media) return null
+              
+              const { filename, width, height, alt } = media
+              const url = media.url || `/media/${filename}`
+              
+              return (
+                <div className="col-start-2 my-4" key={index}>
+                  <figure className="relative w-full">
+                    <Image 
+                      src={url}
+                      alt={alt || ''}
+                      width={width || 800}
+                      height={height || 600}
+                      className="w-full h-auto rounded-md"
+                    />
+                    {media.caption && (
+                      <figcaption className="text-sm text-muted-foreground mt-2">
+                        {typeof media.caption === 'string' ? media.caption : (
+                          serializeLexical({
+                            nodes: media.caption as any,
+                            overrideStyle: {
+                              p: 'text-sm text-muted-foreground mt-0 mb-0'
+                            },
+                            publicContext
+                          })
+                        )}
+                      </figcaption>
+                    )}
+                  </figure>
+                </div>
               )
             }
 

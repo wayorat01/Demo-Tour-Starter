@@ -10,6 +10,7 @@ import {
   OrderedListFeature,
   UnorderedListFeature,
   BlockquoteFeature,
+  UploadFeature,
 } from '@payloadcms/richtext-lexical'
 
 import { authenticated } from '@/access/authenticated'
@@ -118,6 +119,13 @@ export const Posts: CollectionConfig = {
                     OrderedListFeature(),
                     UnorderedListFeature(),
                     BlockquoteFeature(),
+                    UploadFeature({
+                      collections: {
+                        media: {
+                          fields: []
+                        }
+                      },
+                    }),
                   ]
                 },
               }),
