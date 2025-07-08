@@ -1,5 +1,16 @@
 # payblocks
 
+## 2.3.0
+
+### Minor Changes
+
+- 70ceeae: adding hero220
+- 5011580: Added new blocks Hero214, Gallery25 and Gallery26. Supporting descriptions for blocks to add more context to the design version.
+
+### Patch Changes
+
+- 4577110: Fix the drawer for design preview when multiple blocks are on the same page
+
 ## 2.2.0
 
 ### Minor Changes
