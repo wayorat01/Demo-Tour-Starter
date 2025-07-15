@@ -1,17 +1,16 @@
+import { designVersionPreview } from '@/components/AdminDashboard/DesignVersionPreview/config'
 import { backgroundColor } from '@/fields/color'
 import { link } from '@/fields/link'
-import {
-  HeadingFeature,
-  lexicalEditor,
-} from '@payloadcms/richtext-lexical'
+import { HeadingFeature, lexicalEditor } from '@payloadcms/richtext-lexical'
 import { Block } from 'payload'
 
 export const allLogosDesignVersions = [
-  'LOGOS2',
-  'LOGOS3',
+  { label: 'LOGOS1', value: 'LOGOS1', image: '/admin/previews/logos/logos1.webp' },
+  { label: 'LOGOS2', value: 'LOGOS2', image: '/admin/previews/logos/logos2.webp' },
+  { label: 'LOGOS3', value: 'LOGOS3', image: '/admin/previews/logos/logos3.webp' },
 ] as const
 
-export type LogosDesignVersion = typeof allLogosDesignVersions[number]
+export type LogosDesignVersion = (typeof allLogosDesignVersions)[number]
 
 export const LogosBlock: Block = {
   slug: 'logos',
@@ -22,12 +21,7 @@ export const LogosBlock: Block = {
   },
   fields: [
     backgroundColor,
-    {
-      name: 'designVersion',
-      type: 'select',
-      required: true,
-      options: allLogosDesignVersions.map(version => ({ label: version, value: version })),
-    },
+    designVersionPreview(allLogosDesignVersions),
     {
       name: 'richText',
       type: 'richText',
@@ -35,27 +29,24 @@ export const LogosBlock: Block = {
       editor: lexicalEditor({
         features: ({ rootFeatures }) => [
           ...rootFeatures,
-          HeadingFeature({ enabledHeadingSizes: ['h2', 'h3', 'h4'] })
+          HeadingFeature({ enabledHeadingSizes: ['h2', 'h3', 'h4'] }),
         ],
       }),
     },
-
-
     link({
       overrides: {
         admin: {
           condition: (_, { designVersion } = { designVersion: '' }) =>
             ['LOGOS2'].includes(designVersion),
         },
-      }
+      },
     }),
-
     {
       name: 'logos',
       type: 'upload',
       relationTo: 'media',
       required: true,
-      minRows: 6,
+      minRows: 5,
       hasMany: true,
     },
   ],
