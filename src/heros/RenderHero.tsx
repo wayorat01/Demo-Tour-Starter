@@ -44,6 +44,7 @@ import Hero51 from '@/heros/PageHero/hero51';
 import Hero53 from '@/heros/PageHero/hero53';
 import Hero55 from '@/heros/PageHero/hero55';
 import Hero57 from '@/heros/PageHero/hero57';
+import Hero101 from '@/heros/PageHero/hero101';
 import Hero112 from '@/heros/PageHero/hero112';
 import Hero195 from '@/heros/PageHero/hero195'
 import { Hero220 } from '@/heros/PageHero/hero220'
@@ -93,6 +94,7 @@ const heroes = {
   53: Hero53,
   55: Hero55,
   57: Hero57,
+  101: Hero101,
   112: Hero112,
   195: Hero195,
   220: Hero220,

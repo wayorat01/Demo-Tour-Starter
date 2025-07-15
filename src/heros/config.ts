@@ -61,6 +61,7 @@ export const allHeroDesignVersions = [
   { label: 'HERO5', value: '5', image: '/admin/previews/hero/hero5.jpeg' },
   { label: 'HERO6', value: '6', image: '/admin/previews/hero/hero6.jpeg' },
   { label: 'HERO12', value: '12', image: '/admin/previews/hero/hero12.jpeg' },
+  { label: 'HERO101', value: '101', image: '/admin/previews/hero/hero101.webp' },
   { label: 'HERO112', value: '112', image: '/admin/previews/hero/hero112.jpeg' },
   { label: 'HERO195', value: '195', image: '/admin/previews/hero/hero195.webp' },
   { label: 'HERO220', value: '220', image: '/admin/previews/hero/hero220.jpeg' },
@@ -130,7 +131,7 @@ export const hero: Field = {
       localized: true,
       admin: {
         condition: (_, { designVersion = "" } = {}) =>
-          ['1', '2', '3', '4', '5', '6', '12', '112', '195', '214'].includes(designVersion),
+          ['1', '2', '3', '4', '5', '6', '12', '101', '112', '195', '214'].includes(designVersion),
       },
       editor: lexicalEditor({
         features: ({ rootFeatures }) => {
@@ -149,7 +150,7 @@ export const hero: Field = {
         maxRows: 2,
         admin: {
           condition: (_, { designVersion = "" } = {}) =>
-            ['1', '2', '3', '4', '5', '6', '12', '112', '195'].includes(designVersion),
+            ['1', '2', '3', '4', '5', '6', '12', '101', '112', '195'].includes(designVersion),
         },
       },
     }),
@@ -173,7 +174,7 @@ export const hero: Field = {
       type: 'upload',
       admin: {
         condition: (_, { designVersion = "" } = {}) =>
-          ['3', '53', '28', '32', '12', '51', '57', '50', '18', '112'].includes(designVersion),
+          ['3', '53', '28', '32', '12', '51', '57', '50', '18', '112', '101'].includes(designVersion),
       },
       relationTo: 'media',
       hasMany: true,
@@ -283,7 +284,7 @@ export const hero: Field = {
       type: 'group',
       admin: {
         condition: (_, { designVersion = "" } = {}) =>
-          ['112', '220'].includes(designVersion),
+          ['112', '220', '101'].includes(designVersion),
       },
       fields: [
         {
@@ -291,6 +292,12 @@ export const hero: Field = {
           type: 'text',
           localized: true,
           defaultValue: 'Presentation Video',
+        },
+        {
+          name: 'videoDuration',
+          type: 'text',
+          localized: true,
+          defaultValue: '2 min',
         },
         {
           name: 'videoUrl',
