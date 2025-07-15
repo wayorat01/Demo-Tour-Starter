@@ -1,5 +1,22 @@
 # payblocks
 
+## 2.4.0
+
+### Minor Changes
+
+- 662af2f: added new block - feature105
+- 767da45: richtext: support image upload and media block with more settings
+- 222615f: added new block - banner 1
+- 4049440: added new block - hero101
+- 91b7dda: Login3 and Signup4 added. Support for authentication with payload. This change is adding full support to login and signup directly with payload as auth provider. We support login with Google as well. We offer a very flexible way to add a signup block to the login block as well.
+- d1250e9: added new block - feature 159
+- 02abea1: Improving the icon render component to allow code splitting and only load icons actually used. Improve the bundle size of first load js
+- 9a6cc13: added new block - logos 1
+
+### Patch Changes
+
+- 91b7dda: deleting the no longer needed, old upstream folder of shadcnblocks.com
+
 ## 2.3.0
 
 ### Minor Changes
