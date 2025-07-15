@@ -5,6 +5,7 @@ import { linkGroup } from '@/fields/linkGroup'
 import { Block } from 'payload'
 
 export const allBannerDesignVersions = [
+  { label: 'BANNER1', value: 'BANNER1', image: '/admin/previews/banner/banner1.webp' },
   { label: 'BANNER5', value: 'BANNER5', image: '/admin/previews/banner/banner5.webp' },
 ] as const
 
@@ -58,7 +59,7 @@ export const BannerBlock: Block = {
       appearances: false,
       overrides: {
         admin: {
-          condition: (_, { designVersion = '' } = {}) => ['BANNER5'].includes(designVersion),
+          condition: (_, { designVersion = '' } = {}) => ['BANNER1', 'BANNER5'].includes(designVersion),
         },
       },
     }),
