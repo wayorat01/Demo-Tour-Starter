@@ -1,6 +1,7 @@
 import { withPayload } from '@payloadcms/next/withPayload'
 import type { NextConfig } from 'next'
 import { serverUrl } from './src/config/server'
+import bundleAnalyzer from '@next/bundle-analyzer'
 
 /**
  * Set NEXT_PUBLIC_SERVER_URL to the URL of the server.
@@ -36,4 +37,8 @@ const nextConfig: NextConfig = {
 
 }
 
-export default withPayload(nextConfig)
+const withBundleAnalyzer = bundleAnalyzer({
+  enabled: process.env.ANALYZE === 'true',
+})
+
+export default withPayload(withBundleAnalyzer(nextConfig))

@@ -1,5 +1,4 @@
-import { DefaultNodeTypes, SerializedHeadingNode } from '@payloadcms/richtext-lexical';
-import { Serializable } from 'child_process';
+import type { DefaultNodeTypes, SerializedHeadingNode } from '@payloadcms/richtext-lexical';
 
 export type RichTextNode<T = DefaultNodeTypes> = {
   type?: string;

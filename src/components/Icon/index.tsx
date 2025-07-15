@@ -1,14 +1,60 @@
-import * as lucide from "lucide-react";
-import { LucideIcon, LucideProps } from "lucide-react";
+'use client';
 
-export type IconType = keyof typeof lucide;
+import dynamic from 'next/dynamic';
+import { LucideProps } from "lucide-react";
+
+export type IconType = string;
 
 type IconProps = {
   icon: string;
 } & LucideProps;
 
-export const Icon: React.FC<IconProps> = ({ icon, ...props }) => {
-  const LucideIcon = lucide[icon] as LucideIcon;
-  if (!LucideIcon) return null;
-  return <LucideIcon {...props} />;
+// Cache for dynamic components
+const iconComponentCache = new Map<string, any>();
+
+const createDynamicIcon = (iconName: string) => {
+  if (iconComponentCache.has(iconName)) {
+    return iconComponentCache.get(iconName);
+  }
+
+  const kebabName = iconName
+    .replace(/([A-Z])/g, '-$1')
+    .toLowerCase()
+    .replace(/^-/, '');
+
+  const DynamicIcon = dynamic(
+    () => import(`lucide-react/dist/esm/icons/${kebabName}.js`),
+    {
+      loading: () => (
+        <div 
+          style={{ 
+            width: 24, 
+            height: 24, 
+            display: 'inline-block' 
+          }} 
+        />
+      ),
+      ssr: false
+    }
+  );
+
+  iconComponentCache.set(iconName, DynamicIcon);
+  return DynamicIcon;
+};
+
+export const Icon: React.FC<IconProps> = ({ icon, size = 24, ...props }) => {
+  const DynamicIconComponent = createDynamicIcon(icon);
+
+  return (
+    <div style={{
+      width: size,
+      height: size,
+      display: 'inline-flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      flexShrink: 0,
+    }}>
+      <DynamicIconComponent size={size} {...props} />
+    </div>
+  );
 };
