@@ -120,6 +120,7 @@ export const allFeatureDesignVersions = [
   { label: 'FEATURE114', value: 'FEATURE114', image: '/admin/previews/feature/feature114.jpeg' },
   { label: 'FEATURE117', value: 'FEATURE117', image: '/admin/previews/feature/feature117.jpeg' },
   { label: 'FEATURE126', value: 'FEATURE126', image: '/admin/previews/feature/feature126.jpeg' },
+  { label: 'FEATURE159', value: 'FEATURE159', image: '/admin/previews/feature/feature159.webp' },
 ] as const
 
 export type FeatureDesignVersion = (typeof allFeatureDesignVersions)[number]
@@ -190,6 +191,7 @@ export const FeatureBlock: Block = {
             'FEATURE62',
             'FEATURE106',
             'FEATURE91',
+            'FEATURE159',
           ].includes(designVersion),
       },
       editor: lexicalEditor({
@@ -369,6 +371,7 @@ export const FeatureBlock: Block = {
                 'FEATURE108',
                 'FEATURE114',
                 'FEATURE117',
+                'FEATURE159',
               ].includes(designVersion)
             },
           },
