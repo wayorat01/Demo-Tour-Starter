@@ -1,153 +1,75 @@
+import React from 'react'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@radix-ui/react-tabs'
-import {
-  FileSpreadsheet,
-  Flag,
-  Layout,
-  MessagesSquare,
-  Settings,
-  Target,
-  Timer,
-  Wand,
-} from 'lucide-react'
+import { Flag } from 'lucide-react'
 
+import { Icon } from '@/components/Icon'
 import { Badge } from '@/components/ui/badge'
+import { FeatureBlock } from '@/payload-types'
+import { PublicContextProps } from '@/utilities/publicContextProps'
+import RichText from '@/components/RichText'
+import { Media } from '@/components/Media'
 
-const Feature105 = () => {
+const Feature105: React.FC<FeatureBlock & { publicContext: PublicContextProps }> = ({
+  richText,
+  badge,
+  USPs,
+  publicContext,
+}) => {
+  const tabs = USPs?.map(({ tagline, uspIcon, image }) => ({
+    value: tagline,
+    label: tagline,
+    icon: uspIcon,
+    image: image,
+  }))
+
+  if (!tabs) return null
+
   return (
     <section className="py-32">
       <div className="container">
         <div className="mx-auto flex max-w-screen-md flex-col items-center gap-4">
           <Badge variant="outline" className="flex items-center gap-1 px-2.5 py-1.5 text-sm">
             <Flag className="h-auto w-4" />
-            Highlights
+            {badge}
           </Badge>
-          <h2 className="text-center text-3xl font-semibold lg:text-4xl">
-            Steps to Achieve Your Goals
-          </h2>
-          <p className="text-center text-muted-foreground lg:text-lg">
-            Discover effective strategies to maximize your potential and enhance performance. Our
-            platform is designed to help you achieve your goals.
-          </p>
+          {richText && (
+            <RichText
+              publicContext={publicContext}
+              content={richText}
+              withWrapper={false}
+              overrideStyle={{
+                h2: 'text-center text-3xl font-semibold lg:text-4xl',
+                p: 'text-center text-muted-foreground lg:text-lg',
+              }}
+            />
+          )}
         </div>
         <div className="mx-auto mt-14 max-w-screen-xl">
-          <Tabs defaultValue="tab-1">
+          <Tabs defaultValue={tabs[0]?.value as string}>
             <div className="max-w-[100vw-4rem] overflow-x-auto">
               <TabsList className="mx-auto flex w-fit justify-center gap-5 border-b">
-                <TabsTrigger
-                  value="tab-1"
-                  className="group -mb-px flex flex-col items-center gap-1.5 px-1 pb-3.5 data-[state=active]:border-b data-[state=active]:border-primary"
-                >
-                  <span className="flex size-12 items-center justify-center rounded-md bg-muted transition-colors duration-300 group-data-[state=active]:bg-primary group-data-[state=active]:text-background">
-                    <Target className="w-7" />
-                  </span>
-                  <p className="text-sm text-muted-foreground">Aim</p>
-                </TabsTrigger>
-                <TabsTrigger
-                  value="tab-2"
-                  className="group -mb-px flex flex-col items-center gap-1.5 px-1 pb-3.5 data-[state=active]:border-b data-[state=active]:border-primary"
-                >
-                  <span className="flex size-12 items-center justify-center rounded-md bg-muted transition-colors duration-300 group-data-[state=active]:bg-primary group-data-[state=active]:text-background">
-                    <Layout className="w-7" />
-                  </span>
-                  <p className="text-sm text-muted-foreground">Plans</p>
-                </TabsTrigger>
-                <TabsTrigger
-                  value="tab-3"
-                  className="group -mb-px flex flex-col items-center gap-1.5 px-1 pb-3.5 data-[state=active]:border-b data-[state=active]:border-primary"
-                >
-                  <span className="flex size-12 items-center justify-center rounded-md bg-muted transition-colors duration-300 group-data-[state=active]:bg-primary group-data-[state=active]:text-background">
-                    <Wand className="w-7" />
-                  </span>
-                  <p className="text-sm text-muted-foreground">Execution</p>
-                </TabsTrigger>
-                <TabsTrigger
-                  value="tab-4"
-                  className="group -mb-px flex flex-col items-center gap-1.5 px-1 pb-3.5 data-[state=active]:border-b data-[state=active]:border-primary"
-                >
-                  <span className="flex size-12 items-center justify-center rounded-md bg-muted transition-colors duration-300 group-data-[state=active]:bg-primary group-data-[state=active]:text-background">
-                    <FileSpreadsheet className="w-7" />
-                  </span>
-                  <p className="text-sm text-muted-foreground">Files</p>
-                </TabsTrigger>
-                <TabsTrigger
-                  value="tab-5"
-                  className="group -mb-px flex flex-col items-center gap-1.5 px-1 pb-3.5 data-[state=active]:border-b data-[state=active]:border-primary"
-                >
-                  <span className="flex size-12 items-center justify-center rounded-md bg-muted transition-colors duration-300 group-data-[state=active]:bg-primary group-data-[state=active]:text-background">
-                    <Timer className="w-7" />
-                  </span>
-                  <p className="text-sm text-muted-foreground">Monitor</p>
-                </TabsTrigger>
-                <TabsTrigger
-                  value="tab-6"
-                  className="group -mb-px flex flex-col items-center gap-1.5 px-1 pb-3.5 data-[state=active]:border-b data-[state=active]:border-primary"
-                >
-                  <span className="flex size-12 items-center justify-center rounded-md bg-muted transition-colors duration-300 group-data-[state=active]:bg-primary group-data-[state=active]:text-background">
-                    <MessagesSquare className="w-7" />
-                  </span>
-                  <p className="text-sm text-muted-foreground">Comms</p>
-                </TabsTrigger>
-                <TabsTrigger
-                  value="tab-7"
-                  className="group -mb-px flex flex-col items-center gap-1.5 px-1 pb-3.5 data-[state=active]:border-b data-[state=active]:border-primary"
-                >
-                  <span className="flex size-12 items-center justify-center rounded-md bg-muted transition-colors duration-300 group-data-[state=active]:bg-primary group-data-[state=active]:text-background">
-                    <Settings className="w-7" />
-                  </span>
-                  <p className="text-sm text-muted-foreground">Settings</p>
-                </TabsTrigger>
+                {tabs.map(({ value, label, icon }) => (
+                  <TabsTrigger
+                    key={value}
+                    value={value as string}
+                    className="group -mb-px flex flex-col items-center gap-1.5 px-1 pb-3.5 data-[state=active]:border-b data-[state=active]:border-primary"
+                  >
+                    <span className="flex size-12 items-center justify-center rounded-md bg-muted transition-colors duration-300 group-data-[state=active]:bg-primary group-data-[state=active]:text-background">
+                      {icon && <Icon icon={icon} className="w-7" />}
+                    </span>
+                    <p className="text-sm text-muted-foreground">{label}</p>
+                  </TabsTrigger>
+                ))}
               </TabsList>
             </div>
             <div className="mt-5">
-              <TabsContent value="tab-1" className="aspect-video">
-                <img
-                  src="/images/block/placeholder-1.svg"
-                  alt="placeholder"
-                  className="size-full rounded-xl border object-cover"
-                />
-              </TabsContent>
-              <TabsContent value="tab-2" className="aspect-video">
-                <img
-                  src="/images/block/placeholder-2.svg"
-                  alt="placeholder"
-                  className="size-full rounded-xl border object-cover"
-                />
-              </TabsContent>
-              <TabsContent value="tab-3" className="aspect-video">
-                <img
-                  src="/images/block/placeholder-3.svg"
-                  alt="placeholder"
-                  className="size-full rounded-xl border object-cover"
-                />
-              </TabsContent>
-              <TabsContent value="tab-4" className="aspect-video">
-                <img
-                  src="/images/block/placeholder-4.svg"
-                  alt="placeholder"
-                  className="size-full rounded-xl border object-cover"
-                />
-              </TabsContent>
-              <TabsContent value="tab-5" className="aspect-video">
-                <img
-                  src="/images/block/placeholder-5.svg"
-                  alt="placeholder"
-                  className="size-full rounded-xl border object-cover"
-                />
-              </TabsContent>
-              <TabsContent value="tab-6" className="aspect-video">
-                <img
-                  src="/images/block/placeholder-6.svg"
-                  alt="placeholder"
-                  className="size-full rounded-xl border object-cover"
-                />
-              </TabsContent>
-              <TabsContent value="tab-7" className="aspect-video">
-                <img
-                  src="/images/block/placeholder-1.svg"
-                  alt="placeholder"
-                  className="size-full rounded-xl border object-cover"
-                />
-              </TabsContent>
+              {tabs.map(({ value, image, label }) => (
+                <TabsContent key={value} value={value as string} className="aspect-video">
+                  {image && (
+                    <Media resource={image} imgClassName="size-full rounded-xl border object-cover" className='aspect-video'/>
+                  )}
+                </TabsContent>
+              ))}
             </div>
           </Tabs>
         </div>

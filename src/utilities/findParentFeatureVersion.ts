@@ -69,7 +69,12 @@ export const findParentBlockVersion = (
 
 /**
  * Creates a condition function that checks if a nested item's parent block
- * has a design version that is in the list of supported versions
+ * has a design version that matches the specified criteria
+ * 
+ * Supports both positive and negative matching:
+ * - Positive: ['FEATURE1', 'FEATURE2'] - matches if version is in the list
+ * - Negative: ['NOT FEATURE105'] - matches if version is NOT FEATURE105
+ * - Mixed: ['FEATURE1', 'NOT FEATURE105'] - matches FEATURE1 but excludes FEATURE105
  * 
  * This is the preferred way to create conditions for design version-based fields
  * in Payload CMS - it automatically determines which block type contains the item
@@ -84,6 +89,26 @@ export const createBlockItemCondition = (
 ) => {
   return (data: any, siblingData: any) => {
     const designVersion = findParentBlockVersion(data, siblingData, options);
-    return supportedVersions.includes(designVersion);
+    
+    // Process each version condition
+    for (const condition of supportedVersions) {
+      if (condition.startsWith('NOT ')) {
+        // Negative condition - exclude this version
+        const excludedVersion = condition.substring(4); // Remove 'NOT ' prefix
+        if (designVersion === excludedVersion) {
+          return false; // Explicitly excluded
+        }
+      } else {
+        // Positive condition - include this version
+        if (designVersion === condition) {
+          return true; // Explicitly included
+        }
+      }
+    }
+    
+    // If we have any positive conditions, default to false (not included)
+    // If we only have negative conditions, default to true (not excluded)
+    const hasPositiveConditions = supportedVersions.some(v => !v.startsWith('NOT '));
+    return !hasPositiveConditions;
   };
 };

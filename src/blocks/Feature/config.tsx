@@ -112,7 +112,7 @@ export const allFeatureDesignVersions = [
   { label: 'FEATURE102', value: 'FEATURE102', image: '/admin/previews/feature/feature102.jpeg' },
   { label: 'FEATURE103', value: 'FEATURE103', image: '/admin/previews/feature/feature103.jpeg' },
   // 'FEATURE104',
-  // 'FEATURE105',
+  { label: 'FEATURE105', value: 'FEATURE105', image: '/admin/previews/feature/feature105.webp' },
   // 'FEATURE106',
   // 'FEATURE107',
   // 'FEATURE108',
@@ -124,7 +124,6 @@ export const allFeatureDesignVersions = [
 ] as const
 
 export type FeatureDesignVersion = (typeof allFeatureDesignVersions)[number]
-
 
 /**
  * The Feature block is the shadcnblocks.com feature block integrated in payload.
@@ -141,10 +140,18 @@ export const FeatureBlock: Block = {
       type: 'text',
       localized: true,
       admin: {
-        condition: (_, { designVersion = "" } = {}) =>
-          ['FEATURE1', 'FEATURE2', 'FEATURE3', 'FEATURE4', 'FEATURE5', 'FEATURE6','FEATURE57', 'FEATURE126'].includes(
-            designVersion,
-          ),
+        condition: (_, { designVersion = '' } = {}) =>
+          [
+            'FEATURE1',
+            'FEATURE2',
+            'FEATURE3',
+            'FEATURE4',
+            'FEATURE5',
+            'FEATURE6',
+            'FEATURE57',
+            'FEATURE105',
+            'FEATURE126',
+          ].includes(designVersion),
       },
     },
     {
@@ -152,13 +159,13 @@ export const FeatureBlock: Block = {
       type: 'text',
       localized: true,
       admin: {
-        condition: (_, { designVersion = "" } = {}) =>
+        condition: (_, { designVersion = '' } = {}) =>
           ['FEATURE99', 'FEATURE103', 'FEATURE25'].includes(designVersion),
       },
     },
     icon({
       admin: {
-        condition: (_, { designVersion = "" } = {}) =>
+        condition: (_, { designVersion = '' } = {}) =>
           [
             'FEATURE1',
             'FEATURE2',
@@ -176,7 +183,7 @@ export const FeatureBlock: Block = {
       type: 'richText',
       localized: true,
       admin: {
-        condition: (_, { designVersion = "" } = {}) =>
+        condition: (_, { designVersion = '' } = {}) =>
           ![
             'FEATURE14',
             'FEATURE28',
@@ -210,7 +217,7 @@ export const FeatureBlock: Block = {
       overrides: {
         maxRows: 2,
         admin: {
-          condition: (_, { designVersion = "" } = {}) =>
+          condition: (_, { designVersion = '' } = {}) =>
             [
               'FEATURE1',
               'FEATURE2',
@@ -243,7 +250,7 @@ export const FeatureBlock: Block = {
       name: 'image',
       type: 'upload',
       admin: {
-        condition: (_, { designVersion = "" } = {}) =>
+        condition: (_, { designVersion = '' } = {}) =>
           [
             'FEATURE1',
             'FEATURE95',
@@ -285,8 +292,7 @@ export const FeatureBlock: Block = {
       label: 'Images / Avatars',
       type: 'upload',
       admin: {
-        condition: (_, { designVersion = "" } = {}) =>
-          ['FEATURE114'].includes(designVersion),
+        condition: (_, { designVersion = '' } = {}) => ['FEATURE114'].includes(designVersion),
       },
       relationTo: 'media',
       hasMany: true,
@@ -299,7 +305,7 @@ export const FeatureBlock: Block = {
       name: 'metrics',
       type: 'array',
       admin: {
-        condition: (_, { designVersion = "" } = {}) =>
+        condition: (_, { designVersion = '' } = {}) =>
           ['FEATURE114', 'FEATURE120', 'FEATURE136'].includes(designVersion),
       },
       fields: [
@@ -320,7 +326,7 @@ export const FeatureBlock: Block = {
       name: 'USPs',
       type: 'array',
       admin: {
-        condition: (_, { designVersion = "" } = {}) =>
+        condition: (_, { designVersion = '' } = {}) =>
           ![
             'FEATURE1',
             'FEATURE2',
@@ -385,7 +391,6 @@ export const FeatureBlock: Block = {
           localized: true,
           admin: {
             // conditions on sibling fields are unfortunatly currently not possible in payload
-
           },
         },
         {
@@ -393,7 +398,10 @@ export const FeatureBlock: Block = {
           type: 'richText',
           localized: true,
           admin: {
-
+            condition: createBlockItemCondition([
+              'NOT FEATURE105',
+              // add any other versions as needed, but NOT 'FEATURE105'
+            ]),
           },
           editor: lexicalEditor({
             features: ({ rootFeatures }) => {
@@ -420,20 +428,24 @@ export const FeatureBlock: Block = {
             description: 'USPs can feature 1 or many features, with icon and richText',
             condition: (data, siblingData) => {
               // Get all feature blocks
-              const featureBlocks = data.layout?.filter(
-                (block) => block.blockType === 'feature'
-              ) || []
+              const featureBlocks =
+                data.layout?.filter((block) => block.blockType === 'feature') || []
 
               // Find the feature block that contains our current USP
-              const currentFeatureBlock = featureBlocks.find(block =>
-                block.USPs?.some(usp =>
-                  // Compare USP fields to identify the current one
-                  usp.tagline === siblingData.tagline &&
-                  usp.image === siblingData.image
-                )
+              const currentFeatureBlock = featureBlocks.find((block) =>
+                block.USPs?.some(
+                  (usp) =>
+                    // Compare USP fields to identify the current one
+                    usp.tagline === siblingData.tagline && usp.image === siblingData.image,
+                ),
               )
 
-              return currentFeatureBlock && ['FEATURE19', 'FEATURE22', 'FEATURE25', 'FEATURE91'].includes(currentFeatureBlock.designVersion)
+              return (
+                currentFeatureBlock &&
+                ['FEATURE19', 'FEATURE22', 'FEATURE25', 'FEATURE91'].includes(
+                  currentFeatureBlock.designVersion,
+                )
+              )
             },
           },
           fields: [
@@ -441,21 +453,23 @@ export const FeatureBlock: Block = {
               admin: {
                 condition: (data, siblingData) => {
                   // Get all feature blocks
-                  const featureBlocks = data.layout?.filter(
-                    (block) => block.blockType === 'feature'
-                  ) || []
+                  const featureBlocks =
+                    data.layout?.filter((block) => block.blockType === 'feature') || []
 
                   // Find the feature block that contains our current USP
-                  const currentFeatureBlock = featureBlocks.find(block =>
-                    block.USPs?.some(usp =>
-                      // Compare USP fields to identify the current one
-                      usp.tagline === siblingData.tagline &&
-                      usp.image === siblingData.image
-                    )
+                  const currentFeatureBlock = featureBlocks.find((block) =>
+                    block.USPs?.some(
+                      (usp) =>
+                        // Compare USP fields to identify the current one
+                        usp.tagline === siblingData.tagline && usp.image === siblingData.image,
+                    ),
                   )
 
                   // Show icon for all features except feature25
-                  return currentFeatureBlock && !['FEATURE25'].includes(currentFeatureBlock.designVersion)
+                  return (
+                    currentFeatureBlock &&
+                    !['FEATURE25'].includes(currentFeatureBlock.designVersion)
+                  )
                 },
               },
             }),
@@ -518,7 +532,8 @@ export const FeatureBlock: Block = {
               'FEATURE81',
               'FEATURE117',
               'FEATURE126',
-            ])
+              'FEATURE105',
+            ]),
           },
           relationTo: 'media',
           hasMany: false,
