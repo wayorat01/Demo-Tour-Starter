@@ -21,7 +21,7 @@ const Logos1: React.FC<LogosBlock & { publicContext: PublicContextProps }> = ({
         />
       )}
       <div className="flex flex-wrap items-center gap-x-8 gap-y-6 opacity-70 grayscale lg:gap-[60px]">
-        {logos.map((logo, index) => (
+        {logos?.map((logo, index) => (
           <Media key={index} resource={logo} imgClassName="h-12 w-28 object-contain" />
         ))}
       </div>

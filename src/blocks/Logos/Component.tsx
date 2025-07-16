@@ -1,6 +1,7 @@
 import Logos1 from '@/blocks/Logos/logos1'
 import Logos2 from '@/blocks/Logos/logos2'
 import Logos3 from '@/blocks/Logos/logos3'
+import Logos9 from '@/blocks/Logos/logos9'
 
 import { LogosDesignVersion } from './config'
 
@@ -12,6 +13,7 @@ const Logos: Logos = {
   LOGOS1: Logos1,
   LOGOS2: Logos2,
   LOGOS3: Logos3,
+  LOGOS9: Logos9,
 }
 
 export const LogosBlock: React.FC<any> = (props) => {
