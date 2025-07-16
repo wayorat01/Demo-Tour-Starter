@@ -8,7 +8,9 @@ import { PublicContextProps } from '@/utilities/publicContextProps'
 type PostDesignVersionValue = (typeof allPostDesignVersions)[number]['value']
 
 // Enforce required blog but allow additional ones
-type BlogContent<T extends string = string> = Required<Record<PostDesignVersionValue, React.FC<any>>> &
+type BlogContent<T extends string = string> = Required<
+  Record<PostDesignVersionValue, React.FC<any>>
+> &
   Record<T, React.FC<any>>
 
 const blog: BlogContent = {
@@ -17,9 +19,9 @@ const blog: BlogContent = {
 }
 
 /**
- * Blog Content is the Blog Detail Page. 
- * @param props 
- * @returns 
+ * Blog Content is the Blog Detail Page.
+ * @param props
+ * @returns
  */
 export const BlogContentBlock: React.FC<Post & { publicContext: PublicContextProps }> = (props) => {
   if (!props.content) return null

@@ -1,25 +1,13 @@
-import {
-  Code,
-  GitBranch,
-  List,
-  Play,
-  Sparkles,
-  WandSparkles,
-} from 'lucide-react';
+import { Code, GitBranch, List, Play, Sparkles, WandSparkles } from 'lucide-react'
 
-import {
-  Card,
-  CardContent,
-  CardFooter,
-  CardHeader,
-} from '@/components/ui/card';
+import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card'
 
 const Feature3 = () => {
   return (
     <section className="py-32">
       <div className="container">
         <div className="mx-auto flex max-w-5xl flex-col items-center gap-6 text-center">
-          <h1 className="mb-6 text-pretty text-4xl font-semibold lg:text-5xl">
+          <h1 className="mb-6 text-4xl font-semibold text-pretty lg:text-5xl">
             This is where your feature goes
           </h1>
 
@@ -30,11 +18,11 @@ const Feature3 = () => {
               </CardHeader>
               <CardContent className="text-left">
                 <h2 className="mb-1 text-lg font-semibold">Card Title</h2>
-                <p className="leading-snug text-muted-foreground">
+                <p className="text-muted-foreground leading-snug">
                   Lorem ipsum dolor sit amet consectetur.
                 </p>
               </CardContent>
-              <CardFooter className="justify-end pb-0 pr-0">
+              <CardFooter className="justify-end pr-0 pb-0">
                 <img
                   className="h-40 w-full rounded-tl-md object-cover object-center"
                   src="https://www.shadcnblocks.com/images/block/placeholder.svg"
@@ -48,11 +36,11 @@ const Feature3 = () => {
               </CardHeader>
               <CardContent className="text-left">
                 <h2 className="mb-1 text-lg font-semibold">Card Title</h2>
-                <p className="leading-snug text-muted-foreground">
+                <p className="text-muted-foreground leading-snug">
                   Lorem ipsum dolor sit amet consectetur.
                 </p>
               </CardContent>
-              <CardFooter className="justify-end pb-0 pr-0">
+              <CardFooter className="justify-end pr-0 pb-0">
                 <img
                   className="h-40 w-full rounded-tl-md object-cover object-center"
                   src="https://www.shadcnblocks.com/images/block/placeholder.svg"
@@ -66,11 +54,11 @@ const Feature3 = () => {
               </CardHeader>
               <CardContent className="text-left">
                 <h2 className="mb-1 text-lg font-semibold">Card Title</h2>
-                <p className="leading-snug text-muted-foreground">
+                <p className="text-muted-foreground leading-snug">
                   Lorem ipsum dolor sit amet consectetur.
                 </p>
               </CardContent>
-              <CardFooter className="justify-end pb-0 pr-0">
+              <CardFooter className="justify-end pr-0 pb-0">
                 <img
                   className="h-40 w-full rounded-tl-md object-cover object-center"
                   src="https://www.shadcnblocks.com/images/block/placeholder.svg"
@@ -84,11 +72,11 @@ const Feature3 = () => {
               </CardHeader>
               <CardContent className="text-left">
                 <h2 className="mb-1 text-lg font-semibold">Card Title</h2>
-                <p className="leading-snug text-muted-foreground">
+                <p className="text-muted-foreground leading-snug">
                   Lorem ipsum dolor sit amet consectetur.
                 </p>
               </CardContent>
-              <CardFooter className="justify-end pb-0 pr-0">
+              <CardFooter className="justify-end pr-0 pb-0">
                 <img
                   className="h-40 w-full rounded-tl-md object-cover object-center"
                   src="https://www.shadcnblocks.com/images/block/placeholder.svg"
@@ -102,11 +90,11 @@ const Feature3 = () => {
               </CardHeader>
               <CardContent className="text-left">
                 <h2 className="mb-1 text-lg font-semibold">Card Title</h2>
-                <p className="leading-snug text-muted-foreground">
+                <p className="text-muted-foreground leading-snug">
                   Lorem ipsum dolor sit amet consectetur.
                 </p>
               </CardContent>
-              <CardFooter className="justify-end pb-0 pr-0">
+              <CardFooter className="justify-end pr-0 pb-0">
                 <img
                   className="h-40 w-full rounded-tl-md object-cover object-center"
                   src="https://www.shadcnblocks.com/images/block/placeholder.svg"
@@ -120,11 +108,11 @@ const Feature3 = () => {
               </CardHeader>
               <CardContent className="text-left">
                 <h2 className="mb-1 text-lg font-semibold">Card Title</h2>
-                <p className="leading-snug text-muted-foreground">
+                <p className="text-muted-foreground leading-snug">
                   Lorem ipsum dolor sit amet consectetur.
                 </p>
               </CardContent>
-              <CardFooter className="justify-end pb-0 pr-0">
+              <CardFooter className="justify-end pr-0 pb-0">
                 <img
                   className="h-40 w-full rounded-tl-md object-cover object-center"
                   src="https://www.shadcnblocks.com/images/block/placeholder.svg"
@@ -136,7 +124,7 @@ const Feature3 = () => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Feature3;
+export default Feature3

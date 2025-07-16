@@ -3,7 +3,6 @@ import React from 'react'
 
 import type { Footer } from '@/payload-types'
 
-
 import Footer1 from './footer/footer1'
 import Footer2 from './footer/footer2'
 import Footer3 from './footer/footer3'
@@ -38,8 +37,7 @@ export async function Footer({ publicContext }: { publicContext: PublicContextPr
       return <Footer8 footer={footer} publicContext={publicContext} />
   }
 
-  return null;
-
+  return null
 
   // return (
   //   <footer className="border-t border-border bg-black dark:bg-card text-white">

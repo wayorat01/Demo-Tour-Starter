@@ -1,9 +1,6 @@
 import { backgroundColor } from '@/fields/color'
 import { linkGroup } from '@/fields/linkGroup'
-import {
-  HeadingFeature,
-  lexicalEditor,
-} from '@payloadcms/richtext-lexical'
+import { HeadingFeature, lexicalEditor } from '@payloadcms/richtext-lexical'
 import { Block } from 'payload'
 
 export const allStatDesignVersions = [
@@ -76,7 +73,7 @@ export const StatBlock: Block = {
           condition: (_, { designVersion } = { designVersion: '' }) =>
             ['STAT6', 'STAT8'].includes(designVersion),
         },
-      }
-    })
+      },
+    }),
   ],
 }

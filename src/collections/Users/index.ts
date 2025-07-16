@@ -16,7 +16,6 @@ async function findRole(payload: any, slug: string) {
   return docs[0] || null
 }
 
-
 const Users: CollectionConfig = {
   slug: 'users',
   auth: true,

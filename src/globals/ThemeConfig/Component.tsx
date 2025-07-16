@@ -5,8 +5,12 @@ import type { ThemeConfig } from '@/payload-types'
 export async function ThemeConfig() {
   const themeConfig: ThemeConfig = await getCachedGlobal('themeConfig', 2)()
 
-  return <style id="theme-config" dangerouslySetInnerHTML={{
-    __html: `
+  return (
+    <style
+      id="theme-config"
+      dangerouslySetInnerHTML={{
+        __html:
+          `
 :root { 
   --radius: ${themeConfig.radius};
 
@@ -49,8 +53,9 @@ export async function ThemeConfig() {
 
   --muted2: ${themeConfig.regularColors?.muted2};
   --muted2-foreground: ${themeConfig.regularColors?.['muted2-foreground']};
-}`
-      + (themeConfig.darkmodeColors?.enableDarkMode ? `
+}` +
+          (themeConfig.darkmodeColors?.enableDarkMode
+            ? `
 
         
 [data-theme='dark'] {
@@ -85,7 +90,9 @@ export async function ThemeConfig() {
   --success: ${themeConfig.darkmodeColors?.success};
   --warning: ${themeConfig.darkmodeColors?.warning};
   --error: ${themeConfig.darkmodeColors?.error};
-}` : '')
-  }} />
+}`
+            : ''),
+      }}
+    />
+  )
 }
-

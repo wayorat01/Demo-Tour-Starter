@@ -1,17 +1,13 @@
-'use client';
+'use client'
 
-import { Star } from 'lucide-react';
-import { useEffect, useState } from 'react';
+import { Star } from 'lucide-react'
+import { useEffect, useState } from 'react'
 
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { Button } from '@/components/ui/button';
-import type { CarouselApi } from '@/components/ui/carousel';
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-} from '@/components/ui/carousel';
-import { TestimonialBlock } from '@/payload-types';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
+import { Button } from '@/components/ui/button'
+import type { CarouselApi } from '@/components/ui/carousel'
+import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carousel'
+import { TestimonialBlock } from '@/payload-types'
 
 const testimonials = [
   {
@@ -35,26 +31,26 @@ const testimonials = [
     role: 'Position at Company',
     avatar: 'https://www.shadcnblocks.com/images/block/avatar-3.webp',
   },
-];
+]
 
 const Testimonial14: React.FC<TestimonialBlock> = ({ headline, link, tagline, testimonial }) => {
-  const [api, setApi] = useState<CarouselApi>();
-  const [current, setCurrent] = useState(0);
+  const [api, setApi] = useState<CarouselApi>()
+  const [current, setCurrent] = useState(0)
 
   useEffect(() => {
     if (!api) {
-      return;
+      return
     }
 
     const updateCurrent = () => {
-      setCurrent(api.selectedScrollSnap());
-    };
+      setCurrent(api.selectedScrollSnap())
+    }
 
-    api.on('select', updateCurrent);
+    api.on('select', updateCurrent)
     return () => {
-      api.off('select', updateCurrent);
-    };
-  }, [api]);
+      api.off('select', updateCurrent)
+    }
+  }, [api])
 
   return (
     <section className="py-32">
@@ -70,18 +66,14 @@ const Testimonial14: React.FC<TestimonialBlock> = ({ headline, link, tagline, te
                   <AvatarImage src={testimonial.avatar} />
                   <AvatarFallback>{testimonial.name}</AvatarFallback>
                 </Avatar>
-                <p className="mb-1 text-sm font-medium md:text-lg">
-                  {testimonial.name}
-                </p>
-                <p className="mb-2 text-sm text-muted-foreground md:text-lg">
-                  {testimonial.role}
-                </p>
+                <p className="mb-1 text-sm font-medium md:text-lg">{testimonial.name}</p>
+                <p className="text-muted-foreground mb-2 text-sm md:text-lg">{testimonial.role}</p>
                 <div className="mt-2 flex items-center gap-0.5">
-                  <Star className="size-5 fill-primary stroke-none" />
-                  <Star className="size-5 fill-primary stroke-none" />
-                  <Star className="size-5 fill-primary stroke-none" />
-                  <Star className="size-5 fill-primary stroke-none" />
-                  <Star className="size-5 fill-primary stroke-none" />
+                  <Star className="fill-primary size-5 stroke-none" />
+                  <Star className="fill-primary size-5 stroke-none" />
+                  <Star className="fill-primary size-5 stroke-none" />
+                  <Star className="fill-primary size-5 stroke-none" />
+                  <Star className="fill-primary size-5 stroke-none" />
                 </div>
               </div>
             </CarouselItem>
@@ -95,7 +87,7 @@ const Testimonial14: React.FC<TestimonialBlock> = ({ headline, link, tagline, te
             variant="ghost"
             size="sm"
             onClick={() => {
-              api?.scrollTo(index);
+              api?.scrollTo(index)
             }}
           >
             <div
@@ -105,7 +97,7 @@ const Testimonial14: React.FC<TestimonialBlock> = ({ headline, link, tagline, te
         ))}
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Testimonial14;
+export default Testimonial14

@@ -15,24 +15,25 @@ import Link from 'next/link'
 
 interface BreadcrumbProps {
   items?:
-  | {
-    doc?: (string | null) | Page
-    url?: string | null
-    label?: string | null
-    id?: string | null
-  }[]
-  | null
+    | {
+        doc?: (string | null) | Page
+        url?: string | null
+        label?: string | null
+        id?: string | null
+      }[]
+    | null
   className?: string
   publicContext?: PublicContextProps
 }
 
 export function Breadcrumbs({ items, className, publicContext }: BreadcrumbProps) {
   if (!items?.length) return null
-  const localePrefix = publicContext?.locale !== localization.defaultLocale ? `/${publicContext?.locale}` : '';
+  const localePrefix =
+    publicContext?.locale !== localization.defaultLocale ? `/${publicContext?.locale}` : ''
   return (
     <div className="container my-12">
       <Breadcrumb>
-        <BreadcrumbList className={cn('text-sm text-muted-foreground', className)}>
+        <BreadcrumbList className={cn('text-muted-foreground text-sm', className)}>
           <BreadcrumbItem>
             <BreadcrumbLink
               className="hover:text-foreground transition-colors duration-200"

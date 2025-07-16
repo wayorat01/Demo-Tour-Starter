@@ -1,7 +1,7 @@
-import { ChevronRight, SquareDashedMousePointer } from 'lucide-react';
+import { ChevronRight, SquareDashedMousePointer } from 'lucide-react'
 
-import { Card } from '@/components/ui/card';
-import { Separator } from '@/components/ui/separator';
+import { Card } from '@/components/ui/card'
+import { Separator } from '@/components/ui/separator'
 
 const utilities = [
   {
@@ -34,14 +34,14 @@ const utilities = [
     description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit.',
     image: '/images/block/placeholder-6.svg',
   },
-];
+]
 
 const Feature20 = () => {
   return (
     <section className="py-32">
       <div className="container max-w-7xl">
         <div className="flex items-center justify-between text-sm">
-          <div className="flex items-center gap-1  text-muted-foreground">
+          <div className="text-muted-foreground flex items-center gap-1">
             <SquareDashedMousePointer className="size-5" />
             <p>Utilities</p>
           </div>
@@ -50,15 +50,12 @@ const Feature20 = () => {
             <ChevronRight className="ml-2 inline-block size-4" />
           </a>
         </div>
-        <Separator className="mb-8 mt-3" />
+        <Separator className="mt-3 mb-8" />
         <div className="flex flex-col justify-between gap-6 md:flex-row">
-          <h2 className="text-3xl font-medium md:w-1/2">
-            What you can do with our utilities?
-          </h2>
+          <h2 className="text-3xl font-medium md:w-1/2">What you can do with our utilities?</h2>
           <p className="md:w-1/2">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae
-            praesent, ad ullam quis cupiditate atque maxime alias eaque
-            repellendus perferendis, nemo repudiandae.
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae praesent, ad ullam
+            quis cupiditate atque maxime alias eaque repellendus perferendis, nemo repudiandae.
           </p>
         </div>
         <div className="mt-11 grid w-full grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
@@ -78,7 +75,7 @@ const Feature20 = () => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Feature20;
+export default Feature20

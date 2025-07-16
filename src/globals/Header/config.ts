@@ -21,7 +21,7 @@ export const Header: GlobalConfig = {
           slug: 'home',
           breadcrumbs: undefined,
           collection: 'pages',
-          locale: "en"
+          locale: 'en',
         })
 
         return `${NEXT_PUBLIC_SERVER_URL}${path}`
@@ -32,7 +32,7 @@ export const Header: GlobalConfig = {
         slug: 'home',
         breadcrumbs: undefined,
         collection: 'pages',
-        locale: "en"
+        locale: 'en',
       })
 
       return `${NEXT_PUBLIC_SERVER_URL}${path}`
@@ -45,25 +45,25 @@ export const Header: GlobalConfig = {
       type: 'select',
       options: [
         {
-          label: "1 (left aligned)",
-          value: "1"
+          label: '1 (left aligned)',
+          value: '1',
         },
 
         // '3' is not implemented yet because of the complex mobile menu
-        // { 
+        // {
         //   label: "3 (centered)",
         //   value: "3"
         // },
 
         {
-          label: "4 (multi block submenus)",
-          value: "4"
+          label: '4 (multi block submenus)',
+          value: '4',
         },
-        
+
         {
-          label: "5 (simple)",
-          value: "5"
-        }
+          label: '5 (simple)',
+          value: '5',
+        },
       ],
       defaultValue: '1',
       required: true,

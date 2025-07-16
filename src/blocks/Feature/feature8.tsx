@@ -1,9 +1,9 @@
-import { ChevronRight } from 'lucide-react';
+import { ChevronRight } from 'lucide-react'
 
-import { Badge } from '@/components/ui/badge';
-import { buttonVariants } from '@/components/ui/button';
-import { Card } from '@/components/ui/card';
-import { cn } from '@/utilities/cn';
+import { Badge } from '@/components/ui/badge'
+import { buttonVariants } from '@/components/ui/button'
+import { Card } from '@/components/ui/card'
+import { cn } from '@/utilities/cn'
 
 const Feature8 = () => {
   return (
@@ -29,8 +29,7 @@ const Feature8 = () => {
             </a>
             <div className="mt-6 flex gap-4">
               <p className="text-lg font-light lg:text-2xl">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dicta,
-                deserunt.
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dicta, deserunt.
               </p>
               <a
                 href="#"
@@ -67,8 +66,7 @@ const Feature8 = () => {
             </a>
             <div className="mt-6 flex gap-4">
               <p className="text-lg font-light lg:text-2xl">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dicta,
-                deserunt.
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dicta, deserunt.
               </p>
               <a
                 href="#"
@@ -95,7 +93,7 @@ const Feature8 = () => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Feature8;
+export default Feature8

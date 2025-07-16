@@ -11,7 +11,9 @@ import { PublicContextProps } from '@/utilities/publicContextProps'
 type BlogDesignVersionValue = (typeof allBlogDesignVersions)[number]['value']
 
 // Enforce required blog but allow additional ones
-type BlogContent<T extends string = string> = Required<Record<BlogDesignVersionValue, React.FC<any>>> &
+type BlogContent<T extends string = string> = Required<
+  Record<BlogDesignVersionValue, React.FC<any>>
+> &
   Record<T, React.FC<any>>
 
 // Blog block props interface
@@ -37,40 +39,40 @@ const blog: BlogContent = {
  * Blog Overview / List components
  * Renders different blog designs based on the designVersion
  * Supports configurable collection source, sort options, and filtering
- * @returns 
+ * @returns
  */
 export const BlogBlock: React.FC<BlogBlockProps> = async (props) => {
-  const { 
-    designVersion, 
+  const {
+    designVersion,
     populateBy = 'collection',
     selectedPosts,
     postCollection = 'posts',
-    limit = 3, 
+    limit = 3,
     sortField = 'publishedAt',
     sortOrder = 'desc',
     categories,
   } = props || {}
-  
+
   // Initialize posts array
   let posts: Post[] = []
-  
+
   // Fetch posts based on populateBy approach
   if (populateBy === 'collection') {
     // Fetch posts from collection with filters
     const payload = await getPayload({ config: configPromise })
-    
+
     // Flatten categories for query
     const flattenedCategories = categories?.map((category) => {
       if (typeof category === 'object') return category.id
       return category
     })
-    
+
     // Fetch posts from the API
     try {
       // Prepare sort parameter for Payload API
       // Payload expects a string in the format 'field' or '-field' for descending
-      const sortString = sortOrder === 'desc' ? `-${sortField}` : sortField;
-      
+      const sortString = sortOrder === 'desc' ? `-${sortField}` : sortField
+
       const fetchedPosts = await payload.find({
         collection: postCollection as 'posts', // Type assertion to handle collection slug
         depth: 1,
@@ -86,7 +88,7 @@ export const BlogBlock: React.FC<BlogBlockProps> = async (props) => {
             }
           : {}),
       })
-      
+
       // Type assertion to ensure we're working with Post objects
       posts = fetchedPosts.docs as Post[]
     } catch (error) {
@@ -96,10 +98,10 @@ export const BlogBlock: React.FC<BlogBlockProps> = async (props) => {
   } else if (populateBy === 'selection' && selectedPosts?.length) {
     // Use manually selected posts
     posts = selectedPosts
-      .map(post => typeof post === 'object' ? post : null)
+      .map((post) => (typeof post === 'object' ? post : null))
       .filter(Boolean) as Post[]
   }
-  
+
   if (!designVersion) return null
 
   const BlogContentToRender = blog[designVersion]

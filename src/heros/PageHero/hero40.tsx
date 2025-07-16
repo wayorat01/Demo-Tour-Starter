@@ -1,6 +1,6 @@
-import { Cloud } from 'lucide-react';
+import { Cloud } from 'lucide-react'
 
-import { Button } from '@/components/ui/button';
+import { Button } from '@/components/ui/button'
 
 const integrations = [
   [
@@ -91,12 +91,12 @@ const integrations = [
       icon: Cloud,
     },
   ],
-];
+]
 
 const Hero40 = () => {
   return (
     <section className="relative overflow-hidden py-32">
-      <div className="absolute inset-0 overflow-hidden bg-muted">
+      <div className="bg-muted absolute inset-0 overflow-hidden">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 1400 656"
@@ -105,23 +105,10 @@ const Hero40 = () => {
           <defs>
             <filter id="blur1" x="-20%" y="-20%" width="140%" height="140%">
               <feFlood flood-opacity="0" result="BackgroundImageFix" />
-              <feBlend
-                mode="normal"
-                in="SourceGraphic"
-                in2="BackgroundImageFix"
-                result="shape"
-              />
-              <feGaussianBlur
-                stdDeviation="180"
-                result="effect1_foregroundBlur"
-              />
+              <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+              <feGaussianBlur stdDeviation="180" result="effect1_foregroundBlur" />
             </filter>
-            <pattern
-              id="innerGrid"
-              width="40"
-              height="40"
-              patternUnits="userSpaceOnUse"
-            >
+            <pattern id="innerGrid" width="40" height="40" patternUnits="userSpaceOnUse">
               <path
                 d="M 40 0 L 0 0 0 40"
                 fill="none"
@@ -130,12 +117,7 @@ const Hero40 = () => {
                 strokeOpacity={0.6}
               />
             </pattern>
-            <pattern
-              id="grid"
-              width="160"
-              height="160"
-              patternUnits="userSpaceOnUse"
-            >
+            <pattern id="grid" width="160" height="160" patternUnits="userSpaceOnUse">
               <rect width="160" height="160" fill="url(#innerGrid)" />
               <path
                 d="M 70 80 H 90 M 80 70 V 90"
@@ -171,16 +153,15 @@ const Hero40 = () => {
           <rect width="1400" height="900" fill="url(#grid)" />
         </svg>
       </div>
-      <div className="container relative">
+      <div className="relative container">
         <div className="grid items-center gap-8 lg:grid-cols-2">
           <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
-            <h1 className="my-6 text-pretty text-4xl font-bold lg:text-6xl">
+            <h1 className="my-6 text-4xl font-bold text-pretty lg:text-6xl">
               Welcome to Our Website
             </h1>
-            <p className="mb-8 max-w-xl text-muted-foreground lg:text-xl">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Elig
-              doloremque mollitia fugiat omnis! Porro facilis quo animi
-              consequatur. Explicabo.
+            <p className="text-muted-foreground mb-8 max-w-xl lg:text-xl">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Elig doloremque mollitia
+              fugiat omnis! Porro facilis quo animi consequatur. Explicabo.
             </p>
             <div className="flex w-full flex-col justify-center gap-2 sm:flex-row lg:justify-start">
               <Button variant="outline" className="w-full sm:w-auto">
@@ -191,25 +172,20 @@ const Hero40 = () => {
           </div>
           <div className="-mb-48 flex justify-start gap-4 pt-4">
             <div className="absolute">
-              <div className="flex scale-75 flex-col gap-12 pl-32 pt-8 sm:scale-100">
+              <div className="flex scale-75 flex-col gap-12 pt-8 pl-32 sm:scale-100">
                 {integrations.map((line, i) => (
-                  <div
-                    key={i}
-                    className="flex gap-x-8 odd:pl-[calc(--spacing(32)+16px)]"
-                  >
+                  <div key={i} className="flex gap-x-8 odd:pl-[calc(--spacing(32)+16px)]">
                     {line.map((integration) => (
                       <div
                         key={integration.title}
-                        className="flex w-64 gap-x-3 rounded-xl border border-background bg-background p-4 shadow-sm"
+                        className="border-background bg-background flex w-64 gap-x-3 rounded-xl border p-4 shadow-sm"
                       >
-                        <div className="flex size-7 shrink-0 items-center justify-center rounded bg-accent">
+                        <div className="bg-accent flex size-7 shrink-0 items-center justify-center rounded">
                           <integration.icon className="size-4" />
                         </div>
                         <div>
-                          <div className="mb-0.5 text-xs font-medium">
-                            {integration.title}
-                          </div>
-                          <div className="text-xs font-normal text-muted-foreground">
+                          <div className="mb-0.5 text-xs font-medium">{integration.title}</div>
+                          <div className="text-muted-foreground text-xs font-normal">
                             {integration.description}
                           </div>
                         </div>
@@ -219,12 +195,12 @@ const Hero40 = () => {
                 ))}
               </div>
             </div>
-            <div className="relative flex aspect-3/6 w-[240px] justify-center rounded-lg border border-border bg-background sm:w-[300px]"></div>
+            <div className="border-border bg-background relative flex aspect-3/6 w-[240px] justify-center rounded-lg border sm:w-[300px]"></div>
           </div>
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Hero40;
+export default Hero40

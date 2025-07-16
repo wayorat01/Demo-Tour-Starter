@@ -115,7 +115,7 @@ jobs:
           name: Release v${{ env.version }}
           body: |
             🚀 **New Release v${{ env.version }}**
-            
+
             ${{ env.changelog }}
           files: release.zip
         env:

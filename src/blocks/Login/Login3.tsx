@@ -1,25 +1,24 @@
-"use client"
+'use client'
 
-import { Fragment, useState } from "react";
-import { FcGoogle } from "react-icons/fc";
-import { FaApple } from "react-icons/fa";
+import { Fragment, useState } from 'react'
+import { FcGoogle } from 'react-icons/fc'
+import { FaApple } from 'react-icons/fa'
 
-import { Button } from "@/components/ui/button";
-import { Checkbox } from "@/components/ui/checkbox";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Alert, AlertDescription } from "@/components/ui/alert";
-import { PublicContextProps } from "@/utilities/publicContextProps";
-import { LoginBlock } from "@/payload-types";
-import { SignupBlock } from "@/blocks/Signup/Component";
-import { login, LoginFormData } from "@/actions/auth/login";
-
+import { Button } from '@/components/ui/button'
+import { Checkbox } from '@/components/ui/checkbox'
+import { Input } from '@/components/ui/input'
+import { Label } from '@/components/ui/label'
+import { Alert, AlertDescription } from '@/components/ui/alert'
+import { PublicContextProps } from '@/utilities/publicContextProps'
+import { LoginBlock } from '@/payload-types'
+import { SignupBlock } from '@/blocks/Signup/Component'
+import { login, LoginFormData } from '@/actions/auth/login'
 
 const Login3: React.FC<LoginBlock & { publicContext: PublicContextProps }> = ({
-  heading = "Login",
-  subheading = "Welcome back",
-  loginText = "Log in",
-  googleText = "Log in with Google",
+  heading = 'Login',
+  subheading = 'Welcome back',
+  loginText = 'Log in',
+  googleText = 'Log in with Google',
   dontHaveAccountText = "Don't have an account?",
   signupEnabled = true,
   googleLoginEnabled = true,
@@ -27,55 +26,55 @@ const Login3: React.FC<LoginBlock & { publicContext: PublicContextProps }> = ({
   appleLoginEnabled = false,
   signupBlock,
 }) => {
-  const [showSignup, setShowSignup] = useState(false);
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [rememberMe, setRememberMe] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState<string | null>(null);
+  const [showSignup, setShowSignup] = useState(false)
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [rememberMe, setRememberMe] = useState(false)
+  const [isLoading, setIsLoading] = useState(false)
+  const [error, setError] = useState<string | null>(null)
 
   // Toggle between login and signup views
   const toggleSignup = () => {
-    setShowSignup(!showSignup);
-    setError(null);
-  };
+    setShowSignup(!showSignup)
+    setError(null)
+  }
 
   // Handle form submission
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsLoading(true);
-    setError(null);
+    e.preventDefault()
+    setIsLoading(true)
+    setError(null)
 
     try {
       const formData: LoginFormData = {
         email,
         password,
         rememberMe,
-      };
+      }
 
-      const result = await login(formData);
-      
+      const result = await login(formData)
+
       // Handle successful login
       // You might want to redirect the user or update UI state here
       // For now, we'll just log the result
-      console.log("Login successful", result);
-      
+      console.log('Login successful', result)
+
       // Optionally redirect after successful login
       // window.location.href = "/dashboard";
     } catch (err: any) {
-      setError(err.message || "Failed to login. Please try again.");
+      setError(err.message || 'Failed to login. Please try again.')
     } finally {
-      setIsLoading(false);
+      setIsLoading(false)
     }
-  };
+  }
 
   // If signup is enabled and showSignup is true, render the signup view
   if (signupEnabled && showSignup && signupBlock?.[0]) {
     return (
       <Fragment>
-        <SignupBlock {...signupBlock[0]} setShowSignup={setShowSignup}   />
+        <SignupBlock {...signupBlock[0]} setShowSignup={setShowSignup} />
       </Fragment>
-    );
+    )
   }
 
   return (
@@ -125,7 +124,7 @@ const Login3: React.FC<LoginBlock & { publicContext: PublicContextProps }> = ({
               <div>
                 <div className="grid gap-4">
                   <Button type="submit" className="mt-2 w-full" disabled={isLoading}>
-                    {isLoading ? "Logging in..." : loginText}
+                    {isLoading ? 'Logging in...' : loginText}
                   </Button>
 
                   {(googleLoginEnabled || facebookLoginEnabled || appleLoginEnabled) && (
@@ -135,14 +134,14 @@ const Login3: React.FC<LoginBlock & { publicContext: PublicContextProps }> = ({
                       <span className="bg-input h-px w-full"></span>
                     </div>
                   )}
-                  
+
                   {googleLoginEnabled && (
                     <Button variant="outline" className="w-full">
                       <FcGoogle className="mr-2 size-5" />
                       {googleText}
                     </Button>
                   )}
-                  
+
                   {facebookLoginEnabled && (
                     <Button variant="outline" className="w-full">
                       <img
@@ -153,7 +152,7 @@ const Login3: React.FC<LoginBlock & { publicContext: PublicContextProps }> = ({
                       Log in with Facebook
                     </Button>
                   )}
-                  
+
                   {appleLoginEnabled && (
                     <Button variant="outline" className="w-full">
                       <FaApple className="mr-2 size-5" />
@@ -178,18 +177,15 @@ const Login3: React.FC<LoginBlock & { publicContext: PublicContextProps }> = ({
                     Remember me
                   </label>
                 </div>
-                <a href="#" className="text-sm text-primary hover:underline">
+                <a href="#" className="text-primary text-sm hover:underline">
                   Forgot password
                 </a>
               </div>
             </form>
             {signupEnabled && (
-              <div className="mx-auto mt-8 flex justify-center gap-1 text-sm text-muted-foreground">
+              <div className="text-muted-foreground mx-auto mt-8 flex justify-center gap-1 text-sm">
                 <p>{dontHaveAccountText}</p>
-                <button
-                  onClick={toggleSignup}
-                  className="font-medium text-primary hover:underline"
-                >
+                <button onClick={toggleSignup} className="text-primary font-medium hover:underline">
                   Sign up
                 </button>
               </div>
@@ -198,7 +194,7 @@ const Login3: React.FC<LoginBlock & { publicContext: PublicContextProps }> = ({
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export { Login3};
+export { Login3 }

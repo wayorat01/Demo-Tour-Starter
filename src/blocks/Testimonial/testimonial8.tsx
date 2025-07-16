@@ -1,14 +1,14 @@
-'use client';
+'use client'
 
-import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
+import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry'
 
-import { Avatar, AvatarImage } from '@/components/ui/avatar';
-import { Badge } from '@/components/ui/badge';
-import { Card } from '@/components/ui/card';
-import { cn } from '@/utilities/cn';
-import { TestimonialBlock } from '@/payload-types';
-import RichText from '@/components/RichText';
-import { PublicContextProps } from '@/utilities/publicContextProps';
+import { Avatar, AvatarImage } from '@/components/ui/avatar'
+import { Badge } from '@/components/ui/badge'
+import { Card } from '@/components/ui/card'
+import { cn } from '@/utilities/cn'
+import { TestimonialBlock } from '@/payload-types'
+import RichText from '@/components/RichText'
+import { PublicContextProps } from '@/utilities/publicContextProps'
 
 const testimonials = [
   {
@@ -67,29 +67,36 @@ const testimonials = [
     content:
       'Lorem ipsum dolor sit, amet consectetur adipisicing elit. repellat consequatur odio, maxime corporis, ducimus dolorem possimus aspernatur blanditiis asperiores voluptatem Ipsam ipsa cumque deleniti.',
   },
-];
+]
 
-const Testimonial8: React.FC<TestimonialBlock & { publicContext: PublicContextProps }> = ({ headline, link, tagline, testimonial, publicContext }) => {
+const Testimonial8: React.FC<TestimonialBlock & { publicContext: PublicContextProps }> = ({
+  headline,
+  link,
+  tagline,
+  testimonial,
+  publicContext,
+}) => {
   return (
     <section className="py-32">
       <div className="container">
         <div className="flex flex-col items-center gap-6">
           <Badge variant={'outline'}>Testimonials</Badge>
-          {headline && <RichText publicContext={publicContext}
-            content={headline}
-            withWrapper={false}
-            overrideStyle={{
-              h2: 'mb-2 text-center text-3xl font-semibold lg:text-5xl',
-              h3: 'mb-2 text-center text-2xl font-semibold lg:text-4xl',
-              h4: 'mb-2 text-center text-xl font-semibold lg:text-3xl',
-              p: 'text-muted-foreground lg:text-lg'
-            }}
-          />}
+          {headline && (
+            <RichText
+              publicContext={publicContext}
+              content={headline}
+              withWrapper={false}
+              overrideStyle={{
+                h2: 'mb-2 text-center text-3xl font-semibold lg:text-5xl',
+                h3: 'mb-2 text-center text-2xl font-semibold lg:text-4xl',
+                h4: 'mb-2 text-center text-xl font-semibold lg:text-3xl',
+                p: 'text-muted-foreground lg:text-lg',
+              }}
+            />
+          )}
         </div>
-        <div className="relative mt-14 w-full after:absolute after:inset-x-0 after:-bottom-2 after:h-96 after:bg-linear-to-t after:from-background">
-          <ResponsiveMasonry
-            columnsCountBreakPoints={{ 350: 1, 768: 2, 1024: 3 }}
-          >
+        <div className="after:from-background relative mt-14 w-full after:absolute after:inset-x-0 after:-bottom-2 after:h-96 after:bg-linear-to-t">
+          <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 768: 2, 1024: 3 }}>
             <Masonry gutter="20px" columnsCount={3}>
               {testimonials.map((testimonial, idx) => {
                 return (
@@ -102,32 +109,27 @@ const Testimonial8: React.FC<TestimonialBlock & { publicContext: PublicContextPr
                     )}
                   >
                     <div className="flex gap-4 leading-5">
-                      <Avatar className="size-9 rounded-full ring-1 ring-input">
-                        <AvatarImage
-                          src={testimonial.avatar}
-                          alt={testimonial.name}
-                        />
+                      <Avatar className="ring-input size-9 rounded-full ring-1">
+                        <AvatarImage src={testimonial.avatar} alt={testimonial.name} />
                       </Avatar>
                       <div className="text-sm">
                         <p className="font-medium">{testimonial.name}</p>
-                        <p className="text-muted-foreground">
-                          {testimonial.role}
-                        </p>
+                        <p className="text-muted-foreground">{testimonial.role}</p>
                       </div>
                     </div>
 
-                    <div className="mt-8 leading-7 text-foreground/70">
+                    <div className="text-foreground/70 mt-8 leading-7">
                       <q>{testimonial.content}</q>
                     </div>
                   </Card>
-                );
+                )
               })}
             </Masonry>
           </ResponsiveMasonry>
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Testimonial8;
+export default Testimonial8

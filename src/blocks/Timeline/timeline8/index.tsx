@@ -27,14 +27,14 @@ const Timeline8: React.FC<TimelineBlock & { publicContext: PublicContextProps }>
   return (
     <section className="bg-background py-32">
       <div className="container">
-        <h1 className="mb-10 text-center text-3xl font-bold tracking-tighter text-foreground lg:text-6xl">
+        <h1 className="text-foreground mb-10 text-center text-3xl font-bold tracking-tighter lg:text-6xl">
           {heading}
         </h1>
         <div className="relative mx-auto max-w-4xl">
-          <Separator orientation="vertical" className="absolute top-4 left-2 bg-muted" />
+          <Separator orientation="vertical" className="bg-muted absolute top-4 left-2" />
           {sections?.map((entry, index: number) => (
             <div key={index} className="relative mb-10 pl-8">
-              <div className="absolute top-2 left-0 flex size-5 items-center justify-center rounded-full bg-foreground">
+              <div className="bg-foreground absolute top-2 left-0 flex size-5 items-center justify-center rounded-full">
                 <div className="size-3 rounded-full bg-white" />
               </div>
               <Badge variant="secondary" className="mb-4 rounded-xl px-3 py-2 text-sm">

@@ -30,8 +30,8 @@ const Banner5: React.FC<BannerBlockV2 & { publicContext: PublicContextProps }> =
     <section
       className={
         position === 'BOTTOM'
-          ? 'fixed bottom-0 left-0 right-0 mx-auto max-w-2xl mb-4 animate-fade-in z-100'
-          : 'absolute top-4 right-0 left-0 mx-auto max-w-2xl animate-fade-in z-100'
+          ? 'animate-fade-in fixed right-0 bottom-0 left-0 z-100 mx-auto mb-4 max-w-2xl'
+          : 'animate-fade-in absolute top-4 right-0 left-0 z-100 mx-auto max-w-2xl'
       }
     >
       <div className="mx-4">
@@ -49,7 +49,7 @@ const Banner5: React.FC<BannerBlockV2 & { publicContext: PublicContextProps }> =
               {icon && <Icon icon={icon} className="size-5 shrink-0" />}
               <div className="flex flex-col gap-1 md:flex-row md:items-center">
                 <p className="text-sm font-medium">{title}</p>
-                <p className="text-sm text-muted-foreground">{description}</p>
+                <p className="text-muted-foreground text-sm">{description}</p>
               </div>
             </div>
             <div className="flex items-center gap-2">
@@ -63,7 +63,7 @@ const Banner5: React.FC<BannerBlockV2 & { publicContext: PublicContextProps }> =
                       key={i}
                       {...link}
                       size={'sm'}
-                      appearance={"outline"}
+                      appearance={'outline'}
                     />
                   )
                 })}

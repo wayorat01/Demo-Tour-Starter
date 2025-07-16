@@ -9,7 +9,12 @@ import { PublicContextProps } from '@/utilities/publicContextProps'
  * https://www.shadcnblocks.com/block/feature103/
  * @returns
  */
-const Feature103: React.FC<FeatureBlock & { publicContext: PublicContextProps }> = ({ tagline, USPs, richText, publicContext }) => {
+const Feature103: React.FC<FeatureBlock & { publicContext: PublicContextProps }> = ({
+  tagline,
+  USPs,
+  richText,
+  publicContext,
+}) => {
   return (
     <section className="py-32">
       <div className="container">
@@ -20,7 +25,8 @@ const Feature103: React.FC<FeatureBlock & { publicContext: PublicContextProps }>
             </Badge>
           )}
           {richText && (
-            <RichText publicContext={publicContext}
+            <RichText
+              publicContext={publicContext}
               content={richText}
               withWrapper={false}
               overrideStyle={{ h2: 'text-2xl md:text-4xl' }}
@@ -32,10 +38,11 @@ const Feature103: React.FC<FeatureBlock & { publicContext: PublicContextProps }>
             <a
               key={index}
               href={usp.link?.url || '#'}
-              className="flex flex-col rounded-xl border p-6 hover:border-primary relative"
+              className="hover:border-primary relative flex flex-col rounded-xl border p-6"
             >
               {usp.richText && (
-                <RichText publicContext={publicContext}
+                <RichText
+                  publicContext={publicContext}
                   content={usp.richText}
                   withWrapper={false}
                   overrideStyle={{
@@ -44,7 +51,7 @@ const Feature103: React.FC<FeatureBlock & { publicContext: PublicContextProps }>
                   }}
                 />
               )}
-              <span className="absolute right-6 top-6 flex size-8 shrink-0 items-center justify-center rounded-full border">
+              <span className="absolute top-6 right-6 flex size-8 shrink-0 items-center justify-center rounded-full border">
                 <ArrowRight className="h-auto w-4" />
               </span>
             </a>

@@ -1,7 +1,7 @@
-import { Star } from 'lucide-react';
-import { BiLogoPlayStore } from 'react-icons/bi';
-import { FaApple } from 'react-icons/fa';
-import { SiTrustpilot } from 'react-icons/si';
+import { Star } from 'lucide-react'
+import { BiLogoPlayStore } from 'react-icons/bi'
+import { FaApple } from 'react-icons/fa'
+import { SiTrustpilot } from 'react-icons/si'
 
 const Stat4 = () => {
   return (
@@ -19,9 +19,7 @@ const Stat4 = () => {
               </div>
               <div className="flex items-center gap-2">
                 <FaApple className="lg:mr-1" />
-                <span className="whitespace-nowrap text-xs lg:text-sm">
-                  Apple Store
-                </span>
+                <span className="text-xs whitespace-nowrap lg:text-sm">Apple Store</span>
               </div>
             </div>
             <div className="flex flex-col items-center gap-1">
@@ -31,9 +29,7 @@ const Stat4 = () => {
               </div>
               <div className="flex items-center gap-2">
                 <BiLogoPlayStore className="lg:mr-1" />
-                <span className="whitespace-nowrap text-xs lg:text-sm">
-                  Play Store
-                </span>
+                <span className="text-xs whitespace-nowrap lg:text-sm">Play Store</span>
               </div>
             </div>
             <div className="flex flex-col items-center gap-1">
@@ -43,16 +39,14 @@ const Stat4 = () => {
               </div>
               <div className="flex items-center gap-2">
                 <SiTrustpilot className="lg:mr-1" />
-                <span className="whitespace-nowrap text-xs lg:text-sm">
-                  Trustpilot
-                </span>
+                <span className="text-xs whitespace-nowrap lg:text-sm">Trustpilot</span>
               </div>
             </div>
           </div>
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Stat4;
+export default Stat4

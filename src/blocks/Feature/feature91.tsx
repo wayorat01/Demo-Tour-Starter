@@ -23,7 +23,7 @@ const Feature91: React.FC<FeatureBlock & { publicContext: PublicContextProps }> 
     <section className="py-32">
       <div className="container">
         <div className="mx-auto grid max-w-screen-xl gap-y-6 lg:grid-cols-2">
-          <div className="rounded-md border p-6 md:p-10 lg:rounded-l-md lg:rounded-r-none lg:border-y lg:border-l lg:border-r-0">
+          <div className="rounded-md border p-6 md:p-10 lg:rounded-l-md lg:rounded-r-none lg:border-y lg:border-r-0 lg:border-l">
             {usp1.richText && (
               <RichText
                 publicContext={publicContext}
@@ -50,7 +50,7 @@ const Feature91: React.FC<FeatureBlock & { publicContext: PublicContextProps }> 
               {usp1.USPFeatures?.map((feature) => (
                 <div
                   key={feature.id}
-                  className={`flex items-center gap-7 py-6 ${feature.id === usp1.USPFeatures?.[1]?.id ? 'border-y border-dashed border-primary' : ''}`}
+                  className={`flex items-center gap-7 py-6 ${feature.id === usp1.USPFeatures?.[1]?.id ? 'border-primary border-y border-dashed' : ''}`}
                 >
                   {feature.icon && <Icon className="h-auto w-8 shrink-0" icon={feature.icon} />}
                   {feature.richText && (
@@ -60,7 +60,7 @@ const Feature91: React.FC<FeatureBlock & { publicContext: PublicContextProps }> 
               ))}
             </div>
           </div>
-          <div className="dark rounded-md border bg-background p-6 text-primary md:p-10 lg:rounded-l-none lg:rounded-r-md">
+          <div className="dark bg-background text-primary rounded-md border p-6 md:p-10 lg:rounded-l-none lg:rounded-r-md">
             {usp2.richText && (
               <RichText
                 publicContext={publicContext}
@@ -87,7 +87,7 @@ const Feature91: React.FC<FeatureBlock & { publicContext: PublicContextProps }> 
               {usp2.USPFeatures?.map((feature) => (
                 <div
                   key={feature.id}
-                  className={`flex items-center gap-7 py-6 ${feature.id === usp2.USPFeatures?.[1]?.id ? 'border-y border-dashed border-primary' : ''}`}
+                  className={`flex items-center gap-7 py-6 ${feature.id === usp2.USPFeatures?.[1]?.id ? 'border-primary border-y border-dashed' : ''}`}
                 >
                   {feature.icon && <Icon className="h-auto w-8 shrink-0" icon={feature.icon} />}
                   {feature.richText && (

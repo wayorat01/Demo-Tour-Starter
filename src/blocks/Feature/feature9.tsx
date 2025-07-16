@@ -1,13 +1,8 @@
-import { ChevronRight } from 'lucide-react';
+import { ChevronRight } from 'lucide-react'
 
-import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
-import {
-  Card,
-  CardContent,
-  CardFooter,
-  CardHeader,
-} from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge'
+import { Button } from '@/components/ui/button'
+import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card'
 
 const Feature9 = () => {
   return (
@@ -27,8 +22,8 @@ const Feature9 = () => {
                 <Badge variant={'outline'}>Badge</Badge>
               </CardHeader>
               <CardContent className="text-lg lg:text-2xl">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. In,
-                nostrum ullam. Voluptatibus.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. In, nostrum ullam.
+                Voluptatibus.
               </CardContent>
               <CardFooter>
                 <Button variant={'outline'}>
@@ -49,8 +44,8 @@ const Feature9 = () => {
                 <Badge variant={'outline'}>Badge</Badge>
               </CardHeader>
               <CardContent className="text-lg lg:text-2xl">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. In,
-                nostrum ullam. Voluptatibus.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. In, nostrum ullam.
+                Voluptatibus.
               </CardContent>
               <CardFooter>
                 <Button variant={'outline'}>
@@ -63,7 +58,7 @@ const Feature9 = () => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Feature9;
+export default Feature9

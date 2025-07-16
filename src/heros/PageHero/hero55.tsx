@@ -1,7 +1,7 @@
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react'
 
-import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge'
+import { Button } from '@/components/ui/button'
 
 const Hero55 = () => {
   return (
@@ -10,7 +10,7 @@ const Hero55 = () => {
         <div className="flex flex-col items-center gap-10 text-center">
           <a
             href="#"
-            className="flex items-center gap-2 rounded-full px-2 py-1 text-sm transition-colors hover:bg-muted"
+            className="hover:bg-muted flex items-center gap-2 rounded-full px-2 py-1 text-sm transition-colors"
           >
             <Badge>7 days ago</Badge>
             Slack integration is here!
@@ -27,9 +27,9 @@ const Hero55 = () => {
           </div>
         </div>
       </div>
-      <div className="absolute inset-0 -z-10 bg-[url('/images/block/shadow-overlay.png')] bg-[50%_0] bg-no-repeat"></div>
+      <div className="absolute inset-0 -z-10 bg-[50%_0] bg-[url('/images/block/shadow-overlay.png')] bg-no-repeat"></div>
     </section>
-  );
-};
+  )
+}
 
-export default Hero55;
+export default Hero55

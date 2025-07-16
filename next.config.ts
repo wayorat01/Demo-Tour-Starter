@@ -34,7 +34,6 @@ const nextConfig: NextConfig = {
   },
   reactStrictMode: true,
   poweredByHeader: false,
-
 }
 
 const withBundleAnalyzer = bundleAnalyzer({

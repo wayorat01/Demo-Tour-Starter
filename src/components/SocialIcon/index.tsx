@@ -39,12 +39,12 @@ export interface SocialIconProps {
 
 /**
  * Use this component to display social media icons coming from react-icons
- * @param param0 
- * @returns 
+ * @param param0
+ * @returns
  */
 export const SocialIcon: React.FC<SocialIconProps> = ({ type, className = 'size-6' }) => {
   const Icon = iconMap[type]
   if (!Icon) return null
-  
+
   return <Icon className={className} />
 }

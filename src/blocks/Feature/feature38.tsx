@@ -1,7 +1,7 @@
-import { Globe, Hash, NotebookText } from 'lucide-react';
+import { Globe, Hash, NotebookText } from 'lucide-react'
 
-import { Button } from '@/components/ui/button';
-import { Separator } from '@/components/ui/separator';
+import { Button } from '@/components/ui/button'
+import { Separator } from '@/components/ui/separator'
 
 const Feature38 = () => {
   return (
@@ -9,17 +9,16 @@ const Feature38 = () => {
       <div className="container">
         <div className="flex flex-col-reverse items-center justify-between gap-10 lg:flex-row">
           <div className="lg:max-w-md">
-            <span className="flex size-14 items-center justify-center rounded-full bg-accent">
-              <NotebookText className="size-6 text-primary" />
+            <span className="bg-accent flex size-14 items-center justify-center rounded-full">
+              <NotebookText className="text-primary size-6" />
             </span>
-            <h1 className="mb-2 mt-8 text-pretty text-2xl font-bold lg:text-4xl">
+            <h1 className="mt-8 mb-2 text-2xl font-bold text-pretty lg:text-4xl">
               Build your perfect website in a minute
             </h1>
-            <p className="mb-5 text-muted-foreground">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat
-              quam autem quo nam, eligendi commodi, atque at animi consectetur
-              deserunt quis aperiam hic aliquam officia. Nam modi quo ipsa
-              vitae!
+            <p className="text-muted-foreground mb-5">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat quam autem quo nam,
+              eligendi commodi, atque at animi consectetur deserunt quis aperiam hic aliquam
+              officia. Nam modi quo ipsa vitae!
             </p>
             <Button>Start for free</Button>
             <Separator className="my-7" />
@@ -46,7 +45,7 @@ const Feature38 = () => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Feature38;
+export default Feature38

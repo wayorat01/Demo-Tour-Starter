@@ -110,7 +110,10 @@ import { FeatureDesignVersion, allFeatureDesignVersions } from './config'
 type FeatureDesignVersionValue = FeatureDesignVersion['value']
 
 // Enforce required features but allow additional ones
-type Feature<T extends string = string> = Required<Record<FeatureDesignVersionValue, React.FC<any>>> & Record<T, React.FC<any>>;
+type Feature<T extends string = string> = Required<
+  Record<FeatureDesignVersionValue, React.FC<any>>
+> &
+  Record<T, React.FC<any>>
 
 const features: Feature = {
   FEATURE1: Feature1,

@@ -1,9 +1,9 @@
-'use client';
+'use client'
 
-import { useState } from 'react';
+import { useState } from 'react'
 
-import { Button } from '@/components/ui/button';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { Button } from '@/components/ui/button'
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 
 const features = [
   {
@@ -136,15 +136,15 @@ const features = [
       },
     ],
   },
-];
+]
 
 const Feature54 = () => {
-  const [selection, setSelection] = useState(features[0].id);
+  const [selection, setSelection] = useState(features[0].id)
   return (
     <section className="py-32">
       <div className="flex flex-col items-center gap-16 lg:px-16">
         <div className="container flex flex-col items-center">
-          <h3 className="mb-3 text-pretty text-center text-3xl font-semibold md:mb-4 md:text-4xl lg:mb-6 lg:max-w-3xl lg:text-5xl">
+          <h3 className="mb-3 text-center text-3xl font-semibold text-pretty md:mb-4 md:text-4xl lg:mb-6 lg:max-w-3xl lg:text-5xl">
             Feature group
           </h3>
         </div>
@@ -168,7 +168,7 @@ const Feature54 = () => {
               {features.map((feature) => (
                 <TabsContent key={feature.id} value={feature.id}>
                   <div className="">
-                    <div className="aspect-[1.67] w-full rounded-lg border border-border bg-accent">
+                    <div className="border-border bg-accent aspect-[1.67] w-full rounded-lg border">
                       <img
                         src={feature.image}
                         alt={feature.title}
@@ -177,14 +177,9 @@ const Feature54 = () => {
                     </div>
                     <div className="hidden grid-cols-3 gap-6 py-6 md:grid">
                       {feature.subfeatures.map((subfeature) => (
-                        <div
-                          key={subfeature.id}
-                          className="flex flex-col text-left"
-                        >
-                          <p className="mb-2 text-xs font-semibold">
-                            {subfeature.title}
-                          </p>
-                          <p className="mb-8 text-xs text-muted-foreground">
+                        <div key={subfeature.id} className="flex flex-col text-left">
+                          <p className="mb-2 text-xs font-semibold">{subfeature.title}</p>
+                          <p className="text-muted-foreground mb-8 text-xs">
                             {subfeature.description}
                           </p>
                         </div>
@@ -201,7 +196,7 @@ const Feature54 = () => {
                   variant="ghost"
                   size="sm"
                   onClick={() => {
-                    setSelection(feature.id);
+                    setSelection(feature.id)
                   }}
                 >
                   <div
@@ -214,7 +209,7 @@ const Feature54 = () => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Feature54;
+export default Feature54

@@ -12,13 +12,19 @@ import { PublicContextProps } from '@/utilities/publicContextProps'
  * @param param0
  * @returns
  */
-const Feature50: React.FC<FeatureBlock & { publicContext: PublicContextProps }> = ({ richText, links, USPs, publicContext }) => {
+const Feature50: React.FC<FeatureBlock & { publicContext: PublicContextProps }> = ({
+  richText,
+  links,
+  USPs,
+  publicContext,
+}) => {
   return (
     <section className="py-32">
       <div className="container">
         <div className="mx-auto flex max-w-screen-md flex-col items-center gap-6">
           {richText && (
-            <RichText publicContext={publicContext}
+            <RichText
+              publicContext={publicContext}
               content={richText}
               withWrapper={false}
               overrideStyle={{
@@ -30,7 +36,9 @@ const Feature50: React.FC<FeatureBlock & { publicContext: PublicContextProps }> 
           )}
           {Array.isArray(links) &&
             links.length > 0 &&
-            links.map(({ link }, i) => <CMSLink publicContext={publicContext} key={i} {...link} size={'lg'} />)}
+            links.map(({ link }, i) => (
+              <CMSLink publicContext={publicContext} key={i} {...link} size={'lg'} />
+            ))}
         </div>
         <div className="mx-auto mt-20 flex max-w-screen-lg grid-cols-1 flex-col gap-6 lg:grid lg:grid-cols-7">
           {USPs?.map(({ richText, link, image, tagline }, index) => {
@@ -42,15 +50,16 @@ const Feature50: React.FC<FeatureBlock & { publicContext: PublicContextProps }> 
                 <a
                   key={index}
                   href={link?.url || '#'}
-                  className="col-span-7 grid overflow-hidden rounded-lg bg-muted sm:grid-cols-2"
+                  className="bg-muted col-span-7 grid overflow-hidden rounded-lg sm:grid-cols-2"
                 >
                   <div className="flex flex-col justify-between p-8 lg:p-12">
                     <div>
                       {tagline && (
-                        <div className="mb-4 text-xs text-muted-foreground">{tagline}</div>
+                        <div className="text-muted-foreground mb-4 text-xs">{tagline}</div>
                       )}
                       {richText && (
-                        <RichText publicContext={publicContext}
+                        <RichText
+                          publicContext={publicContext}
                           content={richText}
                           withWrapper={false}
                           overrideStyle={{
@@ -65,7 +74,7 @@ const Feature50: React.FC<FeatureBlock & { publicContext: PublicContextProps }> 
                         <CMSLink
                           publicContext={publicContext}
                           {...link}
-                          iconClassName='ml-1 h-4'
+                          iconClassName="ml-1 h-4"
                           className="mt-6 sm:mt-8"
                           appearance={'outline'}
                           withAnchor={false}
@@ -74,7 +83,7 @@ const Feature50: React.FC<FeatureBlock & { publicContext: PublicContextProps }> 
                     )}
                   </div>
                   {image && (
-                    <div className="order-first relative h-72 sm:order-last sm:h-full">
+                    <div className="relative order-first h-72 sm:order-last sm:h-full">
                       <Media
                         resource={image}
                         imgClassName="absolute inset-0 h-full w-full object-cover"
@@ -88,7 +97,7 @@ const Feature50: React.FC<FeatureBlock & { publicContext: PublicContextProps }> 
                 <a
                   key={index}
                   href={link?.url || '#'}
-                  className="group relative rounded-lg bg-muted lg:col-span-3"
+                  className="group bg-muted relative rounded-lg lg:col-span-3"
                 >
                   {image && (
                     <div className="relative h-72">
@@ -99,9 +108,10 @@ const Feature50: React.FC<FeatureBlock & { publicContext: PublicContextProps }> 
                     </div>
                   )}
                   <div className="relative z-10 p-8 lg:p-12">
-                    {tagline && <div className="mb-4 text-xs text-muted-foreground">{tagline}</div>}
+                    {tagline && <div className="text-muted-foreground mb-4 text-xs">{tagline}</div>}
                     {richText && (
-                      <RichText publicContext={publicContext}
+                      <RichText
+                        publicContext={publicContext}
                         content={richText}
                         withWrapper={false}
                         overrideStyle={{
@@ -113,7 +123,7 @@ const Feature50: React.FC<FeatureBlock & { publicContext: PublicContextProps }> 
                   <Button
                     variant="outline"
                     size="sm"
-                    className="absolute right-10 top-7 z-20 transition-all duration-200 lg:translate-y-2 lg:opacity-0 group-hover:opacity-100 lg:group-hover:translate-y-0"
+                    className="absolute top-7 right-10 z-20 transition-all duration-200 group-hover:opacity-100 lg:translate-y-2 lg:opacity-0 lg:group-hover:translate-y-0"
                   >
                     <ChevronRight className="h-4" />
                   </Button>
@@ -124,7 +134,7 @@ const Feature50: React.FC<FeatureBlock & { publicContext: PublicContextProps }> 
                 <a
                   key={index}
                   href={link?.url || '#'}
-                  className="grid rounded-lg bg-muted sm:grid-cols-2 lg:col-span-4"
+                  className="bg-muted grid rounded-lg sm:grid-cols-2 lg:col-span-4"
                 >
                   {image && (
                     <div className="relative h-96 sm:h-full">
@@ -137,10 +147,11 @@ const Feature50: React.FC<FeatureBlock & { publicContext: PublicContextProps }> 
                   <div className="flex flex-col justify-between p-8 lg:p-12">
                     <div>
                       {tagline && (
-                        <div className="mb-4 text-xs text-muted-foreground">{tagline}</div>
+                        <div className="text-muted-foreground mb-4 text-xs">{tagline}</div>
                       )}
                       {richText && (
-                        <RichText publicContext={publicContext}
+                        <RichText
+                          publicContext={publicContext}
                           content={richText}
                           withWrapper={false}
                           overrideStyle={{
@@ -153,7 +164,7 @@ const Feature50: React.FC<FeatureBlock & { publicContext: PublicContextProps }> 
                       <CMSLink
                         publicContext={publicContext}
                         {...link}
-                        iconClassName='ml-1 h-4'
+                        iconClassName="ml-1 h-4"
                         className="mt-6 sm:mt-8"
                         appearance={'outline'}
                         withAnchor={false}

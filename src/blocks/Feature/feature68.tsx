@@ -1,4 +1,4 @@
-import { Check } from 'lucide-react';
+import { Check } from 'lucide-react'
 
 const Feature68 = () => {
   return (
@@ -20,51 +20,50 @@ const Feature68 = () => {
                 Feature name
               </h2>
               <p className="text-muted-foreground lg:text-lg">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Elig
-                doloremque mollitia fugiat omnis! Porro facilis quo animi
-                consequatur. Explicabo.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Elig doloremque mollitia
+                fugiat omnis! Porro facilis quo animi consequatur. Explicabo.
               </p>
             </div>
           </div>
         </div>
-        <div className="mt-8 flex flex-col items-center gap-y-4 rounded-xl border border-border px-5 py-4 md:gap-y-8 md:px-12 md:py-10 lg:mt-12 2xl:mt-16">
+        <div className="border-border mt-8 flex flex-col items-center gap-y-4 rounded-xl border px-5 py-4 md:gap-y-8 md:px-12 md:py-10 lg:mt-12 2xl:mt-16">
           <p className="mb-2 text-lg font-medium sm:text-center lg:text-xl">
             Lorem ipsum dolor sit amet consectetur adipisicing elit
           </p>
           <ul className="grid w-full grid-cols-1 gap-x-6 gap-y-4 text-base sm:grid-cols-2 lg:max-w-5xl lg:grid-cols-3">
             <li className="flex items-center gap-2 lg:justify-center">
-              <div className="flex size-5 items-center justify-center rounded-full bg-primary">
-                <Check className="size-2.5 text-primary-foreground" />
+              <div className="bg-primary flex size-5 items-center justify-center rounded-full">
+                <Check className="text-primary-foreground size-2.5" />
               </div>
               Feature 1
             </li>
             <li className="flex items-center gap-2 lg:justify-center">
-              <div className="flex size-5 items-center justify-center rounded-full bg-primary">
-                <Check className="size-2.5 text-primary-foreground" />
+              <div className="bg-primary flex size-5 items-center justify-center rounded-full">
+                <Check className="text-primary-foreground size-2.5" />
               </div>
               Feature 1
             </li>
             <li className="flex items-center gap-2 lg:justify-center">
-              <div className="flex size-5 items-center justify-center rounded-full bg-primary">
-                <Check className="size-2.5 text-primary-foreground" />
+              <div className="bg-primary flex size-5 items-center justify-center rounded-full">
+                <Check className="text-primary-foreground size-2.5" />
               </div>
               Feature 1
             </li>
             <li className="flex items-center gap-2 lg:justify-center">
-              <div className="flex size-5 items-center justify-center rounded-full bg-primary">
-                <Check className="size-2.5 text-primary-foreground" />
+              <div className="bg-primary flex size-5 items-center justify-center rounded-full">
+                <Check className="text-primary-foreground size-2.5" />
               </div>
               Feature 1
             </li>
             <li className="flex items-center gap-2 lg:justify-center">
-              <div className="flex size-5 items-center justify-center rounded-full bg-primary">
-                <Check className="size-2.5 text-primary-foreground" />
+              <div className="bg-primary flex size-5 items-center justify-center rounded-full">
+                <Check className="text-primary-foreground size-2.5" />
               </div>
               Feature 1
             </li>
             <li className="flex items-center gap-2 lg:justify-center">
-              <div className="flex size-5 items-center justify-center rounded-full bg-primary">
-                <Check className="size-2.5 text-primary-foreground" />
+              <div className="bg-primary flex size-5 items-center justify-center rounded-full">
+                <Check className="text-primary-foreground size-2.5" />
               </div>
               Feature 1
             </li>
@@ -72,7 +71,7 @@ const Feature68 = () => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Feature68;
+export default Feature68

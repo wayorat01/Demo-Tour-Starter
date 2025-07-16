@@ -1,18 +1,10 @@
-'use client';
+'use client'
 
-import {
-  ArrowDownToLine,
-  ArrowUpDown,
-  Code,
-  Redo,
-  Repeat,
-  Scaling,
-  Scan,
-} from 'lucide-react';
-import { useEffect, useState } from 'react';
+import { ArrowDownToLine, ArrowUpDown, Code, Redo, Repeat, Scaling, Scan } from 'lucide-react'
+import { useEffect, useState } from 'react'
 
-import { Badge } from '@/components/ui/badge';
-import { Card, CardContent } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge'
+import { Card, CardContent } from '@/components/ui/card'
 import {
   Carousel,
   type CarouselApi,
@@ -20,68 +12,59 @@ import {
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from '@/components/ui/carousel';
-import { Progress } from '@/components/ui/progress';
+} from '@/components/ui/carousel'
+import { Progress } from '@/components/ui/progress'
 
 const slides = [
   {
     title: 'Integrations',
-    description:
-      'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Labore, quae!',
+    description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Labore, quae!',
     icon: <Code className="size-4" />,
   },
   {
     title: 'Automation',
-    description:
-      'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Labore, quae!',
+    description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Labore, quae!',
     icon: <ArrowUpDown className="size-4" />,
   },
   {
     title: 'Customization',
-    description:
-      'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Labore, quae!',
+    description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Labore, quae!',
     icon: <Redo className="size-4" />,
   },
   {
     title: 'Collaboration',
-    description:
-      'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Labore, quae!',
+    description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Labore, quae!',
     icon: <ArrowDownToLine className="size-4" />,
   },
   {
     title: 'Security',
-    description:
-      'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Labore, quae!',
+    description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Labore, quae!',
     icon: <Repeat className="size-4" />,
   },
   {
     title: 'Performance',
-    description:
-      'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Labore, quae!',
+    description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Labore, quae!',
     icon: <Scan className="size-4" />,
   },
   {
     title: 'Scalability',
-    description:
-      'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Labore, quae!',
+    description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Labore, quae!',
     icon: <Scaling className="size-4" />,
   },
-];
+]
 
 const Feature12 = () => {
-  const [api, setApi] = useState<CarouselApi>();
-  const [progress, setProgress] = useState(Math.floor(100 / slides.length));
+  const [api, setApi] = useState<CarouselApi>()
+  const [progress, setProgress] = useState(Math.floor(100 / slides.length))
 
   useEffect(() => {
     if (!api) {
-      return;
+      return
     }
     api.on('scroll', ({ scrollProgress }) => {
-      setProgress(
-        Math.max(1 / slides.length, Math.min(1, scrollProgress())) * 100,
-      );
-    });
-  }, [api]);
+      setProgress(Math.max(1 / slides.length, Math.min(1, scrollProgress())) * 100)
+    })
+  }, [api])
 
   return (
     <section className="py-32">
@@ -96,7 +79,7 @@ const Feature12 = () => {
           <div className="mb-4 flex justify-between px-1 md:mb-5">
             <p className="font-medium">Rules</p>
             <div className="flex items-center space-x-2">
-              <div className="mr-2 hidden items-center gap-3 text-xs text-muted-foreground md:flex">
+              <div className="text-muted-foreground mr-2 hidden items-center gap-3 text-xs md:flex">
                 <span>01</span>
                 <Progress value={progress} className="h-[2px] w-52" />
                 <span>0{slides.length}</span>
@@ -107,23 +90,18 @@ const Feature12 = () => {
           </div>
           <CarouselContent>
             {slides.map((slide, index) => (
-              <CarouselItem
-                key={index}
-                className="basis-full md:basis-1/2 lg:basis-1/3"
-              >
+              <CarouselItem key={index} className="basis-full md:basis-1/2 lg:basis-1/3">
                 <div className="p-1">
                   <Card>
                     <CardContent className="flex flex-col justify-center p-6">
                       <div className="">
-                        <span className="mb-5 flex size-8 items-center justify-center rounded-full bg-accent lg:size-10">
+                        <span className="bg-accent mb-5 flex size-8 items-center justify-center rounded-full lg:size-10">
                           {slide.icon}
                         </span>
                         <p className="text-xl font-semibold md:text-2xl lg:text-2xl">
                           {slide.title}
                         </p>
-                        <p className="pt-2 text-muted-foreground">
-                          {slide.description}
-                        </p>
+                        <p className="text-muted-foreground pt-2">{slide.description}</p>
                       </div>
                     </CardContent>
                   </Card>
@@ -134,7 +112,7 @@ const Feature12 = () => {
         </Carousel>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Feature12;
+export default Feature12

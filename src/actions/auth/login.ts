@@ -20,7 +20,6 @@ export async function login(formData: LoginFormData) {
     })
     return result
   } catch (error: any) {
-    
     throw new Error(`Login failed: ${error instanceof Error ? error.message : 'Unknown error'}`)
   }
 }

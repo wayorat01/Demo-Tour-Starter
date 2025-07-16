@@ -6,10 +6,9 @@ const About2 = () => {
         <div className="container flex flex-col gap-10 text-center md:gap-24">
           <div className="mx-auto flex max-w-3xl flex-col gap-6">
             <h1 className="text-4xl font-medium md:text-6xl">Our Background</h1>
-            <p className="text-lg text-muted-foreground md:text-xl">
-              Discover how our solution simplifies complex processes, making it
-              easier to manage key operations and deliver exceptional
-              experiences.
+            <p className="text-muted-foreground text-lg md:text-xl">
+              Discover how our solution simplifies complex processes, making it easier to manage key
+              operations and deliver exceptional experiences.
             </p>
           </div>
           <div className="grid gap-6 md:grid-cols-12">
@@ -145,12 +144,11 @@ const About2 = () => {
                 alt="placeholder"
                 className="max-h-96 w-full rounded-xl object-cover"
               />
-              <div className="flex flex-col justify-center rounded-xl bg-muted p-8">
+              <div className="bg-muted flex flex-col justify-center rounded-xl p-8">
                 <p className="mb-2 text-4xl font-medium">21M</p>
                 <p className="mb-6 font-semibold">Global Users</p>
                 <p className="text-muted-foreground">
-                  Streamline tasks and boost efficiency by up to 80% using our
-                  tools.
+                  Streamline tasks and boost efficiency by up to 80% using our tools.
                 </p>
               </div>
             </div>
@@ -160,7 +158,7 @@ const About2 = () => {
                 alt="placeholder"
                 className="h-full rounded-xl object-cover"
               />
-              <div className="absolute inset-x-6 bottom-6 rounded-xl bg-background p-4">
+              <div className="bg-background absolute inset-x-6 bottom-6 rounded-xl p-4">
                 <div className="mb-4 flex items-center gap-2">
                   <img
                     src="https://www.shadcnblocks.com/images/block/block-1.svg"
@@ -170,24 +168,20 @@ const About2 = () => {
                   <span className="text-lg font-semibold">Acme.</span>
                 </div>
                 <p className="mb-6 text-sm">
-                  Our solution helps you reduce costs by half with improved
-                  operations.
+                  Our solution helps you reduce costs by half with improved operations.
                 </p>
                 <div className="flex items-baseline gap-1">
                   <span className="font-medium">John Doe,</span>
-                  <span className="text-sm text-muted-foreground">
-                    CEO at Acme.
-                  </span>
+                  <span className="text-muted-foreground text-sm">CEO at Acme.</span>
                 </div>
               </div>
             </div>
             <div className="flex flex-col gap-6">
-              <div className="rounded-xl bg-muted p-8">
+              <div className="bg-muted rounded-xl p-8">
                 <p className="mb-2 text-4xl font-medium">97%</p>
                 <p className="mb-6 font-semibold">Minimized Errors</p>
                 <p className="text-muted-foreground">
-                  Achieve greater accuracy and efficiency with our advanced
-                  toolkit.
+                  Achieve greater accuracy and efficiency with our advanced toolkit.
                 </p>
               </div>
               <img
@@ -200,7 +194,7 @@ const About2 = () => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default About2;
+export default About2

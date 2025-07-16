@@ -53,23 +53,27 @@ export const CMSLink: React.FC<CMSLinkType> = (props) => {
     publicContext,
   } = props
 
-  const locale = publicContext?.locale || localization.defaultLocale;
-  let href = url;
+  const locale = publicContext?.locale || localization.defaultLocale
+  let href = url
   if (type === 'reference' && typeof reference?.value === 'object' && reference.value.slug) {
     // Prefix url with locale if it's not the default locale
-    const localePrefix = locale !== localization.defaultLocale ? `/${locale}` : '';
+    const localePrefix = locale !== localization.defaultLocale ? `/${locale}` : ''
     // Prefix url with collection name if it's not the pages collection
-    const relationToPrefix = reference?.relationTo !== 'pages' ? `/${reference?.relationTo}` : '';
+    const relationToPrefix = reference?.relationTo !== 'pages' ? `/${reference?.relationTo}` : ''
     // Add remaining url path
-    const remainingPath = ((reference?.relationTo === 'pages' && (reference?.value as Page)?.breadcrumbs) ? (reference?.value as Page)?.breadcrumbs?.[((reference?.value as Page)?.breadcrumbs?.length! - 1)]?.url : `/${reference.value.slug}`) || `/${reference.value.slug}`;
-    const normalizedRemainingPath = reference.value.slug === 'home' ? '' : remainingPath;
-    href = `${localePrefix}${relationToPrefix}${normalizedRemainingPath}`;
+    const remainingPath =
+      (reference?.relationTo === 'pages' && (reference?.value as Page)?.breadcrumbs
+        ? (reference?.value as Page)?.breadcrumbs?.[
+            (reference?.value as Page)?.breadcrumbs?.length! - 1
+          ]?.url
+        : `/${reference.value.slug}`) || `/${reference.value.slug}`
+    const normalizedRemainingPath = reference.value.slug === 'home' ? '' : remainingPath
+    href = `${localePrefix}${relationToPrefix}${normalizedRemainingPath}`
   }
 
   if (type === 'reference' && section) {
     href += `#${section}`
   }
-
 
   if (!href) return null
 

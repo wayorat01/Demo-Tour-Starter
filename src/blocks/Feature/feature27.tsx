@@ -1,4 +1,4 @@
-import { Badge } from '@/components/ui/badge';
+import { Badge } from '@/components/ui/badge'
 
 const Feature27 = () => {
   return (
@@ -9,10 +9,9 @@ const Feature27 = () => {
           <h2 className="mb-2 text-center text-3xl font-semibold lg:text-4xl">
             Built awesome websites with our blocks
           </h2>
-          <p className="text-center text-muted-foreground lg:text-lg">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores
-            itaque modi quos hic placeat laudantium inventore reiciendis
-            cupiditate, facilis aliquam.
+          <p className="text-muted-foreground text-center lg:text-lg">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores itaque modi quos hic
+            placeat laudantium inventore reiciendis cupiditate, facilis aliquam.
           </p>
         </div>
         <div className="mt-20 grid gap-10 md:grid-cols-2">
@@ -25,9 +24,8 @@ const Feature27 = () => {
             <div className="px-4 pt-10">
               <h3 className="font-medium">Fully responsive</h3>
               <p className="text-muted-foreground">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores
-                itaque modi quos hic placeat laudantium inventore reiciendis
-                cupiditate, facilis aliquam.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores itaque modi quos
+                hic placeat laudantium inventore reiciendis cupiditate, facilis aliquam.
               </p>
             </div>
           </div>
@@ -40,9 +38,8 @@ const Feature27 = () => {
             <div className="px-4 pt-10">
               <h3 className="font-medium">Beautiful</h3>
               <p className="text-muted-foreground">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores
-                itaque modi quos hic placeat laudantium inventore reiciendis
-                cupiditate, facilis aliquam.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores itaque modi quos
+                hic placeat laudantium inventore reiciendis cupiditate, facilis aliquam.
               </p>
             </div>
           </div>
@@ -50,21 +47,20 @@ const Feature27 = () => {
             <img
               src="https://www.shadcnblocks.com/images/block/placeholder-3.svg "
               alt="placholder"
-              className="aspect-video max-h-[480px] w-full rounded-lg border bg-muted"
+              className="bg-muted aspect-video max-h-[480px] w-full rounded-lg border"
             />
             <div className="px-4 pt-10">
               <h3 className="font-medium">Fully customizable</h3>
               <p className="text-muted-foreground">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores
-                itaque modi quos hic placeat laudantium inventore reiciendis
-                cupiditate, facilis aliquam.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores itaque modi quos
+                hic placeat laudantium inventore reiciendis cupiditate, facilis aliquam.
               </p>
             </div>
           </div>
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Feature27;
+export default Feature27

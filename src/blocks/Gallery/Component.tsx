@@ -10,9 +10,12 @@ import { Page } from '@/payload-types'
 import { allGalleryDesignVersions } from './config'
 
 // Extract just the value property from the design version objects
-type GalleryDesignVersionValue = typeof allGalleryDesignVersions[number]['value']
+type GalleryDesignVersionValue = (typeof allGalleryDesignVersions)[number]['value']
 
-type Gallery<T extends string = string> = Required<Record<GalleryDesignVersionValue, React.FC<any>>> & Record<T, React.FC<any>>;
+type Gallery<T extends string = string> = Required<
+  Record<GalleryDesignVersionValue, React.FC<any>>
+> &
+  Record<T, React.FC<any>>
 
 const galleries: Gallery = {
   GALLERY1: Gallery1,

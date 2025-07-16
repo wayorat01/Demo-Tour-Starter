@@ -1,7 +1,7 @@
-import { ArrowRight, Book, ChevronRight, File } from 'lucide-react';
+import { ArrowRight, Book, ChevronRight, File } from 'lucide-react'
 
-import { Button } from '@/components/ui/button';
-import { Card } from '@/components/ui/card';
+import { Button } from '@/components/ui/button'
+import { Card } from '@/components/ui/card'
 
 const Cta3 = () => {
   return (
@@ -9,12 +9,10 @@ const Cta3 = () => {
       <div className="container">
         <div className="grid grid-cols-1 flex-col gap-10 rounded-lg border p-6 shadow-xs lg:grid-cols-2 lg:px-20 lg:py-16">
           <div>
-            <h4 className="mb-2 text-2xl font-bold lg:text-4xl">
-              Integrations
-            </h4>
+            <h4 className="mb-2 text-2xl font-bold lg:text-4xl">Integrations</h4>
             <p className="text-muted-foreground">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-              Architecto illo praesentium nisi, accusantium quae.
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto illo praesentium
+              nisi, accusantium quae.
             </p>
             <div className="mt-8 flex flex-col items-center gap-2 sm:flex-row">
               <Button className="w-full sm:w-auto">
@@ -29,14 +27,12 @@ const Cta3 = () => {
 
           <div className="flex flex-col gap-4">
             <a href="#">
-              <Card className="flex items-center justify-between gap-2 px-6 py-4 shadow-none hover:bg-accent">
+              <Card className="hover:bg-accent flex items-center justify-between gap-2 px-6 py-4 shadow-none">
                 <div className="flex items-start gap-2">
                   <File className="size-4" />
                   <div>
-                    <h5 className="mb-2 font-medium leading-4">
-                      Documentation
-                    </h5>
-                    <p className="text-sm text-muted-foreground">
+                    <h5 className="mb-2 leading-4 font-medium">Documentation</h5>
+                    <p className="text-muted-foreground text-sm">
                       Lorem ipsum dolor, sit amet consectetur.
                     </p>
                   </div>
@@ -45,14 +41,12 @@ const Cta3 = () => {
               </Card>
             </a>
             <a href="#">
-              <Card className="flex items-center justify-between gap-2 px-6 py-4 shadow-none hover:bg-accent">
+              <Card className="hover:bg-accent flex items-center justify-between gap-2 px-6 py-4 shadow-none">
                 <div className="flex items-start gap-2">
                   <Book className="size-4" />
                   <div>
-                    <h5 className="mb-2 font-medium leading-4">
-                      Getting Started
-                    </h5>
-                    <p className="text-sm text-muted-foreground">
+                    <h5 className="mb-2 leading-4 font-medium">Getting Started</h5>
+                    <p className="text-muted-foreground text-sm">
                       Lorem ipsum dolor, sit amet consectetur.
                     </p>
                   </div>
@@ -64,7 +58,7 @@ const Cta3 = () => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Cta3;
+export default Cta3

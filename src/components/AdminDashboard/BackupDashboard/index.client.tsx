@@ -24,12 +24,12 @@ export const FilterControls: React.FC<FilterControlsProps> = ({
     const params = new URLSearchParams(searchParams.toString())
     params.set(key, value.toString())
     router.replace(`?${params.toString()}`, {
-      scroll: false
+      scroll: false,
     })
   }
 
   return (
-    <div className='backup-filter-group'>
+    <div className="backup-filter-group">
       <div className="field-type checkbox">
         <input
           id="includeMedia"
@@ -40,10 +40,7 @@ export const FilterControls: React.FC<FilterControlsProps> = ({
             updateSearchParams('includeMedia', e.target.checked)
           }}
         />
-        <label
-          htmlFor="includeMedia"
-          className="field-label"
-        >
+        <label htmlFor="includeMedia" className="field-label">
           Include Media files in Backup
         </label>
       </div>
@@ -59,10 +56,7 @@ export const FilterControls: React.FC<FilterControlsProps> = ({
               updateSearchParams('showOtherDb', e.target.checked)
             }}
           />
-          <label
-            htmlFor="showOtherDb"
-            className="field-label"
-          >
+          <label htmlFor="showOtherDb" className="field-label">
             Show other DBs
           </label>
         </div>
@@ -79,10 +73,7 @@ export const FilterControls: React.FC<FilterControlsProps> = ({
               updateSearchParams('showOtherHostname', e.target.checked)
             }}
           />
-          <label
-            htmlFor="showOtherHostname"
-            className="field-label"
-          >
+          <label htmlFor="showOtherHostname" className="field-label">
             Show other Hostnames
           </label>
         </div>

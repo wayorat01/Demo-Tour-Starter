@@ -1,4 +1,3 @@
-
 import { TestimonialDesignVersion } from './config'
 import Testimonial2 from '@/blocks/Testimonial/testimonial2'
 import Testimonial3 from '@/blocks/Testimonial/testimonial3'
@@ -19,7 +18,10 @@ import Testimonial8 from '@/blocks/Testimonial/testimonial8'
 import Testimonial9 from '@/blocks/Testimonial/testimonial9'
 import Testimonial15 from '@/blocks/Testimonial/testimonial15'
 
-type Testimonial<T extends string = string> = Required<Record<TestimonialDesignVersion, React.FC<any>>> & Record<T, React.FC<any>>;
+type Testimonial<T extends string = string> = Required<
+  Record<TestimonialDesignVersion, React.FC<any>>
+> &
+  Record<T, React.FC<any>>
 
 const testimonial: Testimonial = {
   TESTIMONIAL1: Testimonial1,

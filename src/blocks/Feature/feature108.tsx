@@ -18,32 +18,32 @@ const Feature108 = () => {
             <TabsList className="container flex flex-col items-center justify-center gap-4 sm:flex-row md:gap-10">
               <TabsTrigger
                 value="tab-1"
-                className="flex items-center gap-2 rounded-xl px-4 py-3 text-sm font-semibold text-muted-foreground data-[state=active]:bg-muted data-[state=active]:text-primary"
+                className="text-muted-foreground data-[state=active]:bg-muted data-[state=active]:text-primary flex items-center gap-2 rounded-xl px-4 py-3 text-sm font-semibold"
               >
                 <Zap className="h-auto w-4 shrink-0" /> Boost Revenue
               </TabsTrigger>
               <TabsTrigger
                 value="tab-2"
-                className="flex items-center gap-2 rounded-xl px-4 py-3 text-sm font-semibold text-muted-foreground data-[state=active]:bg-muted data-[state=active]:text-primary"
+                className="text-muted-foreground data-[state=active]:bg-muted data-[state=active]:text-primary flex items-center gap-2 rounded-xl px-4 py-3 text-sm font-semibold"
               >
                 <Pointer className="h-auto w-4 shrink-0" />
                 Higher Engagement
               </TabsTrigger>
               <TabsTrigger
                 value="tab-3"
-                className="flex items-center gap-2 rounded-xl px-4 py-3 text-sm font-semibold text-muted-foreground data-[state=active]:bg-muted data-[state=active]:text-primary"
+                className="text-muted-foreground data-[state=active]:bg-muted data-[state=active]:text-primary flex items-center gap-2 rounded-xl px-4 py-3 text-sm font-semibold"
               >
                 <Layout className="h-auto w-4 shrink-0" />
                 Stunning Layouts
               </TabsTrigger>
             </TabsList>
-            <div className="container mt-14 max-w-screen-xl rounded-2xl bg-muted/70 p-6 lg:p-16">
+            <div className="bg-muted/70 container mt-14 max-w-screen-xl rounded-2xl p-6 lg:p-16">
               <TabsContent
                 value="tab-1"
                 className="grid place-items-center gap-20 lg:grid-cols-2 lg:gap-10"
               >
                 <div className="flex flex-col gap-5">
-                  <Badge variant="outline" className="w-fit bg-background">
+                  <Badge variant="outline" className="bg-background w-fit">
                     Modern Tactics
                   </Badge>
                   <h3 className="text-3xl font-semibold lg:text-5xl">
@@ -69,7 +69,7 @@ const Feature108 = () => {
                 className="grid place-items-center gap-20 lg:grid-cols-2 lg:gap-10"
               >
                 <div className="flex flex-col gap-5">
-                  <Badge variant="outline" className="w-fit bg-background">
+                  <Badge variant="outline" className="bg-background w-fit">
                     Expert Features
                   </Badge>
                   <h3 className="text-3xl font-semibold lg:text-5xl">
@@ -95,7 +95,7 @@ const Feature108 = () => {
                 className="grid place-items-center gap-20 lg:grid-cols-2 lg:gap-10"
               >
                 <div className="flex flex-col gap-5">
-                  <Badge variant="outline" className="w-fit bg-background">
+                  <Badge variant="outline" className="bg-background w-fit">
                     Elite Solutions
                   </Badge>
                   <h3 className="text-3xl font-semibold lg:text-5xl">

@@ -1,4 +1,4 @@
-import { User } from "@/payload-types";
+import { User } from '@/payload-types'
 
 /**
  * Check if the author is a User object and return the full user object
@@ -6,24 +6,24 @@ import { User } from "@/payload-types";
  */
 export const getAuthorObject = (author: string | User | undefined): User | undefined => {
   if (typeof author === 'object' && author !== null && 'name' in author) {
-    return author;
+    return author
   }
-  return undefined;
-};
+  return undefined
+}
 
 /**
  * Get author name based on author data
  */
 export const getAuthorName = (author: string | User | undefined): string => {
-  const authorObj = getAuthorObject(author);
-  
+  const authorObj = getAuthorObject(author)
+
   if (authorObj) {
-    return authorObj.name || '';
+    return authorObj.name || ''
   }
-  
+
   if (typeof author === 'string') {
-    return author;
+    return author
   }
-  
-  return '';
-};
+
+  return ''
+}

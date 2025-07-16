@@ -7,19 +7,20 @@ type LoginDesignVersionValue = LoginDesignVersion['value']
 
 // Define the Login block interface
 export interface LoginBlockProps {
-  blockType: 'login';
-  designVersion: LoginDesignVersionValue;
-  signupEnabled?: boolean;
-  googleLoginEnabled?: boolean;
-  facebookLoginEnabled?: boolean;
-  appleLoginEnabled?: boolean;
-  blockName?: string;
-  id?: string;
-  publicContext?: PublicContextProps;
+  blockType: 'login'
+  designVersion: LoginDesignVersionValue
+  signupEnabled?: boolean
+  googleLoginEnabled?: boolean
+  facebookLoginEnabled?: boolean
+  appleLoginEnabled?: boolean
+  blockName?: string
+  id?: string
+  publicContext?: PublicContextProps
 }
 
 // Enforce required features but allow additional ones
-type Login<T extends string = string> = Required<Record<LoginDesignVersionValue, React.FC<any>>> & Record<T, React.FC<any>>;
+type Login<T extends string = string> = Required<Record<LoginDesignVersionValue, React.FC<any>>> &
+  Record<T, React.FC<any>>
 
 const logins: Login = {
   LOGIN3: Login3,

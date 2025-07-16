@@ -1,19 +1,24 @@
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react'
 
-import { Button } from '@/components/ui/button';
-import { Card } from '@/components/ui/card';
-import { CtaBlock } from '@/payload-types';
-import { Icon } from '@/components/Icon';
-import RichText from '@/components/RichText';
-import { splitRichText } from '@/utilities/richtext';
-import { Media } from '@/components/Media';
-import { PublicContextProps } from '@/utilities/publicContextProps';
+import { Button } from '@/components/ui/button'
+import { Card } from '@/components/ui/card'
+import { CtaBlock } from '@/payload-types'
+import { Icon } from '@/components/Icon'
+import RichText from '@/components/RichText'
+import { splitRichText } from '@/utilities/richtext'
+import { Media } from '@/components/Media'
+import { PublicContextProps } from '@/utilities/publicContextProps'
 
-const Cta1: React.FC<CtaBlock & { publicContext: PublicContextProps }> = ({ icon, richText, image, publicContext }) => {
+const Cta1: React.FC<CtaBlock & { publicContext: PublicContextProps }> = ({
+  icon,
+  richText,
+  image,
+  publicContext,
+}) => {
   const { firstNode, rest } = splitRichText(richText, {
     splitOn: ['h2', 'h3', 'h4'],
-    takeFirst: true
-  });
+    takeFirst: true,
+  })
 
   return (
     <section className="py-32">
@@ -21,7 +26,7 @@ const Cta1: React.FC<CtaBlock & { publicContext: PublicContextProps }> = ({ icon
         <Card className="flex flex-col justify-between md:flex-row">
           <div className="p-6 md:max-w-96">
             <div className="mb-2 flex items-center gap-2">
-              <span className="flex size-7 items-center justify-center rounded-full bg-muted">
+              <span className="bg-muted flex size-7 items-center justify-center rounded-full">
                 {icon && <Icon icon={icon} className="size-4" strokeWidth={1.5} />}
               </span>
               {firstNode && (
@@ -50,7 +55,7 @@ const Cta1: React.FC<CtaBlock & { publicContext: PublicContextProps }> = ({ icon
         </Card>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Cta1;
+export default Cta1

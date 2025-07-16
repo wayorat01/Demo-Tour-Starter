@@ -36,7 +36,10 @@ const Changelog1: React.FC<Changelogblock & { publicContext: PublicContextProps 
           {tagline && (
             <div className="mx-auto flex w-fit items-center rounded-lg border px-3 py-2.5 text-xs">
               <span className="text-muted-foreground">{tagline}</span>
-              <a className="ml-2 flex items-center font-semibold hover:underline" href={`#${entries?.[0]?.id}`}>
+              <a
+                className="ml-2 flex items-center font-semibold hover:underline"
+                href={`#${entries?.[0]?.id}`}
+              >
                 {entries?.[0]?.version ? `v${entries?.[0]?.version}` : ''}
                 <Zap className="h-3.5" />
               </a>
@@ -46,10 +49,14 @@ const Changelog1: React.FC<Changelogblock & { publicContext: PublicContextProps 
         <div className="mx-auto mt-20 max-w-screen-lg space-y-20 md:mt-40 md:space-y-32">
           {entries &&
             entries.map((entry) => (
-              <div id={entry.id as string} key={entry.id} className="relative flex flex-col gap-5 md:flex-row md:gap-20">
+              <div
+                id={entry.id as string}
+                key={entry.id}
+                className="relative flex flex-col gap-5 md:flex-row md:gap-20"
+              >
                 <div className="top-28 flex h-min shrink-0 items-center gap-5 md:sticky">
                   <Badge variant="secondary">Version {entry.version}</Badge>
-                  <span className="text-xs font-medium text-muted-foreground">
+                  <span className="text-muted-foreground text-xs font-medium">
                     {new Date(entry.date).toLocaleDateString()}
                   </span>
                 </div>
@@ -71,9 +78,12 @@ const Changelog1: React.FC<Changelogblock & { publicContext: PublicContextProps 
                       }}
                     />
                   )}
-                  {
-                    entry.image && <Media imgClassName="mt-10 w-full rounded-lg object-cover" resource={entry.image} />
-                  }
+                  {entry.image && (
+                    <Media
+                      imgClassName="mt-10 w-full rounded-lg object-cover"
+                      resource={entry.image}
+                    />
+                  )}
                 </div>
               </div>
             ))}

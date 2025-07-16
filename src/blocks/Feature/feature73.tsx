@@ -1,17 +1,14 @@
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react'
 
 const Feature73 = () => {
   return (
     <section className="py-32">
       <div className="container flex flex-col gap-16 lg:px-16">
         <div className="lg:max-w-sm">
-          <h2 className="mb-3 text-xl font-semibold md:mb-4 md:text-4xl lg:mb-6">
-            Feature name
-          </h2>
-          <p className="mb-8 text-muted-foreground lg:text-lg">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Elig
-            doloremque mollitia fugiat omnis! Porro facilis quo animi
-            consequatur. Explicabo.
+          <h2 className="mb-3 text-xl font-semibold md:mb-4 md:text-4xl lg:mb-6">Feature name</h2>
+          <p className="text-muted-foreground mb-8 lg:text-lg">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Elig doloremque mollitia fugiat
+            omnis! Porro facilis quo animi consequatur. Explicabo.
           </p>
           <a
             href="#"
@@ -22,7 +19,7 @@ const Feature73 = () => {
           </a>
         </div>
         <div className="grid gap-6 md:grid-cols-2 lg:gap-8">
-          <div className="flex flex-col text-clip rounded-xl border border-border md:col-span-2 md:grid md:grid-cols-2 md:gap-6 lg:gap-8">
+          <div className="border-border flex flex-col rounded-xl border text-clip md:col-span-2 md:grid md:grid-cols-2 md:gap-6 lg:gap-8">
             <div className="md:min-h-96 lg:min-h-112 xl:min-h-128">
               <img
                 src="https://www.shadcnblocks.com/images/block/placeholder-1.svg"
@@ -31,16 +28,14 @@ const Feature73 = () => {
               />
             </div>
             <div className="flex flex-col justify-center px-6 py-8 md:px-8 md:py-10 lg:px-10 lg:py-12">
-              <h3 className="mb-3 text-lg font-semibold md:mb-4 md:text-2xl lg:mb-6">
-                Feature 1
-              </h3>
+              <h3 className="mb-3 text-lg font-semibold md:mb-4 md:text-2xl lg:mb-6">Feature 1</h3>
               <p className="text-muted-foreground lg:text-lg">
-                Nam vitae molestie arcu. Quisque eu libero orci. Aliquam
-                imperdiet magna nec massa consectetur, id interdum ante congue.
+                Nam vitae molestie arcu. Quisque eu libero orci. Aliquam imperdiet magna nec massa
+                consectetur, id interdum ante congue.
               </p>
             </div>
           </div>
-          <div className="flex flex-col text-clip rounded-xl border border-border">
+          <div className="border-border flex flex-col rounded-xl border text-clip">
             <div>
               <img
                 src="https://www.shadcnblocks.com/images/block/placeholder-2.svg"
@@ -49,16 +44,14 @@ const Feature73 = () => {
               />
             </div>
             <div className="px-6 py-8 md:px-8 md:py-10 lg:px-10 lg:py-12">
-              <h3 className="mb-3 text-lg font-semibold md:mb-4 md:text-2xl lg:mb-6">
-                Feature 2
-              </h3>
+              <h3 className="mb-3 text-lg font-semibold md:mb-4 md:text-2xl lg:mb-6">Feature 2</h3>
               <p className="text-muted-foreground lg:text-lg">
-                Nam vitae molestie arcu. Quisque eu libero orci. Aliquam
-                imperdiet magna nec massa consectetur.
+                Nam vitae molestie arcu. Quisque eu libero orci. Aliquam imperdiet magna nec massa
+                consectetur.
               </p>
             </div>
           </div>
-          <div className="flex flex-col text-clip rounded-xl border border-border">
+          <div className="border-border flex flex-col rounded-xl border text-clip">
             <div>
               <img
                 src="https://www.shadcnblocks.com/images/block/placeholder-3.svg"
@@ -67,19 +60,16 @@ const Feature73 = () => {
               />
             </div>
             <div className="px-6 py-8 md:px-8 md:py-10 lg:px-10 lg:py-12">
-              <h3 className="mb-3 text-lg font-semibold md:mb-4 md:text-2xl lg:mb-6">
-                Feature 3
-              </h3>
+              <h3 className="mb-3 text-lg font-semibold md:mb-4 md:text-2xl lg:mb-6">Feature 3</h3>
               <p className="text-muted-foreground lg:text-lg">
-                Nam vitae molestie arcu. Aliquam imperdiet magna nec massa
-                consectetur.
+                Nam vitae molestie arcu. Aliquam imperdiet magna nec massa consectetur.
               </p>
             </div>
           </div>
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Feature73;
+export default Feature73

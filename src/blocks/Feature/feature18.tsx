@@ -1,12 +1,4 @@
-import {
-  Blocks,
-  ChevronRight,
-  Infinity,
-  Laptop,
-  ListEnd,
-  Zap,
-  ZoomIn,
-} from 'lucide-react';
+import { Blocks, ChevronRight, Infinity, Laptop, ListEnd, Zap, ZoomIn } from 'lucide-react'
 
 const features = [
   {
@@ -51,33 +43,25 @@ const features = [
     icon: <Infinity className="size-6" />,
     link: '#',
   },
-];
+]
 
 const Feature18 = () => {
   return (
-    <section className="relative py-32 before:absolute before:inset-0 before:bg-primary/10 before:mask-[url(/images/block/waves.svg)] before:mask-repeat before:mask-size-[64px_32px]">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,var(--tw-gradient-stops))] from-transparent to-background"></div>
-      <div className="container relative">
-        <h2 className="mb-8 max-w-screen-sm text-balance text-2xl font-semibold lg:text-4xl">
+    <section className="before:bg-primary/10 relative py-32 before:absolute before:inset-0 before:mask-[url(/images/block/waves.svg)] before:mask-size-[64px_32px] before:mask-repeat">
+      <div className="to-background absolute inset-0 bg-[radial-gradient(ellipse_at_center,var(--tw-gradient-stops))] from-transparent"></div>
+      <div className="relative container">
+        <h2 className="mb-8 max-w-screen-sm text-2xl font-semibold text-balance lg:text-4xl">
           Build your own website with our UI blocks
         </h2>
         <div className="z-30 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {features.map((feature, index) => (
-            <div
-              key={index}
-              className="flex flex-col gap-10 rounded-lg border bg-background p-8"
-            >
+            <div key={index} className="bg-background flex flex-col gap-10 rounded-lg border p-8">
               <div>
                 {feature.icon}
-                <h3 className="mb-2 mt-6 font-medium">{feature.title}</h3>
-                <p className="text-sm text-muted-foreground">
-                  {feature.description}
-                </p>
+                <h3 className="mt-6 mb-2 font-medium">{feature.title}</h3>
+                <p className="text-muted-foreground text-sm">{feature.description}</p>
               </div>
-              <a
-                href={feature.link}
-                className="flex items-center gap-2 text-sm font-medium"
-              >
+              <a href={feature.link} className="flex items-center gap-2 text-sm font-medium">
                 Learn more
                 <ChevronRight className="w-4" />
               </a>
@@ -86,7 +70,7 @@ const Feature18 = () => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Feature18;
+export default Feature18

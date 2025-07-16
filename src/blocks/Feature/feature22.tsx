@@ -1,6 +1,6 @@
-import { Check, ChevronRight } from 'lucide-react';
+import { Check, ChevronRight } from 'lucide-react'
 
-import { Badge } from '@/components/ui/badge';
+import { Badge } from '@/components/ui/badge'
 
 const Feature22 = () => {
   return (
@@ -10,7 +10,7 @@ const Feature22 = () => {
           <h2 className="mb-4 text-4xl font-medium md:mb-0">
             Build any kind of Website with our Blocks
           </h2>
-          <ul className="flex flex-col gap-4 text-muted-foreground">
+          <ul className="text-muted-foreground flex flex-col gap-4">
             <li className="flex items-center gap-2">
               <Check className="size-4" /> Responsive Design and Layout
             </li>
@@ -27,7 +27,7 @@ const Feature22 = () => {
               <Check className="size-4" /> SEO Friendly
             </li>
           </ul>
-          <ul className="flex flex-col gap-4 text-muted-foreground">
+          <ul className="text-muted-foreground flex flex-col gap-4">
             <li className="flex items-center gap-2">
               <Check className="size-4" /> High Performance and Speed
             </li>
@@ -53,10 +53,7 @@ const Feature22 = () => {
                 alt="placeholder"
                 className="max-h-96 w-full rounded-t-lg object-cover md:max-h-64"
               />
-              <Badge
-                variant="outline"
-                className="absolute left-5 top-5 bg-primary-foreground"
-              >
+              <Badge variant="outline" className="bg-primary-foreground absolute top-5 left-5">
                 Example
               </Badge>
             </div>
@@ -64,8 +61,7 @@ const Feature22 = () => {
               <div className="mb-3 px-6 pt-6">
                 <h3 className="font-medium">Copy and paste Blocks</h3>
                 <p className="text-muted-foreground">
-                  Easly copy and paste any block you like and use it in your
-                  project.
+                  Easly copy and paste any block you like and use it in your project.
                 </p>
               </div>
               <div className="h-px border-t border-dashed"></div>
@@ -82,15 +78,11 @@ const Feature22 = () => {
                 <div className="h-px border-t border-dashed"></div>
                 <li className="flex items-start gap-2 px-6 py-3">
                   <Check className="mt-1 size-4 shrink-0" />
-                  SEO friendly with high performance and speed for improved laod
-                  times
+                  SEO friendly with high performance and speed for improved laod times
                 </li>
               </ul>
               <div className="h-px border-t border-dashed"></div>
-              <a
-                href="#"
-                className="my-4 flex items-center gap-2 px-6 font-medium"
-              >
+              <a href="#" className="my-4 flex items-center gap-2 px-6 font-medium">
                 Read more
                 <ChevronRight className="mt-0.5 size-4" />
               </a>
@@ -104,10 +96,7 @@ const Feature22 = () => {
                 alt="placeholder"
                 className="max-h-96 w-full rounded-t-lg object-cover md:max-h-64"
               />
-              <Badge
-                variant="outline"
-                className="absolute left-5 top-5 bg-primary-foreground"
-              >
+              <Badge variant="outline" className="bg-primary-foreground absolute top-5 left-5">
                 Example
               </Badge>
             </div>
@@ -122,8 +111,7 @@ const Feature22 = () => {
               <ul className="text-muted-foreground">
                 <li className="flex items-start gap-2 px-6 py-3">
                   <Check className="mt-1 size-4 shrink-0" />
-                  The blocks are clean and modern with easy to customize
-                  features
+                  The blocks are clean and modern with easy to customize features
                 </li>
                 <div className="h-px border-t border-dashed"></div>
                 <li className="flex items-start gap-2 px-6 py-3">
@@ -137,10 +125,7 @@ const Feature22 = () => {
                 </li>
               </ul>
               <div className="h-px border-t border-dashed"></div>
-              <a
-                href="#"
-                className="my-4 flex items-center gap-2 px-6 font-medium"
-              >
+              <a href="#" className="my-4 flex items-center gap-2 px-6 font-medium">
                 Read more
                 <ChevronRight className="mt-0.5 size-4" />
               </a>
@@ -153,10 +138,7 @@ const Feature22 = () => {
                 alt="placeholder"
                 className="max-h-96 w-full rounded-t-lg object-cover md:max-h-64"
               />
-              <Badge
-                variant="outline"
-                className="absolute left-5 top-5 bg-primary-foreground"
-              >
+              <Badge variant="outline" className="bg-primary-foreground absolute top-5 left-5">
                 Example
               </Badge>
             </div>
@@ -176,8 +158,7 @@ const Feature22 = () => {
                 <div className="h-px border-t border-dashed"></div>
                 <li className="flex items-start gap-2 px-6 py-3">
                   <Check className="mt-1 size-4 shrink-0" />
-                  Synced with your project theme and design with easy to
-                  customize features
+                  Synced with your project theme and design with easy to customize features
                 </li>
                 <div className="h-px border-t border-dashed"></div>
                 <li className="flex items-start gap-2 px-6 py-3">
@@ -186,10 +167,7 @@ const Feature22 = () => {
                 </li>
               </ul>
               <div className="h-px border-t border-dashed"></div>
-              <a
-                href="#"
-                className="my-4 flex items-center gap-2 px-6 font-medium"
-              >
+              <a href="#" className="my-4 flex items-center gap-2 px-6 font-medium">
                 Read more
                 <ChevronRight className="mt-0.5 size-4" />
               </a>
@@ -198,7 +176,7 @@ const Feature22 = () => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Feature22;
+export default Feature22

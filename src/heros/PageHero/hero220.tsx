@@ -16,20 +16,23 @@ export const Hero220: React.FC<Page['hero'] & { publicContext: PublicContextProp
   presentationVideo,
   publicContext,
   images,
-  tagline
+  tagline,
 }) => {
-
   const backgroundUrl =
-    images && Array.isArray(images) && images[0] && typeof images[0] === "object" && "url" in images[0]
+    images &&
+    Array.isArray(images) &&
+    images[0] &&
+    typeof images[0] === 'object' &&
+    'url' in images[0]
       ? images[0].url
       : undefined
   return (
     <section className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden py-32">
       <div className="container">
-        <div 
-        className="absolute left-0 top-0 h-screen w-full overflow-hidden bg-cover bg-top bg-no-repeat opacity-20" 
-        style={{ backgroundImage: backgroundUrl ? `url(${backgroundUrl})` : 'none' }} 
-      />
+        <div
+          className="absolute top-0 left-0 h-screen w-full overflow-hidden bg-cover bg-top bg-no-repeat opacity-20"
+          style={{ backgroundImage: backgroundUrl ? `url(${backgroundUrl})` : 'none' }}
+        />
         <div className="flex flex-col items-center justify-center gap-4">
           <motion.div
             initial={{ opacity: 0, scale: 1.1 }}
@@ -48,9 +51,8 @@ export const Hero220: React.FC<Page['hero'] & { publicContext: PublicContextProp
             )}
           </motion.div>
 
-
           {Array.isArray(links) && links.length > 0 && (
-            <div className="flex w-full flex-col justify-center gap-2 sm:flex-row mt-4">
+            <div className="mt-4 flex w-full flex-col justify-center gap-2 sm:flex-row">
               {links.map(({ link }, i) => {
                 return (
                   <CMSLink

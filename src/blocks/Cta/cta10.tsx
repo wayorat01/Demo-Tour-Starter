@@ -4,14 +4,19 @@ import { Button } from '@/components/ui/button'
 import { CtaBlock } from '@/payload-types'
 import { PublicContextProps } from '@/utilities/publicContextProps'
 
-const CTA10: React.FC<CtaBlock & { publicContext: PublicContextProps }> = ({ richText, links, publicContext }) => {
+const CTA10: React.FC<CtaBlock & { publicContext: PublicContextProps }> = ({
+  richText,
+  links,
+  publicContext,
+}) => {
   return (
     <section className="py-32">
       <div className="container">
-        <div className="flex w-full flex-col gap-16 overflow-hidden rounded-lg bg-accent p-8 md:rounded-xl lg:flex-row lg:items-center lg:p-16">
+        <div className="bg-accent flex w-full flex-col gap-16 overflow-hidden rounded-lg p-8 md:rounded-xl lg:flex-row lg:items-center lg:p-16">
           <div className="flex-1">
             {richText && (
-              <RichText publicContext={publicContext}
+              <RichText
+                publicContext={publicContext}
                 content={richText}
                 withWrapper={false}
                 overrideStyle={{
@@ -25,11 +30,17 @@ const CTA10: React.FC<CtaBlock & { publicContext: PublicContextProps }> = ({ ric
             {Array.isArray(links) && links.length > 0 && (
               <>
                 {links.map(({ link }, i) => {
-                  return <CMSLink publicContext={publicContext} className="w-full sm:w-auto" key={i} {...link} />
+                  return (
+                    <CMSLink
+                      publicContext={publicContext}
+                      className="w-full sm:w-auto"
+                      key={i}
+                      {...link}
+                    />
+                  )
                 })}
               </>
             )}
-
           </div>
         </div>
       </div>

@@ -1,9 +1,9 @@
-import { Button } from '@/components/ui/button';
+import { Button } from '@/components/ui/button'
 
 const Hero30 = () => {
   return (
     <section className="relative overflow-hidden py-32">
-      <div className="absolute inset-0 overflow-hidden bg-muted">
+      <div className="bg-muted absolute inset-0 overflow-hidden">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 1400 656"
@@ -12,23 +12,10 @@ const Hero30 = () => {
           <defs>
             <filter id="blur1" x="-20%" y="-20%" width="140%" height="140%">
               <feFlood floodOpacity="0" result="BackgroundImageFix" />
-              <feBlend
-                mode="normal"
-                in="SourceGraphic"
-                in2="BackgroundImageFix"
-                result="shape"
-              />
-              <feGaussianBlur
-                stdDeviation="180"
-                result="effect1_foregroundBlur"
-              />
+              <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+              <feGaussianBlur stdDeviation="180" result="effect1_foregroundBlur" />
             </filter>
-            <pattern
-              id="innerGrid"
-              width="40"
-              height="40"
-              patternUnits="userSpaceOnUse"
-            >
+            <pattern id="innerGrid" width="40" height="40" patternUnits="userSpaceOnUse">
               <path
                 d="M 40 0 L 0 0 0 40"
                 fill="none"
@@ -37,12 +24,7 @@ const Hero30 = () => {
                 strokeOpacity={0.6}
               />
             </pattern>
-            <pattern
-              id="grid"
-              width="160"
-              height="160"
-              patternUnits="userSpaceOnUse"
-            >
+            <pattern id="grid" width="160" height="160" patternUnits="userSpaceOnUse">
               <rect width="160" height="160" fill="url(#innerGrid)" />
               <path
                 d="M 70 80 H 90 M 80 70 V 90"
@@ -78,16 +60,15 @@ const Hero30 = () => {
           <rect width="1400" height="900" fill="url(#grid)" />
         </svg>
       </div>
-      <div className="container relative">
+      <div className="relative container">
         <div className="grid items-center gap-8 lg:grid-cols-2">
           <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
-            <h1 className="my-6 text-pretty text-4xl font-bold lg:text-6xl">
+            <h1 className="my-6 text-4xl font-bold text-pretty lg:text-6xl">
               Welcome to Our Website
             </h1>
-            <p className="mb-8 max-w-xl text-muted-foreground lg:text-xl">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Elig
-              doloremque mollitia fugiat omnis! Porro facilis quo animi
-              consequatur. Explicabo.
+            <p className="text-muted-foreground mb-8 max-w-xl lg:text-xl">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Elig doloremque mollitia
+              fugiat omnis! Porro facilis quo animi consequatur. Explicabo.
             </p>
             <div className="flex w-full flex-col justify-center gap-2 sm:flex-row lg:justify-start">
               <Button variant="outline" className="w-full sm:w-auto">
@@ -96,21 +77,21 @@ const Hero30 = () => {
               <Button className="w-full sm:w-auto">Primary</Button>
             </div>
           </div>
-          <div className="-mb-16 mt-16 flex justify-center gap-4 lg:my-0 lg:justify-end">
+          <div className="mt-16 -mb-16 flex justify-center gap-4 lg:my-0 lg:justify-end">
             <img
               src="https://www.shadcnblocks.com/images/block/placeholder-1.svg"
               alt="placeholder hero"
-              className="h-[400px] rounded-lg border border-border object-cover object-center sm:max-w-[320px]"
+              className="border-border h-[400px] rounded-lg border object-cover object-center sm:max-w-[320px]"
             />
             <div className="hidden flex-col gap-4 sm:flex lg:hidden 2xl:flex">
-              <div className="w-[256px] flex-1 text-clip rounded-lg border border-border bg-background"></div>
-              <div className="aspect-2/1 w-[256px] text-clip rounded-lg border border-border bg-background"></div>
+              <div className="border-border bg-background w-[256px] flex-1 rounded-lg border text-clip"></div>
+              <div className="border-border bg-background aspect-2/1 w-[256px] rounded-lg border text-clip"></div>
             </div>
           </div>
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Hero30;
+export default Hero30

@@ -5,11 +5,10 @@ import { LocalizationConfig, Payload } from 'payload'
 import { getPayload } from 'payload'
 import configPromise from '@payload-config'
 
-
 type CollectionReturnTypeMap = {
   pages: Page & { type: 'page' }
   posts: Post & { type: 'post' }
-};
+}
 /**
  * Select, in which collection we should search. Currently supported is 'pages' and 'posts'
  * For slugs with /posts/XX we should search in 'posts'
@@ -18,7 +17,7 @@ type CollectionReturnTypeMap = {
  *
  * We call queryPageBySlug if we search in 'pages' and queryPostBySlug if we search in 'posts'
  */
-export const queryCollectionData = async<T extends keyof CollectionReturnTypeMap> ({
+export const queryCollectionData = async <T extends keyof CollectionReturnTypeMap>({
   cleanSlugs,
   locale,
   collection,
@@ -39,7 +38,7 @@ export const queryCollectionData = async<T extends keyof CollectionReturnTypeMap
   }
 
   let result: Page | Post | null = null
-  
+
   if (collection === 'pages') {
     result = await queryPageBySlug({ cleanSlugs, locale, draft, payload })
   } else {
@@ -77,7 +76,7 @@ export const queryPostBySlug = cache(
     })
 
     if (result.docs?.[0]) {
-      return {...result.docs?.[0], type: 'post'}
+      return { ...result.docs?.[0], type: 'post' }
     }
     return null
   },
@@ -125,6 +124,6 @@ export const queryPageBySlug = cache(
       return null
     }
 
-    return {...result.docs?.[0], type: 'page'}
+    return { ...result.docs?.[0], type: 'page' }
   },
 )

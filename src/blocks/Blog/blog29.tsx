@@ -44,12 +44,7 @@ function formatDate(dateString: string | null | undefined): string {
  * Blog29 component for displaying blog posts in a card layout
  */
 const Blog29: React.FC<Blog29Props> = (props) => {
-  const {
-    publicContext,
-    richText,
-    populateBy = 'collection',
-    selectedPosts,
-  } = props
+  const { publicContext, richText, populateBy = 'collection', selectedPosts } = props
 
   // For compatibility with previous code, map the new structure
   const featuredPosts = populateBy === 'selection' ? selectedPosts : undefined
@@ -86,7 +81,7 @@ const Blog29: React.FC<Blog29Props> = (props) => {
 
         {/* If no rich text is provided, show a default heading */}
         {!richText && (
-          <h1 className="mb-10 px-6 text-left text-4xl font-bold tracking-tighter text-foreground sm:text-6xl">
+          <h1 className="text-foreground mb-10 px-6 text-left text-4xl font-bold tracking-tighter sm:text-6xl">
             Blog
           </h1>
         )}
@@ -117,13 +112,13 @@ const Blog29: React.FC<Blog29Props> = (props) => {
                   <Card className="border-none shadow-none">
                     <CardContent className="">
                       <div className="relative w-full">
-                        <p className="text-sm tracking-tight text-muted-foreground">{postDate}</p>
+                        <p className="text-muted-foreground text-sm tracking-tight">{postDate}</p>
 
-                        <h2 className="mt-2 text-lg font-medium tracking-tight text-foreground md:text-2xl">
+                        <h2 className="text-foreground mt-2 text-lg font-medium tracking-tight md:text-2xl">
                           {post.title}
                         </h2>
 
-                        <p className="md:text-md mt-4 text-sm text-muted-foreground md:pr-24 xl:pr-32">
+                        <p className="md:text-md text-muted-foreground mt-4 text-sm md:pr-24 xl:pr-32">
                           {postContent}
                         </p>
 
@@ -132,7 +127,7 @@ const Blog29: React.FC<Blog29Props> = (props) => {
                           {categories.length > 0 &&
                             categories.map((category, tagIndex) => (
                               <Badge key={tagIndex} variant="secondary" className="h-6 rounded-md">
-                                <span className="text-md font-medium text-muted-foreground">
+                                <span className="text-md text-muted-foreground font-medium">
                                   {category.title}
                                 </span>
                               </Badge>
@@ -143,7 +138,7 @@ const Blog29: React.FC<Blog29Props> = (props) => {
                             Array.isArray(post.tags) &&
                             post.tags.map((tag, tagIndex) => (
                               <Badge key={tagIndex} variant="secondary" className="h-6 rounded-md">
-                                <span className="text-md font-medium text-muted-foreground">
+                                <span className="text-md text-muted-foreground font-medium">
                                   {tag}
                                 </span>
                               </Badge>
@@ -152,7 +147,7 @@ const Blog29: React.FC<Blog29Props> = (props) => {
                           {/* Show read time if available */}
                           {post.readTime && (
                             <Badge variant="secondary" className="h-6 rounded-md">
-                              <span className="text-md font-medium text-muted-foreground">
+                              <span className="text-md text-muted-foreground font-medium">
                                 {post.readTime} min read
                               </span>
                             </Badge>

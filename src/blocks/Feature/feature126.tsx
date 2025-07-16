@@ -39,7 +39,11 @@ const Feature126: React.FC<FeatureBlock & { publicContext: PublicContextProps }>
   const [activeImage, setActiveImage] = useState<MediaType | null>(tabsData?.[0]?.image || null)
 
   if (!tabsData?.length || !activeTabId || !activeImage)
-    return <div className="text-red-500">You need to add USPs for the component to work, all USPs need to have an image set as well</div>
+    return (
+      <div className="text-red-500">
+        You need to add USPs for the component to work, all USPs need to have an image set as well
+      </div>
+    )
 
   return (
     <section className="py-32">
@@ -55,7 +59,7 @@ const Feature126: React.FC<FeatureBlock & { publicContext: PublicContextProps }>
             }}
           />
         )}
-        <div className="mb-16 mt-3 flex flex-col items-start gap-1 md:flex-row md:items-center md:gap-8">
+        <div className="mt-3 mb-16 flex flex-col items-start gap-1 md:flex-row md:items-center md:gap-8">
           {/* <a
                         href='#'
                         className='group flex items-center gap-2 text-muted-foreground hover:cursor-pointer'
@@ -83,7 +87,7 @@ const Feature126: React.FC<FeatureBlock & { publicContext: PublicContextProps }>
                 <AccordionItem
                   key={tab.id}
                   value={tab.id}
-                  className={`border-b-0 border-t-2 px-2 transition hover:bg-accent ${tab.id === activeTabId && 'border-foreground'}`}
+                  className={`hover:bg-accent border-t-2 border-b-0 px-2 transition ${tab.id === activeTabId && 'border-foreground'}`}
                 >
                   <AccordionTrigger
                     onClick={() => {
@@ -126,7 +130,7 @@ const Feature126: React.FC<FeatureBlock & { publicContext: PublicContextProps }>
             </Accordion>
           </div>
           <div className="relative m-auto hidden w-[calc(100%-100px)] max-w-[1266px] overflow-hidden md:block">
-            <div className="absolute bottom-0 left-0 right-0 z-2 h-[100px] bg-[linear-gradient(to_top,white_0%,rgba(255,255,255,0)_100%)]"></div>
+            <div className="absolute right-0 bottom-0 left-0 z-2 h-[100px] bg-[linear-gradient(to_top,white_0%,rgba(255,255,255,0)_100%)]"></div>
             <Media
               resource={activeImage}
               imgClassName="max-h-[490px] w-full rounded-md object-cover transition-opacity duration-300"

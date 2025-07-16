@@ -1,9 +1,9 @@
-import { ArrowRight } from 'lucide-react';
-import { BiLogoPlayStore } from 'react-icons/bi';
-import { FaApple } from 'react-icons/fa';
-import { SiTrustpilot } from 'react-icons/si';
+import { ArrowRight } from 'lucide-react'
+import { BiLogoPlayStore } from 'react-icons/bi'
+import { FaApple } from 'react-icons/fa'
+import { SiTrustpilot } from 'react-icons/si'
 
-import { Button } from '@/components/ui/button';
+import { Button } from '@/components/ui/button'
 
 const Hero15 = () => {
   return (
@@ -11,7 +11,7 @@ const Hero15 = () => {
       <div className="container">
         <a
           href="#"
-          className="mx-auto mb-4 flex w-fit items-center rounded-full bg-muted px-4 py-2 text-sm"
+          className="bg-muted mx-auto mb-4 flex w-fit items-center rounded-full px-4 py-2 text-sm"
         >
           <span className="mr-1 font-semibold">What&apos;s new</span>
           | Read more
@@ -20,9 +20,9 @@ const Hero15 = () => {
         <h1 className="my-4 mb-6 text-center text-3xl font-bold lg:text-5xl">
           Efficient tools that simplify your workflow.
         </h1>
-        <p className="mx-auto mb-6 max-w-2xl text-center text-muted-foreground lg:text-xl">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum dolor
-          assumenda voluptatem nemo magni a maiores aspernatur.
+        <p className="text-muted-foreground mx-auto mb-6 max-w-2xl text-center lg:text-xl">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum dolor assumenda
+          voluptatem nemo magni a maiores aspernatur.
         </p>
         <div className="flex justify-center">
           <Button size="lg" className="w-full sm:w-auto lg:mt-10">
@@ -47,7 +47,7 @@ const Hero15 = () => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Hero15;
+export default Hero15

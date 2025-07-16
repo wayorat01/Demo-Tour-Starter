@@ -14,9 +14,7 @@ import {
 import { CasestudiesBlock } from '@/payload-types'
 import { Media } from '@/components/Media'
 
-const Casestudies5: React.FC<CasestudiesBlock> = ({
-  slides,
-}) => {
+const Casestudies5: React.FC<CasestudiesBlock> = ({ slides }) => {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [carouselApi, setCarouselApi] = useState<CarouselApi>()
 
@@ -115,7 +113,7 @@ const Casestudies5: React.FC<CasestudiesBlock> = ({
                         ease: 'easeOut',
                         delay: 0.15,
                       }}
-                      className="min-h-[100px] leading-snug tracking-tight text-muted-foreground sm:text-xl xl:mr-8"
+                      className="text-muted-foreground min-h-[100px] leading-snug tracking-tight sm:text-xl xl:mr-8"
                     >
                       {slides[currentIndex].content}
                     </motion.p>

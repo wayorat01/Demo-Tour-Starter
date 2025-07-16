@@ -1,11 +1,12 @@
-import { Star } from "lucide-react";
+import { Star } from 'lucide-react'
 
 export const Stars: React.FC<{ rating: number }> = ({ rating }) => {
   return (
     <div className="flex items-center gap-1">
-      {rating && Array.from({ length: Math.floor(rating) }).map((_, i) => (
-        <Star className="size-5 fill-yellow-400 text-yellow-400" key={i} />
-      ))}
+      {rating &&
+        Array.from({ length: Math.floor(rating) }).map((_, i) => (
+          <Star className="size-5 fill-yellow-400 text-yellow-400" key={i} />
+        ))}
       {rating && rating % 1 !== 0 && rating % 1 > 0.8 && (
         <Star className="size-5 fill-yellow-400 text-yellow-400" />
       )}
@@ -18,5 +19,5 @@ export const Stars: React.FC<{ rating: number }> = ({ rating }) => {
         </div>
       )}
     </div>
-  );
-};
+  )
+}

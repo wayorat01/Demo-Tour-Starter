@@ -1,57 +1,54 @@
-"use client";
+'use client'
 
-import { BookOpen, PenTool, Play } from "lucide-react";
-import { useState } from "react";
+import { BookOpen, PenTool, Play } from 'lucide-react'
+import { useState } from 'react'
 
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Button } from "@/components/ui/button";
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-} from "@/components/ui/dialog";
-import { Page } from '@/payload-types';
-import RichText from '@/components/RichText';
-import { CMSLink } from '@/components/Link';
-import { Media } from '@/components/Media';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
+import { Button } from '@/components/ui/button'
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog'
+import { Page } from '@/payload-types'
+import RichText from '@/components/RichText'
+import { CMSLink } from '@/components/Link'
+import { Media } from '@/components/Media'
 import { PublicContextProps } from '@/utilities/publicContextProps'
 
-const Hero112: React.FC<Page['hero'] & { publicContext: PublicContextProps }> = ({ 
-  richText, 
-  links, 
-  images, 
-  icons, 
-  badge, 
-  tagline, 
+const Hero112: React.FC<Page['hero'] & { publicContext: PublicContextProps }> = ({
+  richText,
+  links,
+  images,
+  icons,
+  badge,
+  tagline,
   presentationVideo,
   statsItems,
-  publicContext 
+  publicContext,
 }) => {
-  const [isVideoOpen, setIsVideoOpen] = useState(false);
+  const [isVideoOpen, setIsVideoOpen] = useState(false)
 
   return (
     <section className="bg-background py-12 md:py-32">
       <div className="container max-w-240">
         <div className="flex flex-col gap-4 md:flex-row">
           <div className="flex flex-col gap-6">
-            {richText && <RichText 
-              publicContext={publicContext}
-              className="flex flex-col gap-6"
-              content={richText}
-              enableGutter={false}
-              overrideStyle={{
-                h1: "text-4xl leading-tight font-medium lg:text-6xl",
-                p: "text-lg text-muted-foreground lg:max-w-[80%]"
-              }}
-            />}
+            {richText && (
+              <RichText
+                publicContext={publicContext}
+                className="flex flex-col gap-6"
+                content={richText}
+                enableGutter={false}
+                overrideStyle={{
+                  h1: 'text-4xl leading-tight font-medium lg:text-6xl',
+                  p: 'text-lg text-muted-foreground lg:max-w-[80%]',
+                }}
+              />
+            )}
             <div className="relative z-10 flex flex-wrap items-center gap-6">
-              {Array.isArray(links) && links.length > 0 && (
+              {Array.isArray(links) &&
+                links.length > 0 &&
                 links.map(({ link }, i) => (
                   <CMSLink publicContext={publicContext} key={i} {...link} />
-                ))
-              )}
-              
+                ))}
+
               {presentationVideo && presentationVideo.label && (
                 <Button
                   variant="ghost"
@@ -79,36 +76,38 @@ const Hero112: React.FC<Page['hero'] & { publicContext: PublicContextProps }> = 
               </div>
               <div className="absolute -right-5 bottom-10 flex w-70 items-center justify-center gap-1 rounded-full bg-white px-4 py-3 shadow-md">
                 <div className="flex -space-x-3.5">
-                  {icons && icons.length > 0 ? (
-                    icons.slice(0, 3).map((icon, i) => (
-                      <Avatar
-                        key={i}
-                        className="flex h-12 w-12 shrink-0 rounded-full border-4 border-white object-cover"
-                      >
-                        <AvatarImage alt="" />
-                        <Media resource={icon} />
-                        <AvatarFallback>{String.fromCharCode(65 + i) + String.fromCharCode(66 + i)}</AvatarFallback>
-                      </Avatar>
-                    ))
-                  ) : (
-                    [0, 1, 2].map((_, i) => (
-                      <Avatar
-                        key={i}
-                        className="flex h-12 w-12 shrink-0 rounded-full border-4 border-white object-cover"
-                      >
-                        <AvatarFallback>{String.fromCharCode(65 + i) + String.fromCharCode(66 + i)}</AvatarFallback>
-                      </Avatar>
-                    ))
-                  )}
+                  {icons && icons.length > 0
+                    ? icons.slice(0, 3).map((icon, i) => (
+                        <Avatar
+                          key={i}
+                          className="flex h-12 w-12 shrink-0 rounded-full border-4 border-white object-cover"
+                        >
+                          <AvatarImage alt="" />
+                          <Media resource={icon} />
+                          <AvatarFallback>
+                            {String.fromCharCode(65 + i) + String.fromCharCode(66 + i)}
+                          </AvatarFallback>
+                        </Avatar>
+                      ))
+                    : [0, 1, 2].map((_, i) => (
+                        <Avatar
+                          key={i}
+                          className="flex h-12 w-12 shrink-0 rounded-full border-4 border-white object-cover"
+                        >
+                          <AvatarFallback>
+                            {String.fromCharCode(65 + i) + String.fromCharCode(66 + i)}
+                          </AvatarFallback>
+                        </Avatar>
+                      ))}
                 </div>
                 <div className="flex-1 text-sm text-gray-800">
-                  {tagline || "7000+ people already joined"}
+                  {tagline || '7000+ people already joined'}
                 </div>
               </div>
-              <div className="absolute top-0 right-0 flex h-25 w-25 rotate-12 rounded-3xl border-8 border-white bg-primary lg:h-27.5 lg:w-27.5">
+              <div className="bg-primary absolute top-0 right-0 flex h-25 w-25 rotate-12 rounded-3xl border-8 border-white lg:h-27.5 lg:w-27.5">
                 <BookOpen className="m-auto h-10 w-10 stroke-white lg:h-12.5 lg:w-12.5" />
               </div>
-              <div className="absolute top-1/3 -left-10 flex h-25 w-25 -rotate-12 rounded-3xl border-8 border-white bg-primary lg:h-27.5 lg:w-27.5">
+              <div className="bg-primary absolute top-1/3 -left-10 flex h-25 w-25 -rotate-12 rounded-3xl border-8 border-white lg:h-27.5 lg:w-27.5">
                 <PenTool className="m-auto h-14 w-14 -rotate-90 fill-white lg:h-18 lg:w-18" />
               </div>
             </div>
@@ -118,18 +117,14 @@ const Hero112: React.FC<Page['hero'] & { publicContext: PublicContextProps }> = 
           <div className="mt-20 rounded-3xl border p-6">
             <div className="flex w-full flex-col md:flex-row">
               {statsItems.map((item, index) => (
-                <div 
-                  key={index} 
+                <div
+                  key={index}
                   className={`flex flex-1 flex-col gap-3 p-6 ${
                     index < statsItems.length - 1 ? 'border-b md:border-r md:border-b-0' : ''
                   }`}
                 >
-                  <div className="text-2xl font-medium text-primary lg:text-4xl">
-                    {item.value}
-                  </div>
-                  <div className="text-muted-foreground lg:text-lg">
-                    {item.title}
-                  </div>
+                  <div className="text-primary text-2xl font-medium lg:text-4xl">{item.value}</div>
+                  <div className="text-muted-foreground lg:text-lg">{item.title}</div>
                 </div>
               ))}
             </div>
@@ -145,8 +140,8 @@ const Hero112: React.FC<Page['hero'] & { publicContext: PublicContextProps }> = 
           <div className="aspect-video">
             <iframe
               className="h-full w-full"
-              src={presentationVideo?.videoUrl || "https://www.youtube.com/embed/your-video-id"}
-              title={presentationVideo?.label || "Presentation Video"}
+              src={presentationVideo?.videoUrl || 'https://www.youtube.com/embed/your-video-id'}
+              title={presentationVideo?.label || 'Presentation Video'}
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             ></iframe>
@@ -154,7 +149,7 @@ const Hero112: React.FC<Page['hero'] & { publicContext: PublicContextProps }> = 
         </DialogContent>
       </Dialog>
     </section>
-  );
-};
+  )
+}
 
 export default Hero112

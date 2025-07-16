@@ -24,7 +24,7 @@ export const PageConfig: GlobalConfig = {
         description: {
           en: 'Default meta information used as fallback when no specific meta is provided',
           de: 'Standardmetainformationen, die als Fallback verwendet werden, wenn keine spezifische Meta-Informationen vorhanden sind.',
-        }
+        },
       },
       fields: [
         {
@@ -53,28 +53,28 @@ export const PageConfig: GlobalConfig = {
           relationTo: 'media',
           admin: {
             description: {
-              en: "This background image will be used to render OpenGraph images for every page. Use the aspect ratio 1200x630.",
-              de: "Dieses Hintergrundbild wird für die Generierung von OpenGraph-Images für jede Seite verwendet. Am besten mit 1200x630 Pixeln.",
-            }
+              en: 'This background image will be used to render OpenGraph images for every page. Use the aspect ratio 1200x630.',
+              de: 'Dieses Hintergrundbild wird für die Generierung von OpenGraph-Images für jede Seite verwendet. Am besten mit 1200x630 Pixeln.',
+            },
           },
           validate: (value) => {
-            if (!value) return true;
-            const { width, height } = value;
+            if (!value) return true
+            const { width, height } = value
             if (width < 1200 || height < 630) {
-              return 'Image must be at least 1200x630 pixels';
+              return 'Image must be at least 1200x630 pixels'
             }
-            return true;
+            return true
           },
         },
 
         {
-          type: "text",
-          name: "textColor",
+          type: 'text',
+          name: 'textColor',
           admin: {
             description: {
-              en: "Choose a color for the overlay text of the OpenGraph image (HEX)",
-              de: "Wählen Sie eine Farbe für den Text des OpenGraph-Images",
-            }
+              en: 'Choose a color for the overlay text of the OpenGraph image (HEX)',
+              de: 'Wählen Sie eine Farbe für den Text des OpenGraph-Images',
+            },
           },
           defaultValue: '#000000',
         },

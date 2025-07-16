@@ -12,7 +12,7 @@ export const Footer: GlobalConfig = {
   slug: 'footer',
   access: {
     read: () => true,
-    update: authenticated
+    update: authenticated,
   },
   admin: {
     description: 'Theme configuration (For live preview config has to be saved)',

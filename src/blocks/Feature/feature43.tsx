@@ -5,7 +5,7 @@ import {
   Layers,
   WandSparkles,
   ZoomIn,
-} from 'lucide-react';
+} from 'lucide-react'
 
 const reasons = [
   {
@@ -44,21 +44,19 @@ const reasons = [
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe est aliquid exercitationem, quos explicabo repellat?',
     icon: <BatteryCharging className="size-6" />,
   },
-];
+]
 
 const Feature43 = () => {
   return (
     <section className="py-32">
       <div className="container">
         <div className="mb-10 md:mb-20">
-          <h2 className="mb-2 text-center text-3xl font-semibold lg:text-5xl">
-            Why Work With Us?
-          </h2>
+          <h2 className="mb-2 text-center text-3xl font-semibold lg:text-5xl">Why Work With Us?</h2>
         </div>
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
           {reasons.map((reason, i) => (
             <div key={i} className="flex flex-col">
-              <div className="mb-5 flex size-16 items-center justify-center rounded-full bg-accent">
+              <div className="bg-accent mb-5 flex size-16 items-center justify-center rounded-full">
                 {reason.icon}
               </div>
               <h3 className="mb-2 text-xl font-semibold">{reason.title}</h3>
@@ -68,7 +66,7 @@ const Feature43 = () => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Feature43;
+export default Feature43

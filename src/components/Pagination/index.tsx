@@ -42,30 +42,19 @@ export const Pagination: React.FC<{
 
           {hasPrevPage && (
             <PaginationItem>
-              <PaginationLink
-                href={`/posts/page/${page - 1}`}
-              >
-                {page - 1}
-              </PaginationLink>
+              <PaginationLink href={`/posts/page/${page - 1}`}>{page - 1}</PaginationLink>
             </PaginationItem>
           )}
 
           <PaginationItem>
-            <PaginationLink
-              isActive
-              href={`/posts/page/${page}`}
-            >
+            <PaginationLink isActive href={`/posts/page/${page}`}>
               {page}
             </PaginationLink>
           </PaginationItem>
 
           {hasNextPage && (
             <PaginationItem>
-              <PaginationLink
-                href={`/posts/page/${page + 1}`}
-              >
-                {page + 1}
-              </PaginationLink>
+              <PaginationLink href={`/posts/page/${page + 1}`}>{page + 1}</PaginationLink>
             </PaginationItem>
           )}
 

@@ -1,14 +1,7 @@
 'use client'
 import React, { useCallback, useEffect } from 'react'
 
-import {
-  useField,
-  Button,
-  TextInput,
-  FieldLabel,
-  useFormFields,
-  useForm,
-} from '@payloadcms/ui'
+import { useField, Button, TextInput, FieldLabel, useFormFields, useForm } from '@payloadcms/ui'
 
 import { formatSlug } from './formatSlug'
 import './index.scss'

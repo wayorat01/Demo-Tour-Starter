@@ -1,9 +1,9 @@
-'use client';
+'use client'
 
-import { ArrowRight } from 'lucide-react';
-import { useState } from 'react';
+import { ArrowRight } from 'lucide-react'
+import { useState } from 'react'
 
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 
 const features = [
   {
@@ -30,10 +30,10 @@ const features = [
       'Nam vitae molestie arcu. Quisque eu libero orci. Aliquam imperdiet magna nec massa consectetur, id interdum ante congue.',
     image: 'https://www.shadcnblocks.com/images/block/placeholder-3.svg',
   },
-];
+]
 
 const Feature78 = () => {
-  const [selection, setSelection] = useState(features[0].id);
+  const [selection, setSelection] = useState(features[0].id)
   return (
     <section className="py-32">
       <div className="flex flex-col gap-12 md:gap-16">
@@ -71,7 +71,7 @@ const Feature78 = () => {
               {features.map((feature) => (
                 <TabsContent key={feature.id} value={feature.id}>
                   <div className="mt-12 flex flex-col md:col-span-2 md:mt-20 md:grid md:grid-cols-2 md:gap-6 lg:gap-8">
-                    <div className="text-clip rounded-3xl md:min-h-96 lg:min-h-112 xl:min-h-128">
+                    <div className="rounded-3xl text-clip md:min-h-96 lg:min-h-112 xl:min-h-128">
                       <img
                         src={feature.image}
                         alt={feature.tabLabel}
@@ -82,9 +82,7 @@ const Feature78 = () => {
                       <h3 className="mb-3 text-xl font-semibold md:mb-4 md:text-4xl lg:mb-6">
                         {feature.title}
                       </h3>
-                      <p className="text-muted-foreground lg:text-lg">
-                        {feature.description}
-                      </p>
+                      <p className="text-muted-foreground lg:text-lg">{feature.description}</p>
                     </div>
                   </div>
                 </TabsContent>
@@ -94,7 +92,7 @@ const Feature78 = () => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Feature78;
+export default Feature78

@@ -1,15 +1,26 @@
-"use client";
+'use client'
 
-import { FcGoogle } from 'react-icons/fc';
-import './index.scss';
-import Link from 'next/link';
+import { FcGoogle } from 'react-icons/fc'
+import './index.scss'
+import Link from 'next/link'
 
 const LoginButton = () => {
   return (
     <>
-      <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem', gap: '1rem', width: '100%', marginTop: '-10px' }}>
+      <div
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          marginBottom: '1rem',
+          gap: '1rem',
+          width: '100%',
+          marginTop: '-10px',
+        }}
+      >
         <div style={{ flex: 1, height: 1, background: 'var(--border, #E5E7EB)' }} />
-        <span style={{ color: 'var(--muted-foreground, #6B7280)', fontWeight: 500, fontSize: 10 }}>OR</span>
+        <span style={{ color: 'var(--muted-foreground, #6B7280)', fontWeight: 500, fontSize: 10 }}>
+          OR
+        </span>
         <div style={{ flex: 1, height: 1, background: 'var(--border, #E5E7EB)' }} />
       </div>
       <Link
@@ -21,7 +32,7 @@ const LoginButton = () => {
         Sign in with Google
       </Link>
     </>
-  );
-};
+  )
+}
 
-export default LoginButton;
+export default LoginButton

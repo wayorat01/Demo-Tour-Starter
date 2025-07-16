@@ -12,13 +12,13 @@ type Props = {
   className?: string
 } & BannerBlockProps
 
-export const BannerBlock: React.FC<Props & { publicContext: PublicContextProps }> = ({ 
-  className, 
+export const BannerBlock: React.FC<Props & { publicContext: PublicContextProps }> = ({
+  className,
   content,
   title,
-  style, 
-  icon, 
-  publicContext 
+  style,
+  icon,
+  publicContext,
 }) => {
   // Map banner style to alert variant
   const getAlertVariant = () => {
@@ -52,12 +52,14 @@ export const BannerBlock: React.FC<Props & { publicContext: PublicContextProps }
         {icon && <Icon icon={icon} className="h-4 w-4" />}
         {title && <AlertTitle>{title}</AlertTitle>}
         <AlertDescription>
-          {content && <RichText 
-            publicContext={publicContext} 
-            overrideStyle={{p: 'm-0 text-muted-foreground'}}
-            content={content} 
-            withWrapper={false}
-          />}
+          {content && (
+            <RichText
+              publicContext={publicContext}
+              overrideStyle={{ p: 'm-0 text-muted-foreground' }}
+              content={content}
+              withWrapper={false}
+            />
+          )}
         </AlertDescription>
       </Alert>
     </div>

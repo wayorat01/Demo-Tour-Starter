@@ -9,39 +9,35 @@ export const Feature42 = () => {
           <div>
             <h3 className="mb-2 text-xl font-medium">Team Spirit</h3>
             <p className="text-muted-foreground">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit
-              architecto atque consequuntur perferendis ratione dolorem vitae,
-              doloribus facere.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit architecto atque
+              consequuntur perferendis ratione dolorem vitae, doloribus facere.
             </p>
           </div>
           <div>
             <h3 className="mb-2 text-xl font-medium">Innovation</h3>
             <p className="text-muted-foreground">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit
-              architecto atque consequuntur perferendis ratione dolorem vitae,
-              doloribus facere.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit architecto atque
+              consequuntur perferendis ratione dolorem vitae, doloribus facere.
             </p>
           </div>
           <div>
             <h3 className="mb-2 text-xl font-medium">Quality</h3>
             <p className="text-muted-foreground">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit
-              architecto atque consequuntur perferendis ratione dolorem vitae,
-              doloribus facere.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit architecto atque
+              consequuntur perferendis ratione dolorem vitae, doloribus facere.
             </p>
           </div>
           <div>
             <h3 className="mb-2 text-xl font-medium">Integrity</h3>
             <p className="text-muted-foreground">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit
-              architecto atque consequuntur perferendis ratione dolorem vitae,
-              doloribus facere.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit architecto atque
+              consequuntur perferendis ratione dolorem vitae, doloribus facere.
             </p>
           </div>
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Feature42;
+export default Feature42

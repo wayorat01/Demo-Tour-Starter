@@ -1,21 +1,21 @@
-import { TestimonialBlock } from '@/payload-types';
+import { TestimonialBlock } from '@/payload-types'
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from '@/components/ui/carousel';
-import { Separator } from '@/components/ui/separator';
+} from '@/components/ui/carousel'
+import { Separator } from '@/components/ui/separator'
 
 const Testimonial12: React.FC<TestimonialBlock> = ({ headline, link, tagline, testimonial }) => {
   return (
     <section className="py-32">
       <div className="container">
-        <div className="relative rounded-2xl bg-muted">
+        <div className="bg-muted relative rounded-2xl">
           <Carousel className="static">
             <CarouselContent className="-ml-4">
-              <CarouselItem className="grid grid-cols-1 gap-y-10 pb-14 pl-8 pr-4 pt-4 sm:pt-8 lg:grid-cols-3 lg:gap-10 lg:p-20">
+              <CarouselItem className="grid grid-cols-1 gap-y-10 pt-4 pr-4 pb-14 pl-8 sm:pt-8 lg:grid-cols-3 lg:gap-10 lg:p-20">
                 <div>
                   <img
                     src="https://www.shadcnblocks.com/images/block/placeholder-dark-1.svg"
@@ -34,39 +34,28 @@ const Testimonial12: React.FC<TestimonialBlock> = ({ headline, link, tagline, te
                       alt="logo"
                       className="h-auto w-7 lg:w-11"
                     />
-                    <span className="text-xl font-semibold lg:text-3xl">
-                      Company Name
-                    </span>
+                    <span className="text-xl font-semibold lg:text-3xl">Company Name</span>
                   </div>
                   <p className="text-center text-xl font-semibold lg:text-left lg:text-2xl">
-                    “Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Sed do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua”
+                    “Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
+                    incididunt ut labore et dolore magna aliqua”
                   </p>
                   <Separator className="my-8 lg:my-10" />
                   <div className="grid justify-center gap-10 text-center md:grid-cols-2 lg:justify-start lg:text-left">
                     <div className="flex flex-col">
-                      <span className="mb-4 text-4xl font-semibold md:text-6xl">
-                        2.2x
-                      </span>
+                      <span className="mb-4 text-4xl font-semibold md:text-6xl">2.2x</span>
                       <span className="font-medium">Monthly Active Users</span>
-                      <span className="text-muted-foreground">
-                        Since last month
-                      </span>
+                      <span className="text-muted-foreground">Since last month</span>
                     </div>
                     <div className="flex flex-col">
-                      <span className="mb-4 text-4xl font-semibold md:text-6xl">
-                        256%
-                      </span>
+                      <span className="mb-4 text-4xl font-semibold md:text-6xl">256%</span>
                       <span className="font-medium">Increase in Revenue</span>
-                      <span className="text-muted-foreground">
-                        Since last year
-                      </span>
+                      <span className="text-muted-foreground">Since last year</span>
                     </div>
                   </div>
                 </div>
               </CarouselItem>
-              <CarouselItem className="grid grid-cols-1 gap-y-10 pb-14 pl-8 pr-4 pt-4 sm:pt-8 lg:grid-cols-3 lg:gap-10 lg:p-20">
+              <CarouselItem className="grid grid-cols-1 gap-y-10 pt-4 pr-4 pb-14 pl-8 sm:pt-8 lg:grid-cols-3 lg:gap-10 lg:p-20">
                 <div>
                   <img
                     src="https://www.shadcnblocks.com/images/block/placeholder-dark-2.svg"
@@ -85,40 +74,29 @@ const Testimonial12: React.FC<TestimonialBlock> = ({ headline, link, tagline, te
                       alt="logo"
                       className="h-auto w-5 lg:mr-1 lg:w-9"
                     />
-                    <span className="text-xl font-semibold lg:text-3xl">
-                      Company Name
-                    </span>
+                    <span className="text-xl font-semibold lg:text-3xl">Company Name</span>
                   </div>
                   <p className="text-center text-xl font-semibold lg:text-left lg:text-2xl">
-                    “Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Sed do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua”
+                    “Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
+                    incididunt ut labore et dolore magna aliqua”
                   </p>
                   <Separator className="my-8 lg:my-10" />
                   <div className="grid justify-center gap-10 text-center md:grid-cols-2 lg:justify-start lg:text-left">
                     <div className="flex flex-col">
-                      <span className="mb-4 text-4xl font-semibold md:text-6xl">
-                        1.5x
-                      </span>
+                      <span className="mb-4 text-4xl font-semibold md:text-6xl">1.5x</span>
                       <span className="font-medium">Monthly Active Users</span>
-                      <span className="text-muted-foreground">
-                        Since last month
-                      </span>
+                      <span className="text-muted-foreground">Since last month</span>
                     </div>
                     <div className="flex flex-col">
-                      <span className="mb-4 text-4xl font-semibold md:text-6xl">
-                        150%
-                      </span>
+                      <span className="mb-4 text-4xl font-semibold md:text-6xl">150%</span>
                       <span className="font-medium">Increase in Revenue</span>
-                      <span className="text-muted-foreground">
-                        Since last year
-                      </span>
+                      <span className="text-muted-foreground">Since last year</span>
                     </div>
                   </div>
                 </div>
               </CarouselItem>
             </CarouselContent>
-            <div className="absolute bottom-6 right-6 z-10 lg:bottom-10 lg:right-10">
+            <div className="absolute right-6 bottom-6 z-10 lg:right-10 lg:bottom-10">
               <div className="relative flex items-center gap-4">
                 <CarouselPrevious className="static translate-y-0" />
                 <CarouselNext className="static translate-y-0" />
@@ -128,7 +106,7 @@ const Testimonial12: React.FC<TestimonialBlock> = ({ headline, link, tagline, te
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Testimonial12;
+export default Testimonial12

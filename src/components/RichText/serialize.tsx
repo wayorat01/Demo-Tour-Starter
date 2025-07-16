@@ -137,7 +137,7 @@ export function serializeLexical({
             case 'mediaBlock':
               return (
                 <MediaBlock
-                disableContainer
+                  disableContainer
                   key={index}
                   {...block}
                   captionClassName="mx-auto max-w-3xl"
@@ -207,7 +207,7 @@ export function serializeLexical({
               return (
                 <Tag
                   className={cn(
-                    'col-start-2 ps-7 mb-2 mt-4 space-y-3', 
+                    'col-start-2 mt-4 mb-2 space-y-3 ps-7',
                     // Add specific styling based on list type
                     node.listType === 'bullet' ? 'list-disc' : 'list-decimal',
                   )}
@@ -263,42 +263,42 @@ export function serializeLexical({
                   type={fields.linkType === 'internal' ? 'reference' : 'custom'}
                   url={fields.url}
                   appearance="inline"
-                  className="text-muted-foreground hover:underline transition-colors"
+                  className="text-muted-foreground transition-colors hover:underline"
                 >
                   {serializedChildren}
                 </CMSLink>
               )
             }
-            
+
             case 'upload': {
               const media = node.value as MediaType
-              
+
               if (!media) return null
-              
+
               const { filename, width, height, alt } = media
               const url = media.url || `/media/${filename}`
-              
+
               return (
                 <div className="col-start-2 my-4" key={index}>
                   <figure className="relative w-full">
-                    <Image 
+                    <Image
                       src={url}
                       alt={alt || ''}
                       width={width || 800}
                       height={height || 600}
-                      className="w-full h-auto rounded-md"
+                      className="h-auto w-full rounded-md"
                     />
                     {media.caption && (
-                      <figcaption className="text-sm text-muted-foreground mt-2">
-                        {typeof media.caption === 'string' ? media.caption : (
-                          serializeLexical({
-                            nodes: media.caption as any,
-                            overrideStyle: {
-                              p: 'text-sm text-muted-foreground mt-0 mb-0'
-                            },
-                            publicContext
-                          })
-                        )}
+                      <figcaption className="text-muted-foreground mt-2 text-sm">
+                        {typeof media.caption === 'string'
+                          ? media.caption
+                          : serializeLexical({
+                              nodes: media.caption as any,
+                              overrideStyle: {
+                                p: 'text-sm text-muted-foreground mt-0 mb-0',
+                              },
+                              publicContext,
+                            })}
                       </figcaption>
                     )}
                   </figure>

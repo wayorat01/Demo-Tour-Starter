@@ -1,18 +1,13 @@
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react'
 
 const Stats8 = () => {
   return (
     <section className="py-32">
       <div className="container">
         <div className="flex flex-col gap-4">
-          <h2 className="text-2xl font-bold md:text-4xl">
-            Platform performance insights
-          </h2>
+          <h2 className="text-2xl font-bold md:text-4xl">Platform performance insights</h2>
           <p>Ensuring stability and scalability for all users</p>
-          <a
-            href="#"
-            className="flex items-center gap-1 font-bold hover:underline"
-          >
+          <a href="#" className="flex items-center gap-1 font-bold hover:underline">
             Read the full impact report
             <ArrowRight className="h-auto w-4" />
           </a>
@@ -37,7 +32,7 @@ const Stats8 = () => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Stats8;
+export default Stats8

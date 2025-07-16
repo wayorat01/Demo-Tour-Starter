@@ -1,18 +1,17 @@
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react'
 
-import { Button } from '@/components/ui/button';
+import { Button } from '@/components/ui/button'
 
 const Hero37 = () => {
   return (
     <section className="overflow-hidden py-32">
       <div className="container flex flex-col items-center text-center">
         <p className="text-xs uppercase">New Release</p>
-        <h1 className="my-3 text-pretty text-2xl font-bold sm:text-4xl md:my-6 lg:text-5xl">
+        <h1 className="my-3 text-2xl font-bold text-pretty sm:text-4xl md:my-6 lg:text-5xl">
           Welcome to Our Website
         </h1>
-        <p className="mb-6 max-w-xl text-muted-foreground md:mb-12 lg:text-xl">
-          Elig doloremque mollitia fugiat omnis! Porro facilis quo animi
-          consequatur.
+        <p className="text-muted-foreground mb-6 max-w-xl md:mb-12 lg:text-xl">
+          Elig doloremque mollitia fugiat omnis! Porro facilis quo animi consequatur.
         </p>
         <div className="flex w-full flex-col justify-center gap-2 sm:flex-row">
           <Button className="w-full sm:w-auto">
@@ -31,13 +30,13 @@ const Hero37 = () => {
               xmlns="http://www.w3.org/2000/svg"
               version="1.1"
               viewBox="0 0 800 800"
-              className="size-full text-muted-foreground opacity-20"
+              className="text-muted-foreground size-full opacity-20"
             >
               {Array.from(Array(4000).keys()).map((dot, index, array) => {
-                const angle = 0.2 * index;
-                const scalar = 300 + index * (100 / array.length);
-                const x = Math.round(Math.cos(angle) * scalar);
-                const y = Math.round(Math.sin(angle) * scalar);
+                const angle = 0.2 * index
+                const scalar = 300 + index * (100 / array.length)
+                const x = Math.round(Math.cos(angle) * scalar)
+                const y = Math.round(Math.sin(angle) * scalar)
                 return (
                   <circle
                     key={index}
@@ -47,17 +46,17 @@ const Hero37 = () => {
                     fill="currentColor"
                     opacity={(array.length - index) / array.length}
                   />
-                );
+                )
               })}
             </svg>
           </div>
-          <div className="z-5 absolute inset-0 m-auto flex aspect-29/36 w-4/5 max-w-64 -translate-x-3/4 translate-y-[10%] rotate-[-15deg] scale-[0.85] justify-center rounded-lg border border-border bg-accent opacity-60 md:w-85 md:max-w-85"></div>
-          <div className="absolute inset-0 z-10 m-auto flex aspect-29/36 w-4/5 max-w-64 justify-center rounded-lg border border-border bg-accent md:w-85 md:max-w-85"></div>
-          <div className="z-5 absolute inset-0 m-auto flex aspect-29/36 w-4/5 max-w-64 translate-x-3/4 translate-y-[10%] rotate-15 scale-[0.85] justify-center rounded-lg border border-border bg-accent opacity-60 md:w-85 md:max-w-85"></div>
+          <div className="border-border bg-accent absolute inset-0 z-5 m-auto flex aspect-29/36 w-4/5 max-w-64 -translate-x-3/4 translate-y-[10%] scale-[0.85] rotate-[-15deg] justify-center rounded-lg border opacity-60 md:w-85 md:max-w-85"></div>
+          <div className="border-border bg-accent absolute inset-0 z-10 m-auto flex aspect-29/36 w-4/5 max-w-64 justify-center rounded-lg border md:w-85 md:max-w-85"></div>
+          <div className="border-border bg-accent absolute inset-0 z-5 m-auto flex aspect-29/36 w-4/5 max-w-64 translate-x-3/4 translate-y-[10%] scale-[0.85] rotate-15 justify-center rounded-lg border opacity-60 md:w-85 md:max-w-85"></div>
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Hero37;
+export default Hero37

@@ -1,4 +1,4 @@
-import { Separator } from '@/components/ui/separator';
+import { Separator } from '@/components/ui/separator'
 
 const Feature29 = () => {
   return (
@@ -26,32 +26,26 @@ const Feature29 = () => {
             />
           </div>
           <div className="order-2 -mt-6 max-w-[412px] md:order-3">
-            <p className="mb-6 text-sm text-muted-foreground md:mb-12">
+            <p className="text-muted-foreground mb-6 text-sm md:mb-12">
               Lorem ipsum dolor sit amet.
             </p>
-            <h3 className="mb-3 text-2xl font-medium md:mb-6">
-              Quality and Durability
-            </h3>
+            <h3 className="mb-3 text-2xl font-medium md:mb-6">Quality and Durability</h3>
             <p className="mb-6">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi
-              distinctio maiores sint cupiditate ab ullam numquam a similique
-              vel itaque.
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi distinctio maiores sint
+              cupiditate ab ullam numquam a similique vel itaque.
             </p>
             <a href="#" className="font-medium hover:underline">
               Learn more about our process
             </a>
           </div>
           <div className="order-4 -mt-6 max-w-[412px] md:order-3">
-            <p className="mb-6 text-sm text-muted-foreground md:mb-12">
+            <p className="text-muted-foreground mb-6 text-sm md:mb-12">
               Lorem ipsum dolor sit amet.
             </p>
-            <h3 className="mb-3 text-2xl font-medium md:mb-6">
-              Transform Your Space a Reality
-            </h3>
+            <h3 className="mb-3 text-2xl font-medium md:mb-6">Transform Your Space a Reality</h3>
             <p className="mb-6">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi
-              distinctio maiores sint cupiditate ab ullam numquam a similique
-              vel itaque.
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi distinctio maiores sint
+              cupiditate ab ullam numquam a similique vel itaque.
             </p>
             <a href="#" className="font-medium hover:underline">
               Learn more about our process
@@ -60,7 +54,7 @@ const Feature29 = () => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Feature29;
+export default Feature29

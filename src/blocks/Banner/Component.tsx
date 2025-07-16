@@ -3,9 +3,10 @@ import Banner5 from './banner5'
 import Banner1 from './banner1'
 
 // Extract the value property from BannerDesignVersion for use as keys
-type BannerVersionValue = BannerDesignVersion['value'];
+type BannerVersionValue = BannerDesignVersion['value']
 
-type Banner<T extends string = string> = Required<Record<BannerVersionValue, React.FC<any>>> & Record<T, React.FC<any>>;
+type Banner<T extends string = string> = Required<Record<BannerVersionValue, React.FC<any>>> &
+  Record<T, React.FC<any>>
 
 const banner: Banner = {
   BANNER1: Banner1,

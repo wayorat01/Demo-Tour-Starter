@@ -1,7 +1,7 @@
-import { ChevronRight, Play } from 'lucide-react';
+import { ChevronRight, Play } from 'lucide-react'
 
-import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge'
+import { Button } from '@/components/ui/button'
 
 const Hero21 = () => {
   return (
@@ -11,7 +11,7 @@ const Hero21 = () => {
           <div className="magicpattern absolute inset-x-0 top-0 -z-10 flex size-full items-center justify-center opacity-100" />
           <a
             href="#"
-            className="mx-auto flex w-fit items-center gap-2 rounded-lg bg-muted p-3 sm:rounded-full sm:py-1 sm:pl-1 sm:pr-3"
+            className="bg-muted mx-auto flex w-fit items-center gap-2 rounded-lg p-3 sm:rounded-full sm:py-1 sm:pr-3 sm:pl-1"
           >
             <Badge className="hidden sm:block">New Release</Badge>
             <p className="flex items-center gap-1 text-sm">
@@ -19,13 +19,12 @@ const Hero21 = () => {
               <ChevronRight className="mt-0.5 size-4 shrink-0" />
             </p>
           </a>
-          <h1 className="mx-auto my-5 max-w-screen-lg text-balance text-center text-3xl md:text-5xl">
+          <h1 className="mx-auto my-5 max-w-screen-lg text-center text-3xl text-balance md:text-5xl">
             Smart home automation and security system for you
           </h1>
-          <p className="mx-auto max-w-screen-md text-center text-sm text-muted-foreground md:text-base">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia
-            possimus fugit ab cumque consequuntur pariatur provident? Nulla
-            consequuntur nisi eum!
+          <p className="text-muted-foreground mx-auto max-w-screen-md text-center text-sm md:text-base">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia possimus fugit ab cumque
+            consequuntur pariatur provident? Nulla consequuntur nisi eum!
           </p>
           <div className="mt-8 flex items-center justify-center gap-3">
             <Button>
@@ -39,7 +38,7 @@ const Hero21 = () => {
           <div className="mt-5 flex justify-center">
             <a
               href="#"
-              className="flex items-center gap-1 border-b border-dashed text-sm hover:border-solid hover:border-primary"
+              className="hover:border-primary flex items-center gap-1 border-b border-dashed text-sm hover:border-solid"
             >
               Schedule a call
               <ChevronRight className="size-3.5" />
@@ -55,7 +54,7 @@ const Hero21 = () => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Hero21;
+export default Hero21

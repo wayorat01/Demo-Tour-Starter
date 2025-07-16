@@ -25,7 +25,6 @@ const defaultRoles = [
   },
 ]
 
-
 const initRoleCreation = async (payload: Payload) => {
   for (const role of defaultRoles) {
     try {
@@ -43,11 +42,10 @@ const initRoleCreation = async (payload: Payload) => {
     collection: 'roles',
     limit: 10,
   })
-  payload.logger.info(`Created roles: ${createdRoles.map(r => r.name)}`)
+  payload.logger.info(`Created roles: ${createdRoles.map((r) => r.name)}`)
 }
 
 export async function initializeRoles(payload: Payload): Promise<void> {
-
   try {
     // Check if any roles exist
     const { totalDocs } = await payload.find({
@@ -59,17 +57,16 @@ export async function initializeRoles(payload: Payload): Promise<void> {
     if (totalDocs < defaultRoles.length) {
       payload.logger.info('No roles found, creating defaults...')
       // we wait a bit to make sure, that we dont run into mongoDB "Unable to write to collection 'XX.roles' due to catalog changes;"
-      await new Promise(resolve => setTimeout(resolve, 2000))
+      await new Promise((resolve) => setTimeout(resolve, 2000))
 
       // Create roles. Retry one time if it fails
       try {
         await initRoleCreation(payload)
       } catch (error) {
         payload.logger.error(`Error creating roles, retrying one time: ${error}`)
-        await new Promise(resolve => setTimeout(resolve, 4000))
+        await new Promise((resolve) => setTimeout(resolve, 4000))
         await initRoleCreation(payload)
       }
-      
     }
   } catch (error) {
     payload.logger.error(`Error initializing roles: ${error}`)

@@ -14,7 +14,15 @@ export const ArchiveBlock: React.FC<
     publicContext: PublicContextProps
   }
 > = async (props) => {
-  const { id, categories, introContent, limit: limitFromProps, populateBy, selectedDocs, publicContext } = props
+  const {
+    id,
+    categories,
+    introContent,
+    limit: limitFromProps,
+    populateBy,
+    selectedDocs,
+    publicContext,
+  } = props
 
   const limit = limitFromProps || 3
 
@@ -34,12 +42,12 @@ export const ArchiveBlock: React.FC<
       limit,
       ...(flattenedCategories && flattenedCategories.length > 0
         ? {
-          where: {
-            categories: {
-              in: flattenedCategories,
+            where: {
+              categories: {
+                in: flattenedCategories,
+              },
             },
-          },
-        }
+          }
         : {}),
     })
 
@@ -58,7 +66,12 @@ export const ArchiveBlock: React.FC<
     <div className="my-16" id={`block-${id}`}>
       {introContent && (
         <div className="container mb-16">
-          <RichText publicContext={publicContext} className="ml-0 max-w-3xl" content={introContent} enableGutter={false} />
+          <RichText
+            publicContext={publicContext}
+            className="ml-0 max-w-3xl"
+            content={introContent}
+            enableGutter={false}
+          />
         </div>
       )}
       <CollectionArchive posts={posts} />

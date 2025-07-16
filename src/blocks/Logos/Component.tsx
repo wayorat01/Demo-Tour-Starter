@@ -5,9 +5,10 @@ import Logos9 from '@/blocks/Logos/logos9'
 
 import { LogosDesignVersion } from './config'
 
-type LogosVersionValue = LogosDesignVersion['value'];
+type LogosVersionValue = LogosDesignVersion['value']
 
-type Logos<T extends string = string> = Required<Record<LogosVersionValue, React.FC<any>>> & Record<T, React.FC<any>>;
+type Logos<T extends string = string> = Required<Record<LogosVersionValue, React.FC<any>>> &
+  Record<T, React.FC<any>>
 
 const Logos: Logos = {
   LOGOS1: Logos1,

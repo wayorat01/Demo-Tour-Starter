@@ -122,8 +122,8 @@ export const Posts: CollectionConfig = {
                     UploadFeature({
                       collections: {
                         media: {
-                          fields: []
-                        }
+                          fields: [],
+                        },
                       },
                     }),
                   ]

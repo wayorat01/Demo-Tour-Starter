@@ -1,27 +1,27 @@
-import { Check } from 'lucide-react';
+import { Check } from 'lucide-react'
 
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
+import { Button } from '@/components/ui/button'
+import { Input } from '@/components/ui/input'
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from '@/components/ui/select';
-import { ContactBlock } from '@/payload-types';
-import RichText from '@/components/RichText';
-import { FormBlock, FormBlockType } from '../Form/Component';
+} from '@/components/ui/select'
+import { ContactBlock } from '@/payload-types'
+import RichText from '@/components/RichText'
+import { FormBlock, FormBlockType } from '../Form/Component'
 
 const Contact1: React.FC<ContactBlock> = ({ richText, form, contactBlocks, maps }) => {
   return (
     <section className="relative py-32">
       {/* Background gradients */}
-      <div className="pointer-events-none absolute -inset-y-20 inset-x-0 bg-[radial-gradient(ellipse_35%_15%_at_40%_55%,hsl(from_var(--accent)_h_s_l)_0%,transparent_100%)] lg:bg-[radial-gradient(ellipse_12%_20%_at_60%_45%,hsl(from_var(--accent)_h_s_l)_0%,transparent_100%)]"></div>
-      <div className="pointer-events-none absolute -inset-y-20 inset-x-0 bg-[radial-gradient(ellipse_35%_20%_at_70%_75%,hsl(from_var(--accent)_h_s_l)_0%,transparent_80%)] lg:bg-[radial-gradient(ellipse_15%_30%_at_70%_65%,hsl(from_var(--accent)_h_s_l)_0%,transparent_80%)]"></div>
+      <div className="pointer-events-none absolute inset-x-0 -inset-y-20 bg-[radial-gradient(ellipse_35%_15%_at_40%_55%,hsl(from_var(--accent)_h_s_l)_0%,transparent_100%)] lg:bg-[radial-gradient(ellipse_12%_20%_at_60%_45%,hsl(from_var(--accent)_h_s_l)_0%,transparent_100%)]"></div>
+      <div className="pointer-events-none absolute inset-x-0 -inset-y-20 bg-[radial-gradient(ellipse_35%_20%_at_70%_75%,hsl(from_var(--accent)_h_s_l)_0%,transparent_80%)] lg:bg-[radial-gradient(ellipse_15%_30%_at_70%_65%,hsl(from_var(--accent)_h_s_l)_0%,transparent_80%)]"></div>
       {/* Background pattern */}
-      <div className="pointer-events-none absolute -inset-y-20 inset-x-0 bg-[radial-gradient(hsl(from_var(--accent-foreground)_h_s_l/0.1)_1px,transparent_1px)] bg-size-[8px_8px] mask-[radial-gradient(ellipse_60%_60%_at_65%_50%,#000_0%,transparent_80%)]"></div>
+      <div className="pointer-events-none absolute inset-x-0 -inset-y-20 bg-[radial-gradient(hsl(from_var(--accent-foreground)_h_s_l/0.1)_1px,transparent_1px)] mask-[radial-gradient(ellipse_60%_60%_at_65%_50%,#000_0%,transparent_80%)] bg-size-[8px_8px]"></div>
       {/*
       <div className="container grid w-full grid-cols-1 gap-x-32 overflow-hidden lg:grid-cols-2">
         <div className="w-full pb-10 md:space-y-10 md:pb-0">
@@ -196,7 +196,7 @@ const Contact1: React.FC<ContactBlock> = ({ richText, form, contactBlocks, maps 
       </div>
       */}
     </section>
-  );
-};
+  )
+}
 
-export default Contact1;
+export default Contact1

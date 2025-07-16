@@ -121,11 +121,11 @@ const Signup4: React.FC<Signup4Props> = ({
               </div>
             </div>
             {setShowSignup && (
-              <div className="mx-auto mt-8 flex justify-center gap-1 text-sm text-muted-foreground">
+              <div className="text-muted-foreground mx-auto mt-8 flex justify-center gap-1 text-sm">
                 <p>{loginText}</p>
                 <button
                   onClick={() => setShowSignup(false)}
-                  className="font-medium text-primary hover:underline"
+                  className="text-primary font-medium hover:underline"
                 >
                   Log in
                 </button>

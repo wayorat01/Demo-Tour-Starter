@@ -7,7 +7,7 @@ import { Footer } from '@/globals/Footer/Component'
 import { Header } from '@/globals/Header/Component'
 import { Providers } from '@/providers'
 import { InitTheme } from '@/providers/Theme/InitTheme'
-import { Analytics } from "@vercel/analytics/react"
+import { Analytics } from '@vercel/analytics/react'
 
 import { ThemeConfig } from '@/globals/ThemeConfig/Component'
 import localization from '@/localization.config'
@@ -16,7 +16,7 @@ import './[[...slugs]]/globals.css'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 
-// Change fonts by changing class Geist_Mono or Geist. 
+// Change fonts by changing class Geist_Mono or Geist.
 // No change in tailwind.config.mjs needed (Because it's already synced via --font-mono and --font-sans variables). Just make sure, that these variables stay.
 const mono = Geist_Mono({ subsets: ['latin'], variable: '--font-mono' })
 const sans = Geist({ subsets: ['latin'], variable: '--font-sans' })
@@ -26,9 +26,13 @@ export default function NotFound() {
     isNotFound: true,
     locale: localization.defaultLocale,
     cleanSlugs: [],
-  };
+  }
   return (
-    <html className={cn(mono.variable, sans.variable)} lang={localization.defaultLocale} suppressHydrationWarning>
+    <html
+      className={cn(mono.variable, sans.variable)}
+      lang={localization.defaultLocale}
+      suppressHydrationWarning
+    >
       <head>
         <ThemeConfig />
         <InitTheme />
@@ -39,9 +43,9 @@ export default function NotFound() {
         <Providers>
           <Analytics />
           <Header publicContext={publicContext} />
-          <div className="container py-28" key='not-found'>
+          <div className="container py-28" key="not-found">
             <div className="prose max-w-none">
-              <h1 className='mb-0'>404</h1>
+              <h1 className="mb-0">404</h1>
               <p className="mb-4">This page could not be found.</p>
             </div>
             <Button asChild variant="default">

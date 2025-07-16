@@ -63,7 +63,7 @@ const Timeline2: React.FC<TimelineBlock & { publicContext: PublicContextProps }>
                 }}
                 className="flex flex-col gap-4 md:h-[50vh]"
               >
-                <div className="block rounded-2xl border bg-muted p-4 md:hidden">
+                <div className="bg-muted block rounded-2xl border p-4 md:hidden">
                   {section.image && (
                     <Media
                       imgClassName="h-full max-h-full w-full max-w-full rounded-2xl object-cover"
@@ -74,7 +74,7 @@ const Timeline2: React.FC<TimelineBlock & { publicContext: PublicContextProps }>
                     />
                   )}
                 </div>
-                <p className="text-sm font-semibold text-muted-foreground md:text-base">
+                <p className="text-muted-foreground text-sm font-semibold md:text-base">
                   {section.tagline}
                 </p>
                 {section.richText && (
@@ -108,7 +108,7 @@ const Timeline2: React.FC<TimelineBlock & { publicContext: PublicContextProps }>
               <div
                 key={index}
                 className={cn(
-                  'absolute inset-0 flex h-full items-center justify-center rounded-2xl border bg-muted p-4 transition-opacity duration-200',
+                  'bg-muted absolute inset-0 flex h-full items-center justify-center rounded-2xl border p-4 transition-opacity duration-200',
                   index === activeIndex ? 'opacity-100' : 'opacity-0',
                 )}
               >

@@ -2,7 +2,7 @@ const Feature66 = () => {
   return (
     <section className="py-32">
       <div className="container flex flex-col items-start gap-8 lg:gap-12 lg:px-16">
-        <h3 className="text-pretty text-3xl font-semibold md:text-4xl lg:max-w-3xl lg:text-5xl">
+        <h3 className="text-3xl font-semibold text-pretty md:text-4xl lg:max-w-3xl lg:text-5xl">
           Feature group
         </h3>
         <div className="grid w-full grid-cols-1 gap-4 max-md:grid-rows-[1fr_1fr] md:grid-cols-2 lg:gap-6">
@@ -14,7 +14,7 @@ const Feature66 = () => {
                 className="absolute size-full object-cover object-center transition-transform duration-300 group-hover:scale-105"
               />
               <div className="absolute inset-x-0 bottom-0 mt-auto max-h-[50%] min-h-[50%] bg-[linear-gradient(transparent,hsl(from_var(--primary)_h_s_l/0.8)_80%)] mix-blend-multiply" />
-              <div className="absolute inset-x-0 bottom-0 flex flex-col items-start p-6 text-primary-foreground md:p-8">
+              <div className="text-primary-foreground absolute inset-x-0 bottom-0 flex flex-col items-start p-6 md:p-8">
                 <img
                   src="https://www.shadcnblocks.com/images/block/logos/astro.svg"
                   alt="placeholder logo"
@@ -34,7 +34,7 @@ const Feature66 = () => {
                 className="absolute size-full object-cover object-center transition-transform duration-300 group-hover:scale-105"
               />
               <div className="absolute inset-x-0 bottom-0 mt-auto max-h-[50%] min-h-[50%] bg-[linear-gradient(transparent,hsl(from_var(--primary)_h_s_l/0.8)_80%)] mix-blend-multiply" />
-              <div className="absolute inset-x-0 bottom-0 flex flex-col items-start p-6 text-primary-foreground md:p-8">
+              <div className="text-primary-foreground absolute inset-x-0 bottom-0 flex flex-col items-start p-6 md:p-8">
                 <img
                   src="https://www.shadcnblocks.com/images/block/logos/nextjs.svg"
                   alt="placeholder logo"
@@ -49,7 +49,7 @@ const Feature66 = () => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Feature66;
+export default Feature66

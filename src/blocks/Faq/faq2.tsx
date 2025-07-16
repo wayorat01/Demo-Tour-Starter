@@ -3,8 +3,8 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from '@/components/ui/accordion';
-import { FaqBlock } from '@/payload-types';
+} from '@/components/ui/accordion'
+import { FaqBlock } from '@/payload-types'
 
 const data = [
   {
@@ -49,7 +49,7 @@ const data = [
     answer:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Elig doloremque mollitia fugiat omnis! Porro facilis quo animi consequatur. Explicabo.',
   },
-];
+]
 
 const FAQ2: React.FC<FaqBlock> = () => {
   return (
@@ -64,21 +64,17 @@ const FAQ2: React.FC<FaqBlock> = () => {
           {data.map((item) => (
             <AccordionItem key={item.id} value={item.id}>
               <AccordionTrigger>
-                <div className="font-medium sm:py-1 lg:py-2 lg:text-lg">
-                  {item.question}
-                </div>
+                <div className="font-medium sm:py-1 lg:py-2 lg:text-lg">{item.question}</div>
               </AccordionTrigger>
               <AccordionContent className="sm:mb-1 lg:mb-2">
-                <div className="text-muted-foreground lg:text-lg">
-                  {item.answer}
-                </div>
+                <div className="text-muted-foreground lg:text-lg">{item.answer}</div>
               </AccordionContent>
             </AccordionItem>
           ))}
         </Accordion>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default FAQ2;
+export default FAQ2

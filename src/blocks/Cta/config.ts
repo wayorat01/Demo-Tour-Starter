@@ -29,7 +29,7 @@ export const allCtaDesignVersions = [
   // 'CTA17',
 ] as const
 
-export type CtaDesignVersion = typeof allCtaDesignVersions[number]
+export type CtaDesignVersion = (typeof allCtaDesignVersions)[number]
 
 export const CtaBlock: Block = {
   slug: 'cta',
@@ -44,20 +44,20 @@ export const CtaBlock: Block = {
       name: 'designVersion',
       type: 'select',
       required: true,
-      options: allCtaDesignVersions.map(version => ({ label: version, value: version })),
+      options: allCtaDesignVersions.map((version) => ({ label: version, value: version })),
     },
     {
       name: 'tagline',
       type: 'text',
       localized: true,
       admin: {
-        condition: (_, { designVersion = "" } = {}) =>
+        condition: (_, { designVersion = '' } = {}) =>
           ['CTA3', 'CTA4', 'CTA7', 'CTA13', 'CTA15'].includes(designVersion),
       },
     },
     icon({
       admin: {
-        condition: (_, { designVersion = "" } = {}) =>
+        condition: (_, { designVersion = '' } = {}) =>
           ['CTA1', 'CTA6', 'CTA7', 'CTA13', 'CTA15'].includes(designVersion),
       },
     }),
@@ -66,10 +66,21 @@ export const CtaBlock: Block = {
       type: 'richText',
       localized: true,
       admin: {
-        condition: (_, { designVersion = "" } = {}) =>
-          ['CTA1', 'CTA3', 'CTA4', 'CTA5', 'CTA6', 'CTA7', 'CTA10', 'CTA11', 'CTA12', 'CTA13', 'CTA15', 'CTA16'].includes(
-            designVersion,
-          ),
+        condition: (_, { designVersion = '' } = {}) =>
+          [
+            'CTA1',
+            'CTA3',
+            'CTA4',
+            'CTA5',
+            'CTA6',
+            'CTA7',
+            'CTA10',
+            'CTA11',
+            'CTA12',
+            'CTA13',
+            'CTA15',
+            'CTA16',
+          ].includes(designVersion),
       },
       editor: lexicalEditor({
         features: ({ rootFeatures }) => [
@@ -86,7 +97,7 @@ export const CtaBlock: Block = {
     linkGroup({
       overrides: {
         admin: {
-          condition: (_, { designVersion = "" } = {}) =>
+          condition: (_, { designVersion = '' } = {}) =>
             allCtaDesignVersions.includes(designVersion), // All CTAs use links
         },
       },
@@ -95,7 +106,7 @@ export const CtaBlock: Block = {
       name: 'image',
       type: 'upload',
       admin: {
-        condition: (_, { designVersion = "" } = {}) =>
+        condition: (_, { designVersion = '' } = {}) =>
           ['CTA1', 'CTA4', 'CTA6', 'CTA7', 'CTA13', 'CTA15', 'CTA16'].includes(designVersion),
       },
       relationTo: 'media',

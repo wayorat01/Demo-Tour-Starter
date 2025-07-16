@@ -8,7 +8,7 @@ const Feature60 = () => {
               <img
                 src="https://www.shadcnblocks.com/images/block/placeholder-1.svg"
                 alt="placeholder hero"
-                className="aspect-4/3 w-full rounded-md border border-border object-cover"
+                className="border-border aspect-4/3 w-full rounded-md border object-cover"
               />
             </div>
           </div>
@@ -18,16 +18,15 @@ const Feature60 = () => {
                 Feature name
               </h3>
               <p className="text-muted-foreground lg:text-lg">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Elig
-                doloremque mollitia fugiat omnis! Porro facilis quo animi
-                consequatur. Explicabo.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Elig doloremque mollitia
+                fugiat omnis! Porro facilis quo animi consequatur. Explicabo.
               </p>
             </div>
           </div>
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Feature60;
+export default Feature60

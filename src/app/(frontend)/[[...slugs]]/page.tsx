@@ -96,7 +96,6 @@ export default async function Page(props: Args) {
 
   const collection = cleanSlugs[0] === 'posts' ? 'posts' : 'pages'
 
-
   let page = await queryCollectionData({
     cleanSlugs,
     locale,
@@ -124,12 +123,12 @@ export default async function Page(props: Args) {
     )
   } else if (page.type === 'post') {
     const { designVersion } = page
-    
+
     // Dynamically render the blog post based on its design version
     return (
       <article className="blog-post">
         <PayloadRedirects disableNotFound url={url} />
-        
+
         {/* Render the appropriate blog post layout based on design version */}
         <RenderPostDetailPage post={page} publicContext={publicContext} />
       </article>
@@ -148,7 +147,7 @@ export async function generateMetadata(props: Args): Promise<Metadata> {
   const page = await queryCollectionData({
     cleanSlugs,
     locale,
-    collection: 'pages'
+    collection: 'pages',
   })
   const url = generateUrl(locale, cleanSlugs)
   if (page) {

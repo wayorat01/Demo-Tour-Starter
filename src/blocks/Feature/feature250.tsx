@@ -53,7 +53,7 @@ function AnimatedBeamIllustration({ image, icons }: { image: MediaType; icons: s
   const iconRef5 = useRef<HTMLDivElement>(null)
   const div6Ref = useRef<HTMLDivElement>(null)
   const div7Ref = useRef<HTMLDivElement>(null)
-  
+
   // Array of icon refs
   const iconRefs = [iconRef1, iconRef2, iconRef3, iconRef4, iconRef5]
 
@@ -108,7 +108,7 @@ function AnimatedBeamIllustration({ image, icons }: { image: MediaType; icons: s
     { from: iconRefs[4], to: div7Ref },
     { from: div6Ref, to: div7Ref },
   ]
-  
+
   const desktopBeams = [
     { from: iconRefs[0], to: div6Ref, props: {} },
     { from: iconRefs[1], to: div6Ref, props: { endYOffset: -30, endXOffset: 60, curvature: -140 } },
@@ -133,8 +133,8 @@ function AnimatedBeamIllustration({ image, icons }: { image: MediaType; icons: s
   }) {
     return (
       <div ref={ref} className={className} key={iconIdx}>
-        <div className="flex size-10 items-center justify-center rounded-lg border border-border bg-background p-[5px]">
-          <div className="flex size-full items-center justify-center rounded-md border border-border bg-muted">
+        <div className="border-border bg-background flex size-10 items-center justify-center rounded-lg border p-[5px]">
+          <div className="border-border bg-muted flex size-full items-center justify-center rounded-md border">
             {icons[iconIdx] && <Icon icon={icons[iconIdx]} size={16} />}
           </div>
         </div>
@@ -153,17 +153,17 @@ function AnimatedBeamIllustration({ image, icons }: { image: MediaType; icons: s
         </div>
         <div
           ref={div6Ref}
-          className="z-10 flex size-32 items-center justify-center rounded-3xl border bg-muted lg:size-42"
+          className="bg-muted z-10 flex size-32 items-center justify-center rounded-3xl border lg:size-42"
         >
           <Media
             resource={image}
             imgClassName="size-14 lg:size-18"
-            className="z-10 flex size-32 items-center justify-center rounded-3xl border bg-muted lg:size-42"
+            className="bg-muted z-10 flex size-32 items-center justify-center rounded-3xl border lg:size-42"
           />
         </div>
         <div
           ref={div7Ref}
-          className="z-10 mt-40 flex size-15 items-center justify-center rounded-xl border bg-muted lg:mt-0"
+          className="bg-muted z-10 mt-40 flex size-15 items-center justify-center rounded-xl border lg:mt-0"
         >
           {icons[5] && <Icon icon={icons[5]} size={28} />}
         </div>

@@ -1,13 +1,18 @@
-import { CMSLink } from '@/components/Link';
-import { Media } from '@/components/Media';
-import RichText from '@/components/RichText';
-import { Page } from '@/payload-types';
-import { PublicContextProps } from '@/utilities/publicContextProps';
+import { CMSLink } from '@/components/Link'
+import { Media } from '@/components/Media'
+import RichText from '@/components/RichText'
+import { Page } from '@/payload-types'
+import { PublicContextProps } from '@/utilities/publicContextProps'
 
-export const Hero31: React.FC<Page['hero'] & { publicContext: PublicContextProps }> = ({ links, images, richText, publicContext }) => {
+export const Hero31: React.FC<Page['hero'] & { publicContext: PublicContextProps }> = ({
+  links,
+  images,
+  richText,
+  publicContext,
+}) => {
   return (
     <section className="relative overflow-hidden py-32">
-      <div className="absolute inset-0 overflow-hidden bg-muted">
+      <div className="bg-muted absolute inset-0 overflow-hidden">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 1400 900"
@@ -16,23 +21,10 @@ export const Hero31: React.FC<Page['hero'] & { publicContext: PublicContextProps
           <defs>
             <filter id="blur1" x="-20%" y="-20%" width="140%" height="140%">
               <feFlood floodOpacity="0" result="BackgroundImageFix" />
-              <feBlend
-                mode="normal"
-                in="SourceGraphic"
-                in2="BackgroundImageFix"
-                result="shape"
-              />
-              <feGaussianBlur
-                stdDeviation="200"
-                result="effect1_foregroundBlur"
-              />
+              <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+              <feGaussianBlur stdDeviation="200" result="effect1_foregroundBlur" />
             </filter>
-            <pattern
-              id="innerGrid"
-              width="40"
-              height="40"
-              patternUnits="userSpaceOnUse"
-            >
+            <pattern id="innerGrid" width="40" height="40" patternUnits="userSpaceOnUse">
               <path
                 d="M 40 0 L 0 0 0 40"
                 fill="none"
@@ -41,12 +33,7 @@ export const Hero31: React.FC<Page['hero'] & { publicContext: PublicContextProps
                 strokeOpacity={0.6}
               />
             </pattern>
-            <pattern
-              id="grid"
-              width="160"
-              height="160"
-              patternUnits="userSpaceOnUse"
-            >
+            <pattern id="grid" width="160" height="160" patternUnits="userSpaceOnUse">
               <rect width="160" height="160" fill="url(#innerGrid)" />
               <path
                 d="M 70 80 H 90 M 80 70 V 90"
@@ -82,31 +69,39 @@ export const Hero31: React.FC<Page['hero'] & { publicContext: PublicContextProps
           <rect width="1400" height="900" fill="url(#grid)" />
         </svg>
       </div>
-      <div className="container relative">
+      <div className="relative container">
         <div className="flex flex-col items-center text-center">
-          {richText && <RichText publicContext={publicContext}
-            className="flex flex-col items-center text-center"
-            content={richText}
-            enableGutter={false}
-            overrideStyle={{
-              h1: "my-6 text-pretty text-4xl font-bold lg:text-6xl",
-              p: "mb-8 max-w-xl text-muted-foreground lg:text-xl"
-            }}
-          />}
+          {richText && (
+            <RichText
+              publicContext={publicContext}
+              className="flex flex-col items-center text-center"
+              content={richText}
+              enableGutter={false}
+              overrideStyle={{
+                h1: 'my-6 text-pretty text-4xl font-bold lg:text-6xl',
+                p: 'mb-8 max-w-xl text-muted-foreground lg:text-xl',
+              }}
+            />
+          )}
 
           {Array.isArray(links) && links.length > 0 && (
             <div className="flex w-full flex-col justify-center gap-2 sm:flex-row">
               {links.map(({ link }, i) => {
                 return (
-                  <CMSLink publicContext={publicContext} className="w-full sm:w-auto" key={i} {...link} />
+                  <CMSLink
+                    publicContext={publicContext}
+                    className="w-full sm:w-auto"
+                    key={i}
+                    {...link}
+                  />
                 )
               })}
             </div>
           )}
         </div>
       </div>
-      <div className="container relative">
-        <div className="-mb-48 mt-16 flex justify-center gap-4 pt-4">
+      <div className="relative container">
+        <div className="mt-16 -mb-48 flex justify-center gap-4 pt-4">
           {images && images.length > 0 && (
             <>
               <Media
@@ -175,5 +170,5 @@ export const Hero31: React.FC<Page['hero'] & { publicContext: PublicContextProps
         </div>
       </div>
     </section>
-  );
-};
+  )
+}

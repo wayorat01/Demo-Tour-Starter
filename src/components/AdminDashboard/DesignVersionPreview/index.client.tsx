@@ -109,7 +109,12 @@ const DesignVersionPreviewClient: React.FC<DesignVersionPreviewProps> = ({
                   fill="none"
                   stroke="currentColor"
                 >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 5l7 7-7 7"
+                  />
                 </svg>
               </div>
             </Button>
@@ -117,9 +122,7 @@ const DesignVersionPreviewClient: React.FC<DesignVersionPreviewProps> = ({
 
           {/* Description below the header */}
           {value && selectedOption?.description && (
-            <div className="design-version-preview__description">
-              {selectedOption.description}
-            </div>
+            <div className="design-version-preview__description">{selectedOption.description}</div>
           )}
         </div>
 

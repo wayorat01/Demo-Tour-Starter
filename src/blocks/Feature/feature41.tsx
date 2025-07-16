@@ -3,9 +3,7 @@ const Feature41 = () => {
     <section className="py-32">
       <div className="container">
         <div className="grid gap-10 md:grid-cols-5 md:gap-0">
-          <h2 className="col-span-2 text-4xl font-semibold lg:text-5xl">
-            Get Started
-          </h2>
+          <h2 className="col-span-2 text-4xl font-semibold lg:text-5xl">Get Started</h2>
           <div className="col-span-3 grid gap-10 sm:grid-cols-2">
             <div>
               <div className="h-5 w-7 rounded-sm bg-red-600"></div>
@@ -39,7 +37,7 @@ const Feature41 = () => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Feature41;
+export default Feature41

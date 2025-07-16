@@ -24,7 +24,7 @@ export const SplitViewBlock: React.FC<Props> = (props) => {
   if (!columns?.length) return null
 
   return (
-    <section className="w-full py-16 overflow-x-hidden">
+    <section className="w-full overflow-x-hidden py-16">
       <div className="container">
         <div className="grid grid-cols-12 gap-4 md:gap-8">
           {columns.map((column, index) => {
@@ -34,8 +34,15 @@ export const SplitViewBlock: React.FC<Props> = (props) => {
              */
             const size = (column as any)?.size || 'half'
             return (
-              <div key={index} className={cn('col-span-12', colsSpanClasses[size], 'flex items-center')}>
-                <RenderBlocks blocks={[column]} publicContext={publicContext} disableContainer={true} />
+              <div
+                key={index}
+                className={cn('col-span-12', colsSpanClasses[size], 'flex items-center')}
+              >
+                <RenderBlocks
+                  blocks={[column]}
+                  publicContext={publicContext}
+                  disableContainer={true}
+                />
               </div>
             )
           })}

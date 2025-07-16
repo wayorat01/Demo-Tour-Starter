@@ -21,7 +21,7 @@ export async function GET(
   const token = req.cookies.get(payloadToken)?.value
   const { searchParams } = new URL(req.url)
   const path = searchParams.get('path')
-  const locale = searchParams.get('locale') as typeof locales[number]
+  const locale = searchParams.get('locale') as (typeof locales)[number]
   const collection = searchParams.get('collection') as CollectionSlug
   const slug = searchParams.get('slug')
 

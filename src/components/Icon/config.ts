@@ -1,18 +1,18 @@
-import { RecursivePartial } from '@/utilities/typeUtils';
-import { TextField } from 'payload';
+import { RecursivePartial } from '@/utilities/typeUtils'
+import { TextField } from 'payload'
 
-type IconType = (overrides?: RecursivePartial<TextField>) => TextField;
+type IconType = (overrides?: RecursivePartial<TextField>) => TextField
 
 /**
  * Custom icon field type, that allows to select an icon from react-icons library
  * To be used in the payload config
- * @param overrides 
- * @returns 
+ * @param overrides
+ * @returns
  */
 export const icon: IconType = (overrides) => ({
   // @ts-ignore - We want these properties to be overwritten by the spread
-  name: "icon",
-  ...overrides as TextField,
+  name: 'icon',
+  ...(overrides as TextField),
   type: 'text',
   admin: {
     width: '50%',
@@ -22,7 +22,7 @@ export const icon: IconType = (overrides) => ({
       ...overrides?.admin?.components,
       Field: {
         path: '@/components/AdminDashboard/IconSelect',
-      }
+      },
     },
   },
 })

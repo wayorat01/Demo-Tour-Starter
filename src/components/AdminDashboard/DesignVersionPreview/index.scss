@@ -123,15 +123,15 @@
     grid-template-columns: repeat(1, 1fr);
     gap: base(1.5);
     grid-auto-rows: 1fr;
-    
+
     @media (min-width: 500px) {
       grid-template-columns: repeat(2, 1fr);
     }
-    
+
     @media (min-width: 768px) {
       grid-template-columns: repeat(3, 1fr);
     }
-    
+
     @media (min-width: 1200px) {
       grid-template-columns: repeat(3, 1fr);
     }
@@ -146,12 +146,12 @@
     background-color: var(--theme-input-bg);
     position: relative;
     min-height: 200px; // Set minimum height for each item
-    
+
     &:hover {
       transform: translateY(-2px);
       box-shadow: 0 2px 8px var(--theme-elevation-100);
     }
-    
+
     &--selected {
       border-color: var(--theme-warning-500);
       box-shadow: 0 0 0 2px var(--theme-warning-100);
@@ -186,7 +186,7 @@
     align-items: center;
     justify-content: center;
     color: var(--theme-elevation-300);
-    
+
     svg {
       width: base(2.5);
       height: base(2.5);
@@ -206,7 +206,7 @@
     justify-content: center;
     border: 3px solid white;
     z-index: 10;
-    
+
     svg {
       width: base(1);
       height: base(1);
@@ -286,7 +286,7 @@
       background: none;
       border: none;
       cursor: pointer;
-      
+
       &:hover {
         background-color: var(--theme-elevation-100);
         border-radius: 50%;

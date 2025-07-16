@@ -5,7 +5,8 @@ import Contact2 from '@/blocks/Contact/contact2'
 import Contact4 from '@/blocks/Contact/contact4'
 
 // Enforce required contacts but allow additional ones
-type Contact<T extends string = string> = Required<Record<ContactDesignVersion, React.FC<any>>> & Record<T, React.FC<any>>;
+type Contact<T extends string = string> = Required<Record<ContactDesignVersion, React.FC<any>>> &
+  Record<T, React.FC<any>>
 
 const contact: Contact = {
   CONTACT1: Contact1,

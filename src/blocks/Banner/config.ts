@@ -59,7 +59,8 @@ export const BannerBlock: Block = {
       appearances: false,
       overrides: {
         admin: {
-          condition: (_, { designVersion = '' } = {}) => ['BANNER1', 'BANNER5'].includes(designVersion),
+          condition: (_, { designVersion = '' } = {}) =>
+            ['BANNER1', 'BANNER5'].includes(designVersion),
         },
       },
     }),

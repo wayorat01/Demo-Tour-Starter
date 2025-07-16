@@ -14,7 +14,8 @@ import Cta17 from '@/blocks/Cta/cta17'
 
 import { CtaDesignVersion } from './config'
 
-type Cta<T extends string = string> = Required<Record<CtaDesignVersion, React.FC<any>>> & Record<T, React.FC<any>>;
+type Cta<T extends string = string> = Required<Record<CtaDesignVersion, React.FC<any>>> &
+  Record<T, React.FC<any>>
 
 const ctas: Cta = {
   CTA1: Cta1,

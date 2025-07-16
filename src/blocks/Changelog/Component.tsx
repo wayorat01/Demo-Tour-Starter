@@ -7,7 +7,9 @@ const changelogs = {
   CHANGELOG1: Changelog1,
 }
 
-export const ChangelogBlock: React.FC<Page['layout'][0] & { publicContext: PublicContextProps }> = (props) => {
+export const ChangelogBlock: React.FC<Page['layout'][0] & { publicContext: PublicContextProps }> = (
+  props,
+) => {
   if (props.blockType !== 'changelog') return null
 
   const { designVersion } = props || {}
@@ -20,4 +22,3 @@ export const ChangelogBlock: React.FC<Page['layout'][0] & { publicContext: Publi
 
   return <ChangelogToRender {...props} />
 }
-

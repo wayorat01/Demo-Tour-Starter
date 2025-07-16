@@ -34,7 +34,7 @@ const Navbar5: React.FC<{ header: HeaderType; publicContext: PublicContextProps 
   publicContext,
 }) => {
   return (
-    <section className="py-4 z-50">
+    <section className="z-50 py-4">
       <div className="container">
         <nav className="flex items-center justify-between">
           <div className="flex items-center">
@@ -42,7 +42,7 @@ const Navbar5: React.FC<{ header: HeaderType; publicContext: PublicContextProps 
               <Media resource={header.logo} priority className="h-9" imgClassName="h-full w-auto" />
             </Link>
           </div>
-          <NavigationMenu className="hidden lg:block z-50">
+          <NavigationMenu className="z-50 hidden lg:block">
             <NavigationMenuList>
               {header.items?.map((item) => {
                 if (item.blockType === 'link') {
@@ -74,7 +74,7 @@ const Navbar5: React.FC<{ header: HeaderType; publicContext: PublicContextProps 
                               <li>
                                 <CMSLink
                                   publicContext={publicContext}
-                                  className="flex select-none gap-4 rounded-md p-3 leading-none no-underline outline-hidden transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                                  className="hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground flex gap-4 rounded-md p-3 leading-none no-underline outline-hidden transition-colors select-none"
                                   {...subitem.link}
                                   label=""
                                   iconBefore={undefined}
@@ -90,7 +90,7 @@ const Navbar5: React.FC<{ header: HeaderType; publicContext: PublicContextProps 
                                     <div className="text-sm font-semibold">
                                       {subitem.link.label}
                                     </div>
-                                    <p className="text-sm leading-snug text-muted-foreground">
+                                    <p className="text-muted-foreground text-sm leading-snug">
                                       {subitem.Description}
                                     </p>
                                   </div>
@@ -108,7 +108,7 @@ const Navbar5: React.FC<{ header: HeaderType; publicContext: PublicContextProps 
           </NavigationMenu>
 
           {/* Right Button Group */}
-          <div className="hidden lg:flex gap-2 z-50">
+          <div className="z-50 hidden gap-2 lg:flex">
             {header?.buttons?.map((btn) => (
               <CMSLink publicContext={publicContext} key={btn.id} {...btn.link} size="sm" />
             ))}
@@ -171,7 +171,7 @@ const Navbar5: React.FC<{ header: HeaderType; publicContext: PublicContextProps 
                                   publicContext={publicContext}
                                   key={subitem.id}
                                   className={cn(
-                                    'flex select-none gap-4 rounded-md p-3 leading-none outline-hidden transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground',
+                                    'hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground flex gap-4 rounded-md p-3 leading-none outline-hidden transition-colors select-none',
                                   )}
                                   {...subitem.link}
                                   label=""
@@ -185,7 +185,7 @@ const Navbar5: React.FC<{ header: HeaderType; publicContext: PublicContextProps 
                                     <div className="text-sm font-semibold">
                                       {subitem.link.label}
                                     </div>
-                                    <p className="text-sm leading-snug text-muted-foreground">
+                                    <p className="text-muted-foreground text-sm leading-snug">
                                       {subitem.Description}
                                     </p>
                                   </div>

@@ -1,13 +1,13 @@
-import { Globe } from 'lucide-react';
+import { Globe } from 'lucide-react'
 
-import { Avatar, AvatarImage } from '@/components/ui/avatar';
-import { Button } from '@/components/ui/button';
+import { Avatar, AvatarImage } from '@/components/ui/avatar'
+import { Button } from '@/components/ui/button'
 
 const Hero53 = () => {
   return (
     <section className="relative py-32">
       <div className="container">
-        <div className="absolute inset-0 -z-10 size-full bg-[radial-gradient(hsl(from_var(--muted-foreground)_h_s_l)_1px,transparent_1px)] opacity-35 bg-size-[14px_14px]"></div>
+        <div className="absolute inset-0 -z-10 size-full bg-[radial-gradient(hsl(from_var(--muted-foreground)_h_s_l)_1px,transparent_1px)] bg-size-[14px_14px] opacity-35"></div>
         <h1 className="text-5xl font-bold md:text-6xl lg:text-8xl">
           Simplifying maintenance for efficient code management.
         </h1>
@@ -40,14 +40,14 @@ const Hero53 = () => {
               <p className="text-xs">Trusted by 2000+ developers worldwide</p>
             </div>
           </div>
-          <p className="max-w-lg text-xl text-muted-foreground">
-            Our platform streamlines development by automating issue tracking,
-            documentation, and knowledge management.
+          <p className="text-muted-foreground max-w-lg text-xl">
+            Our platform streamlines development by automating issue tracking, documentation, and
+            knowledge management.
           </p>
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Hero53;
+export default Hero53

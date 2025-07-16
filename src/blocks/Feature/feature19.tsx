@@ -1,6 +1,6 @@
-import { ArrowRight, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, CheckCircle2 } from 'lucide-react'
 
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 
 const slides = [
   {
@@ -53,7 +53,7 @@ const slides = [
     link: '#',
     image: '/images/block/placeholder-5.svg',
   },
-];
+]
 
 const Feature19 = () => {
   return (
@@ -63,9 +63,9 @@ const Feature19 = () => {
           <h2 className="mb-4 text-center text-3xl font-semibold lg:text-5xl">
             This is where your feature goes
           </h2>
-          <p className="text-balance text-center text-muted-foreground lg:text-2xl">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae aut
-            doloribus voluptatum distinctio! Eum
+          <p className="text-muted-foreground text-center text-balance lg:text-2xl">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae aut doloribus voluptatum
+            distinctio! Eum
           </p>
         </div>
         <div className="mt-24">
@@ -85,19 +85,11 @@ const Feature19 = () => {
               ))}
             </TabsList>
             {slides.map((slide) => (
-              <TabsContent
-                value={slide.id.toString()}
-                key={slide.id}
-                className="max-w-screen-lg"
-              >
+              <TabsContent value={slide.id.toString()} key={slide.id} className="max-w-screen-lg">
                 <div className="grid grid-cols-1 items-center gap-10 md:grid-cols-2">
                   <div>
-                    <h2 className="mb-4 text-2xl font-semibold md:text-4xl">
-                      {slide.title}
-                    </h2>
-                    <p className="text-xl text-muted-foreground">
-                      {slide.description}
-                    </p>
+                    <h2 className="mb-4 text-2xl font-semibold md:text-4xl">{slide.title}</h2>
+                    <p className="text-muted-foreground text-xl">{slide.description}</p>
                     <ul className="mt-8 grid grid-cols-1 gap-2 lg:grid-cols-2">
                       {slide.features.map((feature) => (
                         <li key={feature} className="flex items-center gap-2">
@@ -126,7 +118,7 @@ const Feature19 = () => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Feature19;
+export default Feature19

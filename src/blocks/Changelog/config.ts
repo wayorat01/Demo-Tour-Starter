@@ -1,5 +1,9 @@
 import encryptionHooks from '@/hooks/encryptionHook'
-import { lexicalEditor, OrderedListFeature, UnorderedListFeature } from '@payloadcms/richtext-lexical'
+import {
+  lexicalEditor,
+  OrderedListFeature,
+  UnorderedListFeature,
+} from '@payloadcms/richtext-lexical'
 import type { Block } from 'payload'
 
 export const ChangelogBlock: Block = {
@@ -75,10 +79,10 @@ export const ChangelogBlock: Block = {
             components: {
               Field: {
                 path: '@/components/AdminDashboard/Changelog/FetchButton',
-              }
-            }
-          }
-        }
+              },
+            },
+          },
+        },
       ],
     },
     {
@@ -89,9 +93,9 @@ export const ChangelogBlock: Block = {
       },
       admin: {
         description: {
-          en: 'Add changelog entries. Entries coming from Github won\'t be overwritten when the data is updated manually.',
+          en: "Add changelog entries. Entries coming from Github won't be overwritten when the data is updated manually.",
           de: 'Changelog-Einträge hinzufügen',
-        }
+        },
       },
       type: 'array',
       fields: [
@@ -100,20 +104,16 @@ export const ChangelogBlock: Block = {
           type: 'text',
           admin: {
             description: {
-              en: "Describe this release. We will auto-generate it using the version, if not set"
-            }
-          }
+              en: 'Describe this release. We will auto-generate it using the version, if not set',
+            },
+          },
         },
         {
           name: 'description',
           type: 'richText',
           editor: lexicalEditor({
             features: ({ rootFeatures }) => {
-              return [
-                ...rootFeatures,
-                OrderedListFeature(),
-                UnorderedListFeature()
-              ]
+              return [...rootFeatures, OrderedListFeature(), UnorderedListFeature()]
             },
           }),
         },
@@ -144,11 +144,11 @@ export const ChangelogBlock: Block = {
             description: {
               en: 'Optional image for the entry',
               de: 'Optionales Bild für den Eintrag',
-            }
-          }
-        }
-      ]
-    }
+            },
+          },
+        },
+      ],
+    },
   ],
   interfaceName: 'changelogblock',
 }

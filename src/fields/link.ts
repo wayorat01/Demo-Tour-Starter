@@ -117,7 +117,7 @@ export const link: LinkType = ({
         components: {
           Field: {
             path: '@/components/AdminDashboard/SectionSelect',
-          }
+          },
         },
       },
     },
@@ -185,19 +185,22 @@ export const link: LinkType = ({
 
     linkResult.fields.push({
       type: 'row',
-      fields: [{
-        name: 'appearance',
-        type: 'select',
-        admin: {
-          description: 'Choose how the link should be rendered.',
+      fields: [
+        {
+          name: 'appearance',
+          type: 'select',
+          admin: {
+            description: 'Choose how the link should be rendered.',
+          },
+          defaultValue: 'default',
+          options: appearanceOptionsToUse,
         },
-        defaultValue: 'default',
-        options: appearanceOptionsToUse,
-      }, {
-        name: 'size',
-        type: 'select',
-        options: ['default', 'sm', 'lg', 'icon', 'clear'],
-      }]
+        {
+          name: 'size',
+          type: 'select',
+          options: ['default', 'sm', 'lg', 'icon', 'clear'],
+        },
+      ],
     })
   }
 

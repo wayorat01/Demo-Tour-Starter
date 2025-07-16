@@ -1,12 +1,12 @@
-import { Play } from 'lucide-react';
+import { Play } from 'lucide-react'
 
-import { Badge } from '@/components/ui/badge';
-import { Separator } from '@/components/ui/separator';
+import { Badge } from '@/components/ui/badge'
+import { Separator } from '@/components/ui/separator'
 
 const Feature86 = () => {
   return (
     <section className="relative py-32">
-      <div className="pointer-events-none absolute inset-0 z-10 bg-[url('/images/block/shadow-overlay.png')] bg-[50%_0] bg-no-repeat"></div>
+      <div className="pointer-events-none absolute inset-0 z-10 bg-[50%_0] bg-[url('/images/block/shadow-overlay.png')] bg-no-repeat"></div>
       <div className="container p-6 md:p-16">
         <div className="grid gap-12 lg:grid-cols-3">
           <div className="flex flex-col justify-between gap-8">
@@ -18,16 +18,15 @@ const Feature86 = () => {
                 <span className="text-muted-foreground">less meetings.</span>
               </h2>
               <p className="text-muted-foreground">
-                Shared platforms empower teams and partners to track progress,
-                provide feedback, and approve tasks, reducing meetings and
-                updates, allowing you to focus on the bigger picture.
+                Shared platforms empower teams and partners to track progress, provide feedback, and
+                approve tasks, reducing meetings and updates, allowing you to focus on the bigger
+                picture.
               </p>
             </div>
             <div className="flex flex-col gap-3">
               <Separator />
               <p className="text-muted-foreground">
-                Discover how we operate a remote-first, efficient service team
-                with Flow.
+                Discover how we operate a remote-first, efficient service team with Flow.
               </p>
               <a href="#" className="flex items-center gap-1 hover:underline">
                 <Play className="h-auto w-4" />
@@ -35,7 +34,7 @@ const Feature86 = () => {
               </a>
             </div>
           </div>
-          <div className="flex aspect-square w-full items-center justify-center bg-muted px-6 md:px-8 lg:col-span-2">
+          <div className="bg-muted flex aspect-square w-full items-center justify-center px-6 md:px-8 lg:col-span-2">
             <img
               src="https://www.shadcnblocks.com/images/block/placeholder-aspect-video-1.svg"
               alt="placeholder"
@@ -45,7 +44,7 @@ const Feature86 = () => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Feature86;
+export default Feature86

@@ -20,7 +20,10 @@ export const Text: React.FC<
 > = ({ name, defaultValue, errors, label, register, required: requiredFromProps, width }) => {
   return (
     <Width width={width}>
-      <Label htmlFor={name}>{label}{requiredFromProps && <span className="ml-1">*</span>}</Label>
+      <Label htmlFor={name}>
+        {label}
+        {requiredFromProps && <span className="ml-1">*</span>}
+      </Label>
       <Input
         defaultValue={defaultValue}
         id={name}

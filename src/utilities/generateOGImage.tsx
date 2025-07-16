@@ -28,8 +28,10 @@ export const contentType = 'image/png'
  * @returns {Promise<ImageResponse>} - A promise that resolves to an `ImageResponse` object.
  */
 export default async function generateOGImage({ title }: { title?: string | null }) {
-
-  const pageConfig = (await getCachedGlobal("page-config", 3)() as DataFromGlobalSlug<"page-config">)
+  const pageConfig = (await getCachedGlobal(
+    'page-config',
+    3,
+  )()) as DataFromGlobalSlug<'page-config'>
 
   const backgroundImageUrl = (pageConfig.openGraph?.backgroundImage as Media)?.url
 
@@ -45,15 +47,11 @@ export default async function generateOGImage({ title }: { title?: string | null
     return new Response('No text color found', { status: 404 })
   }
 
-
   const backgroundImage = `${NEXT_PUBLIC_SERVER_URL}${backgroundImageUrl}`
 
-
   try {
-
     // Load the font
     const fontData = await loadGoogleFont('Inter', pageTitle)
-
 
     return new ImageResponse(
       (

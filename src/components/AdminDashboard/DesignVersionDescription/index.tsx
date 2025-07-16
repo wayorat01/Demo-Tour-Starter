@@ -1,4 +1,4 @@
-import { Condition, Field } from "payload";
+import { Condition, Field } from 'payload'
 
 /**
  * Creates a conditional description field for feature design versions in the Payload CMS admin interface.
@@ -9,32 +9,36 @@ import { Condition, Field } from "payload";
  * @param {{en: string, de?: string}} description - The description in English and optionally in German.
  * @returns {Field} A Payload CMS field configuration object.
  */
-export const designVersionDescription = (name: string, condition: Condition<any, any>, description: {
-  en: string,
-  de?: string,
-}): Field => ({
-  type: "ui",
+export const designVersionDescription = (
+  name: string,
+  condition: Condition<any, any>,
+  description: {
+    en: string
+    de?: string
+  },
+): Field => ({
+  type: 'ui',
   name,
   admin: {
     condition,
     components: {
       Field: {
-        path: "@/components/AdminDashboard/DesignVersionDescription",
+        path: '@/components/AdminDashboard/DesignVersionDescription',
         serverProps: {
           description: {
             en: description?.en,
             de: description?.de,
-          }
+          },
         },
         clientProps: {
           description: {
             en: description?.en,
             de: description?.de,
-          }
-        }
-      }
+          },
+        },
+      },
     },
-  }
+  },
 })
 
 /**
@@ -45,8 +49,8 @@ export const designVersionDescription = (name: string, condition: Condition<any,
  * @returns {JSX.Element} A paragraph element with the localized description.
  */
 const DesignVersionDescription: React.FC<any> = ({ description, i18n }) => {
-  const lang = i18n?.language || i18n?.fallbackLanguage || "en";
-  return <p style={{ color: "red", marginBottom: 10 }}>{description?.[lang] || description?.en}</p>
-};
+  const lang = i18n?.language || i18n?.fallbackLanguage || 'en'
+  return <p style={{ color: 'red', marginBottom: 10 }}>{description?.[lang] || description?.en}</p>
+}
 
-export default DesignVersionDescription;
+export default DesignVersionDescription

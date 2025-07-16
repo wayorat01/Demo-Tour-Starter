@@ -1,8 +1,8 @@
 'use client'
 
-import { useEffect } from "react";
+import { useEffect } from 'react'
 
-const r = "radius"
+const r = 'radius'
 // const colors = [
 //     "background",
 //     "foreground",
@@ -34,104 +34,90 @@ const r = "radius"
 //     "muted2",
 //     "muted2-foreground",
 // ]
-const colors = [
-  "bg-",
-  "text-",
-  "border-",
-  "ring-",
-  "shadow-",
-]
+const colors = ['bg-', 'text-', 'border-', 'ring-', 'shadow-']
 
-const highlightColors = [
-  "red",
-  "green",
-  "blue",
-  "purple",
-  "pink",
-  "orange",
-]
-let highlightColorIndex = 0;
-let popover: HTMLDivElement | null = null;
-let prevHoveredElement: HTMLElement | null = null;
+const highlightColors = ['red', 'green', 'blue', 'purple', 'pink', 'orange']
+let highlightColorIndex = 0
+let popover: HTMLDivElement | null = null
+let prevHoveredElement: HTMLElement | null = null
 
 // Function to place one element above another with pixel offset
 function placeElementAbove(referenceElement, targetElement, offsetX = 0, offsetY = 0) {
   // Get the bounding box of the reference element
-  const referenceRect = referenceElement.getBoundingClientRect();
+  const referenceRect = referenceElement.getBoundingClientRect()
 
   // Set initial styles to measure width
-  targetElement.style.position = "fixed";
-  targetElement.style.visibility = "hidden"; // Hide temporarily to measure
-  targetElement.style.backgroundColor = "red";
-  targetElement.style.color = 'white';
-  targetElement.style.padding = '4px';
-  targetElement.style.borderRadius = '10px';
-  targetElement.style.lineHeight = '20px';
-  targetElement.style.fontSize = '15px';
-  targetElement.style.width = 'auto';
+  targetElement.style.position = 'fixed'
+  targetElement.style.visibility = 'hidden' // Hide temporarily to measure
+  targetElement.style.backgroundColor = 'red'
+  targetElement.style.color = 'white'
+  targetElement.style.padding = '4px'
+  targetElement.style.borderRadius = '10px'
+  targetElement.style.lineHeight = '20px'
+  targetElement.style.fontSize = '15px'
+  targetElement.style.width = 'auto'
 
   // Measure the target element width
-  const targetWidth = targetElement.offsetWidth;
+  const targetWidth = targetElement.offsetWidth
 
   // Calculate positions
-  const topPosition = referenceRect.top - targetElement.offsetHeight + offsetY;
-  let leftPosition = referenceRect.left + offsetX;
+  const topPosition = referenceRect.top - targetElement.offsetHeight + offsetY
+  let leftPosition = referenceRect.left + offsetX
 
   // Check if element would go off screen to the left
   if (leftPosition + targetWidth > window.innerWidth) {
-    leftPosition = window.innerWidth - targetWidth - 10; // 10px padding from right edge
+    leftPosition = window.innerWidth - targetWidth - 10 // 10px padding from right edge
   }
 
   // Ensure element doesn't go off screen to the left
-  leftPosition = Math.max(10, leftPosition); // 10px minimum padding from left edge
+  leftPosition = Math.max(10, leftPosition) // 10px minimum padding from left edge
 
   // Apply final position
-  targetElement.style.top = `${topPosition}px`;
-  targetElement.style.left = `${leftPosition}px`;
-  targetElement.style.zIndex = 1000;
-  targetElement.style.visibility = 'visible'; // Make visible again
+  targetElement.style.top = `${topPosition}px`
+  targetElement.style.left = `${leftPosition}px`
+  targetElement.style.zIndex = 1000
+  targetElement.style.visibility = 'visible' // Make visible again
 }
 function cssColorToHex(color) {
   // Create a temporary element to use browser's internal CSS parser
-  const tempElement = document.createElement("div");
-  tempElement.style.color = color;
-  document.body.appendChild(tempElement);
+  const tempElement = document.createElement('div')
+  tempElement.style.color = color
+  document.body.appendChild(tempElement)
 
   // Get computed color in rgb(a) format
-  const computedColor = window.getComputedStyle(tempElement).color;
-  document.body.removeChild(tempElement);
+  const computedColor = window.getComputedStyle(tempElement).color
+  document.body.removeChild(tempElement)
 
   // Match the rgba or rgb format
-  const rgbaMatch = computedColor.match(/^rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*(\d*\.?\d+))?\)$/);
+  const rgbaMatch = computedColor.match(/^rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*(\d*\.?\d+))?\)$/)
   if (!rgbaMatch) {
-    throw new Error("Invalid CSS color format");
+    throw new Error('Invalid CSS color format')
   }
 
   // Extract red, green, blue, and alpha values
-  const r = parseInt(rgbaMatch[1], 10);
-  const g = parseInt(rgbaMatch[2], 10);
-  const b = parseInt(rgbaMatch[3], 10);
-  const a = rgbaMatch[4] !== undefined ? Math.round(parseFloat(rgbaMatch[4]) * 255) : null;
+  const r = parseInt(rgbaMatch[1], 10)
+  const g = parseInt(rgbaMatch[2], 10)
+  const b = parseInt(rgbaMatch[3], 10)
+  const a = rgbaMatch[4] !== undefined ? Math.round(parseFloat(rgbaMatch[4]) * 255) : null
 
   // Convert to hexadecimal
-  const hexR = r.toString(16).padStart(2, "0");
-  const hexG = g.toString(16).padStart(2, "0");
-  const hexB = b.toString(16).padStart(2, "0");
-  const hexA = a !== null ? a.toString(16).padStart(2, "0") : "";
+  const hexR = r.toString(16).padStart(2, '0')
+  const hexG = g.toString(16).padStart(2, '0')
+  const hexB = b.toString(16).padStart(2, '0')
+  const hexA = a !== null ? a.toString(16).padStart(2, '0') : ''
 
-  return `#${hexR}${hexG}${hexB}${hexA}`;
+  return `#${hexR}${hexG}${hexB}${hexA}`
 }
 
 export const ThemeColorHelper: React.FC<{}> = () => {
-
   // Mouseover Event listeners for popover
   useEffect(() => {
     // Event-Listener für das "mouseover"-Event
     const mouseover = (event: MouseEvent) => {
       // Gehovertes Element aus dem Event-Objekt
-      const hoveredElement = event?.target as HTMLElement;
-      if (!hoveredElement || !hoveredElement?.className) return;
-      const highlightColor = "red";
+      const hoveredElement = event?.target as HTMLElement
+      if (!hoveredElement || !hoveredElement?.className) return
+      const highlightColor = 'red'
       // const highlightColor = highlightColors[highlightColorIndex];
       // highlightColorIndex = (highlightColorIndex + 1) % highlightColors.length;
 
@@ -144,29 +130,30 @@ export const ThemeColorHelper: React.FC<{}> = () => {
       }
 
       // Klassen in der Konsole ausgeben
-      const c = classNames.filter((cn) => colors.some((color) => {
-        if (cn.match(/ring-offset/)) {
-          return false
-        }
-        if (cn.match(/ring-[0-9]+/)) {
-          return false
-        }
-        if (cn.match(/border-[0-9]+/)) {
-          return false
-        }
-        if (cn.match(/shadow-[0-9]+/)) {
-          return false
-        }
-        if (cn.match(/shadow-(lg|md|sm|xs|xl|2xl|3xl|4xl|5xl|6xl|7xl|8xl|9xl)/)) {
-          return false
-        }
-        if (cn.match(/text-(lg|md|sm|xs|xl|2xl|3xl|4xl|5xl|6xl|7xl|8xl|9xl)/)) {
-          return false
-        }
-        return cn.includes(color)
-      }));
+      const c = classNames.filter((cn) =>
+        colors.some((color) => {
+          if (cn.match(/ring-offset/)) {
+            return false
+          }
+          if (cn.match(/ring-[0-9]+/)) {
+            return false
+          }
+          if (cn.match(/border-[0-9]+/)) {
+            return false
+          }
+          if (cn.match(/shadow-[0-9]+/)) {
+            return false
+          }
+          if (cn.match(/shadow-(lg|md|sm|xs|xl|2xl|3xl|4xl|5xl|6xl|7xl|8xl|9xl)/)) {
+            return false
+          }
+          if (cn.match(/text-(lg|md|sm|xs|xl|2xl|3xl|4xl|5xl|6xl|7xl|8xl|9xl)/)) {
+            return false
+          }
+          return cn.includes(color)
+        }),
+      )
       if (c.length > 0) {
-
         if (prevHoveredElement) {
           prevHoveredElement.style.outline = 'none'
         }
@@ -174,15 +161,14 @@ export const ThemeColorHelper: React.FC<{}> = () => {
           popover.remove()
         }
 
-
         hoveredElement.style.outline = `2px solid ${highlightColor}`
         popover = document.createElement('div')
-        popover.style.background = "red"
-        popover.style.color = "black"
-        popover.style.height = "20px"
-        popover.style.lineHeight = "20px"
-        popover.style.fontSize = "15px"
-        popover.style.width = "auto"
+        popover.style.background = 'red'
+        popover.style.color = 'black'
+        popover.style.height = '20px'
+        popover.style.lineHeight = '20px'
+        popover.style.fontSize = '15px'
+        popover.style.width = 'auto'
         popover.innerText = c.join(' ')
         document.body.appendChild(popover)
         placeElementAbove(hoveredElement, popover, -2, -8)
@@ -195,12 +181,11 @@ export const ThemeColorHelper: React.FC<{}> = () => {
         }, 10_000)
       }
     }
-    document.addEventListener('mouseover', mouseover);
+    document.addEventListener('mouseover', mouseover)
     return () => {
-      document.removeEventListener('mouseover', mouseover);
+      document.removeEventListener('mouseover', mouseover)
     }
   }, [])
-
 
   // Theme Color Picker on right side of screen
   useEffect(() => {
@@ -218,24 +203,30 @@ export const ThemeColorHelper: React.FC<{}> = () => {
     // colorPicker.style.height = '200px'
     // colorPicker.style.flexWrap = 'wrap'
     colorPicker.style.gap = '10px'
-    const themeConfigElement = document.querySelector("#theme-config");
-    if (!themeConfigElement) return;
-    const themeConfig = themeConfigElement?.innerHTML?.split("\n").filter((line) => line.startsWith("  --") && !line.includes("radius")).map((line) => {
-      let [name, value] = line.split(": ");
-      name = name?.replace("--", "").trim()
-      value = value?.replace(";", "").trim()
-      return {
-        name,
-        value,
-      }
-    })
+    const themeConfigElement = document.querySelector('#theme-config')
+    if (!themeConfigElement) return
+    const themeConfig = themeConfigElement?.innerHTML
+      ?.split('\n')
+      .filter((line) => line.startsWith('  --') && !line.includes('radius'))
+      .map((line) => {
+        let [name, value] = line.split(': ')
+        name = name?.replace('--', '').trim()
+        value = value?.replace(';', '').trim()
+        return {
+          name,
+          value,
+        }
+      })
     themeConfig?.map(({ name, value }) => {
       const color = document.createElement('input')
       color.type = 'color'
       color.value = cssColorToHex(value)
       color.addEventListener('input', (event) => {
-        const target = event.target as HTMLInputElement;
-        const newThemeConfig = themeConfigElement?.innerHTML?.replace(`${name}: ${value}`, `${name}: ${target?.value}`)
+        const target = event.target as HTMLInputElement
+        const newThemeConfig = themeConfigElement?.innerHTML?.replace(
+          `${name}: ${value}`,
+          `${name}: ${target?.value}`,
+        )
         value = target?.value
         if (newThemeConfig) {
           themeConfigElement.innerHTML = newThemeConfig
@@ -257,11 +248,13 @@ export const ThemeColorHelper: React.FC<{}> = () => {
       label.style.margin = '-25px 0px 0px 24px'
       colorPicker.appendChild(label)
 
-
       const over = (event) => {
         color.style.border = '1px solid #f0f'
         label.style.color = '#f0f'
-        const newThemeConfig = themeConfigElement?.innerHTML?.replace(`${name}: ${value}`, `${name}: #f0f`)
+        const newThemeConfig = themeConfigElement?.innerHTML?.replace(
+          `${name}: ${value}`,
+          `${name}: #f0f`,
+        )
         if (newThemeConfig) {
           themeConfigElement.innerHTML = newThemeConfig
         }
@@ -269,7 +262,10 @@ export const ThemeColorHelper: React.FC<{}> = () => {
       const out = (event) => {
         color.style.border = '1px solid white'
         label.style.color = 'black'
-        const newThemeConfig = themeConfigElement?.innerHTML?.replace(`${name}: #f0f`, `${name}: ${value}`)
+        const newThemeConfig = themeConfigElement?.innerHTML?.replace(
+          `${name}: #f0f`,
+          `${name}: ${value}`,
+        )
         if (newThemeConfig) {
           themeConfigElement.innerHTML = newThemeConfig
         }
@@ -292,8 +288,11 @@ export const ThemeColorHelper: React.FC<{}> = () => {
       radiusSlider.value = radiusValue
     }
     radiusSlider.addEventListener('input', (event) => {
-      const target = event.target as HTMLInputElement;
-      const newThemeConfig = themeConfigElement?.innerHTML?.replace(`--radius: ${radiusValue}`, `--radius: ${target?.value}`)
+      const target = event.target as HTMLInputElement
+      const newThemeConfig = themeConfigElement?.innerHTML?.replace(
+        `--radius: ${radiusValue}`,
+        `--radius: ${target?.value}`,
+      )
       if (newThemeConfig) {
         themeConfigElement.innerHTML = newThemeConfig
       }
@@ -328,7 +327,5 @@ export const ThemeColorHelper: React.FC<{}> = () => {
     }
   }, [])
 
-  return (
-    null
-  )
+  return null
 }

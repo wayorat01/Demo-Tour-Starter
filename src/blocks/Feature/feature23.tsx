@@ -1,6 +1,6 @@
-import { ChevronRight } from 'lucide-react';
+import { ChevronRight } from 'lucide-react'
 
-import { Badge } from '@/components/ui/badge';
+import { Badge } from '@/components/ui/badge'
 
 const Feature23 = () => {
   return (
@@ -11,14 +11,14 @@ const Feature23 = () => {
           <h2 className="text-4xl font-medium">
             Various integrations to help you grow your business
           </h2>
-          <p className="text-lg text-muted-foreground">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente
-            sunt deleniti aliquid voluptates, nihil culpa enim.
+          <p className="text-muted-foreground text-lg">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente sunt deleniti aliquid
+            voluptates, nihil culpa enim.
           </p>
         </div>
         <div className="mt-20 grid gap-10 lg:grid-cols-3 xl:gap-20">
           <div className="flex flex-col lg:block">
-            <div className="h-full max-h-[500px] rounded-lg border bg-muted p-3">
+            <div className="bg-muted h-full max-h-[500px] rounded-lg border p-3">
               <img
                 src="https://www.shadcnblocks.com/images/block/placeholder-dark-1.svg"
                 alt="placeholder"
@@ -28,8 +28,8 @@ const Feature23 = () => {
             <div className="p-6">
               <div className="mb-1 font-semibold">Copy paste components</div>
               <p className="text-muted-foreground">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi
-                laboriosam voluptatibus temporibus doloremque laudantium.
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi laboriosam
+                voluptatibus temporibus doloremque laudantium.
               </p>
               <a href="#" className="mt-4 flex items-center gap-2 font-medium">
                 Learn more
@@ -38,7 +38,7 @@ const Feature23 = () => {
             </div>
           </div>
           <div className="flex flex-col lg:block">
-            <div className="h-full max-h-[500px] rounded-lg border bg-muted p-3">
+            <div className="bg-muted h-full max-h-[500px] rounded-lg border p-3">
               <img
                 src="https://www.shadcnblocks.com/images/block/placeholder-dark-2.svg"
                 alt="placeholder"
@@ -46,12 +46,10 @@ const Feature23 = () => {
               />
             </div>
             <div className="p-6">
-              <p className="mb-1 flex items-center gap-2 font-semibold">
-                100% customizable
-              </p>
+              <p className="mb-1 flex items-center gap-2 font-semibold">100% customizable</p>
               <p className="text-muted-foreground">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi
-                laboriosam voluptatibus temporibus doloremque laudantium.
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi laboriosam
+                voluptatibus temporibus doloremque laudantium.
               </p>
               <a href="#" className="mt-4 flex items-center gap-2 font-medium">
                 Learn more
@@ -60,7 +58,7 @@ const Feature23 = () => {
             </div>
           </div>
           <div className="flex flex-col lg:block">
-            <div className="h-full max-h-[500px] rounded-lg border bg-muted p-3">
+            <div className="bg-muted h-full max-h-[500px] rounded-lg border p-3">
               <img
                 src="https://www.shadcnblocks.com/images/block/placeholder-dark-3.svg"
                 alt="placeholder"
@@ -68,12 +66,10 @@ const Feature23 = () => {
               />
             </div>
             <div className="p-6">
-              <p className="mb-1 flex items-center gap-2 font-semibold">
-                24/7 support
-              </p>
+              <p className="mb-1 flex items-center gap-2 font-semibold">24/7 support</p>
               <p className="text-muted-foreground">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi
-                laboriosam voluptatibus temporibus doloremque laudantium.
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi laboriosam
+                voluptatibus temporibus doloremque laudantium.
               </p>
               <a href="#" className="mt-4 flex items-center gap-2 font-medium">
                 Learn more
@@ -84,7 +80,7 @@ const Feature23 = () => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Feature23;
+export default Feature23

@@ -5,8 +5,7 @@ import { MediaBlock } from '../MediaBlock/config'
 import { backgroundColor } from '@/fields/color'
 import { FormBlock } from '../Form/config'
 
-const sizeField: Field =
-{
+const sizeField: Field = {
   name: 'size',
   type: 'select',
   defaultValue: 'oneThird',
@@ -29,10 +28,7 @@ const sizeField: Field =
 const appendSizeFieldToBlock = (block: Block, sizeField: Field): Block => {
   return {
     ...block,
-    fields: [
-      sizeField,
-      ...block.fields,
-    ],
+    fields: [sizeField, ...block.fields],
   }
 }
 

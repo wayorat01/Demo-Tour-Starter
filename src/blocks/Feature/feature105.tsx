@@ -52,12 +52,12 @@ const Feature105: React.FC<FeatureBlock & { publicContext: PublicContextProps }>
                   <TabsTrigger
                     key={value}
                     value={value as string}
-                    className="group -mb-px flex flex-col items-center gap-1.5 px-1 pb-3.5 data-[state=active]:border-b data-[state=active]:border-primary"
+                    className="group data-[state=active]:border-primary -mb-px flex flex-col items-center gap-1.5 px-1 pb-3.5 data-[state=active]:border-b"
                   >
-                    <span className="flex size-12 items-center justify-center rounded-md bg-muted transition-colors duration-300 group-data-[state=active]:bg-primary group-data-[state=active]:text-background">
+                    <span className="bg-muted group-data-[state=active]:bg-primary group-data-[state=active]:text-background flex size-12 items-center justify-center rounded-md transition-colors duration-300">
                       {icon && <Icon icon={icon} className="w-7" />}
                     </span>
-                    <p className="text-sm text-muted-foreground">{label}</p>
+                    <p className="text-muted-foreground text-sm">{label}</p>
                   </TabsTrigger>
                 ))}
               </TabsList>
@@ -66,7 +66,11 @@ const Feature105: React.FC<FeatureBlock & { publicContext: PublicContextProps }>
               {tabs.map(({ value, image, label }) => (
                 <TabsContent key={value} value={value as string} className="aspect-video">
                   {image && (
-                    <Media resource={image} imgClassName="size-full rounded-xl border object-cover" className='aspect-video'/>
+                    <Media
+                      resource={image}
+                      imgClassName="size-full rounded-xl border object-cover"
+                      className="aspect-video"
+                    />
                   )}
                 </TabsContent>
               ))}

@@ -1,13 +1,7 @@
-import {
-  ArrowRight,
-  Blocks,
-  MessagesSquare,
-  MoveRight,
-  Users,
-} from 'lucide-react';
+import { ArrowRight, Blocks, MessagesSquare, MoveRight, Users } from 'lucide-react'
 
-import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge'
+import { Button } from '@/components/ui/button'
 
 const Hero26 = () => {
   return (
@@ -20,30 +14,29 @@ const Hero26 = () => {
           >
             <Badge>NEW</Badge>
             Introducing Collaboration 2.0
-            <span className="flex size-7 items-center justify-center rounded-full bg-muted">
+            <span className="bg-muted flex size-7 items-center justify-center rounded-full">
               <ArrowRight className="w-4" />
             </span>
           </a>
-          <h1 className="mx-auto mb-3 mt-4 max-w-3xl text-balance text-4xl font-semibold lg:mb-7 lg:text-7xl">
+          <h1 className="mx-auto mt-4 mb-3 max-w-3xl text-4xl font-semibold text-balance lg:mb-7 lg:text-7xl">
             Unlock the power of collaboration
           </h1>
-          <p className="m mx-auto max-w-3xl text-muted-foreground lg:text-xl">
+          <p className="m text-muted-foreground mx-auto max-w-3xl lg:text-xl">
             Collaboration 2.0 is the ultimate platform for
-            <span className="relative top-[5px] mx-2 inline-flex font-medium text-primary md:top-[3px]">
+            <span className="text-primary relative top-[5px] mx-2 inline-flex font-medium md:top-[3px]">
               <Users className="mr-1 w-4 md:w-5" />
               Teams
             </span>
             to
-            <span className="relative top-[5px] mx-2 inline-flex font-medium text-primary md:top-[3px]">
+            <span className="text-primary relative top-[5px] mx-2 inline-flex font-medium md:top-[3px]">
               <Blocks className="mr-1 w-5" />
               Collaborate,
             </span>
-            <span className="relative top-[5px] mx-2 inline-flex font-medium text-primary md:top-[3px]">
+            <span className="text-primary relative top-[5px] mx-2 inline-flex font-medium md:top-[3px]">
               <MessagesSquare className="mr-1 w-5" />
               Communicate,
             </span>
-            and achieve their goals. Get a head start with our free plan. No
-            credit card required.
+            and achieve their goals. Get a head start with our free plan. No credit card required.
           </p>
           <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
             <Button size="lg">
@@ -58,7 +51,7 @@ const Hero26 = () => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Hero26;
+export default Hero26

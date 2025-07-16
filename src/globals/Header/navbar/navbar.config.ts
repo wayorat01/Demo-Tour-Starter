@@ -6,197 +6,197 @@ import { icon } from '@/components/Icon/config'
 const navSubmenuBlocks: Block[] = [
   // Featured Banner Block
   {
-    slug: "featuredBanner",
-    imageURL: "/admin/previews/header/navbar4/featuredBanner.jpeg",
+    slug: 'featuredBanner',
+    imageURL: '/admin/previews/header/navbar4/featuredBanner.jpeg',
     labels: {
-      plural: "Featured Banners",
-      singular: "Featured Banner"
+      plural: 'Featured Banners',
+      singular: 'Featured Banner',
     },
     fields: [
       {
-        type: "text",
-        name: "title",
-        label: "Title",
+        type: 'text',
+        name: 'title',
+        label: 'Title',
         localized: true,
       },
       {
-        type: "text",
-        name: "subtitle",
-        label: "Subtitle",
+        type: 'text',
+        name: 'subtitle',
+        label: 'Subtitle',
         localized: true,
       },
       {
-        type: "text",
-        name: "description",
-        label: "Description",
+        type: 'text',
+        name: 'description',
+        label: 'Description',
         localized: true,
       },
       {
-        name: "image",
-        type: "upload",
-        relationTo: "media",
+        name: 'image',
+        type: 'upload',
+        relationTo: 'media',
       },
       {
-        name: "backgroundColor",
-        type: "select",
+        name: 'backgroundColor',
+        type: 'select',
         options: [
-          { label: "Primary", value: "primary" },
-          { label: "Secondary", value: "secondary" },
-          { label: "Accent", value: "accent" },
-          { label: "Muted", value: "muted" }
+          { label: 'Primary', value: 'primary' },
+          { label: 'Secondary', value: 'secondary' },
+          { label: 'Accent', value: 'accent' },
+          { label: 'Muted', value: 'muted' },
         ],
-        defaultValue: "primary",
+        defaultValue: 'primary',
       },
       link({
         appearances: ['default', 'outline', 'ghost', 'secondary'],
-      })
-    ]
+      }),
+    ],
   },
   // Category Grid Block
   {
-    slug: "categoryGrid",
+    slug: 'categoryGrid',
     labels: {
-      plural: "Category Grids",
-      singular: "Category Grid"
+      plural: 'Category Grids',
+      singular: 'Category Grid',
     },
-    imageURL: "/admin/previews/header/navbar4/categoryGrid.jpeg",
-    
+    imageURL: '/admin/previews/header/navbar4/categoryGrid.jpeg',
+
     fields: [
       {
-        type: "text",
-        name: "title",
-        label: "Title",
+        type: 'text',
+        name: 'title',
+        label: 'Title',
         localized: true,
       },
       {
-        type: "array",
-        name: "items",
-        label: "Items",
+        type: 'array',
+        name: 'items',
+        label: 'Items',
         fields: [
           {
-            type: "text",
-            name: "title",
-            label: "Title",
+            type: 'text',
+            name: 'title',
+            label: 'Title',
             localized: true,
           },
           {
-            type: "text",
-            name: "description",
-            label: "Description",
+            type: 'text',
+            name: 'description',
+            label: 'Description',
             localized: true,
           },
           icon(),
           link({
             appearances: false,
-          })
-        ]
-      }
-    ]
+          }),
+        ],
+      },
+    ],
   },
   // Card Grid Block
   {
-    slug: "cardGrid",
+    slug: 'cardGrid',
     labels: {
-      plural: "Card Grids",
-      singular: "Card Grid"
+      plural: 'Card Grids',
+      singular: 'Card Grid',
     },
-    imageURL: "/admin/previews/header/navbar4/cardGrid.jpeg",
+    imageURL: '/admin/previews/header/navbar4/cardGrid.jpeg',
     fields: [
       {
-        type: "text",
-        name: "title",
-        label: "Title",
+        type: 'text',
+        name: 'title',
+        label: 'Title',
         localized: true,
       },
       {
-        type: "array",
-        name: "cards",
-        label: "Cards",
+        type: 'array',
+        name: 'cards',
+        label: 'Cards',
         fields: [
           {
-            type: "text",
-            name: "title",
-            label: "Title",
+            type: 'text',
+            name: 'title',
+            label: 'Title',
             localized: true,
           },
           {
-            type: "text",
-            name: "description",
-            label: "Description",
+            type: 'text',
+            name: 'description',
+            label: 'Description',
             localized: true,
           },
           {
-            type: "array",
-            name: "links",
-            label: "Links",
+            type: 'array',
+            name: 'links',
+            label: 'Links',
             fields: [
               link({
                 appearances: false,
               }),
-              icon()
-            ]
-          }
-        ]
-      }
-    ]
+              icon(),
+            ],
+          },
+        ],
+      },
+    ],
   },
   // Feature List Block
   {
-    slug: "featureList",
+    slug: 'featureList',
     labels: {
-      plural: "Feature Lists",
-      singular: "Feature List"
+      plural: 'Feature Lists',
+      singular: 'Feature List',
     },
     fields: [
       {
-        type: "text",
-        name: "title",
-        label: "Title",
+        type: 'text',
+        name: 'title',
+        label: 'Title',
         localized: true,
       },
       {
-        type: "array",
-        name: "features",
-        label: "Features",
+        type: 'array',
+        name: 'features',
+        label: 'Features',
         fields: [
           {
-            type: "text",
-            name: "title",
-            label: "Title",
+            type: 'text',
+            name: 'title',
+            label: 'Title',
             localized: true,
           },
           {
-            type: "text",
-            name: "description",
-            label: "Description",
+            type: 'text',
+            name: 'description',
+            label: 'Description',
             localized: true,
           },
           icon(),
           link({
             appearances: false,
-          })
-        ]
-      }
-    ]
+          }),
+        ],
+      },
+    ],
   },
   // Simple Links Block
   {
-    slug: "simpleLinks",
+    slug: 'simpleLinks',
     labels: {
-      plural: "Simple Links",
-      singular: "Simple Links"
+      plural: 'Simple Links',
+      singular: 'Simple Links',
     },
     fields: [
       {
-        type: "text",
-        name: "title",
-        label: "Title",
+        type: 'text',
+        name: 'title',
+        label: 'Title',
         localized: true,
       },
       {
-        type: "array",
-        name: "links",
-        label: "Links",
+        type: 'array',
+        name: 'links',
+        label: 'Links',
         fields: [
           link({
             appearances: false,
@@ -204,67 +204,67 @@ const navSubmenuBlocks: Block[] = [
           }),
           icon(),
           {
-            type: "text",
-            name: "description",
-            label: "Description",
+            type: 'text',
+            name: 'description',
+            label: 'Description',
             localized: true,
-          }
-        ]
-      }
-    ]
-  }, 
+          },
+        ],
+      },
+    ],
+  },
   // Featured Image Block
   {
-    slug: "featuredImage",
-    imageURL: "/admin/previews/header/navbar4/featuredImage.jpeg",
+    slug: 'featuredImage',
+    imageURL: '/admin/previews/header/navbar4/featuredImage.jpeg',
     labels: {
-      plural: "Featured Images",
-      singular: "Featured Image"
+      plural: 'Featured Images',
+      singular: 'Featured Image',
     },
     fields: [
       {
-        type: "text",
-        name: "title",
-        label: "Title",
+        type: 'text',
+        name: 'title',
+        label: 'Title',
         localized: true,
       },
       {
-        type: "text",
-        name: "subtitle",
-        label: "Subtitle",
+        type: 'text',
+        name: 'subtitle',
+        label: 'Subtitle',
         localized: true,
       },
       {
-        type: "text",
-        name: "description",
-        label: "Description",
+        type: 'text',
+        name: 'description',
+        label: 'Description',
         localized: true,
       },
       {
-        name: "image",
-        type: "upload",
-        relationTo: "media",
+        name: 'image',
+        type: 'upload',
+        relationTo: 'media',
       },
       {
-        name: "backgroundColor",
-        type: "select",
+        name: 'backgroundColor',
+        type: 'select',
         options: [
-          { label: "Primary", value: "primary" },
-          { label: "Secondary", value: "secondary" },
-          { label: "Accent", value: "accent" },
-          { label: "Muted", value: "muted" }
+          { label: 'Primary', value: 'primary' },
+          { label: 'Secondary', value: 'secondary' },
+          { label: 'Accent', value: 'accent' },
+          { label: 'Muted', value: 'muted' },
         ],
-        defaultValue: "primary",
+        defaultValue: 'primary',
       },
 
       link({
         appearances: false,
         disableIcon: true,
         disableLabel: true,
-      })
-    ]
-  }
-];
+      }),
+    ],
+  },
+]
 
 export const navbar: Field[] = [
   {
@@ -274,10 +274,7 @@ export const navbar: Field[] = [
     type: 'blocks',
     name: 'items',
     admin: {
-      condition: (_, { designVersion = "" } = {}) =>
-        ["1", "3", "5"].includes(
-          designVersion,
-        ),
+      condition: (_, { designVersion = '' } = {}) => ['1', '3', '5'].includes(designVersion),
       description: 'Navigation structure for navbar designs 1, 3, and 5',
     },
     blocks: [
@@ -337,11 +334,10 @@ export const navbar: Field[] = [
     name: 'richItems',
     label: 'Items',
     admin: {
-      condition: (_, { designVersion = "" } = {}) =>
-        designVersion === "4",
+      condition: (_, { designVersion = '' } = {}) => designVersion === '4',
       description: {
-        de: "Navigationselemente",
-        en: "Navigation elements"
+        de: 'Navigationselemente',
+        en: 'Navigation elements',
       },
     },
     blocks: [
@@ -390,14 +386,13 @@ export const navbar: Field[] = [
     fields: [link()],
   },
   {
-    type: "text",
-    name: "copyright",
-    label: "Copyright",
+    type: 'text',
+    name: 'copyright',
+    label: 'Copyright',
     localized: true,
-    defaultValue: "Copyright © All Rights Reserved.",
+    defaultValue: 'Copyright © All Rights Reserved.',
     admin: {
-      condition: (_, { designVersion = "" } = {}) =>
-        designVersion === "4",
-    },  
-  }
+      condition: (_, { designVersion = '' } = {}) => designVersion === '4',
+    },
+  },
 ]

@@ -1,6 +1,6 @@
 /**
  * RichText component for rendering Lexical editor content
- * 
+ *
  * @example
  * // With wrapper div (for standalone content sections)
  * <RichText publicContext={publicContext}
@@ -10,7 +10,7 @@
  *   enableGutter={true}
  *   enableProse={true}
  * />
- * 
+ *
  * // Without wrapper (for nested content inside other components)
  * <RichText publicContext={publicContext}
  *   withWrapper={false}
@@ -57,31 +57,32 @@ const RichText: React.FC<RichTextProps> = (props) => {
     return null
   }
 
-  const content = props.content &&
+  const content =
+    props.content &&
     !Array.isArray(props.content) &&
     typeof props.content === 'object' &&
     'root' in props.content &&
     serializeLexical({
       nodes: props.content?.root?.children,
       overrideStyle: props.overrideStyle,
-      publicContext: props.publicContext
+      publicContext: props.publicContext,
     })
 
   if (!props.withWrapper) {
     // If className is provided, wrap in a span for styling
     if (props.className) {
-      return <span className={props.className}>{content}</span>;
+      return <span className={props.className}>{content}</span>
     }
-    return <>{content}</>;
+    return <>{content}</>
   }
 
   return (
     <div
       className={cn(
         {
-          'container': props.enableGutter,
+          container: props.enableGutter,
           'max-w-none': !props.enableGutter,
-          'mx-auto prose dark:prose-invert': props.enableProse,
+          'prose dark:prose-invert mx-auto': props.enableProse,
         },
         props.className,
       )}

@@ -1,10 +1,6 @@
 import { backgroundColor } from '@/fields/color'
 import { link } from '@/fields/link'
-import {
-  HeadingFeature,
-  lexicalEditor,
-  UnorderedListFeature,
-} from '@payloadcms/richtext-lexical'
+import { HeadingFeature, lexicalEditor, UnorderedListFeature } from '@payloadcms/richtext-lexical'
 import { Block } from 'payload'
 
 export const allFaqDesignVersions = [
@@ -40,7 +36,7 @@ export const FaqBlock: Block = {
       admin: {
         condition: (_, { designVersion } = { designVersion: '' }) =>
           ['FAQ4', 'FAQ5', 'FAQ6'].includes(designVersion),
-      }
+      },
     },
     {
       name: 'headline',

@@ -161,7 +161,8 @@ export default buildConfig({
               return {
                 ...field,
                 admin: {
-                  description: 'Add new redirects here. The redirect will work immediately after saving. For example: /about or https://example.com/about',
+                  description:
+                    'Add new redirects here. The redirect will work immediately after saving. For example: /about or https://example.com/about',
                 },
               }
             }

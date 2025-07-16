@@ -5,7 +5,7 @@ const cssVariables = {
     l: 1440,
     m: 1024,
     s: 768,
-  }
+  },
 }
 
 export default cssVariables

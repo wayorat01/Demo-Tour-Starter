@@ -5,7 +5,8 @@ import Faq3 from '@/blocks/Faq/faq3'
 import Faq4 from '@/blocks/Faq/faq4'
 import Faq5 from '@/blocks/Faq/faq5'
 
-type Faq<T extends string = string> = Required<Record<FaqDesignVersion, React.FC<any>>> & Record<T, React.FC<any>>;
+type Faq<T extends string = string> = Required<Record<FaqDesignVersion, React.FC<any>>> &
+  Record<T, React.FC<any>>
 
 const faq: Faq = {
   FAQ1: Faq1,

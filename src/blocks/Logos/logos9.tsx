@@ -17,7 +17,6 @@ const Logos9: React.FC<LogosBlock & { publicContext: PublicContextProps }> = ({
   logos,
   richText,
 }) => {
-
   if (!testimonials || !logos) return null
 
   return (
@@ -57,10 +56,10 @@ const Logos9: React.FC<LogosBlock & { publicContext: PublicContextProps }> = ({
             ))}
           </CarouselContent>
         </Carousel>
-        <div className="bg-linear-to-r from-background absolute inset-y-0 left-0 w-12 to-transparent"></div>
-        <div className="bg-linear-to-l from-background absolute inset-y-0 right-0 w-12 to-transparent"></div>
+        <div className="from-background absolute inset-y-0 left-0 w-12 bg-linear-to-r to-transparent"></div>
+        <div className="from-background absolute inset-y-0 right-0 w-12 bg-linear-to-l to-transparent"></div>
       </div>
-      <Separator className="my-15 mx-auto max-w-5xl" />
+      <Separator className="mx-auto my-15 max-w-5xl" />
 
       <div>
         <Carousel opts={{ loop: true }} className="mx-auto w-full max-w-6xl">
@@ -74,14 +73,17 @@ const Logos9: React.FC<LogosBlock & { publicContext: PublicContextProps }> = ({
                   )}
                   key={index}
                 >
-                  <h5 className="text-muted-foreground mb-14 mt-5 line-clamp-3 text-lg tracking-tight md:mb-28">
+                  <h5 className="text-muted-foreground mt-5 mb-14 line-clamp-3 text-lg tracking-tight md:mb-28">
                     {testimonial.quote}
                   </h5>
                   <div className="mt-auto">
                     <p className="text-foreground text-lg font-semibold tracking-tight">
                       {testimonial.name}
                     </p>
-                    <Media imgClassName="mx-auto my-5 w-40 md:mx-0 object-contain" resource={testimonial.image as MediaType} />
+                    <Media
+                      imgClassName="mx-auto my-5 w-40 md:mx-0 object-contain"
+                      resource={testimonial.image as MediaType}
+                    />
                   </div>
                 </div>
               </CarouselItem>

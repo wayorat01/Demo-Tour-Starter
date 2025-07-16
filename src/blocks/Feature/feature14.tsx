@@ -1,4 +1,4 @@
-import { CheckCircle } from 'lucide-react';
+import { CheckCircle } from 'lucide-react'
 
 const Feature14 = () => {
   return (
@@ -10,10 +10,9 @@ const Feature14 = () => {
               <h3 className="mb-3 text-2xl font-medium sm:mb-5 md:text-3xl lg:text-4xl">
                 Secure Payments
               </h3>
-              <div className="mb-8 text-sm text-muted-foreground sm:mb-10 md:text-base">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Pariatur modi et recusandae ducimus eligendi eveniet soluta
-                reprehenderit nostrum expedita omnis.
+              <div className="text-muted-foreground mb-8 text-sm sm:mb-10 md:text-base">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur modi et
+                recusandae ducimus eligendi eveniet soluta reprehenderit nostrum expedita omnis.
               </div>
               <ul className="mt-auto space-y-2 sm:space-y-3">
                 <li className="flex gap-x-3">
@@ -24,9 +23,7 @@ const Feature14 = () => {
                 </li>
                 <li className="flex gap-x-3">
                   <CheckCircle className="mt-0.5 size-4 shrink-0 sm:mt-1" />
-                  <p className="text-sm md:text-base">
-                    SSL encryption for secure transactions
-                  </p>
+                  <p className="text-sm md:text-base">SSL encryption for secure transactions</p>
                 </li>
               </ul>
             </div>
@@ -36,7 +33,7 @@ const Feature14 = () => {
                 alt="placeholder"
                 className="size-full object-cover"
               />
-              <span className="absolute left-5 top-5 flex size-6 items-center justify-center rounded-sm bg-primary font-mono text-xs text-primary-foreground md:left-10 md:top-10">
+              <span className="bg-primary text-primary-foreground absolute top-5 left-5 flex size-6 items-center justify-center rounded-sm font-mono text-xs md:top-10 md:left-10">
                 01
               </span>
             </div>
@@ -46,17 +43,14 @@ const Feature14 = () => {
               <h3 className="mb-3 text-2xl font-medium sm:mb-5 md:text-3xl lg:text-4xl">
                 Automated Invoicing
               </h3>
-              <div className="mb-8 text-sm text-muted-foreground sm:mb-10 md:text-base">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Pariatur modi et recusandae ducimus eligendi eveniet soluta
-                reprehenderit nostrum expedita omnis.
+              <div className="text-muted-foreground mb-8 text-sm sm:mb-10 md:text-base">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur modi et
+                recusandae ducimus eligendi eveniet soluta reprehenderit nostrum expedita omnis.
               </div>
               <ul className="mt-auto space-y-2 sm:space-y-3">
                 <li className="flex gap-x-3">
                   <CheckCircle className="mt-0.5 size-4 shrink-0 sm:mt-1" />
-                  <p className="text-sm md:text-base">
-                    Automated invoicing for easy billing
-                  </p>
+                  <p className="text-sm md:text-base">Automated invoicing for easy billing</p>
                 </li>
               </ul>
             </div>
@@ -66,7 +60,7 @@ const Feature14 = () => {
                 alt="placeholder"
                 className="size-full object-cover"
               />
-              <span className="absolute left-5 top-5 flex size-6 items-center justify-center rounded-sm bg-primary font-mono text-xs text-primary-foreground md:left-10 md:top-10">
+              <span className="bg-primary text-primary-foreground absolute top-5 left-5 flex size-6 items-center justify-center rounded-sm font-mono text-xs md:top-10 md:left-10">
                 02
               </span>
             </div>
@@ -74,7 +68,7 @@ const Feature14 = () => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Feature14;
+export default Feature14

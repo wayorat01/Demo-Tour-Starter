@@ -107,7 +107,7 @@ const Blog18: React.FC<Post & { publicContext: PublicContextProps }> = (props) =
                   {author.name}
                 </a>
                 {publishedAt && (
-                  <span className="ml-1 text-muted-foreground">
+                  <span className="text-muted-foreground ml-1">
                     on <DateFormatter date={publishedAt} locale={publicContext?.locale} />
                   </span>
                 )}
@@ -115,7 +115,7 @@ const Blog18: React.FC<Post & { publicContext: PublicContextProps }> = (props) =
             </>
           )}
 
-          <span className="flex items-center gap-1 text-muted-foreground">
+          <span className="text-muted-foreground flex items-center gap-1">
             <Clock className="h-4 w-4" />
             {readTime} min. read
           </span>
@@ -168,7 +168,7 @@ const Blog18: React.FC<Post & { publicContext: PublicContextProps }> = (props) =
                 <li>
                   <a
                     href="#"
-                    className="inline-flex rounded-full border p-2 transition-colors hover:bg-muted"
+                    className="hover:bg-muted inline-flex rounded-full border p-2 transition-colors"
                   >
                     <Facebook className="h-4 w-4" />
                   </a>
@@ -176,7 +176,7 @@ const Blog18: React.FC<Post & { publicContext: PublicContextProps }> = (props) =
                 <li>
                   <a
                     href="#"
-                    className="inline-flex rounded-full border p-2 transition-colors hover:bg-muted"
+                    className="hover:bg-muted inline-flex rounded-full border p-2 transition-colors"
                   >
                     <Twitter className="h-4 w-4" />
                   </a>
@@ -184,7 +184,7 @@ const Blog18: React.FC<Post & { publicContext: PublicContextProps }> = (props) =
                 <li>
                   <a
                     href="#"
-                    className="inline-flex rounded-full border p-2 transition-colors hover:bg-muted"
+                    className="hover:bg-muted inline-flex rounded-full border p-2 transition-colors"
                   >
                     <Linkedin className="h-4 w-4" />
                   </a>
@@ -192,7 +192,7 @@ const Blog18: React.FC<Post & { publicContext: PublicContextProps }> = (props) =
                 <li>
                   <a
                     href="#"
-                    className="inline-flex rounded-full border p-2 transition-colors hover:bg-muted"
+                    className="hover:bg-muted inline-flex rounded-full border p-2 transition-colors"
                   >
                     <Instagram className="h-4 w-4" />
                   </a>

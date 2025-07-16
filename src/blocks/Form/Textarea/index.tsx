@@ -30,7 +30,10 @@ export const Textarea: React.FC<
 }) => {
   return (
     <Width width={width}>
-      <Label htmlFor={name}>{label}{requiredFromProps && <span className="ml-1">*</span>}</Label>
+      <Label htmlFor={name}>
+        {label}
+        {requiredFromProps && <span className="ml-1">*</span>}
+      </Label>
 
       <TextAreaComponent
         defaultValue={defaultValue}

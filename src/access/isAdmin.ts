@@ -11,5 +11,5 @@ export const isAdminFieldLevel: FieldAccess = ({ req: { user } }) => {
 
 // For Payload admin UI and frontend components
 export const isAdminHidden = ({ user }: { user: User }): boolean => {
-  return !checkRole(['admin'], user);
+  return !checkRole(['admin'], user)
 }

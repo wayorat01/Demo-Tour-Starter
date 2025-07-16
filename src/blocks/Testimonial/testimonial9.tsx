@@ -1,10 +1,10 @@
-'use client';
+'use client'
 
-import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
+import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry'
 
-import { Avatar, AvatarImage } from '@/components/ui/avatar';
-import { Card } from '@/components/ui/card';
-import { TestimonialBlock } from '@/payload-types';
+import { Avatar, AvatarImage } from '@/components/ui/avatar'
+import { Card } from '@/components/ui/card'
+import { TestimonialBlock } from '@/payload-types'
 
 const testimonials = [
   {
@@ -61,7 +61,7 @@ const testimonials = [
     link: '#',
     icon: '/images/block/logos/twitter-icon.svg',
   },
-];
+]
 
 const Testimonial9: React.FC<TestimonialBlock> = ({ headline, link, tagline, testimonial }) => {
   return (
@@ -76,48 +76,37 @@ const Testimonial9: React.FC<TestimonialBlock> = ({ headline, link, tagline, tes
           </p>
         </div>
         <div className="mt-14 w-full">
-          <ResponsiveMasonry
-            columnsCountBreakPoints={{ 350: 1, 768: 2, 1024: 3 }}
-          >
+          <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 768: 2, 1024: 3 }}>
             <Masonry gutter="20px" columnsCount={3}>
               {testimonials.map((testimonial, idx) => {
                 return (
                   <Card key={idx} className="p-5">
                     <div className="flex justify-between">
                       <div className="flex gap-4 leading-5">
-                        <Avatar className="size-9 rounded-full ring-1 ring-input">
-                          <AvatarImage
-                            src={testimonial.avatar}
-                            alt={testimonial.name}
-                          />
+                        <Avatar className="ring-input size-9 rounded-full ring-1">
+                          <AvatarImage src={testimonial.avatar} alt={testimonial.name} />
                         </Avatar>
                         <div className="text-sm">
                           <p className="font-medium">{testimonial.name}</p>
-                          <p className="text-muted-foreground">
-                            {testimonial.role}
-                          </p>
+                          <p className="text-muted-foreground">{testimonial.role}</p>
                         </div>
                       </div>
                       <a href={testimonial.link}>
-                        <img
-                          alt="Testimonial source"
-                          src={testimonial.icon}
-                          className="size-4"
-                        />
+                        <img alt="Testimonial source" src={testimonial.icon} className="size-4" />
                       </a>
                     </div>
-                    <div className="mt-8 leading-7 text-foreground/70">
+                    <div className="text-foreground/70 mt-8 leading-7">
                       <q>{testimonial.content}</q>
                     </div>
                   </Card>
-                );
+                )
               })}
             </Masonry>
           </ResponsiveMasonry>
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Testimonial9;
+export default Testimonial9

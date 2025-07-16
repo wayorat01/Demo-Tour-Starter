@@ -1,15 +1,15 @@
-"use client";
-import { useState } from 'react';
+'use client'
+import { useState } from 'react'
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from '@/components/ui/carousel';
-import { Dialog, DialogContent } from '@/components/ui/dialog';
-import { Button } from '@/components/ui/button';
-import { X } from 'lucide-react';
+} from '@/components/ui/carousel'
+import { Dialog, DialogContent } from '@/components/ui/dialog'
+import { Button } from '@/components/ui/button'
+import { X } from 'lucide-react'
 
 const images = [
   {
@@ -28,27 +28,23 @@ const images = [
     url: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87',
     alt: 'Night event',
   },
-];
+]
 
 export default function Gallery2() {
-  const [fullscreenImage, setFullscreenImage] = useState<string | null>(null);
+  const [fullscreenImage, setFullscreenImage] = useState<string | null>(null)
 
   return (
     <div className="px-6 py-12">
-      <Carousel className="w-full max-w-5xl mx-auto">
+      <Carousel className="mx-auto w-full max-w-5xl">
         <CarouselContent>
           {images.map((image, index) => (
             <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
               <div className="p-1">
                 <div
-                  className="overflow-hidden rounded-lg cursor-pointer transition-transform hover:scale-105"
+                  className="cursor-pointer overflow-hidden rounded-lg transition-transform hover:scale-105"
                   onClick={() => setFullscreenImage(image.url)}
                 >
-                  <img
-                    src={image.url}
-                    alt={image.alt}
-                    className="w-full h-[300px] object-cover"
-                  />
+                  <img src={image.url} alt={image.alt} className="h-[300px] w-full object-cover" />
                 </div>
               </div>
             </CarouselItem>
@@ -59,25 +55,25 @@ export default function Gallery2() {
       </Carousel>
 
       <Dialog open={!!fullscreenImage} onOpenChange={() => setFullscreenImage(null)}>
-        <DialogContent className="max-w-[90vw] h-[90vh] p-0">
+        <DialogContent className="h-[90vh] max-w-[90vw] p-0">
           <Button
             variant="ghost"
             size="icon"
-            className="absolute right-4 top-4 z-50"
+            className="absolute top-4 right-4 z-50"
             onClick={() => setFullscreenImage(null)}
           >
             <X className="h-4 w-4" />
           </Button>
-          <div className="w-full h-full flex items-center justify-center bg-black">
+          <div className="flex h-full w-full items-center justify-center bg-black">
             <img
               src={fullscreenImage || ''}
               alt="Fullscreen view"
-              className="max-w-full max-h-full object-contain"
+              className="max-h-full max-w-full object-contain"
               onClick={() => setFullscreenImage(null)}
             />
           </div>
         </DialogContent>
       </Dialog>
     </div>
-  );
+  )
 }

@@ -82,24 +82,26 @@ export const hero: Field = {
       type: 'text',
       localized: true,
       admin: {
-        condition: (_, { designVersion = "" } = {}) =>
+        condition: (_, { designVersion = '' } = {}) =>
           ['1', '2', '3', '4', '5', '6', '12', '112'].includes(designVersion),
       },
     },
     icon({
       name: 'badgeIcon',
       admin: {
-        condition: (_, { designVersion = "" } = {}) =>
+        condition: (_, { designVersion = '' } = {}) =>
           ['1', '2', '3', '4', '5', '6'].includes(designVersion),
-      }
+      },
     }),
     {
       name: 'tagline',
       type: 'text',
       localized: true,
       admin: {
-        condition: (_, { designVersion = "" } = {}) =>
-          ['3', '27', '26', '55', '21', '53', '12', '51', '57', '112', '220'].includes(designVersion),
+        condition: (_, { designVersion = '' } = {}) =>
+          ['3', '27', '26', '55', '21', '53', '12', '51', '57', '112', '220'].includes(
+            designVersion,
+          ),
       },
     },
     link({
@@ -130,7 +132,7 @@ export const hero: Field = {
       type: 'richText',
       localized: true,
       admin: {
-        condition: (_, { designVersion = "" } = {}) =>
+        condition: (_, { designVersion = '' } = {}) =>
           ['1', '2', '3', '4', '5', '6', '12', '101', '112', '195', '214'].includes(designVersion),
       },
       editor: lexicalEditor({
@@ -149,7 +151,7 @@ export const hero: Field = {
       overrides: {
         maxRows: 2,
         admin: {
-          condition: (_, { designVersion = "" } = {}) =>
+          condition: (_, { designVersion = '' } = {}) =>
             ['1', '2', '3', '4', '5', '6', '12', '101', '112', '195'].includes(designVersion),
         },
       },
@@ -158,23 +160,44 @@ export const hero: Field = {
       name: 'images',
       type: 'upload',
       admin: {
-        condition: (_, { designVersion = "" } = {}) =>
-          ['1', '2', '3', '4', '5', '6', '12', '31', '37', '38', '18', '112', '220', '214'].includes(designVersion),
+        condition: (_, { designVersion = '' } = {}) =>
+          [
+            '1',
+            '2',
+            '3',
+            '4',
+            '5',
+            '6',
+            '12',
+            '31',
+            '37',
+            '38',
+            '18',
+            '112',
+            '220',
+            '214',
+          ].includes(designVersion),
       },
       relationTo: 'media',
       hasMany: true,
       maxRows: 3,
     },
-    designVersionDescription('description112', (_, { designVersion } = {}) => ['112'].includes(designVersion), {
-      en: 'Just use a single image here as background image',
-      de: 'Nur ein Bild hier als Hintergrund-Bild verwenden',
-    }),
+    designVersionDescription(
+      'description112',
+      (_, { designVersion } = {}) => ['112'].includes(designVersion),
+      {
+        en: 'Just use a single image here as background image',
+        de: 'Nur ein Bild hier als Hintergrund-Bild verwenden',
+      },
+    ),
     {
       name: 'icons',
       type: 'upload',
       admin: {
-        condition: (_, { designVersion = "" } = {}) =>
-          ['3', '53', '28', '32', '12', '51', '57', '50', '18', '112', '101'].includes(designVersion),
+        condition: (_, { designVersion = '' } = {}) =>
+          ['3', '53', '28', '32', '12', '51', '57', '50', '18', '112', '101'].includes(
+            designVersion,
+          ),
       },
       relationTo: 'media',
       hasMany: true,
@@ -184,7 +207,8 @@ export const hero: Field = {
       name: 'USPs',
       type: 'array',
       admin: {
-        condition: (_, { designVersion = "" } = {}) => ['24', '25', '20', '45'].includes(designVersion),
+        condition: (_, { designVersion = '' } = {}) =>
+          ['24', '25', '20', '45'].includes(designVersion),
       },
       fields: [
         {
@@ -215,7 +239,7 @@ export const hero: Field = {
       label: 'Stats Items',
       type: 'array',
       admin: {
-        condition: (_, { designVersion = "" } = {}) => ['112'].includes(designVersion),
+        condition: (_, { designVersion = '' } = {}) => ['112'].includes(designVersion),
       },
       maxRows: 3,
       defaultValue: [
@@ -230,7 +254,7 @@ export const hero: Field = {
         {
           title: 'User Satisfaction Rating',
           value: '100%',
-        }
+        },
       ],
       fields: [
         {
@@ -249,7 +273,7 @@ export const hero: Field = {
       name: 'pricing',
       type: 'group',
       admin: {
-        condition: (_, { designVersion = "" } = {}) => ['33'].includes(designVersion),
+        condition: (_, { designVersion = '' } = {}) => ['33'].includes(designVersion),
       },
       fields: [
         {
@@ -275,7 +299,8 @@ export const hero: Field = {
       max: 5,
       min: 1,
       admin: {
-        condition: (_, { designVersion = "" } = {}) => ['3', '4', '7', '15'].includes(designVersion),
+        condition: (_, { designVersion = '' } = {}) =>
+          ['3', '4', '7', '15'].includes(designVersion),
       },
     },
     ...customHeroFields,
@@ -283,7 +308,7 @@ export const hero: Field = {
       name: 'presentationVideo',
       type: 'group',
       admin: {
-        condition: (_, { designVersion = "" } = {}) =>
+        condition: (_, { designVersion = '' } = {}) =>
           ['112', '220', '101'].includes(designVersion),
       },
       fields: [
@@ -304,15 +329,14 @@ export const hero: Field = {
           type: 'text',
           localized: true,
           defaultValue: 'https://library.shadcnblocks.com/videos/block/landscape.mp4',
-        }
-      ]
+        },
+      ],
     },
     {
       name: 'tabs',
       type: 'array',
       admin: {
-        condition: (_, { designVersion = "" } = {}) =>
-          ['195'].includes(designVersion),
+        condition: (_, { designVersion = '' } = {}) => ['195'].includes(designVersion),
       },
       fields: [
         {
@@ -338,10 +362,10 @@ export const hero: Field = {
           type: 'upload',
           relationTo: 'media',
           required: true,
-        }
+        },
       ],
       maxRows: 5,
-    }
+    },
   ],
   label: false,
 }

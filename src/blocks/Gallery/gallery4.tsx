@@ -13,7 +13,11 @@ import { CMSLink } from '@/components/Link'
 
 import { PublicContextProps } from '@/utilities/publicContextProps'
 
-const Gallery4: React.FC<GalleryBlock & { publicContext: PublicContextProps }> = ({ richText, elements, publicContext }) => {
+const Gallery4: React.FC<GalleryBlock & { publicContext: PublicContextProps }> = ({
+  richText,
+  elements,
+  publicContext,
+}) => {
   const [carouselApi, setCarouselApi] = useState<CarouselApi>()
   const [canScrollPrev, setCanScrollPrev] = useState(false)
   const [canScrollNext, setCanScrollNext] = useState(false)
@@ -35,15 +39,17 @@ const Gallery4: React.FC<GalleryBlock & { publicContext: PublicContextProps }> =
     <section className="py-32">
       <div className="container">
         <div className="mb-8 flex items-end justify-between md:mb-14 lg:mb-16">
-          {richText && <RichText publicContext={publicContext}
-            content={richText}
-            withWrapper={true}
-            overrideStyle={{
-              h2: 'text-3xl font-medium md:text-4xl lg:text-5xl lg:mb-6 md:mb-4',
-              p: 'text-muted-foreground',
-            }}
-          />
-          }
+          {richText && (
+            <RichText
+              publicContext={publicContext}
+              content={richText}
+              withWrapper={true}
+              overrideStyle={{
+                h2: 'text-3xl font-medium md:text-4xl lg:text-5xl lg:mb-6 md:mb-4',
+                p: 'text-muted-foreground',
+              }}
+            />
+          )}
           <div className="hidden shrink-0 gap-2 md:flex">
             <Button
               size="icon"
@@ -85,7 +91,11 @@ const Gallery4: React.FC<GalleryBlock & { publicContext: PublicContextProps }> =
             {elements &&
               elements.map((item) => (
                 <CarouselItem key={item.id} className="max-w-[320px] pl-[20px] lg:max-w-[360px]">
-                  <a href={item.link?.url || '#'} className="group rounded-xl" target={item?.link?.newTab ? '_blank' : '_self'}>
+                  <a
+                    href={item.link?.url || '#'}
+                    className="group rounded-xl"
+                    target={item?.link?.newTab ? '_blank' : '_self'}
+                  >
                     <div className="group relative h-full min-h-108 max-w-full overflow-hidden rounded-xl bg-red-200 md:aspect-5/4 lg:aspect-video">
                       {item.image && (
                         <Media
@@ -96,9 +106,10 @@ const Gallery4: React.FC<GalleryBlock & { publicContext: PublicContextProps }> =
                         />
                       )}
                       <div className="absolute inset-0 h-full bg-[linear-gradient(hsl(from_var(--primary)_h_s_l/0.2),hsl(from_var(--primary)_h_s_l/0.8)_100%)] mix-blend-multiply" />
-                      <div className="absolute inset-x-0 bottom-0 flex flex-col items-start p-6 text-primary-foreground md:p-8">
+                      <div className="text-primary-foreground absolute inset-x-0 bottom-0 flex flex-col items-start p-6 md:p-8">
                         {item.richText && (
-                          <RichText publicContext={publicContext}
+                          <RichText
+                            publicContext={publicContext}
                             content={item.richText}
                             overrideStyle={{
                               h3: 'mb-2 pt-4 text-xl font-semibold md:mb-3 md:pt-4 lg:pt-4',

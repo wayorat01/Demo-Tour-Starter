@@ -1,22 +1,21 @@
-import { ChevronRight } from 'lucide-react';
+import { ChevronRight } from 'lucide-react'
 
-import { Button } from '@/components/ui/button';
-import { Page } from '@/payload-types';
+import { Button } from '@/components/ui/button'
+import { Page } from '@/payload-types'
 
-export const Hero8: React.FC<Page['hero']> = ({ }) => {
+export const Hero8: React.FC<Page['hero']> = ({}) => {
   return (
     <section className="py-32">
-      <div className="overflow-hidden border-b border-muted">
+      <div className="border-muted overflow-hidden border-b">
         <div className="container">
           <div className="mx-auto flex max-w-5xl flex-col items-center">
             <div className="z-10 items-center text-center">
-              <h1 className="mb-8 text-pretty text-4xl font-medium lg:text-8xl">
+              <h1 className="mb-8 text-4xl font-medium text-pretty lg:text-8xl">
                 Build your next project with Blocks
               </h1>
-              <p className="mx-auto max-w-screen-md text-muted-foreground lg:text-xl">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Elig
-                doloremque mollitia fugiat omnis! Porro facilis quo animi
-                consequatur. Explicabo.
+              <p className="text-muted-foreground mx-auto max-w-screen-md lg:text-xl">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Elig doloremque mollitia
+                fugiat omnis! Porro facilis quo animi consequatur. Explicabo.
               </p>
               <div className="mt-12 flex w-full flex-col justify-center gap-2 sm:flex-row">
                 <Button>
@@ -38,6 +37,5 @@ export const Hero8: React.FC<Page['hero']> = ({ }) => {
         </div>
       </div>
     </section>
-  );
-};
-
+  )
+}

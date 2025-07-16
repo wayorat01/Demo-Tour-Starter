@@ -35,47 +35,39 @@ const features = [
     description: 'Nam vitae molestie arcu. Quisque eu libero orci.',
     image: 'https://www.shadcnblocks.com/images/block/placeholder-6.svg',
   },
-];
+]
 
 const Feature65 = () => {
   return (
     <section className="py-32">
       <div className="container flex flex-col items-center gap-16 lg:px-16">
         <div className="text-center">
-          <h3 className="mb-3 text-pretty text-3xl font-semibold md:mb-4 md:text-4xl lg:mb-6 lg:max-w-3xl lg:text-5xl">
+          <h3 className="mb-3 text-3xl font-semibold text-pretty md:mb-4 md:text-4xl lg:mb-6 lg:max-w-3xl lg:text-5xl">
             Feature group
           </h3>
           <p className="md:text-md text-muted-foreground lg:max-w-3xl lg:text-lg">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Elig
-            doloremque mollitia fugiat omnis! Porro facilis quo animi
-            consequatur. Explicabo.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Elig doloremque mollitia fugiat
+            omnis! Porro facilis quo animi consequatur. Explicabo.
           </p>
         </div>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {features.map((feature) => (
-            <div
-              key={feature.id}
-              className="rounded-lg border border-border bg-accent p-6 md:p-8"
-            >
+            <div key={feature.id} className="border-border bg-accent rounded-lg border p-6 md:p-8">
               <img
                 src="https://www.shadcnblocks.com/images/block/placeholder-1.svg"
                 alt="placeholder"
                 className="mb-6 aspect-video md:mb-8 lg:w-full"
               />
               <div className="flex flex-col">
-                <p className="mb-2 text-sm font-semibold md:text-base">
-                  {feature.title}
-                </p>
-                <p className="text-sm text-muted-foreground md:text-base">
-                  {feature.description}
-                </p>
+                <p className="mb-2 text-sm font-semibold md:text-base">{feature.title}</p>
+                <p className="text-muted-foreground text-sm md:text-base">{feature.description}</p>
               </div>
             </div>
           ))}
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Feature65;
+export default Feature65

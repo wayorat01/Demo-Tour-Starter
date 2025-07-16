@@ -1,14 +1,7 @@
-import {
-  Code,
-  Infinity,
-  Lock,
-  MessageCircle,
-  Text,
-  Upload,
-} from 'lucide-react';
+import { Code, Infinity, Lock, MessageCircle, Text, Upload } from 'lucide-react'
 
-import { Badge } from '@/components/ui/badge';
-import { Separator } from '@/components/ui/separator';
+import { Badge } from '@/components/ui/badge'
+import { Separator } from '@/components/ui/separator'
 
 const features = [
   {
@@ -47,7 +40,7 @@ const features = [
       'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero, numquam possimus necessitatibus voluptatem eius.',
     icon: <Upload className="h-5" />,
   },
-];
+]
 
 const Feature26 = () => {
   return (
@@ -56,28 +49,24 @@ const Feature26 = () => {
         <Badge className="mb-6" variant={'outline'}>
           Features
         </Badge>
-        <h2 className="text-3xl font-medium">
-          Lorem ipsum dolor sit amet consectetur.
-        </h2>
+        <h2 className="text-3xl font-medium">Lorem ipsum dolor sit amet consectetur.</h2>
         <Separator className="my-16" />
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {features.map((feature, idx) => (
             <div key={idx} className="flex gap-3">
-              <span className="flex size-11 shrink-0 items-center justify-center rounded-full bg-accent">
+              <span className="bg-accent flex size-11 shrink-0 items-center justify-center rounded-full">
                 {feature.icon}
               </span>
               <div>
                 <h3 className="text-lg font-medium">{feature.title}</h3>
-                <p className="leading-7 text-muted-foreground">
-                  {feature.description}
-                </p>
+                <p className="text-muted-foreground leading-7">{feature.description}</p>
               </div>
             </div>
           ))}
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Feature26;
+export default Feature26

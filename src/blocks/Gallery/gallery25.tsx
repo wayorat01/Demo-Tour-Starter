@@ -50,7 +50,7 @@ function GalleryColumn({ images, initialY }: GalleryColumnProps) {
             delay: index * 0.1,
           }}
           key={index}
-          className="w-full overflow-hidden rounded-2xl bg-muted"
+          className="bg-muted w-full overflow-hidden rounded-2xl"
           style={{ height: image.imageHeight as string }}
         >
           <Media

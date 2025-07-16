@@ -36,7 +36,10 @@ export const Checkbox: React.FC<
             setValue(props.name, checked)
           }}
         />
-        <Label htmlFor={name}>{label}{requiredFromProps && <span className="ml-1">*</span>}</Label>
+        <Label htmlFor={name}>
+          {label}
+          {requiredFromProps && <span className="ml-1">*</span>}
+        </Label>
       </div>
       {requiredFromProps && errors[name] && <Error />}
     </Width>

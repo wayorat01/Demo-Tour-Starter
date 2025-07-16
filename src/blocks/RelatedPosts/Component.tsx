@@ -13,14 +13,18 @@ export type RelatedPostsProps = {
   introContent?: any
 }
 
-export const RelatedPosts: React.FC<RelatedPostsProps & { publicContext: PublicContextProps }> = (props) => {
+export const RelatedPosts: React.FC<RelatedPostsProps & { publicContext: PublicContextProps }> = (
+  props,
+) => {
   const { className, docs, introContent, publicContext } = props
 
   return (
     <div className={clsx('container', className)}>
-      {introContent && <RichText publicContext={publicContext} content={introContent} enableGutter={false} />}
+      {introContent && (
+        <RichText publicContext={publicContext} content={introContent} enableGutter={false} />
+      )}
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 items-stretch">
+      <div className="grid grid-cols-1 items-stretch gap-4 md:grid-cols-2 md:gap-8 lg:grid-cols-3">
         {docs?.map((doc, index) => {
           if (typeof doc === 'string') return null
 

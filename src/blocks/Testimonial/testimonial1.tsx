@@ -1,24 +1,24 @@
-'use client';
+'use client'
 
-import { Globe } from 'lucide-react';
-import Masonry from 'react-responsive-masonry';
+import { Globe } from 'lucide-react'
+import Masonry from 'react-responsive-masonry'
 
-import { Avatar, AvatarImage } from '@/components/ui/avatar';
-import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardFooter } from '@/components/ui/card';
+import { Avatar, AvatarImage } from '@/components/ui/avatar'
+import { Badge } from '@/components/ui/badge'
+import { Button } from '@/components/ui/button'
+import { Card, CardContent, CardFooter } from '@/components/ui/card'
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from '@/components/ui/carousel';
-import { cn } from '@/utilities/cn';
-import RichText from '@/components/RichText';
-import { TestimonialBlock } from '@/payload-types';
-import { CMSLink } from '@/components/Link';
-import { PublicContextProps } from '@/utilities/publicContextProps';
+} from '@/components/ui/carousel'
+import { cn } from '@/utilities/cn'
+import RichText from '@/components/RichText'
+import { TestimonialBlock } from '@/payload-types'
+import { CMSLink } from '@/components/Link'
+import { PublicContextProps } from '@/utilities/publicContextProps'
 
 const testimonials = [
   {
@@ -77,49 +77,55 @@ const testimonials = [
     content:
       'Lorem ipsum dolor Odio, incidunt. Ratione, ullam? Iusto id ut omnis repellat consequatur odio, maxime corporis, ducimus dolorem possimus aspernatur blanditiis.',
   },
-];
+]
 
-const Testimonial1: React.FC<TestimonialBlock & { publicContext: PublicContextProps }> = ({ headline, link, tagline, testimonial, publicContext }) => {
+const Testimonial1: React.FC<TestimonialBlock & { publicContext: PublicContextProps }> = ({
+  headline,
+  link,
+  tagline,
+  testimonial,
+  publicContext,
+}) => {
   return (
     <section className="mb-32 border-b pt-32">
       <div className="container">
         <div className="flex flex-col items-center gap-6">
           {tagline && <Badge variant={'outline'}>{tagline}</Badge>}
-          {headline && <RichText publicContext={publicContext}
-            content={headline}
-            withWrapper={false}
-            overrideStyle={{
-              h2: 'mb-2 text-center text-3xl font-semibold lg:text-5xl',
-              h3: 'mb-2 text-center text-2xl font-semibold lg:text-4xl',
-              h4: 'mb-2 text-center text-xl font-semibold lg:text-3xl',
-              p: 'text-muted-foreground lg:text-lg',
-            }}
-          />}
-          {link && (<div className="flex w-full flex-col justify-center gap-4 sm:flex-row">
-            <CMSLink publicContext={publicContext} className="w-full sm:w-auto" {...link} />
-          </div>)}
+          {headline && (
+            <RichText
+              publicContext={publicContext}
+              content={headline}
+              withWrapper={false}
+              overrideStyle={{
+                h2: 'mb-2 text-center text-3xl font-semibold lg:text-5xl',
+                h3: 'mb-2 text-center text-2xl font-semibold lg:text-4xl',
+                h4: 'mb-2 text-center text-xl font-semibold lg:text-3xl',
+                p: 'text-muted-foreground lg:text-lg',
+              }}
+            />
+          )}
+          {link && (
+            <div className="flex w-full flex-col justify-center gap-4 sm:flex-row">
+              <CMSLink publicContext={publicContext} className="w-full sm:w-auto" {...link} />
+            </div>
+          )}
           <div className="mt-6 block lg:mt-14 lg:hidden">
             <Carousel opts={{}} className="w-full max-w-[264px] sm:max-w-md">
               <CarouselContent>
                 {testimonials.map((testimonial, idx) => (
                   <CarouselItem key={idx} className="flex items-center">
                     <Card>
-                      <CardContent className="px-6 pt-6 leading-7 text-foreground/70">
+                      <CardContent className="text-foreground/70 px-6 pt-6 leading-7">
                         <q>{testimonial.content}</q>
                       </CardContent>
                       <CardFooter>
                         <div className="flex gap-4 leading-5">
-                          <Avatar className="size-9 rounded-full ring-1 ring-input">
-                            <AvatarImage
-                              src={testimonial.avatar}
-                              alt={testimonial.name}
-                            />
+                          <Avatar className="ring-input size-9 rounded-full ring-1">
+                            <AvatarImage src={testimonial.avatar} alt={testimonial.name} />
                           </Avatar>
                           <div className="text-sm">
                             <p className="font-medium">{testimonial.name}</p>
-                            <p className="text-muted-foreground">
-                              {testimonial.role}
-                            </p>
+                            <p className="text-muted-foreground">{testimonial.role}</p>
                           </div>
                         </div>
                       </CardFooter>
@@ -137,40 +143,31 @@ const Testimonial1: React.FC<TestimonialBlock & { publicContext: PublicContextPr
                 return (
                   <Card
                     key={idx}
-                    className={cn(
-                      'max-w-md',
-                      idx === 1 && 'mt-10',
-                      idx === 2 && 'mt-20',
-                    )}
+                    className={cn('max-w-md', idx === 1 && 'mt-10', idx === 2 && 'mt-20')}
                   >
-                    <CardContent className="px-6 pt-6 leading-7 text-foreground/70">
+                    <CardContent className="text-foreground/70 px-6 pt-6 leading-7">
                       <q>{testimonial.content}</q>
                     </CardContent>
                     <CardFooter>
                       <div className="flex gap-4 leading-5">
-                        <Avatar className="size-9 rounded-full ring-1 ring-input">
-                          <AvatarImage
-                            src={testimonial.avatar}
-                            alt={testimonial.name}
-                          />
+                        <Avatar className="ring-input size-9 rounded-full ring-1">
+                          <AvatarImage src={testimonial.avatar} alt={testimonial.name} />
                         </Avatar>
                         <div className="text-sm">
                           <p className="font-medium">{testimonial.name}</p>
-                          <p className="text-muted-foreground">
-                            {testimonial.role}
-                          </p>
+                          <p className="text-muted-foreground">{testimonial.role}</p>
                         </div>
                       </div>
                     </CardFooter>
                   </Card>
-                );
+                )
               })}
             </Masonry>
           </div>
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Testimonial1;
+export default Testimonial1

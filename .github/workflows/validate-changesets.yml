@@ -9,13 +9,12 @@ jobs:
   check-files:
     name: Check files
     runs-on: ubuntu-latest
-    if: ${{ !contains(github.event.pull_request.labels.*.name, 'no-changeset') }}  # Skip job if label is present
+    if: ${{ !contains(github.event.pull_request.labels.*.name, 'no-changeset') }} # Skip job if label is present
     steps:
-              
       - name: Checkout code
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # Ensure we have full history
+          fetch-depth: 0 # Ensure we have full history
 
       - name: Check for new changeset
         run: |

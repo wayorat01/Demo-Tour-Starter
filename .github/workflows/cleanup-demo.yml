@@ -19,7 +19,7 @@ jobs:
 
       - name: Set demo restore URL as environment variable
         run: echo "DEMO_RESTORE_URL=${{ secrets.DEMO_RESTORE_URL }}" >> $GITHUB_ENV
-      
+
       - name: Debug restore URL
         run: |
           echo "Running cleanup-demo workflow with DEMO_RESTORE_URL: ${{ env.DEMO_RESTORE_URL }}"

@@ -1,4 +1,4 @@
-'use client';
+'use client'
 
 import {
   ArrowUpRight,
@@ -10,14 +10,13 @@ import {
   Lock,
   Menu,
   X,
-} from 'lucide-react';
-import { useState } from 'react';
+} from 'lucide-react'
+import { useState } from 'react'
 
 import type { Header as HeaderType } from '@/payload-types'
 
-
-import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge'
+import { Button } from '@/components/ui/button'
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -25,7 +24,7 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-} from '@/components/ui/navigation-menu';
+} from '@/components/ui/navigation-menu'
 
 const solutions = [
   {
@@ -46,7 +45,7 @@ const solutions = [
     href: '#',
     icon: Fingerprint,
   },
-];
+]
 
 const useCases = [
   {
@@ -94,7 +93,7 @@ const useCases = [
     href: '#',
     icon: CircleCheckBig,
   },
-];
+]
 
 const documentationLinks = [
   {
@@ -113,7 +112,7 @@ const documentationLinks = [
     title: 'External link',
     href: '#',
   },
-];
+]
 
 const resources = [
   {
@@ -134,15 +133,15 @@ const resources = [
     href: '#',
     icon: CircleCheckBig,
   },
-];
+]
 
 export const Navbar3: React.FC<{ header: HeaderType }> = ({ header }) => {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(false)
   const [submenu, setSubmenu] = useState<
     'platform' | 'usecases' | 'developers' | 'resources' | null
-  >(null);
+  >(null)
   return (
-    <div className="fixed inset-x-0 top-0 z-50 bg-background">
+    <div className="bg-background fixed inset-x-0 top-0 z-50">
       <div className="container">
         <NavigationMenu className="min-w-full">
           <div className="flex w-full items-center justify-between gap-12 py-4">
@@ -168,11 +167,8 @@ export const Navbar3: React.FC<{ header: HeaderType }> = ({ header }) => {
                 <NavigationMenuTrigger>Platform</NavigationMenuTrigger>
                 <NavigationMenuContent className="min-w-[calc(100vw-4rem)] p-12 2xl:min-w-[calc(1400px-4rem)]">
                   <div className="flex items-start justify-between gap-x-12">
-                    <NavigationMenuLink
-                      href="#"
-                      className="group w-1/3 max-w-[398px]"
-                    >
-                      <div className="text-clip rounded-lg border border-input bg-background hover:bg-accent hover:text-accent-foreground">
+                    <NavigationMenuLink href="#" className="group w-1/3 max-w-[398px]">
+                      <div className="border-input bg-background hover:bg-accent hover:text-accent-foreground rounded-lg border text-clip">
                         <div>
                           <img
                             src="https://www.shadcnblocks.com/images/block/placeholder-1.svg"
@@ -181,17 +177,15 @@ export const Navbar3: React.FC<{ header: HeaderType }> = ({ header }) => {
                           />
                         </div>
                         <div className="p-5 xl:p-8">
-                          <div className="mb-2 text-base">
-                            Platform Overview
-                          </div>
-                          <div className="text-sm font-normal text-muted-foreground">
+                          <div className="mb-2 text-base">Platform Overview</div>
+                          <div className="text-muted-foreground text-sm font-normal">
                             Pellentesque nec odio id elit dapibus rutrum.
                           </div>
                         </div>
                       </div>
                     </NavigationMenuLink>
                     <div className="max-w-[760px] flex-1 pt-2.5">
-                      <div className="mb-10 text-xs uppercase tracking-widest text-muted-foreground">
+                      <div className="text-muted-foreground mb-10 text-xs tracking-widest uppercase">
                         Solutions
                       </div>
                       <div className="grid grid-cols-2 gap-8">
@@ -204,10 +198,8 @@ export const Navbar3: React.FC<{ header: HeaderType }> = ({ header }) => {
                             <div className="mb-5 group-hover:opacity-60">
                               <solution.icon className="size-6" />
                             </div>
-                            <div className="mb-1 text-base">
-                              {solution.title}
-                            </div>
-                            <div className="text-sm font-normal text-muted-foreground">
+                            <div className="mb-1 text-base">{solution.title}</div>
+                            <div className="text-muted-foreground text-sm font-normal">
                               {solution.description}
                             </div>
                           </NavigationMenuLink>
@@ -222,7 +214,7 @@ export const Navbar3: React.FC<{ header: HeaderType }> = ({ header }) => {
                 <NavigationMenuContent className="min-w-[calc(100vw-4rem)] p-12 2xl:min-w-[calc(1400px-4rem)]">
                   <div className="flex justify-between gap-x-[52px]">
                     <div className="w-1/2 max-w-[510px] py-2.5">
-                      <div className="mb-10 text-xs uppercase tracking-widest text-muted-foreground">
+                      <div className="text-muted-foreground mb-10 text-xs tracking-widest uppercase">
                         Use cases
                       </div>
                       <div className="grid grid-cols-2 gap-6">
@@ -240,12 +232,9 @@ export const Navbar3: React.FC<{ header: HeaderType }> = ({ header }) => {
                         ))}
                       </div>
                     </div>
-                    <NavigationMenuLink
-                      href="#"
-                      className="group max-w-[604px] flex-1"
-                    >
-                      <div className="flex h-full rounded-lg bg-secondary/30 group-hover:bg-secondary/80 group-focus:bg-secondary/80">
-                        <div className="w-2/5 max-w-[210px] shrink-0 text-clip rounded-lg">
+                    <NavigationMenuLink href="#" className="group max-w-[604px] flex-1">
+                      <div className="bg-secondary/30 group-hover:bg-secondary/80 group-focus:bg-secondary/80 flex h-full rounded-lg">
+                        <div className="w-2/5 max-w-[210px] shrink-0 rounded-lg text-clip">
                           <img
                             src="https://www.shadcnblocks.com/images/block/placeholder-1.svg"
                             alt="Placeholder image"
@@ -253,16 +242,13 @@ export const Navbar3: React.FC<{ header: HeaderType }> = ({ header }) => {
                           />
                         </div>
                         <div className="flex flex-col p-5 xl:p-8">
-                          <div className="mb-8 text-xs uppercase tracking-widest text-muted-foreground">
+                          <div className="text-muted-foreground mb-8 text-xs tracking-widest uppercase">
                             For user persona
                           </div>
                           <div className="mt-auto">
-                            <div className="mb-4 text-xl">
-                              Call to action for user persona
-                            </div>
-                            <div className="text-sm font-normal text-muted-foreground">
-                              Etiam ornare venenatis neque, sit amet suscipit
-                              diam pulvinar a.
+                            <div className="mb-4 text-xl">Call to action for user persona</div>
+                            <div className="text-muted-foreground text-sm font-normal">
+                              Etiam ornare venenatis neque, sit amet suscipit diam pulvinar a.
                             </div>
                           </div>
                         </div>
@@ -276,10 +262,10 @@ export const Navbar3: React.FC<{ header: HeaderType }> = ({ header }) => {
                 <NavigationMenuContent className="min-w-[calc(100vw-4rem)] p-12 2xl:min-w-[calc(1400px-4rem)]">
                   <div className="flex justify-between gap-x-12">
                     <div className="w-1/3 max-w-[404px]">
-                      <div className="mb-6 text-xs uppercase tracking-widest text-muted-foreground">
+                      <div className="text-muted-foreground mb-6 text-xs tracking-widest uppercase">
                         Documentation
                       </div>
-                      <div className="mb-[30px] text-sm font-normal text-muted-foreground">
+                      <div className="text-muted-foreground mb-[30px] text-sm font-normal">
                         Call to action for developers
                       </div>
                       <div className="-ml-2.5 space-y-2.5">
@@ -287,14 +273,12 @@ export const Navbar3: React.FC<{ header: HeaderType }> = ({ header }) => {
                           <NavigationMenuLink
                             key={documentationLink.href}
                             href={documentationLink.href}
-                            className="group flex items-center gap-2.5 rounded-md p-2.5 hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                            className="group hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground flex items-center gap-2.5 rounded-md p-2.5"
                           >
-                            <div className="flex size-5 items-center justify-center rounded bg-accent group-hover:bg-primary group-hover:text-primary-foreground">
+                            <div className="bg-accent group-hover:bg-primary group-hover:text-primary-foreground flex size-5 items-center justify-center rounded">
                               <ArrowUpRight className="size-3" />
                             </div>
-                            <div className="text-sm">
-                              {documentationLink.title}
-                            </div>
+                            <div className="text-sm">{documentationLink.title}</div>
                           </NavigationMenuLink>
                         ))}
                       </div>
@@ -302,13 +286,12 @@ export const Navbar3: React.FC<{ header: HeaderType }> = ({ header }) => {
                     <div className="max-w-[716px] flex-1 space-y-6">
                       <NavigationMenuLink
                         href="#"
-                        className="flex items-center text-clip rounded-lg border border-input bg-background hover:bg-accent hover:text-accent-foreground"
+                        className="border-input bg-background hover:bg-accent hover:text-accent-foreground flex items-center rounded-lg border text-clip"
                       >
                         <div className="flex-1 p-5 xl:p-8">
                           <div className="mb-2 text-base">Showcase link</div>
-                          <div className="text-sm font-normal text-muted-foreground">
-                            Fusce neque dolor, sollicitudin sed sodales non,
-                            condimentum vel metus.
+                          <div className="text-muted-foreground text-sm font-normal">
+                            Fusce neque dolor, sollicitudin sed sodales non, condimentum vel metus.
                           </div>
                         </div>
                         <div className="h-[154px] max-w-[264px] shrink-0">
@@ -321,15 +304,13 @@ export const Navbar3: React.FC<{ header: HeaderType }> = ({ header }) => {
                       </NavigationMenuLink>
                       <NavigationMenuLink
                         href="#"
-                        className="flex items-center text-clip rounded-lg border border-input bg-background hover:bg-accent hover:text-accent-foreground"
+                        className="border-input bg-background hover:bg-accent hover:text-accent-foreground flex items-center rounded-lg border text-clip"
                       >
                         <div className="flex-1 p-5 xl:p-8">
-                          <div className="mb-2 text-base">
-                            Another showcase link
-                          </div>
-                          <div className="text-sm font-normal text-muted-foreground">
-                            Duis metus mauris, efficitur imperdiet magna vitae,
-                            accumsan mattis lacus.
+                          <div className="mb-2 text-base">Another showcase link</div>
+                          <div className="text-muted-foreground text-sm font-normal">
+                            Duis metus mauris, efficitur imperdiet magna vitae, accumsan mattis
+                            lacus.
                           </div>
                         </div>
                         <div className="h-[154px] max-w-[264px] shrink-0">
@@ -349,7 +330,7 @@ export const Navbar3: React.FC<{ header: HeaderType }> = ({ header }) => {
                 <NavigationMenuContent className="min-w-[calc(100vw-4rem)] p-12 2xl:min-w-[calc(1400px-4rem)]">
                   <div className="flex gap-12">
                     <div className="flex flex-1 flex-col">
-                      <div className="mb-10 text-xs uppercase tracking-widest text-muted-foreground">
+                      <div className="text-muted-foreground mb-10 text-xs tracking-widest uppercase">
                         Resources
                       </div>
                       <div className="grid flex-1 grid-cols-3 gap-6">
@@ -357,16 +338,14 @@ export const Navbar3: React.FC<{ header: HeaderType }> = ({ header }) => {
                           <NavigationMenuLink
                             key={resource.href}
                             href={resource.href}
-                            className="flex h-full flex-col text-clip rounded-lg border border-input bg-background p-5 hover:bg-accent hover:text-accent-foreground xl:p-8"
+                            className="border-input bg-background hover:bg-accent hover:text-accent-foreground flex h-full flex-col rounded-lg border p-5 text-clip xl:p-8"
                           >
                             <div className="mb-8">
                               <resource.icon className="size-6" />
                             </div>
                             <div className="mt-auto">
-                              <div className="mb-2 text-base">
-                                {resource.title}
-                              </div>
-                              <div className="text-sm font-normal text-muted-foreground">
+                              <div className="mb-2 text-base">{resource.title}</div>
+                              <div className="text-muted-foreground text-sm font-normal">
                                 {resource.description}
                               </div>
                             </div>
@@ -375,18 +354,17 @@ export const Navbar3: React.FC<{ header: HeaderType }> = ({ header }) => {
                       </div>
                     </div>
                     <div className="w-1/3 max-w-[404px]">
-                      <div className="mb-10 text-xs uppercase tracking-widest text-muted-foreground">
+                      <div className="text-muted-foreground mb-10 text-xs tracking-widest uppercase">
                         Customers
                       </div>
                       <NavigationMenuLink
                         href="#"
-                        className="mb-6 flex text-clip rounded-lg border border-input bg-background hover:bg-accent hover:text-accent-foreground"
+                        className="border-input bg-background hover:bg-accent hover:text-accent-foreground mb-6 flex rounded-lg border text-clip"
                       >
                         <div className="flex-1 p-5 xl:p-8">
                           <div className="mb-2 text-base">Customers</div>
-                          <div className="text-sm font-normal text-muted-foreground">
-                            Integer a ipsum quis nisi posuere lobortis at id
-                            tellus.
+                          <div className="text-muted-foreground text-sm font-normal">
+                            Integer a ipsum quis nisi posuere lobortis at id tellus.
                           </div>
                         </div>
                         <div className="w-1/3 max-w-[130px] shrink-0">
@@ -399,10 +377,10 @@ export const Navbar3: React.FC<{ header: HeaderType }> = ({ header }) => {
                       </NavigationMenuLink>
                       <NavigationMenuLink
                         href="#"
-                        className="flex items-center gap-3 rounded-lg bg-secondary/30 p-3 hover:bg-secondary/80 focus:bg-secondary/80"
+                        className="bg-secondary/30 hover:bg-secondary/80 focus:bg-secondary/80 flex items-center gap-3 rounded-lg p-3"
                       >
                         <Badge variant="secondary">NEW</Badge>
-                        <span className="text-ellipsis text-sm text-secondary-foreground">
+                        <span className="text-secondary-foreground text-sm text-ellipsis">
                           Proin volutpat at felis in vehicula
                         </span>
                       </NavigationMenuLink>
@@ -425,10 +403,10 @@ export const Navbar3: React.FC<{ header: HeaderType }> = ({ header }) => {
                 aria-label="Main Menu"
                 onClick={() => {
                   if (open) {
-                    setOpen(false);
-                    setSubmenu(null);
+                    setOpen(false)
+                    setSubmenu(null)
                   } else {
-                    setOpen(true);
+                    setOpen(true)
                   }
                 }}
               >
@@ -440,11 +418,11 @@ export const Navbar3: React.FC<{ header: HeaderType }> = ({ header }) => {
 
           {/* Mobile Menu (Root) */}
           {open && (
-            <div className="fixed inset-0 top-[72px] flex h-[calc(100vh-72px)] w-full flex-col overflow-scroll border-t border-border bg-background lg:hidden">
+            <div className="border-border bg-background fixed inset-0 top-[72px] flex h-[calc(100vh-72px)] w-full flex-col overflow-scroll border-t lg:hidden">
               <div>
                 <button
                   type="button"
-                  className="flex w-full items-center border-b border-border px-8 py-7 text-left"
+                  className="border-border flex w-full items-center border-b px-8 py-7 text-left"
                   onClick={() => setSubmenu('platform')}
                 >
                   <span className="flex-1">Platform</span>
@@ -454,7 +432,7 @@ export const Navbar3: React.FC<{ header: HeaderType }> = ({ header }) => {
                 </button>
                 <button
                   type="button"
-                  className="flex w-full items-center border-b border-border px-8 py-7 text-left"
+                  className="border-border flex w-full items-center border-b px-8 py-7 text-left"
                   onClick={() => setSubmenu('usecases')}
                 >
                   <span className="flex-1">Use cases</span>
@@ -464,7 +442,7 @@ export const Navbar3: React.FC<{ header: HeaderType }> = ({ header }) => {
                 </button>
                 <button
                   type="button"
-                  className="flex w-full items-center border-b border-border px-8 py-7 text-left"
+                  className="border-border flex w-full items-center border-b px-8 py-7 text-left"
                   onClick={() => setSubmenu('developers')}
                 >
                   <span className="flex-1">Developers</span>
@@ -474,7 +452,7 @@ export const Navbar3: React.FC<{ header: HeaderType }> = ({ header }) => {
                 </button>
                 <button
                   type="button"
-                  className="flex w-full items-center border-b border-border px-8 py-7 text-left"
+                  className="border-border flex w-full items-center border-b px-8 py-7 text-left"
                   onClick={() => setSubmenu('resources')}
                 >
                   <span className="flex-1">Resources</span>
@@ -497,9 +475,9 @@ export const Navbar3: React.FC<{ header: HeaderType }> = ({ header }) => {
           )}
           {/* Mobile Menu > Platform */}
           {open && submenu === 'platform' && (
-            <div className="fixed inset-0 top-[72px] flex h-[calc(100vh-72px)] w-full flex-col overflow-scroll border-t border-border bg-background lg:hidden">
+            <div className="border-border bg-background fixed inset-0 top-[72px] flex h-[calc(100vh-72px)] w-full flex-col overflow-scroll border-t lg:hidden">
               <a href="#" className="block space-y-6 p-8">
-                <div className="w-full text-clip rounded-lg">
+                <div className="w-full rounded-lg text-clip">
                   <img
                     src="https://www.shadcnblocks.com/images/block/placeholder-1.svg"
                     alt="Placeholder image"
@@ -508,27 +486,27 @@ export const Navbar3: React.FC<{ header: HeaderType }> = ({ header }) => {
                 </div>
                 <div>
                   <div className="mb-2 text-base">Platform Overview</div>
-                  <div className="text-sm font-normal text-muted-foreground">
+                  <div className="text-muted-foreground text-sm font-normal">
                     Pellentesque nec odio id elit dapibus rutrum.
                   </div>
                 </div>
               </a>
-              <div className="px-8 py-3.5 text-xs uppercase tracking-widest text-muted-foreground">
+              <div className="text-muted-foreground px-8 py-3.5 text-xs tracking-widest uppercase">
                 Solutions
               </div>
-              <div className="border-t border-border pb-16">
+              <div className="border-border border-t pb-16">
                 {solutions.map((solution) => (
                   <a
                     key={solution.href}
                     href={solution.href}
-                    className="group flex w-full items-start gap-x-4 border-b border-border px-8 py-7 text-left hover:bg-accent"
+                    className="group border-border hover:bg-accent flex w-full items-start gap-x-4 border-b px-8 py-7 text-left"
                   >
                     <div className="shrink-0">
                       <solution.icon className="size-6" />
                     </div>
                     <div>
                       <div className="mb-1.5 text-base">{solution.title}</div>
-                      <div className="text-sm font-normal text-muted-foreground">
+                      <div className="text-muted-foreground text-sm font-normal">
                         {solution.description}
                       </div>
                     </div>
@@ -539,8 +517,8 @@ export const Navbar3: React.FC<{ header: HeaderType }> = ({ header }) => {
           )}
           {/* Mobile Menu > Use cases */}
           {open && submenu === 'usecases' && (
-            <div className="fixed inset-0 top-[72px] flex h-[calc(100vh-72px)] w-full flex-col overflow-scroll bg-background lg:hidden">
-              <div className="px-8 py-3.5 text-xs uppercase tracking-widest text-muted-foreground">
+            <div className="bg-background fixed inset-0 top-[72px] flex h-[calc(100vh-72px)] w-full flex-col overflow-scroll lg:hidden">
+              <div className="text-muted-foreground px-8 py-3.5 text-xs tracking-widest uppercase">
                 Use cases
               </div>
               <div>
@@ -548,7 +526,7 @@ export const Navbar3: React.FC<{ header: HeaderType }> = ({ header }) => {
                   <a
                     key={useCase.href}
                     href={useCase.href}
-                    className="group flex w-full items-start gap-x-4 border-t border-border px-8 py-7 text-left hover:bg-accent"
+                    className="group border-border hover:bg-accent flex w-full items-start gap-x-4 border-t px-8 py-7 text-left"
                   >
                     <div className="shrink-0">
                       <useCase.icon className="size-6" />
@@ -557,12 +535,12 @@ export const Navbar3: React.FC<{ header: HeaderType }> = ({ header }) => {
                   </a>
                 ))}
               </div>
-              <div className="bg-secondary/30 px-8 pb-16 pt-8">
-                <div className="mb-7 text-xs uppercase tracking-widest text-muted-foreground">
+              <div className="bg-secondary/30 px-8 pt-8 pb-16">
+                <div className="text-muted-foreground mb-7 text-xs tracking-widest uppercase">
                   For user persona
                 </div>
                 <a href="#" className="block space-y-6">
-                  <div className="text-clip rounded-lg">
+                  <div className="rounded-lg text-clip">
                     <img
                       src="https://www.shadcnblocks.com/images/block/placeholder-1.svg"
                       alt="Placeholder image"
@@ -570,12 +548,9 @@ export const Navbar3: React.FC<{ header: HeaderType }> = ({ header }) => {
                     />
                   </div>
                   <div>
-                    <div className="mb-1.5 text-base">
-                      Call to action for user persona
-                    </div>
-                    <div className="text-sm font-normal text-muted-foreground">
-                      Etiam ornare venenatis neque, sit amet suscipit diam
-                      pulvinar a.
+                    <div className="mb-1.5 text-base">Call to action for user persona</div>
+                    <div className="text-muted-foreground text-sm font-normal">
+                      Etiam ornare venenatis neque, sit amet suscipit diam pulvinar a.
                     </div>
                   </div>
                 </a>
@@ -584,9 +559,9 @@ export const Navbar3: React.FC<{ header: HeaderType }> = ({ header }) => {
           )}
           {/* Mobile Menu > Developers */}
           {open && submenu === 'developers' && (
-            <div className="fixed inset-0 top-[72px] flex h-[calc(100vh-72px)] w-full flex-col overflow-scroll border-t border-border bg-background lg:hidden">
+            <div className="border-border bg-background fixed inset-0 top-[72px] flex h-[calc(100vh-72px)] w-full flex-col overflow-scroll border-t lg:hidden">
               <a href="#" className="block space-y-6 p-8">
-                <div className="w-full text-clip rounded-lg">
+                <div className="w-full rounded-lg text-clip">
                   <img
                     src="https://www.shadcnblocks.com/images/block/placeholder-1.svg"
                     alt="Placeholder image"
@@ -595,17 +570,14 @@ export const Navbar3: React.FC<{ header: HeaderType }> = ({ header }) => {
                 </div>
                 <div>
                   <div className="mb-2 text-base">Start with our API</div>
-                  <div className="text-sm font-normal text-muted-foreground">
-                    Head to our developer documentation for all the help you
-                    need to embed our payments API.
+                  <div className="text-muted-foreground text-sm font-normal">
+                    Head to our developer documentation for all the help you need to embed our
+                    payments API.
                   </div>
                 </div>
               </a>
-              <a
-                href="#"
-                className="block space-y-6 border-t border-border p-8"
-              >
-                <div className="w-full text-clip rounded-lg">
+              <a href="#" className="border-border block space-y-6 border-t p-8">
+                <div className="w-full rounded-lg text-clip">
                   <img
                     src="https://www.shadcnblocks.com/images/block/placeholder-1.svg"
                     alt="Placeholder image"
@@ -614,13 +586,13 @@ export const Navbar3: React.FC<{ header: HeaderType }> = ({ header }) => {
                 </div>
                 <div>
                   <div className="mb-2 text-base">Quick Start</div>
-                  <div className="text-sm font-normal text-muted-foreground">
-                    Check out our quick-start guides, where you&apos;ll find
-                    tips and tricks for everything payments.
+                  <div className="text-muted-foreground text-sm font-normal">
+                    Check out our quick-start guides, where you&apos;ll find tips and tricks for
+                    everything payments.
                   </div>
                 </div>
               </a>
-              <div className="px-8 py-3.5 text-xs uppercase tracking-widest text-muted-foreground">
+              <div className="text-muted-foreground px-8 py-3.5 text-xs tracking-widest uppercase">
                 Documentation
               </div>
               <div className="-mx-2.5 space-y-2.5 px-8 pb-16">
@@ -628,9 +600,9 @@ export const Navbar3: React.FC<{ header: HeaderType }> = ({ header }) => {
                   <NavigationMenuLink
                     key={documentationLink.href}
                     href={documentationLink.href}
-                    className="group flex items-center gap-2.5 rounded-md px-2.5 py-[18px] hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                    className="group hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground flex items-center gap-2.5 rounded-md px-2.5 py-[18px]"
                   >
-                    <div className="flex size-5 items-center justify-center rounded bg-accent group-hover:bg-primary group-hover:text-primary-foreground">
+                    <div className="bg-accent group-hover:bg-primary group-hover:text-primary-foreground flex size-5 items-center justify-center rounded">
                       <ArrowUpRight className="size-3" />
                     </div>
                     <div className="text-sm">{documentationLink.title}</div>
@@ -641,8 +613,8 @@ export const Navbar3: React.FC<{ header: HeaderType }> = ({ header }) => {
           )}
           {/* Mobile Menu > Platform */}
           {open && submenu === 'resources' && (
-            <div className="fixed inset-0 top-[72px] flex h-[calc(100vh-72px)] w-full flex-col overflow-scroll bg-background lg:hidden">
-              <div className="px-8 py-3.5 text-xs uppercase tracking-widest text-muted-foreground">
+            <div className="bg-background fixed inset-0 top-[72px] flex h-[calc(100vh-72px)] w-full flex-col overflow-scroll lg:hidden">
+              <div className="text-muted-foreground px-8 py-3.5 text-xs tracking-widest uppercase">
                 Resources
               </div>
               <div>
@@ -650,26 +622,26 @@ export const Navbar3: React.FC<{ header: HeaderType }> = ({ header }) => {
                   <a
                     key={resource.href}
                     href={resource.href}
-                    className="group flex w-full items-start gap-x-4 border-t border-border px-8 py-7 text-left hover:bg-accent"
+                    className="group border-border hover:bg-accent flex w-full items-start gap-x-4 border-t px-8 py-7 text-left"
                   >
                     <div className="shrink-0">
                       <resource.icon className="size-6" />
                     </div>
                     <div>
                       <div className="mb-1.5 text-base">{resource.title}</div>
-                      <div className="text-sm font-normal text-muted-foreground">
+                      <div className="text-muted-foreground text-sm font-normal">
                         {resource.description}
                       </div>
                     </div>
                   </a>
                 ))}
               </div>
-              <div className="px-8 pb-16 pt-8">
-                <div className="mb-7 text-xs uppercase tracking-widest text-muted-foreground">
+              <div className="px-8 pt-8 pb-16">
+                <div className="text-muted-foreground mb-7 text-xs tracking-widest uppercase">
                   Customers
                 </div>
                 <a href="#" className="block space-y-6">
-                  <div className="text-clip rounded-lg">
+                  <div className="rounded-lg text-clip">
                     <img
                       src="https://www.shadcnblocks.com/images/block/placeholder-1.svg"
                       alt="Placeholder image"
@@ -678,7 +650,7 @@ export const Navbar3: React.FC<{ header: HeaderType }> = ({ header }) => {
                   </div>
                   <div>
                     <div className="mb-1.5 text-base">Customers</div>
-                    <div className="text-sm font-normal text-muted-foreground">
+                    <div className="text-muted-foreground text-sm font-normal">
                       Meet the product teams changing how they process payments.
                     </div>
                   </div>
@@ -689,7 +661,7 @@ export const Navbar3: React.FC<{ header: HeaderType }> = ({ header }) => {
         </NavigationMenu>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Navbar3;
+export default Navbar3

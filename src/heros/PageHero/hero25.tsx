@@ -1,6 +1,6 @@
-import { Blocks, MoveRight, Wrench, Zap } from 'lucide-react';
+import { Blocks, MoveRight, Wrench, Zap } from 'lucide-react'
 
-import { Button } from '@/components/ui/button';
+import { Button } from '@/components/ui/button'
 
 const Hero25 = () => {
   return (
@@ -12,10 +12,10 @@ const Hero25 = () => {
             alt="placeholder"
             className="mx-auto mb-5 w-16 md:mb-6 md:w-24 lg:mb-7 lg:w-28"
           />
-          <span className="mb-3 text-sm tracking-widest text-muted-foreground md:text-base">
+          <span className="text-muted-foreground mb-3 text-sm tracking-widest md:text-base">
             SYSTEMS
           </span>
-          <h1 className="mt-4 text-balance text-4xl font-semibold lg:text-6xl">
+          <h1 className="mt-4 text-4xl font-semibold text-balance lg:text-6xl">
             A system crafted for team success and growth
           </h1>
           <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
@@ -29,7 +29,7 @@ const Hero25 = () => {
             </Button>
           </div>
           <div className="mt-6 lg:mt-8">
-            <ul className="flex flex-wrap justify-center gap-4 text-sm text-muted-foreground lg:text-base">
+            <ul className="text-muted-foreground flex flex-wrap justify-center gap-4 text-sm lg:text-base">
               <li className="flex items-center gap-2 whitespace-nowrap">
                 <Zap className="size-4" />
                 Quick setup guide
@@ -47,7 +47,7 @@ const Hero25 = () => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Hero25;
+export default Hero25

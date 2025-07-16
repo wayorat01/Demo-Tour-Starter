@@ -49,19 +49,19 @@ export const AdminBar: React.FC<{
 
   return (
     <div
-      className={cn(baseClass, 'py-2 bg-black text-white', {
+      className={cn(baseClass, 'bg-black py-2 text-white', {
         block: show,
         hidden: !show,
       })}
     >
       <div className="container">
         <div className="flex items-center gap-4" style={{ fontSize: 'small' }}>
-          <label className="flex items-center gap-2 cursor-pointer">
+          <label className="flex cursor-pointer items-center gap-2">
             <input
               type="checkbox"
               checked={showThemeColorPicker}
               onChange={(e) => setShowThemeColorPicker(e.target.checked)}
-              className="w-3 h-3"
+              className="h-3 w-3"
             />
             <span>Theme Editor</span>
           </label>

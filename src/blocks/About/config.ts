@@ -1,9 +1,6 @@
 import { backgroundColor } from '@/fields/color'
 import { link } from '@/fields/link'
-import {
-  HeadingFeature,
-  lexicalEditor,
-} from '@payloadcms/richtext-lexical'
+import { HeadingFeature, lexicalEditor } from '@payloadcms/richtext-lexical'
 import { Block } from 'payload'
 
 // About2: headline richText, text1 richText, text2 richText, 6 images, logos, counter: { value, title, optional description }
@@ -19,7 +16,7 @@ export const allAboutDesignVersions = [
   // 'ABOUT5',
 ] as const
 
-export type AboutDesignVersion = typeof allAboutDesignVersions[number]
+export type AboutDesignVersion = (typeof allAboutDesignVersions)[number]
 
 export const AboutBlock: Block = {
   slug: 'about',
@@ -34,7 +31,7 @@ export const AboutBlock: Block = {
       name: 'designVersion',
       type: 'select',
       required: true,
-      options: allAboutDesignVersions.map(version => ({ label: version, value: version })),
+      options: allAboutDesignVersions.map((version) => ({ label: version, value: version })),
     },
 
     {
@@ -44,7 +41,7 @@ export const AboutBlock: Block = {
       editor: lexicalEditor({
         features: ({ rootFeatures }) => [
           ...rootFeatures,
-          HeadingFeature({ enabledHeadingSizes: ['h1', 'h2', 'h3'] })
+          HeadingFeature({ enabledHeadingSizes: ['h1', 'h2', 'h3'] }),
         ],
       }),
     },
@@ -55,7 +52,7 @@ export const AboutBlock: Block = {
       editor: lexicalEditor({
         features: ({ rootFeatures }) => [
           ...rootFeatures,
-          HeadingFeature({ enabledHeadingSizes: ['h2', 'h3', 'h4'] })
+          HeadingFeature({ enabledHeadingSizes: ['h2', 'h3', 'h4'] }),
         ],
       }),
     },
@@ -66,7 +63,7 @@ export const AboutBlock: Block = {
       editor: lexicalEditor({
         features: ({ rootFeatures }) => [
           ...rootFeatures,
-          HeadingFeature({ enabledHeadingSizes: ['h2', 'h3', 'h4'] })
+          HeadingFeature({ enabledHeadingSizes: ['h2', 'h3', 'h4'] }),
         ],
       }),
     },
@@ -77,11 +74,10 @@ export const AboutBlock: Block = {
       editor: lexicalEditor({
         features: ({ rootFeatures }) => [
           ...rootFeatures,
-          HeadingFeature({ enabledHeadingSizes: ['h3', 'h4'] })
+          HeadingFeature({ enabledHeadingSizes: ['h3', 'h4'] }),
         ],
       }),
     },
-
 
     link({
       overrides: {
@@ -89,7 +85,7 @@ export const AboutBlock: Block = {
           condition: (_, { designVersion } = { designVersion: '' }) =>
             ['ABOUT3', 'ABOUT4'].includes(designVersion),
         },
-      }
+      },
     }),
 
     {
@@ -121,6 +117,6 @@ export const AboutBlock: Block = {
         condition: (_, { designVersion } = { designVersion: '' }) =>
           ['ABOUT5', 'ABOUT2', 'ABOUT3'].includes(designVersion),
       },
-    }
+    },
   ],
 }

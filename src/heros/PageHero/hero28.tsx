@@ -1,15 +1,15 @@
-import { Button } from '@/components/ui/button';
+import { Button } from '@/components/ui/button'
 
 const Hero28 = () => {
   return (
     <section className="relative py-32">
       {/* Background pattern */}
-      <div className="container absolute inset-x-0 top-0 hidden h-full overflow-hidden lg:block">
+      <div className="absolute inset-x-0 top-0 container hidden h-full overflow-hidden lg:block">
         <div className="flex flex-col items-center justify-center">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 1400 520"
-            className="-mx-8 w-[calc(100%+2*theme(container.padding))]"
+            className="w-[calc(100%+2*theme(container.padding))] -mx-8"
           >
             <defs>
               <radialGradient id="text-backgroud" cx="50%" cy="50%" r={0.6}>
@@ -21,14 +21,7 @@ const Hero28 = () => {
                 <stop stopColor="hsl(from_var(--background)_h_s_l)" offset={1} />
               </linearGradient>
               <mask id="mask">
-                <rect
-                  x="0"
-                  y="0"
-                  width="100%"
-                  height="100%"
-                  stroke="none"
-                  fill="black"
-                />
+                <rect x="0" y="0" width="100%" height="100%" stroke="none" fill="black" />
                 <rect
                   x="80"
                   y="40"
@@ -136,20 +129,17 @@ const Hero28 = () => {
           </svg>
         </div>
       </div>
-      <div className="container relative flex flex-col items-center text-center">
-        <h1 className="my-6 text-pretty text-4xl font-bold lg:text-6xl">
-          Welcome to Our Website
-        </h1>
-        <p className="mb-8 max-w-3xl text-muted-foreground lg:text-xl">
-          Elig doloremque mollitia fugiat omnis! Porro facilis quo animi
-          consequatur.
+      <div className="relative container flex flex-col items-center text-center">
+        <h1 className="my-6 text-4xl font-bold text-pretty lg:text-6xl">Welcome to Our Website</h1>
+        <p className="text-muted-foreground mb-8 max-w-3xl lg:text-xl">
+          Elig doloremque mollitia fugiat omnis! Porro facilis quo animi consequatur.
         </p>
         <div>
           <Button>Primary</Button>
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Hero28;
+export default Hero28

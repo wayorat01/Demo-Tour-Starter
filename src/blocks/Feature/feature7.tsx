@@ -1,4 +1,4 @@
-import { CheckCircle, Zap } from 'lucide-react';
+import { CheckCircle, Zap } from 'lucide-react'
 
 const Feature7 = () => {
   return (
@@ -11,23 +11,20 @@ const Feature7 = () => {
             className="max-h-96 w-full rounded-md object-cover"
           />
           <div className="flex flex-col lg:text-left">
-            <span className="flex size-12 items-center justify-center rounded-full bg-accent">
+            <span className="bg-accent flex size-12 items-center justify-center rounded-full">
               <Zap className="size-6" />
             </span>
-            <h1 className="my-6 text-pretty text-3xl font-bold lg:text-4xl">
+            <h1 className="my-6 text-3xl font-bold text-pretty lg:text-4xl">
               Welcome to Our Website
             </h1>
-            <p className="mb-8 max-w-xl text-muted-foreground lg:max-w-none lg:text-lg">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Elig
-              doloremque mollitia fugiat omnis! Porro facilis quo animi
-              consequatur. Explicabo.
+            <p className="text-muted-foreground mb-8 max-w-xl lg:max-w-none lg:text-lg">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Elig doloremque mollitia
+              fugiat omnis! Porro facilis quo animi consequatur. Explicabo.
             </p>
             <ul className="ml-4 space-y-4 text-left">
               <li className="flex items-center gap-3">
                 <CheckCircle className="size-6" />
-                <p className="text-muted-foreground lg:text-lg">
-                  Lorem ipsum dolor sit amet.
-                </p>
+                <p className="text-muted-foreground lg:text-lg">Lorem ipsum dolor sit amet.</p>
               </li>
               <li className="flex items-center gap-3">
                 <CheckCircle className="size-6" />
@@ -46,7 +43,7 @@ const Feature7 = () => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Feature7;
+export default Feature7

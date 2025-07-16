@@ -79,7 +79,7 @@ export const Pages: CollectionConfig = {
         slug: typeof data?.slug === 'string' ? data.slug : '',
         breadcrumbs: data?.breadcrumbs as Breadcrumb[],
         collection: 'pages',
-        locale: options.locale
+        locale: options.locale,
       })
 
       return `${NEXT_PUBLIC_SERVER_URL}${path}`
@@ -177,14 +177,14 @@ export const Pages: CollectionConfig = {
       defaultValue: false,
       label: {
         en: 'Breadcrumbs',
-        de: 'Breadcumbs'
+        de: 'Breadcumbs',
       },
       admin: {
         position: 'sidebar',
         description: {
           en: 'Enable breadcrumbs for the page',
-          de: 'Breadcumbs für die Seite aktivieren'
-        }
+          de: 'Breadcumbs für die Seite aktivieren',
+        },
       },
     },
   ],

@@ -145,7 +145,7 @@ const Gallery5: React.FC<GalleryBlock & { publicContext: PublicContextProps }> =
                       className="group rounded-xl"
                       target={item.link?.newTab ? '_blank' : '_self'}
                     >
-                      <div className="flex flex-col overflow-clip rounded-xl border border-border md:col-span-2 md:grid md:grid-cols-2 md:gap-6 lg:gap-8">
+                      <div className="border-border flex flex-col overflow-clip rounded-xl border md:col-span-2 md:grid md:grid-cols-2 md:gap-6 lg:gap-8">
                         <div className="md:min-h-96 lg:min-h-112 xl:min-h-128">
                           {item.image && (
                             <Media

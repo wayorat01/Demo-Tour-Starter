@@ -14,7 +14,13 @@ import { splitRichText } from '@/utilities/richtext'
 
 import { PublicContextProps } from '@/utilities/publicContextProps'
 
-const Gallery6: React.FC<GalleryBlock & { publicContext: PublicContextProps }> = ({ richText, tagline, link, elements, publicContext }) => {
+const Gallery6: React.FC<GalleryBlock & { publicContext: PublicContextProps }> = ({
+  richText,
+  tagline,
+  link,
+  elements,
+  publicContext,
+}) => {
   const [carouselApi, setCarouselApi] = useState<CarouselApi>()
   const [canScrollPrev, setCanScrollPrev] = useState(false)
   const [canScrollNext, setCanScrollNext] = useState(false)
@@ -37,10 +43,11 @@ const Gallery6: React.FC<GalleryBlock & { publicContext: PublicContextProps }> =
       <div className="container">
         <div className="mb-8 flex flex-col justify-between md:mb-14 md:flex-row md:items-end lg:mb-16">
           <div>
-            <p className="mb-6 text-xs font-medium uppercase tracking-wider">{tagline}</p>
+            <p className="mb-6 text-xs font-medium tracking-wider uppercase">{tagline}</p>
 
             {richText && (
-              <RichText publicContext={publicContext}
+              <RichText
+                publicContext={publicContext}
                 content={richText}
                 overrideStyle={{
                   h2: 'mb-3 text-xl font-semibold md:mb-4 md:text-4xl lg:mb-6',
@@ -112,7 +119,7 @@ const Gallery6: React.FC<GalleryBlock & { publicContext: PublicContextProps }> =
                   <CarouselItem key={item.id} className="pl-[20px] md:max-w-[452px]">
                     <a href={item.link?.url || '#'} className="group flex flex-col justify-between">
                       <div>
-                        <div className="flex aspect-3/2 text-clip rounded-xl">
+                        <div className="flex aspect-3/2 rounded-xl text-clip">
                           <div className="flex-1">
                             <div className="relative size-full origin-bottom transition duration-300 group-hover:scale-105">
                               {item.image && (
@@ -122,13 +129,13 @@ const Gallery6: React.FC<GalleryBlock & { publicContext: PublicContextProps }> =
                                   htmlElement={null}
                                 />
                               )}
-
                             </div>
                           </div>
                         </div>
                       </div>
                       {firstNode && (
-                        <RichText publicContext={publicContext}
+                        <RichText
+                          publicContext={publicContext}
                           content={firstNode}
                           overrideStyle={{
                             h2: 'mb-2 line-clamp-3 break-words pt-4 text-lg font-medium md:mb-3 md:pt-4 md:text-xl lg:pt-4 lg:text-2xl',
@@ -140,7 +147,8 @@ const Gallery6: React.FC<GalleryBlock & { publicContext: PublicContextProps }> =
                         />
                       )}
                       {rest && (
-                        <RichText publicContext={publicContext}
+                        <RichText
+                          publicContext={publicContext}
                           content={rest}
                           overrideStyle={{
                             p: 'mb-8 line-clamp-2 text-sm text-muted-foreground md:mb-12 md:text-base lg:mb-9',

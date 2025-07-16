@@ -130,8 +130,7 @@ export async function fetchGithubChangelogAction(pageId: string, blockId: string
         },
       })
 
-      revalidatePath('/admin');
-
+      revalidatePath('/admin')
     } else {
       payload.logger.info('No new releases found')
       return { success: true, status: 'No new releases found' }
