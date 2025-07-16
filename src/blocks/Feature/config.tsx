@@ -121,6 +121,7 @@ export const allFeatureDesignVersions = [
   { label: 'FEATURE117', value: 'FEATURE117', image: '/admin/previews/feature/feature117.jpeg' },
   { label: 'FEATURE126', value: 'FEATURE126', image: '/admin/previews/feature/feature126.jpeg' },
   { label: 'FEATURE159', value: 'FEATURE159', image: '/admin/previews/feature/feature159.webp' },
+  { label: 'FEATURE250', value: 'FEATURE250', image: '/admin/previews/feature/feature250.webp' },
 ] as const
 
 export type FeatureDesignVersion = (typeof allFeatureDesignVersions)[number]
@@ -261,6 +262,7 @@ export const FeatureBlock: Block = {
             'FEATURE33',
             'FEATURE38',
             'FEATURE58',
+            'FEATURE250',
           ].includes(designVersion),
       },
       relationTo: 'media',
@@ -378,6 +380,7 @@ export const FeatureBlock: Block = {
                 'FEATURE114',
                 'FEATURE117',
                 'FEATURE159',
+                'FEATURE250',
               ].includes(designVersion)
             },
           },
@@ -390,7 +393,24 @@ export const FeatureBlock: Block = {
           type: 'text',
           localized: true,
           admin: {
-            // conditions on sibling fields are unfortunatly currently not possible in payload
+            condition: createBlockItemCondition([
+              'FEATURE1',
+              'FEATURE25',
+              'FEATURE50',
+              'FEATURE53',
+              'FEATURE57',
+              'FEATURE70',
+              'FEATURE72',
+              'FEATURE91',
+              'FEATURE97',
+              'FEATURE99',
+              'FEATURE102',
+              'FEATURE103',
+              'FEATURE114',
+              'FEATURE117',
+              'FEATURE126',
+              'FEATURE159',
+            ]),
           },
         },
         {
@@ -399,6 +419,22 @@ export const FeatureBlock: Block = {
           localized: true,
           admin: {
             condition: createBlockItemCondition([
+              'FEATURE1',
+              'FEATURE25',
+              'FEATURE50',
+              'FEATURE53',
+              'FEATURE57',
+              'FEATURE70',
+              'FEATURE72',
+              'FEATURE91',
+              'FEATURE97',
+              'FEATURE99',
+              'FEATURE102',
+              'FEATURE103',
+              'FEATURE114',
+              'FEATURE117',
+              'FEATURE126',
+              'FEATURE159',
               'NOT FEATURE105',
               // add any other versions as needed, but NOT 'FEATURE105'
             ]),

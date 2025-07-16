@@ -19,8 +19,11 @@ const createDynamicIcon = (iconName: string) => {
 
   const kebabName = iconName
     .replace(/([A-Z])/g, '-$1')
+    .replace(/([0-9]+)x([0-9]+)/g, '$1-x-$2')  // Handle 'x' between numbers
+    .replace(/([0-9]+)/g, '-$1')
     .toLowerCase()
-    .replace(/^-/, '');
+    .replace(/^-/, '')
+    .replace(/-+/g, '-');
 
   const DynamicIcon = dynamic(
     () => import(`lucide-react/dist/esm/icons/${kebabName}.js`),

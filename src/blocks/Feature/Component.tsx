@@ -101,6 +101,8 @@ import Feature114 from '@/blocks/Feature/feature114'
 import Feature117 from '@/blocks/Feature/feature117'
 import Feature126 from '@/blocks/Feature/feature126'
 import Feature159 from '@/blocks/Feature/feature159'
+import Feature250 from '@/blocks/Feature/feature250'
+
 import { Page } from '@/payload-types'
 import { FeatureDesignVersion, allFeatureDesignVersions } from './config'
 
@@ -214,6 +216,7 @@ const features: Feature = {
   FEATURE117: Feature117,
   FEATURE126: Feature126,
   FEATURE159: Feature159,
+  FEATURE250: Feature250,
 }
 
 export const FeatureBlock: React.FC<Page['layout'][0]> = (props) => {
