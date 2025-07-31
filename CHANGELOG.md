@@ -1,5 +1,17 @@
 # payblocks
 
+## 2.5.0
+
+### Minor Changes
+
+- 0f57b37: added new block - logos9
+- 63b8ccb: added new block - feature250
+- 97a0845: added new block - hero219
+
+### Patch Changes
+
+- 04a1f33: running prettier on all files and adding prettierrule for tailwind
+
 ## 2.4.0
 
 ### Minor Changes
