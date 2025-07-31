@@ -1,6 +1,7 @@
 import type { Field } from 'payload'
 
 import {
+  BlocksFeature,
   FixedToolbarFeature,
   HeadingFeature,
   InlineToolbarFeature,
@@ -14,6 +15,7 @@ import { customHeroFields } from './CustomHero/config'
 import { backgroundColor } from '@/fields/color'
 import { designVersionDescription } from '@/components/AdminDashboard/DesignVersionDescription'
 import { designVersionPreview } from '@/components/AdminDashboard/DesignVersionPreview/config'
+import { MotionText } from '@/blocks/LexicalBlocks/MotionText/config'
 
 /* TODO:
 13 -> X
@@ -66,6 +68,7 @@ export const allHeroDesignVersions = [
   { label: 'HERO195', value: '195', image: '/admin/previews/hero/hero195.webp' },
   { label: 'HERO220', value: '220', image: '/admin/previews/hero/hero220.jpeg' },
   { label: 'HERO214', value: '214', image: '/admin/previews/hero/hero214.webp' },
+  { label: 'HERO219', value: '219', image: '/admin/previews/hero/hero219.webp' },
 ] as const
 
 export type HeroDesignVersion = (typeof allHeroDesignVersions)[number]
@@ -133,13 +136,18 @@ export const hero: Field = {
       localized: true,
       admin: {
         condition: (_, { designVersion = '' } = {}) =>
-          ['1', '2', '3', '4', '5', '6', '12', '101', '112', '195', '214'].includes(designVersion),
+          ['1', '2', '3', '4', '5', '6', '12', '101', '112', '195', '214', '219'].includes(
+            designVersion,
+          ),
       },
       editor: lexicalEditor({
         features: ({ rootFeatures }) => {
           return [
             ...rootFeatures,
             HeadingFeature({ enabledHeadingSizes: ['h1'] }),
+            BlocksFeature({
+              blocks: [MotionText],
+            }),
             FixedToolbarFeature(),
             InlineToolbarFeature(),
           ]
@@ -195,7 +203,7 @@ export const hero: Field = {
       type: 'upload',
       admin: {
         condition: (_, { designVersion = '' } = {}) =>
-          ['3', '53', '28', '32', '12', '51', '57', '50', '18', '112', '101'].includes(
+          ['3', '53', '28', '32', '12', '51', '57', '50', '18', '112', '101', '219'].includes(
             designVersion,
           ),
       },
@@ -203,6 +211,14 @@ export const hero: Field = {
       hasMany: true,
       maxRows: 14,
     },
+    designVersionDescription(
+      'description219',
+      (_, { designVersion } = {}) => ['219'].includes(designVersion),
+      {
+        en: 'Use 14 logo images here',
+        de: 'Verwende hier 14 Logo-Bilder',
+      },
+    ),
     {
       name: 'USPs',
       type: 'array',

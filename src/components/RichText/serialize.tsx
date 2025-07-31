@@ -1,10 +1,11 @@
 import { BannerBlock } from '@/blocks/LexicalBlocks/Banner/Component'
+import { MotionTextBlock } from '@/blocks/LexicalBlocks/MotionText/Component'
 import { CodeBlock, CodeBlockProps } from '@/blocks/Code/Component'
 import { MediaBlock } from '@/blocks/MediaBlock/Component'
 import React, { Fragment, JSX } from 'react'
 import { CMSLink } from '@/components/Link'
 import { DefaultNodeTypes, SerializedBlockNode } from '@payloadcms/richtext-lexical'
-import type { BannerBlock as BannerBlockProps, Media as MediaType } from '@/payload-types'
+import type { BannerBlock as BannerBlockProps, MotionTextBlock as MotionTextBlockProps, Media as MediaType } from '@/payload-types'
 import Image from 'next/image'
 
 import {
@@ -27,6 +28,7 @@ export type NodeTypes =
       | Extract<Page['layout'][0], { blockType: 'cta' }>
       | Extract<Page['layout'][0], { blockType: 'mediaBlock' }>
       | BannerBlockProps
+      | MotionTextBlockProps
       | CodeBlockProps
     >
 
@@ -154,6 +156,16 @@ export function serializeLexical({
               )
             case 'code':
               return <CodeBlock className="col-start-2" key={index} {...block} />
+            case 'motionText':
+              return (
+                <MotionTextBlock
+                  key={index}
+                  {...block}
+                  className="col-start-2"
+                  publicContext={publicContext}
+                  overrideStyles={mergedStyles}
+                />
+              )
             default:
               return null
           }
