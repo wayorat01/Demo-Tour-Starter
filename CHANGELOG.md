@@ -1,5 +1,11 @@
 # payblocks
 
+## 2.5.1
+
+### Patch Changes
+
+- 785519a: version bump to 3.52 and minor cleanups
+
 ## 2.5.0
 
 ### Minor Changes
