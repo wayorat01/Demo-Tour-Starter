@@ -1,12 +1,13 @@
 import './index.scss'
 import { revalidatePath } from 'next/cache'
 import { restoreBackup, restoreSeedMedia } from '../BackupDashboard/actions'
-import { getPayload, User } from 'payload'
+import { getPayload } from 'payload'
 
 import { Button, Popup } from '@payloadcms/ui'
 import { isAdminHidden } from '@/access/isAdmin'
 import { serverConfig } from '@/config/server'
 import configPromise from '@payload-config'
+import { User } from '@/payload-types'
 
 const SEED_DUMP_URL =
   serverConfig.serverUrl + '/seed/demo-payblocks---demo-payblocks.trieb.work---1739813600714.json'

@@ -8,7 +8,6 @@ import { Separator } from '@/components/ui/separator'
 import { BlogBlock, Post, Category } from '@/payload-types'
 import { PublicContextProps } from '@/utilities/publicContextProps'
 import RichText from '@/components/RichText'
-import Link from 'next/link'
 import { CMSLink } from '@/components/Link'
 import { extractPlainText } from '@/utilities/richtext'
 

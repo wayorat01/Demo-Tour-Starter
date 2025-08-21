@@ -1,4 +1,3 @@
-import { Button } from '@/components/ui/button'
 import RichText from '@/components/RichText'
 import { FeatureBlock } from '@/payload-types'
 import { Media } from '@/components/Media'

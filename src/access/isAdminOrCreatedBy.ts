@@ -1,4 +1,4 @@
-import type { Access, User } from 'payload'
+import type { Access } from 'payload'
 import { checkRole } from '../utilities/checkRole'
 
 /**
@@ -26,5 +26,5 @@ export const isAdminOrCreatedBy: Access = ({ req: { user } }) => {
 // Field level access control
 export const isAdminOrCreatedByFieldLevel = ({ req: { user } }) => {
   if (!user) return false
-  return checkRole(['admin'], user as User) || Boolean(user.id)
+  return checkRole(['admin'], user) || Boolean(user.id)
 }
