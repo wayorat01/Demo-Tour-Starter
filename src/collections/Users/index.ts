@@ -1,7 +1,7 @@
 import type { CollectionConfig } from 'payload'
 import { authenticated } from '@/access/authenticated'
 import { isAdmin, isAdminFieldLevel } from '@/access/isAdmin'
-import { isAdminOrCreatedBy } from '@/access/isAdminOrCreatedBy'
+import { isAdminOrSelf } from '@/access/isAdminOrCreatedBy'
 import { checkRole } from '@/utilities/checkRole'
 
 async function findRole(payload: any, slug: string) {
@@ -26,8 +26,8 @@ const Users: CollectionConfig = {
   access: {
     create: isAdmin,
     read: authenticated,
-    update: isAdminOrCreatedBy,
-    delete: isAdminOrCreatedBy,
+    update: isAdminOrSelf,
+    delete: isAdminOrSelf,
     /**
      * Limit the access to the admin dashboard here
      */
