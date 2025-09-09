@@ -46,7 +46,15 @@ export const ImageMedia: React.FC<MediaProps> = (props) => {
     height = fullHeight!
     alt = altFromResource
 
-    src = url ? `${NEXT_PUBLIC_SERVER_URL}${url}` : null
+    /**
+     * Support both absolute and relative media URLs. When using the storage adapter with "disablePayloadAccessControl" you
+     * get absolute URLs. Otherwise, we get a relative URL that needs to be prefixed to work with next/image
+     */
+    if (url && url.startsWith('/')) {
+      src = `${NEXT_PUBLIC_SERVER_URL}${url}`
+    } else {
+      src = url || null
+    }
   }
 
   // NOTE: this is used by the browser to determine which image to download at different screen sizes
