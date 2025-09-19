@@ -1,5 +1,18 @@
 # payblocks
 
+## 2.6.0
+
+### Minor Changes
+
+- 9bd3a78: Added phone input field to the form builder and color text state plugin for richtext
+- 6e02394: added CTA 12 block
+
+### Patch Changes
+
+- b9261d2: adding support for cloud media plugin with absolute URLs
+- a2b1cf3: fixing permissions no longer working for editor after upgrade
+- db65c28: Adding custom props to disable icon and label to link group
+
 ## 2.5.1
 
 ### Patch Changes
