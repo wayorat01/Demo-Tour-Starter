@@ -1,6 +1,5 @@
 import { icon } from '@/components/Icon/config'
 import { linkGroup } from '@/fields/linkGroup'
-import { link } from '@/fields/link'
 import {
   FixedToolbarFeature,
   HeadingFeature,
@@ -11,23 +10,42 @@ import {
   UnorderedListFeature,
 } from '@payloadcms/richtext-lexical'
 import { Block } from 'payload'
-import { backgroundColor, color } from '@/fields/color'
+import { backgroundColor } from '@/fields/color'
+import { designVersionPreview } from '@/components/AdminDashboard/DesignVersionPreview/config'
 
 export const allCtaDesignVersions = [
-  'CTA1',
+  {
+    label: 'CTA1',
+    value: 'CTA1',
+    image: '/admin/previews/cta/cta1.webp',
+  },
   // 'CTA3',
   // 'CTA4',
   // 'CTA5',
-  'CTA6',
+  {
+    label: 'CTA6',
+    value: 'CTA6',
+    image: '/admin/previews/cta/cta6.webp',
+  },
   // 'CTA7',
-  'CTA10',
+  {
+    label: 'CTA10',
+    value: 'CTA10',
+    image: '/admin/previews/cta/cta10.webp',
+  },
   // 'CTA11',
-  // 'CTA12',
+  {
+    label: 'CTA12',
+    value: 'CTA12',
+    image: '/admin/previews/cta/cta12.webp',
+  },
   // 'CTA13',
   // 'CTA15',
   // 'CTA16',
   // 'CTA17',
 ] as const
+
+const ctaDesignVersions: string[] = allCtaDesignVersions.map((item) => item.value)
 
 export type CtaDesignVersion = (typeof allCtaDesignVersions)[number]
 
@@ -40,12 +58,7 @@ export const CtaBlock: Block = {
   },
   fields: [
     backgroundColor,
-    {
-      name: 'designVersion',
-      type: 'select',
-      required: true,
-      options: allCtaDesignVersions.map((version) => ({ label: version, value: version })),
-    },
+    designVersionPreview(allCtaDesignVersions),
     {
       name: 'tagline',
       type: 'text',
@@ -97,8 +110,7 @@ export const CtaBlock: Block = {
     linkGroup({
       overrides: {
         admin: {
-          condition: (_, { designVersion = '' } = {}) =>
-            allCtaDesignVersions.includes(designVersion), // All CTAs use links
+          condition: (_, { designVersion = '' } = {}) => ctaDesignVersions.includes(designVersion), // All CTAs use links
         },
       },
     }),
