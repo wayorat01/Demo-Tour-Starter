@@ -185,6 +185,28 @@ a {
   cursor: pointer;
 }
 
+.phone-input {
+  --PhoneInputCountryFlag-height: 1em;
+  --PhoneInputCountryFlag-borderColor: var(--color-foreground);
+  --PhoneInputCountrySelectArrow-color: var(--color-foreground);
+  --PhoneInput-color--focus: var(--color-foreground);
+}
+
+.PhoneInput:focus-within {
+  outline: 2px solid var(--color-foreground);
+  outline-offset: 2px;
+}
+
+.PhoneInputInput {
+  border: none;
+  outline: none;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  background-color: transparent;
+  flex: 1;
+}
+
 .magicpattern {
   width: 100%;
   height: 100%;

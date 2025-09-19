@@ -38,5 +38,11 @@ export const buildInitialFormState = (fields: FormFieldBlock[]) => {
         [field.name]: '',
       }
     }
+    if (field.blockName === 'telephone') {
+      return {
+        ...initialSchema,
+        [field.blockName]: '',
+      }
+    }
   }, {})
 }

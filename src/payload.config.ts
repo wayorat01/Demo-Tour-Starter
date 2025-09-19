@@ -22,6 +22,8 @@ import {
   lexicalEditor,
   UnderlineFeature,
   ParagraphFeature,
+  TextStateFeature,
+  defaultColors,
 } from '@payloadcms/richtext-lexical'
 import sharp from 'sharp' // editor-import
 import path from 'path'
@@ -49,6 +51,7 @@ import { initializeRoles } from './utilities/initRoles'
 import { isAdminHidden } from './access/isAdmin'
 import { hasPermission } from './utilities/checkPermission'
 import { PageConfig } from './globals/PageConfig/config'
+import { Telephone } from './fields/formBuilder/telephone'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -140,6 +143,21 @@ export default buildConfig({
             ]
           },
         }),
+
+        TextStateFeature({
+          state: {
+            color: {
+              'text-grey': {
+                label: 'Grey',
+
+                css: {
+                  color: 'hsl(0, 0%, 41%)',
+                },
+              },
+              ...defaultColors.text,
+            },
+          },
+        }),
       ]
     },
   }),
@@ -193,6 +211,7 @@ export default buildConfig({
     formBuilderPlugin({
       fields: {
         payment: false,
+        telephone: Telephone,
       },
       formOverrides: {
         fields: ({ defaultFields }) => {

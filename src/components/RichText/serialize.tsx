@@ -5,7 +5,11 @@ import { MediaBlock } from '@/blocks/MediaBlock/Component'
 import React, { Fragment, JSX } from 'react'
 import { CMSLink } from '@/components/Link'
 import { DefaultNodeTypes, SerializedBlockNode } from '@payloadcms/richtext-lexical'
-import type { BannerBlock as BannerBlockProps, MotionTextBlock as MotionTextBlockProps, Media as MediaType } from '@/payload-types'
+import type {
+  BannerBlock as BannerBlockProps,
+  MotionTextBlock as MotionTextBlockProps,
+  Media as MediaType,
+} from '@/payload-types'
 import Image from 'next/image'
 
 import {
@@ -21,6 +25,83 @@ import type { Page } from '@/payload-types'
 import { cn } from '@/utilities/cn'
 import { PublicContextProps } from '@/utilities/publicContextProps'
 import { getHeadlineId } from '@/utilities/richtext'
+
+// Define types locally since they're not exported from the main package
+
+type StateValues = {
+  [stateValue: string]: {
+    css: React.CSSProperties
+
+    label: string
+  }
+}
+
+type TextStateFeatureProps = {
+  state: {
+    [stateKey: string]: StateValues
+  }
+}
+
+// Local copy of defaultColors to avoid Node.js import issues
+const defaultColors = {
+  text: {
+    'text-red': {
+      css: {
+        color: 'light-dark(oklch(0.577 0.245 27.325), oklch(0.704 0.191 22.216))',
+      },
+
+      label: 'Red',
+    },
+
+    'text-orange': {
+      css: {
+        color: 'light-dark(oklch(0.646 0.222 41.116), oklch(0.75 0.183 55.934))',
+      },
+
+      label: 'Orange',
+    },
+
+    'text-yellow': {
+      css: {
+        color: 'light-dark(oklch(0.554 0.135 66.442), oklch(0.897 0.196 126.665))',
+      },
+
+      label: 'Yellow',
+    },
+
+    'text-green': {
+      css: {
+        color: 'light-dark(oklch(0.527 0.154 150.069), oklch(0.792 0.209 151.711))',
+      },
+
+      label: 'Green',
+    },
+
+    'text-blue': {
+      css: {
+        color: 'light-dark(oklch(0.546 0.245 262.881), oklch(0.707 0.165 254.624))',
+      },
+
+      label: 'Blue',
+    },
+
+    'text-purple': {
+      css: {
+        color: 'light-dark(oklch(0.558 0.288 302.321), oklch(0.714 0.203 305.504))',
+      },
+
+      label: 'Purple',
+    },
+
+    'text-pink': {
+      css: {
+        color: 'light-dark(oklch(0.592 0.249 0.584), oklch(0.718 0.202 349.761))',
+      },
+
+      label: 'Pink',
+    },
+  },
+}
 
 export type NodeTypes =
   | DefaultNodeTypes
@@ -40,6 +121,26 @@ type Props = {
   nodes: NodeTypes[]
   overrideStyle?: OverrideStyle
 }
+
+const colorState: TextStateFeatureProps['state'] = {
+  color: {
+    ...defaultColors.text,
+
+    'text-grey': {
+      label: 'Grey',
+
+      css: {
+        color: 'hsl(0, 0%, 41%)',
+      },
+    },
+  },
+}
+
+type ExtractAllColorKeys<T> = {
+  [K in keyof T]: T[K] extends StateValues ? keyof T[K] : never
+}[keyof T]
+
+type ColorStateKeys = ExtractAllColorKeys<typeof colorState>
 
 export function serializeLexical({
   nodes,
@@ -64,6 +165,17 @@ export function serializeLexical({
           return null
         }
         if (node.type === 'text') {
+          const styles: React.CSSProperties = {}
+
+          if (node.$) {
+            Object.entries(colorState).forEach(([stateKey, stateValues]) => {
+              const stateValue = node.$ && (node.$[stateKey] as ColorStateKeys)
+
+              if (stateValue && stateValues[stateValue]) {
+                Object.assign(styles, stateValues[stateValue].css)
+              }
+            })
+          }
           let text = <React.Fragment key={index}>{node.text}</React.Fragment>
           if (node.format & IS_BOLD) {
             text = <strong key={index}>{text}</strong>
@@ -93,6 +205,14 @@ export function serializeLexical({
           }
           if (node.format & IS_SUPERSCRIPT) {
             text = <sup key={index}>{text}</sup>
+          }
+          // Handle TextStateFeature styling for color
+          if (node.$) {
+            text = (
+              <span key={index} style={styles}>
+                {text}
+              </span>
+            )
           }
 
           return text
