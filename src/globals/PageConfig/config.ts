@@ -49,6 +49,7 @@ export const PageConfig: GlobalConfig = {
         {
           name: 'backgroundImage',
           type: 'upload',
+          localized: true,
           label: 'OpenGraph Background Image',
           relationTo: 'media',
           admin: {

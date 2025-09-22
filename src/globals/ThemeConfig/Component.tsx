@@ -1,9 +1,10 @@
 import { getCachedGlobal } from '@/utilities/getGlobals'
 import React from 'react'
 import type { ThemeConfig } from '@/payload-types'
+import { PublicContextProps } from '@/utilities/publicContextProps'
 
-export async function ThemeConfig() {
-  const themeConfig: ThemeConfig = await getCachedGlobal('themeConfig', 2)()
+export async function ThemeConfig({ publicContext }: { publicContext: PublicContextProps }) {
+  const themeConfig: ThemeConfig = await getCachedGlobal('themeConfig', publicContext.locale, 2)()
 
   return (
     <style

@@ -10,7 +10,11 @@ import { PublicContextProps } from '@/utilities/publicContextProps'
 import { Navbar4 } from './navbar/navbar4'
 
 export async function Header({ publicContext }: { publicContext: PublicContextProps }) {
-  const header = (await getCachedGlobal('header', 1)()) as DataFromGlobalSlug<'header'>
+  const header = (await getCachedGlobal(
+    'header',
+    publicContext.locale,
+    1,
+  )()) as DataFromGlobalSlug<'header'>
 
   let navbarComponent: ReactElement
   switch (header.designVersion) {

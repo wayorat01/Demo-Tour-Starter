@@ -14,7 +14,7 @@ import Footer8 from './footer/footer8'
 import { PublicContextProps } from '@/utilities/publicContextProps'
 
 export async function Footer({ publicContext }: { publicContext: PublicContextProps }) {
-  const footer: Footer = await getCachedGlobal('footer', 2)()
+  const footer: Footer = await getCachedGlobal('footer', publicContext.locale, 2)()
 
   const footerType = footer.designVersion
 

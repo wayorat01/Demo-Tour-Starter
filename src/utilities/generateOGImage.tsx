@@ -30,6 +30,7 @@ export const contentType = 'image/png'
 export default async function generateOGImage({ title }: { title?: string | null }) {
   const pageConfig = (await getCachedGlobal(
     'page-config',
+    'all',
     3,
   )()) as DataFromGlobalSlug<'page-config'>
 
