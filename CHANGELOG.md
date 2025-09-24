@@ -1,5 +1,17 @@
 # payblocks
 
+## 2.7.0
+
+### Minor Changes
+
+- 99caf6c: Added Gallery 7 block.
+- b7e6b11: added testimonial block 7 and 14
+
+### Patch Changes
+
+- 99caf6c: changed image with icon and added icon color select options
+- da56546: Fixing the getGlobals function (for header, footer, page-config) to respect the locale flag. Adding Open Graph image with localization.
+
 ## 2.6.0
 
 ### Minor Changes
