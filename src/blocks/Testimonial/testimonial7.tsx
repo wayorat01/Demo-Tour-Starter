@@ -3,108 +3,20 @@
 import AutoScroll from 'embla-carousel-auto-scroll'
 import { useRef } from 'react'
 
-import { Avatar, AvatarImage } from '@/components/ui/avatar'
-import { Button } from '@/components/ui/button'
+import { Avatar } from '@/components/ui/avatar'
 import { Card } from '@/components/ui/card'
 import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carousel'
 import { TestimonialBlock } from '@/payload-types'
 import RichText from '@/components/RichText'
 import { CMSLink } from '@/components/Link'
 import { PublicContextProps } from '@/utilities/publicContextProps'
-
-const testimonials1 = [
-  {
-    name: 'John Doe',
-    role: 'CEO & Founder',
-    avatar: '/images/block/avatar-1.webp',
-    content:
-      'Lorem ipsum dolor sit, amet Odio, incidunt. Ratione, ullam? Iusto id ut omnis repellat.',
-  },
-  {
-    name: 'Jane Doe',
-    role: 'CTO',
-    avatar: '/images/block/avatar-2.webp',
-    content:
-      'Lorem ipsum dolor sit, amet Odio, incidunt. Ratione, ullam? Iusto id ut omnis repellat.',
-  },
-  {
-    name: 'John Smith',
-    role: 'COO',
-    avatar: '/images/block/avatar-3.webp',
-    content:
-      'Lorem ipsum dolor sit, amet Odio, incidunt. Ratione, ullam? Iusto id ut omnis repellat.',
-  },
-  {
-    name: 'Jane Smith',
-    role: 'Tech Lead',
-    avatar: '/images/block/avatar-4.webp',
-    content:
-      'Lorem ipsum dolor sit, amet Odio, incidunt. Ratione, ullam? Iusto id ut omnis repellat.',
-  },
-  {
-    name: 'Richard Doe',
-    role: 'Designer',
-    avatar: '/images/block/avatar-5.webp',
-    content:
-      'Lorem ipsum dolor sit, amet Odio, incidunt. Ratione, ullam? Iusto id ut omnis repellat.',
-  },
-  {
-    name: 'Gordon Doe',
-    role: 'Developer',
-    avatar: '/images/block/avatar-6.webp',
-    content:
-      'Lorem ipsum dolor sit, amet Odio, incidunt. Ratione, ullam? Iusto id ut omnis repellat.',
-  },
-]
-const testimonials2 = [
-  {
-    name: 'John Doe',
-    role: 'CEO & Founder',
-    avatar: '/images/block/avatar-1.webp',
-    content:
-      'Lorem ipsum dolor sit, amet Odio, incidunt. Ratione, ullam? Iusto id ut omnis repellat.',
-  },
-  {
-    name: 'Jane Doe',
-    role: 'CTO',
-    avatar: '/images/block/avatar-2.webp',
-    content:
-      'Lorem ipsum dolor sit, amet Odio, incidunt. Ratione, ullam? Iusto id ut omnis repellat.',
-  },
-  {
-    name: 'John Smith',
-    role: 'COO',
-    avatar: '/images/block/avatar-3.webp',
-    content:
-      'Lorem ipsum dolor sit, amet Odio, incidunt. Ratione, ullam? Iusto id ut omnis repellat.',
-  },
-  {
-    name: 'Jane Smith',
-    role: 'Tech Lead',
-    avatar: '/images/block/avatar-4.webp',
-    content:
-      'Lorem ipsum dolor sit, amet Odio, incidunt. Ratione, ullam? Iusto id ut omnis repellat.',
-  },
-  {
-    name: 'Richard Doe',
-    role: 'Designer',
-    avatar: '/images/block/avatar-5.webp',
-    content:
-      'Lorem ipsum dolor sit, amet Odio, incidunt. Ratione, ullam? Iusto id ut omnis repellat.',
-  },
-  {
-    name: 'Gordon Doe',
-    role: 'Developer',
-    avatar: '/images/block/avatar-6.webp',
-    content:
-      'Lorem ipsum dolor sit, amet Odio, incidunt. Ratione, ullam? Iusto id ut omnis repellat.',
-  },
-]
+import { splitArray } from '@/utilities/splitArray'
+import { Media } from '@/components/Media'
+import type { Media as MediaType } from '@/payload-types'
 
 const Testimonial7: React.FC<TestimonialBlock & { publicContext: PublicContextProps }> = ({
   headline,
-  link,
-  tagline,
+  links,
   testimonial,
   publicContext,
 }) => {
@@ -122,6 +34,48 @@ const Testimonial7: React.FC<TestimonialBlock & { publicContext: PublicContextPr
       direction: 'backward',
     }),
   )
+  if (!testimonial) return null
+
+  const [testimonials1, testimonials2] = splitArray(testimonial)
+
+  const getCarouselContent = (testimonials: TestimonialBlock['testimonial']) => {
+    return (
+      testimonials &&
+      testimonials.length > 0 &&
+      testimonials.map((testimonial, index) => (
+        <CarouselItem key={index} className="basis-auto">
+          <Card className="h-[178px] w-84 p-6 select-none sm:w-96">
+            <div className="mb-4 flex gap-4">
+              <Avatar className="ring-input size-9 rounded-full ring-1">
+                <Media
+                  resource={testimonial.authorAvatar as MediaType}
+                  imgClassName="h-9 w-full rounded-md object-cover lg:h-auto"
+                />
+              </Avatar>
+              <div className="text-sm">
+                <p className="font-medium">{testimonial.authorName}</p>
+                <p className="text-muted-foreground">{testimonial.authorDescription}</p>
+              </div>
+            </div>
+            {testimonial.text && (
+              <RichText
+                publicContext={publicContext}
+                content={testimonial.text}
+                withWrapper={false}
+                overrideStyle={{
+                  h1: 'text-base before:content-[open-quote] after:content-[close-quote] line-clamp-3',
+                  h2: 'text-base before:content-[open-quote] after:content-[close-quote] line-clamp-3',
+                  h3: 'text-base before:content-[open-quote] after:content-[close-quote] line-clamp-3',
+                  p: 'text-base before:content-[open-quote] after:content-[close-quote] line-clamp-3',
+                }}
+              />
+            )}
+          </Card>
+        </CarouselItem>
+      ))
+    )
+  }
+
   return (
     <section className="py-32">
       <div className="container flex flex-col items-center gap-6">
@@ -138,7 +92,10 @@ const Testimonial7: React.FC<TestimonialBlock & { publicContext: PublicContextPr
             }}
           />
         )}
-        {link && <CMSLink publicContext={publicContext} {...link} className="mt-6" />}
+        {links &&
+          links.map((link, index) => (
+            <CMSLink publicContext={publicContext} className="mt-6" key={index} {...link.link} />
+          ))}
       </div>
       <div className="lg:container">
         <div className="mt-16 space-y-4">
@@ -149,24 +106,7 @@ const Testimonial7: React.FC<TestimonialBlock & { publicContext: PublicContextPr
             plugins={[plugin1.current]}
             onMouseLeave={() => plugin1.current.play()}
           >
-            <CarouselContent>
-              {testimonials1.map((testimonial, index) => (
-                <CarouselItem key={index} className="basis-auto">
-                  <Card className="max-w-96 p-6 select-none">
-                    <div className="mb-4 flex gap-4">
-                      <Avatar className="ring-input size-9 rounded-full ring-1">
-                        <AvatarImage src={testimonial.avatar} alt={testimonial.name} />
-                      </Avatar>
-                      <div className="text-sm">
-                        <p className="font-medium">{testimonial.name}</p>
-                        <p className="text-muted-foreground">{testimonial.role}</p>
-                      </div>
-                    </div>
-                    <q>{testimonial.content}</q>
-                  </Card>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
+            <CarouselContent>{getCarouselContent(testimonials1)}</CarouselContent>
           </Carousel>
           <Carousel
             opts={{
@@ -175,24 +115,7 @@ const Testimonial7: React.FC<TestimonialBlock & { publicContext: PublicContextPr
             plugins={[plugin2.current]}
             onMouseLeave={() => plugin2.current.play()}
           >
-            <CarouselContent>
-              {testimonials2.map((testimonial, index) => (
-                <CarouselItem key={index} className="basis-auto">
-                  <Card className="max-w-96 p-6 select-none">
-                    <div className="mb-4 flex gap-4">
-                      <Avatar className="ring-input size-9 rounded-full ring-1">
-                        <AvatarImage src={testimonial.avatar} alt={testimonial.name} />
-                      </Avatar>
-                      <div className="text-sm">
-                        <p className="font-medium">{testimonial.name}</p>
-                        <p className="text-muted-foreground">{testimonial.role}</p>
-                      </div>
-                    </div>
-                    <q>{testimonial.content}</q>
-                  </Card>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
+            <CarouselContent>{getCarouselContent(testimonials2)}</CarouselContent>
           </Carousel>
         </div>
       </div>

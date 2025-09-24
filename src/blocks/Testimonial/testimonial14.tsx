@@ -1,39 +1,21 @@
 'use client'
 
-import { Star } from 'lucide-react'
 import { useEffect, useState } from 'react'
 
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
+import { Avatar } from '@/components/ui/avatar'
 import { Button } from '@/components/ui/button'
 import type { CarouselApi } from '@/components/ui/carousel'
 import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carousel'
 import { TestimonialBlock } from '@/payload-types'
+import { PublicContextProps } from '@/utilities/publicContextProps'
+import RichText from '@/components/RichText'
+import { Media } from '@/components/Media'
+import { Media as MediaType } from '@/payload-types'
 
-const testimonials = [
-  {
-    id: 'testimonial-1',
-    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Elig doloremque mollitia fugiat omnis! Porro facilis quo animi consequatur. Explicabo.',
-    name: 'Customer Name',
-    role: 'Position at Company',
-    avatar: 'https://www.shadcnblocks.com/images/block/avatar-1.webp',
-  },
-  {
-    id: 'testimonial-2',
-    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Elig doloremque mollitia fugiat omnis! Porro facilis quo animi consequatur. Explicabo.',
-    name: 'Customer Name',
-    role: 'Position at Company',
-    avatar: 'https://www.shadcnblocks.com/images/block/avatar-2.webp',
-  },
-  {
-    id: 'testimonial-3',
-    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Elig doloremque mollitia fugiat omnis! Porro facilis quo animi consequatur. Explicabo.',
-    name: 'Customer Name',
-    role: 'Position at Company',
-    avatar: 'https://www.shadcnblocks.com/images/block/avatar-3.webp',
-  },
-]
-
-const Testimonial14: React.FC<TestimonialBlock> = ({ headline, link, tagline, testimonial }) => {
+const Testimonial14: React.FC<TestimonialBlock & { publicContext: PublicContextProps }> = ({
+  testimonial,
+  publicContext,
+}) => {
   const [api, setApi] = useState<CarouselApi>()
   const [current, setCurrent] = useState(0)
 
@@ -52,49 +34,63 @@ const Testimonial14: React.FC<TestimonialBlock> = ({ headline, link, tagline, te
     }
   }, [api])
 
+  if (!testimonial) {
+    return null
+  }
+
   return (
     <section className="py-32">
       <Carousel setApi={setApi}>
         <CarouselContent>
-          {testimonials.map((testimonial) => (
-            <CarouselItem key={testimonial.id}>
-              <div className="container flex flex-col items-center text-center">
-                <p className="mb-8 max-w-4xl font-medium md:px-8 lg:text-3xl">
-                  &ldquo;{testimonial.text}&rdquo;
-                </p>
-                <Avatar className="mb-2 size-12 md:size-24">
-                  <AvatarImage src={testimonial.avatar} />
-                  <AvatarFallback>{testimonial.name}</AvatarFallback>
-                </Avatar>
-                <p className="mb-1 text-sm font-medium md:text-lg">{testimonial.name}</p>
-                <p className="text-muted-foreground mb-2 text-sm md:text-lg">{testimonial.role}</p>
-                <div className="mt-2 flex items-center gap-0.5">
-                  <Star className="fill-primary size-5 stroke-none" />
-                  <Star className="fill-primary size-5 stroke-none" />
-                  <Star className="fill-primary size-5 stroke-none" />
-                  <Star className="fill-primary size-5 stroke-none" />
-                  <Star className="fill-primary size-5 stroke-none" />
+          {testimonial &&
+            testimonial.map((testimonialItem) => (
+              <CarouselItem key={testimonialItem.id}>
+                <div className="container flex flex-col items-center text-center">
+                  {testimonialItem.text && (
+                    <RichText
+                      publicContext={publicContext}
+                      content={testimonialItem.text}
+                      withWrapper={false}
+                      overrideStyle={{
+                        p: 'mb-8 max-w-4xl font-medium md:px-8 lg:text-3xl after:content-[close-quote] before:content-[open-quote]',
+                        h1: 'mb-8 max-w-4xl font-medium md:px-8 lg:text-3xl after:content-[close-quote] before:content-[open-quote]',
+                        h2: 'mb-8 max-w-4xl font-medium md:px-8 lg:text-3xl after:content-[close-quote] before:content-[open-quote]',
+                        h3: 'mb-8 max-w-4xl font-medium md:px-8 lg:text-3xl after:content-[close-quote] before:content-[open-quote]',
+                      }}
+                    />
+                  )}
+                  <Avatar className="mb-2 size-12 md:size-24">
+                    {testimonialItem.authorAvatar && (
+                      <Media
+                        resource={testimonialItem.authorAvatar as MediaType}
+                        imgClassName="h-12 w-full rounded-md object-cover lg:h-auto"
+                      />
+                    )}
+                  </Avatar>
+                  <p className="mb-1 text-sm font-medium md:text-lg">
+                    {testimonialItem.authorName}
+                  </p>
                 </div>
-              </div>
-            </CarouselItem>
-          ))}
+              </CarouselItem>
+            ))}
         </CarouselContent>
       </Carousel>
       <div className="container flex justify-center py-16">
-        {testimonials.map((testimonial, index) => (
-          <Button
-            key={testimonial.id}
-            variant="ghost"
-            size="sm"
-            onClick={() => {
-              api?.scrollTo(index)
-            }}
-          >
-            <div
-              className={`size-2.5 rounded-full ${index === current ? 'bg-primary' : 'bg-input'}`}
-            />
-          </Button>
-        ))}
+        {testimonial &&
+          testimonial.map((_testimonialItem, index) => (
+            <Button
+              key={index}
+              variant="ghost"
+              size="sm"
+              onClick={() => {
+                api?.scrollTo(index)
+              }}
+            >
+              <div
+                className={`size-2.5 rounded-full ${index === current ? 'bg-primary' : 'bg-input'}`}
+              />
+            </Button>
+          ))}
       </div>
     </section>
   )

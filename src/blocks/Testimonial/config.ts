@@ -1,5 +1,7 @@
+import { designVersionPreview } from '@/components/AdminDashboard/DesignVersionPreview/config'
 import { backgroundColor } from '@/fields/color'
 import { link } from '@/fields/link'
+import { linkGroup } from '@/fields/linkGroup'
 import { Page, TestimonialBlock as TestimonialBlockType } from '@/payload-types'
 import { parentLayoutCondition } from '@/utilities/parentLayoutCondition'
 import { HeadingFeature, lexicalEditor } from '@payloadcms/richtext-lexical'
@@ -21,18 +23,38 @@ import { Block } from 'payload'
 
 export const allTestimonialDesignVersions = [
   // "TESTIMONIAL1",
-  'TESTIMONIAL2',
-  'TESTIMONIAL3',
-  'TESTIMONIAL4',
+  {
+    label: 'TESTIMONIAL2',
+    value: 'TESTIMONIAL2',
+    image: '/admin/previews/testimonial/testimonial2.webp',
+  },
+  {
+    label: 'TESTIMONIAL3',
+    value: 'TESTIMONIAL3',
+    image: '/admin/previews/testimonial/testimonial3.webp',
+  },
+  {
+    label: 'TESTIMONIAL4',
+    value: 'TESTIMONIAL4',
+    image: '/admin/previews/testimonial/testimonial4.webp',
+  },
   // "TESTIMONIAL6",
-  // "TESTIMONIAL7",
+  {
+    label: 'TESTIMONIAL7',
+    value: 'TESTIMONIAL7',
+    image: '/admin/previews/testimonial/testimonial7.webp',
+  },
   // "TESTIMONIAL8",
   // "TESTIMONIAL9",
   // "TESTIMONIAL10",
   // "TESTIMONIAL11",
   // "TESTIMONIAL12",
   // "TESTIMONIAL13",
-  // "TESTIMONIAL14",
+  {
+    label: 'TESTIMONIAL14',
+    value: 'TESTIMONIAL14',
+    image: '/admin/previews/testimonial/testimonial14.webp',
+  },
   // "TESTIMONIAL15",
   // "TESTIMONIAL16",
   // "TESTIMONIAL17",
@@ -51,13 +73,7 @@ export const TestimonialBlock: Block = {
   },
   fields: [
     backgroundColor,
-    {
-      name: 'designVersion',
-      type: 'select',
-      required: true,
-      options: allTestimonialDesignVersions.map((version) => ({ label: version, value: version })),
-    },
-
+    designVersionPreview(allTestimonialDesignVersions),
     {
       name: 'headline',
       type: 'richText',
@@ -99,11 +115,20 @@ export const TestimonialBlock: Block = {
       },
     },
 
+    linkGroup({
+      overrides: {
+        admin: {
+          condition: (_, { designVersion } = { designVersion: '' }) =>
+            ['TESTIMONIAL7'].includes(designVersion),
+        },
+      },
+    }),
+
     link({
       overrides: {
         admin: {
           condition: (_, { designVersion } = { designVersion: '' }) =>
-            ['TESTIMONIAL2', 'TESTIMONIAL7', 'TESTIMONIAL19'].includes(designVersion),
+            ['TESTIMONIAL2', 'TESTIMONIAL19'].includes(designVersion),
         },
       },
     }),
@@ -128,6 +153,7 @@ export const TestimonialBlock: Block = {
                 'TESTIMONIAL6',
                 'TESTIMONIAL7',
                 'TESTIMONIAL10',
+                'TESTIMONIAL14',
                 'TESTIMONIAL17',
                 'TESTIMONIAL18',
                 'TESTIMONIAL19',
@@ -171,6 +197,7 @@ export const TestimonialBlock: Block = {
                 'TESTIMONIAL7',
                 'TESTIMONIAL13',
                 'TESTIMONIAL10',
+                'TESTIMONIAL14',
                 'TESTIMONIAL16',
                 'TESTIMONIAL17',
                 'TESTIMONIAL18',
@@ -218,6 +245,7 @@ export const TestimonialBlock: Block = {
                 'TESTIMONIAL6',
                 'TESTIMONIAL7',
                 'TESTIMONIAL10',
+                'TESTIMONIAL14',
                 'TESTIMONIAL16',
                 'TESTIMONIAL17',
                 'TESTIMONIAL18',
