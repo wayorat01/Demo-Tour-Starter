@@ -7,7 +7,9 @@ import Stat6 from '@/blocks/Stat/stat6'
 import Stat7 from '@/blocks/Stat/stat7'
 import Stat8 from '@/blocks/Stat/stat8'
 
-type Stat<T extends string = string> = Required<Record<StatDesignVersion, React.FC<any>>> &
+type StatDesignVersionValue = StatDesignVersion['value']
+
+type Stat<T extends string = string> = Required<Record<StatDesignVersionValue, React.FC<any>>> &
   Record<T, React.FC<any>>
 
 const stat: Stat = {
@@ -25,7 +27,7 @@ export const StatBlock: React.FC<any> = (props) => {
   if (props.blockType !== 'stat') return null
   if (!designVersion) return null
 
-  const StatToRender = stat[designVersion as StatDesignVersion]
+  const StatToRender = stat[designVersion as StatDesignVersionValue]
 
   if (!StatToRender) return null
 

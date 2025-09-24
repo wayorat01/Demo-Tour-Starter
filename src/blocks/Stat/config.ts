@@ -1,11 +1,14 @@
+import { designVersionPreview } from '@/components/AdminDashboard/DesignVersionPreview/config'
+import { icon } from '@/components/Icon/config'
 import { backgroundColor } from '@/fields/color'
 import { linkGroup } from '@/fields/linkGroup'
+import { createBlockItemCondition } from '@/utilities/findParentFeatureVersion'
 import { HeadingFeature, lexicalEditor } from '@payloadcms/richtext-lexical'
 import { Block } from 'payload'
 
 export const allStatDesignVersions = [
-  'STAT1',
-  // 'STAT2',
+  { label: 'STAT1', value: 'STAT1', image: '/admin/previews/stat/stats1.webp' },
+  { label: 'STAT2', value: 'STAT2', image: '/admin/previews/stat/stats2.webp' },
   // 'STAT4',
   // 'STAT5',
   // 'STAT6',
@@ -24,12 +27,7 @@ export const StatBlock: Block = {
   },
   fields: [
     backgroundColor,
-    {
-      name: 'designVersion',
-      type: 'select',
-      required: true,
-      options: allStatDesignVersions.map((version) => ({ label: version, value: version })),
-    },
+    designVersionPreview(allStatDesignVersions),
     {
       name: 'headline',
       type: 'richText',
@@ -44,7 +42,39 @@ export const StatBlock: Block = {
     {
       name: 'stats',
       type: 'array',
+      admin: {
+        condition: (_, { designVersion } = { designVersion: '' }) =>
+          ['STAT1', 'STAT2'].includes(designVersion),
+      },
       fields: [
+        icon({
+          name: 'icon',
+          admin: {
+            condition: createBlockItemCondition(['STAT2']),
+          },
+        }),
+        {
+          name: 'iconColor',
+          type: 'select',
+          admin: {
+            condition: createBlockItemCondition(['STAT2']),
+          },
+          defaultValue: 'black',
+          options: [
+            {
+              label: 'Black',
+              value: 'black',
+            },
+            {
+              label: 'Green',
+              value: 'green',
+            },
+            {
+              label: 'Red',
+              value: 'red',
+            },
+          ],
+        },
         {
           name: 'counter',
           type: 'text',
@@ -56,6 +86,9 @@ export const StatBlock: Block = {
           type: 'text',
           localized: true,
           required: true,
+          admin: {
+            condition: createBlockItemCondition(['STAT1']),
+          },
         },
         {
           name: 'description',

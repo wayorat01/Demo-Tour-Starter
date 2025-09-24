@@ -4,6 +4,7 @@ import { link } from '@/fields/link'
 import { backgroundColor } from '@/fields/color'
 import { designVersionPreview } from '@/components/AdminDashboard/DesignVersionPreview/config'
 import { createBlockItemCondition } from '@/utilities/findParentFeatureVersion'
+import { designVersionDescription } from '@/components/AdminDashboard/DesignVersionDescription'
 
 export const allGalleryDesignVersions = [
   // 'GALLERY1',
@@ -23,6 +24,11 @@ export const allGalleryDesignVersions = [
     label: 'Gallery 6 (Card Layout)',
     value: 'GALLERY6',
     image: '/admin/previews/gallery/gallery6.jpeg',
+  },
+  {
+    label: 'Gallery 7 (Carousel)',
+    value: 'GALLERY7',
+    image: '/admin/previews/gallery/gallery7.webp',
   },
   {
     label: 'Gallery 25 (4 Column Grid)',
@@ -85,7 +91,8 @@ export const Gallery: Block = {
       overrides: {
         admin: {
           description: 'Single link for this gallery. Might look best with arrowRight icon',
-          condition: (_, { designVersion }: any) => ['GALLERY6'].includes(designVersion),
+          condition: (_, { designVersion }: any) =>
+            ['GALLERY6', 'GALLERY7'].includes(designVersion),
         },
       },
     }),
@@ -107,6 +114,14 @@ export const Gallery: Block = {
           relationTo: 'media',
           required: true,
         },
+        designVersionDescription(
+          'description7',
+          (_, { designVersion } = {}) => ['GALLERY7'].includes(designVersion),
+          {
+            en: 'Please add even number of images to get the proper layout',
+            de: 'Bitte füge eine gerade Anzahl von Bildern hinzu, um das richtige Layout zu erhalten',
+          },
+        ),
         {
           name: 'imageHeight',
           type: 'select',

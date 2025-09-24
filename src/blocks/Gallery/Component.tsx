@@ -4,6 +4,7 @@ import Gallery3 from '@/blocks/Gallery/gallery3'
 import Gallery4 from '@/blocks/Gallery/gallery4'
 import Gallery5 from '@/blocks/Gallery/gallery5'
 import Gallery6 from '@/blocks/Gallery/gallery6'
+import Gallery7 from '@/blocks/Gallery/gallery7'
 import { Gallery25 } from '@/blocks/Gallery/gallery25'
 import { Gallery26 } from '@/blocks/Gallery/gallery26'
 import { Page } from '@/payload-types'
@@ -24,6 +25,7 @@ const galleries: Gallery = {
   GALLERY4: Gallery4,
   GALLERY5: Gallery5,
   GALLERY6: Gallery6,
+  GALLERY7: Gallery7,
   GALLERY25: Gallery25,
   GALLERY26: Gallery26,
 }
