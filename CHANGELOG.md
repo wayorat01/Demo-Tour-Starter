@@ -1,5 +1,16 @@
 # payblocks
 
+## 2.8.0
+
+### Minor Changes
+
+- af144fc: Upgrade Payload CMS to 3.57 and Next.js to 15.5.4
+
+### Patch Changes
+
+- af144fc: Fixing the preview secret, removing not needed env variables. Make sure, that you have the NEXT_PRIVATE_DRAFT_SECRET set now
+- af144fc: Improving the slug field, making it more stable to use, as we prevent the auto-overwrite of existing slugs
+
 ## 2.7.0
 
 ### Minor Changes
