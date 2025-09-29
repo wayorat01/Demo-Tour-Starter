@@ -59,12 +59,13 @@ export const Posts: CollectionConfig = {
   admin: {
     defaultColumns: ['title', 'slug', 'updatedAt'],
     livePreview: {
-      url: ({ data, locale }) => {
+      url: ({ data, locale, req }) => {
         const path = generatePreviewPath({
           slug: typeof data?.slug === 'string' ? data.slug : '',
           breadcrumbs: data?.breadcrumbs,
           collection: 'posts',
           locale: locale.code,
+          req,
         })
 
         return `${NEXT_PUBLIC_SERVER_URL}${path}`
@@ -76,6 +77,7 @@ export const Posts: CollectionConfig = {
         breadcrumbs: data?.breadcrumbs as Breadcrumb[],
         collection: 'posts',
         locale: options.locale,
+        req: options.req,
       })
 
       return `${NEXT_PUBLIC_SERVER_URL}${path}`

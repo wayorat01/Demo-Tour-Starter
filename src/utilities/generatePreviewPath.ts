@@ -1,6 +1,6 @@
 import localization from '@/localization.config'
 import { Breadcrumb } from '@payloadcms/plugin-nested-docs/types'
-import { CollectionSlug } from 'payload'
+import { CollectionSlug, PayloadRequest } from 'payload'
 
 const collectionPrefixMap: Partial<Record<CollectionSlug, string>> = {
   posts: '/posts',
@@ -12,6 +12,7 @@ type Props = {
   slug: string
   locale: string
   breadcrumbs: Breadcrumb[] | undefined
+  req?: PayloadRequest
 }
 
 export const generatePreviewPath = ({ collection, slug, locale, breadcrumbs }: Props) => {
@@ -22,6 +23,7 @@ export const generatePreviewPath = ({ collection, slug, locale, breadcrumbs }: P
     collection,
     path,
     locale,
+    previewSecret: process.env.NEXT_PRIVATE_DRAFT_SECRET || '',
   }
 
   const encodedParams = new URLSearchParams()

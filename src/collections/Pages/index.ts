@@ -63,12 +63,13 @@ export const Pages: CollectionConfig = {
   admin: {
     defaultColumns: ['title', 'slug', 'updatedAt'],
     livePreview: {
-      url: ({ data, locale }) => {
+      url: ({ data, locale, req }) => {
         const path = generatePreviewPath({
           slug: typeof data?.slug === 'string' ? data.slug : '',
           breadcrumbs: data?.breadcrumbs,
           collection: 'pages',
           locale: locale.code,
+          req,
         })
 
         return `${NEXT_PUBLIC_SERVER_URL}${path}`
@@ -80,6 +81,7 @@ export const Pages: CollectionConfig = {
         breadcrumbs: data?.breadcrumbs as Breadcrumb[],
         collection: 'pages',
         locale: options.locale,
+        req: options.req,
       })
 
       return `${NEXT_PUBLIC_SERVER_URL}${path}`

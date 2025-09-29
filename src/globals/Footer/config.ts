@@ -17,12 +17,13 @@ export const Footer: GlobalConfig = {
   admin: {
     description: 'Theme configuration (For live preview config has to be saved)',
     livePreview: {
-      url: () => {
+      url: ({ req }) => {
         const path = generatePreviewPath({
           slug: 'home',
           breadcrumbs: undefined,
           collection: 'pages',
           locale: 'en',
+          req,
         })
 
         return `${NEXT_PUBLIC_SERVER_URL}${path}`

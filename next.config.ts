@@ -17,6 +17,7 @@ const nextConfig: NextConfig = {
     staticGenerationMinPagesPerWorker: 25,
   },
   images: {
+    qualities: [100, 90],
     remotePatterns: [
       ...[new URL(serverUrl)].map((item) => {
         const url = new URL(item)
