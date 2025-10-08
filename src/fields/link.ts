@@ -97,6 +97,11 @@ export const link: LinkType = ({
     ],
   }
 
+  /**
+   * This link component should be related to
+   */
+  const relationTo = 'pages'
+
   const linkTypes: Field[] = [
     {
       name: 'reference',
@@ -106,17 +111,21 @@ export const link: LinkType = ({
       },
       label: 'Document to link to',
       maxDepth: 1,
-      relationTo: ['pages'],
+      relationTo: [relationTo],
       required: true,
     },
     {
       name: 'section',
-      type: 'text', // or 'text' if you have dynamic options
+      type: 'text',
       admin: {
         condition: (_, siblingData) => siblingData?.type === 'reference',
         components: {
           Field: {
             path: '@/components/AdminDashboard/SectionSelect',
+            serverProps: {
+              // there is no "clever" way to always get this information, so we need to set it additionally here as prop
+              relationTo,
+            },
           },
         },
       },

@@ -1,4 +1,4 @@
-import type { CollectionConfig } from 'payload'
+import type { Block, CollectionConfig } from 'payload'
 
 import { authenticated } from '@/access/authenticated'
 import { authenticatedOrPublished } from '@/access/authenticatedOrPublished'
@@ -41,6 +41,31 @@ import { CasestudiesBlock } from '@/blocks/Casestudies/config'
 import { TimelineBlock } from '@/blocks/Timeline/config'
 import { LoginBlock } from '@/blocks/Login/config'
 import { SignupBlock } from '@/blocks/Signup/config'
+
+export const PageBlocks: Block[] = [
+  FeatureBlock,
+  Archive,
+  FormBlock,
+  CtaBlock,
+  LogosBlock,
+  AboutBlock,
+  ContactBlock,
+  Gallery,
+  TestimonialBlock,
+  FaqBlock,
+  StatBlock,
+  SplitViewBlock,
+  TextBlock,
+  MediaBlock,
+  CustomBlock,
+  ChangelogBlock,
+  Blog,
+  BannerBlock,
+  CasestudiesBlock,
+  TimelineBlock,
+  LoginBlock,
+  SignupBlock,
+]
 
 export const Pages: CollectionConfig = {
   slug: 'pages',
@@ -106,30 +131,7 @@ export const Pages: CollectionConfig = {
             {
               name: 'layout',
               type: 'blocks',
-              blocks: [
-                FeatureBlock,
-                Archive,
-                FormBlock,
-                CtaBlock,
-                LogosBlock,
-                AboutBlock,
-                ContactBlock,
-                Gallery,
-                TestimonialBlock,
-                FaqBlock,
-                StatBlock,
-                SplitViewBlock,
-                TextBlock,
-                MediaBlock,
-                CustomBlock,
-                ChangelogBlock,
-                Blog,
-                BannerBlock,
-                CasestudiesBlock,
-                TimelineBlock,
-                LoginBlock,
-                SignupBlock,
-              ],
+              blocks: PageBlocks,
               required: true,
             },
           ],
