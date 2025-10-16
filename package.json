@@ -25,7 +25,7 @@
     "backup:apply": "source .env && mongoimport -c pages --uri=$MONGODB_URI --file backup/pages.json --jsonArray --mode upsert"
   },
   "dependencies": {
-    "@payloadcms/admin-bar": "^3.59.1",
+    "@payloadcms/admin-bar": "3.59.1",
     "@payloadcms/db-mongodb": "3.59.1",
     "@payloadcms/db-postgres": "3.59.1",
     "@payloadcms/email-nodemailer": "3.59.1",
