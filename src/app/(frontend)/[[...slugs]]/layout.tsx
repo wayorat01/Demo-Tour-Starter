@@ -75,11 +75,13 @@ export default async function RootLayout({
       </head>
       <body>
         <Providers>
-          <AdminBar
-            adminBarProps={{
-              preview: isEnabled,
-            }}
-          />
+          {isEnabled && (
+            <AdminBar
+              adminBarProps={{
+                preview: isEnabled,
+              }}
+            />
+          )}
           <LivePreviewListener />
           <Analytics />
           <Header publicContext={publicContext} />

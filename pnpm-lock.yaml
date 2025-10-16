@@ -12,6 +12,9 @@ importers:
 
   .:
     dependencies:
+      '@payloadcms/admin-bar':
+        specifier: 3.57.0
+        version: 3.57.0(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
       '@payloadcms/db-mongodb':
         specifier: 3.57.0
         version: 3.57.0(payload@3.57.0(graphql@16.10.0)(typescript@5.6.3))
@@ -168,9 +171,6 @@ importers:
       payload:
         specifier: 3.57.0
         version: 3.57.0(graphql@16.10.0)(typescript@5.6.3)
-      payload-admin-bar:
-        specifier: 1.0.7
-        version: 1.0.7(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
       payload-oauth2:
         specifier: 1.0.18
         version: 1.0.18(payload@3.57.0(graphql@16.10.0)(typescript@5.6.3))
@@ -1381,6 +1381,12 @@ packages:
   '@nolyfill/is-core-module@1.0.39':
     resolution: {integrity: sha512-nn5ozdjYQpUCZlWGuxcJY/KpxkWQs4DcbMCmKojjyrYDEAGy4Ce19NN4v5MduafTwJlbKc99UA8YhSVqq9yPZA==}
     engines: {node: '>=12.4.0'}
+
+  '@payloadcms/admin-bar@3.57.0':
+    resolution: {integrity: sha512-xx59VcYmvMNnOJL3WuakWHedLosFXljJyv8AnDH+8C3ve5lFkQ0nxuBsd3cU42Ghf9XC5Tq0Z4UwI6TWPxAmQQ==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
+      react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
 
   '@payloadcms/db-mongodb@3.57.0':
     resolution: {integrity: sha512-iUbwWDmFuj5CcPu5gicYQUtqzN+rtqHH0/ySQDhbyUnvu004fTtyrX6XYMTP+z0MqeXGcZeOb+yS/tXC0Qc9gQ==}
@@ -4544,12 +4550,6 @@ packages:
     resolution: {integrity: sha512-gDKb8aZMDeD/tZWs9P6+q0J9Mwkdl6xMV8TjnGP3qJVJ06bdMgkbBlLU8IdfOsIsFz2BW1rNVT3XuNEl8zPAvw==}
     engines: {node: '>=8'}
 
-  payload-admin-bar@1.0.7:
-    resolution: {integrity: sha512-eY/FjfCGkyXOxRupv4IPZ+HFh8CQnJBQS++VItgTXe/g9H0B4RqxfdpU3g3tART3e8MzmZYGOBxV5EGGO2+jbg==}
-    peerDependencies:
-      react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
-      react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
-
   payload-oauth2@1.0.18:
     resolution: {integrity: sha512-ynI0ma5p783vfORp22gBDNACzmhWF6JzXETs3Fp4y8uA8luiTkrez3hgHGtjvT7eMK5ymR7qbWY+qf55Y28cqQ==}
     hasBin: true
@@ -6786,6 +6786,11 @@ snapshots:
       fastq: 1.19.1
 
   '@nolyfill/is-core-module@1.0.39': {}
+
+  '@payloadcms/admin-bar@3.57.0(react-dom@19.1.1(react@19.1.1))(react@19.1.1)':
+    dependencies:
+      react: 19.1.1
+      react-dom: 19.1.1(react@19.1.1)
 
   '@payloadcms/db-mongodb@3.57.0(payload@3.57.0(graphql@16.10.0)(typescript@5.6.3))':
     dependencies:
@@ -10513,11 +10518,6 @@ snapshots:
   path-to-regexp@6.3.0: {}
 
   path-type@4.0.0: {}
-
-  payload-admin-bar@1.0.7(react-dom@19.1.1(react@19.1.1))(react@19.1.1):
-    dependencies:
-      react: 19.1.1
-      react-dom: 19.1.1(react@19.1.1)
 
   payload-oauth2@1.0.18(payload@3.57.0(graphql@16.10.0)(typescript@5.6.3)):
     dependencies:
