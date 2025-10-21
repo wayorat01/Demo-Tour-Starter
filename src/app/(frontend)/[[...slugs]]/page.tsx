@@ -151,7 +151,7 @@ export async function generateMetadata(props: Args): Promise<Metadata> {
   })
   const url = generateUrl(locale, cleanSlugs)
   if (page) {
-    return generateMeta({ doc: page, url })
+    return generateMeta({ doc: page, url, locale })
   }
   return {}
 }

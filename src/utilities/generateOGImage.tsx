@@ -4,6 +4,28 @@ import { getCachedGlobal } from './getGlobals'
 import { DataFromGlobalSlug } from 'payload'
 import { Media } from '@/payload-types'
 import { serverUrl as NEXT_PUBLIC_SERVER_URL } from '@/config/server'
+import localization from '@/localization.config'
+
+/**
+ * Type guard to check if a value is a Media object
+ */
+function isMedia(value: unknown): value is Media {
+  return (
+    typeof value === 'object' &&
+    value !== null &&
+    'url' in value &&
+    typeof (value as Media).url === 'string'
+  )
+}
+
+/**
+ * Type guard to check if backgroundImage is localized
+ */
+function isLocalizedMedia(
+  value: unknown,
+): value is { en?: Media | string | null; de?: Media | string | null } {
+  return typeof value === 'object' && value !== null && ('en' in value || 'de' in value)
+}
 
 /**
  * OG Image generation. PayloadCMS can'T be run on edge routes, so prevent setting the open graph routes to edge.
@@ -27,16 +49,37 @@ export const contentType = 'image/png'
  * @param {string} [options.title] - Title to render on the image. Defaults to "Payblocks".
  * @returns {Promise<ImageResponse>} - A promise that resolves to an `ImageResponse` object.
  */
-export default async function generateOGImage({ title }: { title?: string | null }) {
+export default async function generateOGImage({
+  title,
+  locale,
+}: {
+  title?: string | null
+  locale?: string | null
+}) {
   const pageConfig = (await getCachedGlobal(
     'page-config',
     'all',
     3,
   )()) as DataFromGlobalSlug<'page-config'>
 
-  const backgroundImageUrl = (pageConfig.openGraph?.backgroundImage as Media)?.url
+  const currentLocale = locale || localization.defaultLocale
 
-  const pageTitle = title || pageConfig.defaultMeta.title
+  // Extract the localized background image
+  let backgroundImageUrl: string | null = null
+  const bgImage = pageConfig.openGraph?.backgroundImage
+
+  if (isLocalizedMedia(bgImage)) {
+    const localizedImage = bgImage[currentLocale]
+    if (isMedia(localizedImage)) {
+      backgroundImageUrl = localizedImage.url ?? null
+    } else if (typeof localizedImage === 'string') {
+      backgroundImageUrl = localizedImage
+    }
+  }
+
+  // Extract the localized page title
+  const defaultMeta = pageConfig.defaultMeta as any
+  const pageTitle = title || defaultMeta?.[currentLocale]?.title || 'Payblocks'
 
   const textColor = pageConfig.openGraph?.textColor
 

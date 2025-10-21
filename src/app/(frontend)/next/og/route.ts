@@ -9,6 +9,7 @@ export async function GET(req: NextRequest) {
    * Get the title as parameter
    */
   const title = req.nextUrl.searchParams.get('title')
+  const locale = req.nextUrl.searchParams.get('locale')
 
-  return generateOGImage({ title })
+  return generateOGImage({ title, locale })
 }
