@@ -91,7 +91,10 @@ export default async function generateOGImage({
     return new Response('No text color found', { status: 404 })
   }
 
-  const backgroundImage = `${NEXT_PUBLIC_SERVER_URL}${backgroundImageUrl}`
+  // Only prepend server URL if the image URL is relative (doesn't start with http:// or https://)
+  const backgroundImage = backgroundImageUrl.startsWith('http')
+    ? backgroundImageUrl
+    : `${NEXT_PUBLIC_SERVER_URL}${backgroundImageUrl}`
 
   try {
     // Load the font
