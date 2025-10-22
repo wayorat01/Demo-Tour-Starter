@@ -1,5 +1,17 @@
 # payblocks
 
+## 2.9.0
+
+### Minor Changes
+
+- 877bada: Upgrading Next.js and Payload CMS to 3.59.1
+- d949e39: Adding clean selection of OpenGraph image for different languages. Improving types with a typeguard
+- 9a01a7f: Moving to the more recent admin bar package from payload. Disable admin bar when draft mode is not active. This prevents API calls on regular page loads.
+
+### Patch Changes
+
+- d814444: Improving the SectionSelect component by just conditionally fetching the selected page to get the sections. No longer fetching ALL pages on the server component part. Adding typescript types as well
+
 ## 2.8.0
 
 ### Minor Changes
