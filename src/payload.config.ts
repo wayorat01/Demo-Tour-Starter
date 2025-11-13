@@ -244,7 +244,7 @@ export default buildConfig({
       },
     }),
     searchPlugin({
-      collections: ['pages'],
+      collections: ['pages', 'posts'],
       beforeSync: beforeSyncWithSearch,
       searchOverrides: {
         admin: {

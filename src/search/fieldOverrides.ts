@@ -34,6 +34,16 @@ export const searchFields: Field[] = [
         type: 'upload',
         relationTo: 'media',
       },
+      {
+        type: 'text',
+        name: 'extractedText',
+        label: 'Extracted Content as Text',
+      },
+      {
+        name: 'searchKeywords',
+        type: 'text',
+        label: 'Search Keywords',
+      },
     ],
   },
   {

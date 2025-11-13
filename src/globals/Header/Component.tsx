@@ -8,6 +8,7 @@ import Navbar5 from './navbar/navbar5'
 import { Navbar1 } from './navbar/navbar1'
 import { PublicContextProps } from '@/utilities/publicContextProps'
 import { Navbar4 } from './navbar/navbar4'
+import { SearchButton } from '@/search/Component'
 
 export async function Header({ publicContext }: { publicContext: PublicContextProps }) {
   const header = (await getCachedGlobal(

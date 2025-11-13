@@ -69,6 +69,11 @@ export const Header: GlobalConfig = {
       required: true,
     },
     {
+      name: 'isSearchEnabled',
+      type: 'checkbox',
+      defaultValue: false,
+    },
+    {
       name: 'logo',
       type: 'upload',
       relationTo: 'media',

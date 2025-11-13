@@ -1,44 +1,75 @@
 import { BeforeSync, DocToSync } from '@payloadcms/plugin-search/types'
+import { extractTextFromDocument, extractSearchKeywords } from '@/utilities/extractTextFromDocument'
+import { Page, Post } from '@/payload-types'
 
 export const beforeSyncWithSearch: BeforeSync = async ({ originalDoc, searchDoc, payload }) => {
   const {
     doc: { relationTo: collection },
   } = searchDoc
 
-  const { slug, id, categories, title, meta, excerpt } = originalDoc
+  if (collection === 'pages') {
+    const { slug, id, title, meta } = originalDoc as Page
 
-  const modifiedDoc: DocToSync = {
-    ...searchDoc,
-    slug,
-    meta: {
-      ...meta,
-      title: meta?.title || title,
-      image: meta?.image?.id || meta?.image,
-      description: meta?.description,
-    },
-    categories: [],
-  }
+    // Extract full text content from the document for search indexing
+    const extractedText = extractTextFromDocument(originalDoc, {
+      maxLength: 5000, // Limit to 5000 characters for search index
+      includeMetadata: true,
+      includeHero: true,
+      includeLayout: true,
+    })
 
-  if (categories && Array.isArray(categories) && categories.length > 0) {
-    // get full categories and keep a flattened copy of their most important properties
-    try {
-      const mappedCategories = categories.map((category) => {
-        const { id, title } = category
+    // Extract keywords for better search relevance
+    const searchKeywords = extractSearchKeywords(originalDoc, {
+      minLength: 3,
+      maxKeywords: 30,
+    })
 
-        return {
-          relationTo: 'categories',
-          id,
-          title,
-        }
-      })
-
-      modifiedDoc.categories = mappedCategories
-    } catch (err) {
-      console.error(
-        `Failed. Category not found when syncing collection '${collection}' with id: '${id}' to search.`,
-      )
+    const modifiedDoc: DocToSync = {
+      ...searchDoc,
+      slug,
+      meta: {
+        ...meta,
+        title: meta?.title || title,
+        description: meta?.description,
+        extractedText,
+        // Add extracted content for search indexing
+        searchKeywords: searchKeywords.join(' '), // Join keywords as a searchable string
+      },
     }
-  }
 
-  return modifiedDoc
+    return modifiedDoc
+  }
+  if (collection === 'posts') {
+    const { slug, id, title, meta } = originalDoc as Post
+
+    // Extract full text content from the document for search indexing
+    const extractedText = extractTextFromDocument(originalDoc, {
+      maxLength: 5000, // Limit to 5000 characters for search index
+      includeMetadata: true,
+      includeHero: true,
+      includeLayout: true,
+    })
+
+    // Extract keywords for better search relevance
+    const searchKeywords = extractSearchKeywords(originalDoc, {
+      minLength: 3,
+      maxKeywords: 30,
+    })
+
+    const modifiedDoc: DocToSync = {
+      ...searchDoc,
+      slug,
+      meta: {
+        ...meta,
+        title: meta?.title || title,
+        description: meta?.description,
+        extractedText,
+      },
+      // Add extracted content for search indexing
+      searchKeywords: searchKeywords.join(' '), // Join keywords as a searchable string
+    }
+
+    return modifiedDoc
+  }
+  return searchDoc
 }

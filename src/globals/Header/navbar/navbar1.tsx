@@ -25,6 +25,7 @@ import { CMSLink } from '@/components/Link'
 import { Icon } from '@/components/Icon'
 import { LanguageSwitcher, LanguageSwitcherMobile } from '@/components/LanguageSwitcher'
 import { PublicContextProps } from '@/utilities/publicContextProps'
+import { SearchButton } from '@/search/Component'
 
 export const Navbar1: React.FC<{ header: HeaderType; publicContext: PublicContextProps }> = ({
   header,
@@ -114,7 +115,9 @@ export const Navbar1: React.FC<{ header: HeaderType; publicContext: PublicContex
               <CMSLink publicContext={publicContext} key={btn.id} {...btn.link} size="sm" />
             ))}
             <LanguageSwitcher publicContext={publicContext} size="sm" />
+            {header.isSearchEnabled && <SearchButton className="hidden self-center lg:block" />}
           </div>
+          {/* Search Button */}
         </nav>
 
         {/* Mobile Navigation */}
@@ -123,6 +126,9 @@ export const Navbar1: React.FC<{ header: HeaderType; publicContext: PublicContex
             <div className="flex items-center gap-2">
               <Media resource={header.logo} />
             </div>
+            {header.isSearchEnabled && (
+              <SearchButton className="ml-auto block lg:hidden" variant="outline" />
+            )}
             <Sheet>
               <SheetTrigger asChild>
                 <Button variant={'outline'} size={'icon'}>
