@@ -115,13 +115,19 @@ const Navbar5: React.FC<{ header: HeaderType; publicContext: PublicContextProps 
             ))}
             <LanguageSwitcher publicContext={publicContext} size="sm" />
             {/* Search Button */}
-            {header.isSearchEnabled && <SearchButton className="hidden lg:block" />}
+            {header.isSearchEnabled && (
+              <SearchButton className="hidden lg:block" publicContext={publicContext} />
+            )}
           </div>
 
           {/* Mobile Menu Button */}
           <div className="flex items-center gap-2 lg:hidden">
             {header.isSearchEnabled && (
-              <SearchButton variant="outline" className="ml-auto block lg:hidden" />
+              <SearchButton
+                variant="outline"
+                className="ml-auto block lg:hidden"
+                publicContext={publicContext}
+              />
             )}
             <Sheet>
               <SheetTrigger asChild>

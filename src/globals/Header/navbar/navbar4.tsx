@@ -76,7 +76,13 @@ const Navbar4: React.FC<{ header: HeaderType; publicContext: PublicContextProps 
                   className="hidden items-center justify-center md:inline-flex"
                 />
               ))}
-              {header.isSearchEnabled && <SearchButton className="ml-auto mr-0 block lg:hidden" variant="ghost" />}
+              {header.isSearchEnabled && (
+                <SearchButton
+                  className="mr-0 ml-auto block lg:hidden"
+                  variant="ghost"
+                  publicContext={publicContext}
+                />
+              )}
               <Button
                 variant="ghost"
                 size="icon"
@@ -96,7 +102,9 @@ const Navbar4: React.FC<{ header: HeaderType; publicContext: PublicContextProps 
               </Button>
             </div>
             {/* Search Button */}
-            {header.isSearchEnabled && <SearchButton className="hidden lg:block" />}
+            {header.isSearchEnabled && (
+              <SearchButton className="hidden lg:block" publicContext={publicContext} />
+            )}
           </div>
 
           {/* Mobile Menu */}

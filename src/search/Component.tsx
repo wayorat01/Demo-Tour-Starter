@@ -18,18 +18,63 @@ import { Button, ButtonProps } from '@/components/ui/button'
 import { useSearch } from '@/utilities/useSearch'
 import { Sheet, SheetContent, SheetTitle } from '@/components/ui/sheet'
 import { VisuallyHidden } from '@/components/ui/visually-hidden'
+import { PublicContextProps } from '@/utilities/publicContextProps'
+import { Locale, localization } from '@/localization.config'
+
+const translations: Record<
+  Locale,
+  {
+    placeholder: string
+    esc: string
+    searching: string
+    noResults: string
+    startTyping: string
+    recentItems: string
+    recentResults: string
+    foundResults: (count: number) => string
+    search: string
+  }
+> = {
+  en: {
+    placeholder: 'What are you searching for?',
+    esc: 'Esc',
+    searching: 'Searching...',
+    noResults: 'No results found.',
+    startTyping: 'Start typing to search...',
+    recentItems: 'Recent Items',
+    recentResults: 'Recent Results',
+    foundResults: (count) => `Found ${count} result${count !== 1 ? 's' : ''}`,
+    search: 'Search',
+  },
+  de: {
+    placeholder: 'Wonach suchen Sie?',
+    esc: 'Esc',
+    searching: 'Suche...',
+    noResults: 'Keine Ergebnisse gefunden.',
+    startTyping: 'Beginnen Sie zu tippen, um zu suchen...',
+    recentItems: 'Kürzliche Elemente',
+    recentResults: 'Kürzliche Ergebnisse',
+    foundResults: (count) => `${count} Ergebnis${count !== 1 ? 'se' : ''} gefunden`,
+    search: 'Suchen',
+  },
+}
 
 export function SearchButton({
   className = '',
   variant = 'ghost',
+  publicContext,
 }: {
   className?: string
   variant?: ButtonProps['variant']
+  publicContext?: PublicContextProps
 }) {
   const [open, setOpen] = React.useState(false)
   const [value, setValue] = React.useState('')
   const [isMobile, setIsMobile] = React.useState(false)
   const router = useRouter()
+
+  const locale = (publicContext?.locale || localization.defaultLocale) as Locale
+  const t = translations[locale] || translations[localization.defaultLocale as Locale]
 
   const debouncedValue = useDebounce(value, 300)
   const { results, cachedResults, initialResults, isLoading } = useSearch(debouncedValue, open)
@@ -96,7 +141,7 @@ export function SearchButton({
           <Input
             value={value}
             onChange={(e) => setValue(e.target.value)}
-            placeholder="What are you searching for?"
+            placeholder={t.placeholder}
             className="border-0 text-base focus-visible:ring-0 focus-visible:ring-offset-0"
             autoFocus
           />
@@ -104,35 +149,35 @@ export function SearchButton({
             variant="ghost"
             size="sm"
             onClick={() => setOpen(false)}
-            className="ml-2 h-7 rounded border px-2 text-xs"
+            className="hidden lg:block ml-2 h-7 rounded border px-2 text-xs "
           >
-            Esc
+            {t.esc}
           </Button>
         </div>
         <CommandList className="!h-[400px] !max-h-[400px]">
           {isLoading && displayResults.length === 0 && (
             <div className="flex items-center justify-center py-6">
               <Loader2 className="text-muted-foreground h-4 w-4 animate-spin" />
-              <span className="text-muted-foreground ml-2 text-sm">Searching...</span>
+              <span className="text-muted-foreground ml-2 text-sm">{t.searching}</span>
             </div>
           )}
 
           {!isLoading && displayResults.length === 0 && debouncedValue && (
-            <CommandEmpty>No results found.</CommandEmpty>
+            <CommandEmpty>{t.noResults}</CommandEmpty>
           )}
 
           {!debouncedValue && displayResults.length === 0 && !isLoading && (
-            <CommandEmpty>Start typing to search...</CommandEmpty>
+            <CommandEmpty>{t.startTyping}</CommandEmpty>
           )}
 
           {displayResults.length > 0 && (
             <CommandGroup
               heading={
                 !debouncedValue
-                  ? 'Recent Items'
+                  ? t.recentItems
                   : cachedResults.length > 0 && results.length === 0
-                    ? 'Recent Results'
-                    : `Found ${displayResults.length} result${displayResults.length !== 1 ? 's' : ''}`
+                    ? t.recentResults
+                    : t.foundResults(displayResults.length)
               }
             >
               {displayResults.map((result) => (
@@ -182,7 +227,7 @@ export function SearchButton({
       >
         <p className="flex items-center gap-2">
           <Search className="h-4 w-4 rotate-90" />
-          <span className="hidden text-sm lg:block">Search</span>
+          <span className="hidden text-sm lg:block">{t.search}</span>
         </p>
       </Button>
       {isMobile ? (
@@ -192,7 +237,7 @@ export function SearchButton({
             className="flex h-[80vh] flex-col overflow-hidden p-0 [&>button]:hidden"
           >
             <VisuallyHidden>
-              <SheetTitle>Search</SheetTitle>
+              <SheetTitle>{t.search}</SheetTitle>
             </VisuallyHidden>
             <Command className="flex h-full flex-col overflow-hidden">
               <SearchList />

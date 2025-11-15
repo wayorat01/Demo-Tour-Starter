@@ -115,7 +115,9 @@ export const Navbar1: React.FC<{ header: HeaderType; publicContext: PublicContex
               <CMSLink publicContext={publicContext} key={btn.id} {...btn.link} size="sm" />
             ))}
             <LanguageSwitcher publicContext={publicContext} size="sm" />
-            {header.isSearchEnabled && <SearchButton className="hidden self-center lg:block" />}
+            {header.isSearchEnabled && (
+              <SearchButton className="hidden self-center lg:block" publicContext={publicContext} />
+            )}
           </div>
           {/* Search Button */}
         </nav>
@@ -127,7 +129,11 @@ export const Navbar1: React.FC<{ header: HeaderType; publicContext: PublicContex
               <Media resource={header.logo} />
             </div>
             {header.isSearchEnabled && (
-              <SearchButton className="ml-auto block lg:hidden" variant="outline" />
+              <SearchButton
+                className="ml-auto block lg:hidden"
+                variant="outline"
+                publicContext={publicContext}
+              />
             )}
             <Sheet>
               <SheetTrigger asChild>
