@@ -1,0 +1,50 @@
+/* === Static Content RichText Table Styles === */
+
+.static-content-richtext table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid var(--color-border, #e5e7eb);
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.static-content-richtext thead {
+  background-color: var(--color-muted, #f3f4f6);
+}
+
+.static-content-richtext th,
+.static-content-richtext td {
+  border: 1px solid var(--color-border, #e5e7eb);
+  padding: 0.625rem 0.75rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+.static-content-richtext th {
+  font-weight: 600;
+  color: var(--color-foreground);
+}
+
+.static-content-richtext td {
+  color: var(--color-foreground);
+}
+
+.static-content-richtext tr:nth-child(even) {
+  background-color: var(--color-muted, #f9fafb);
+}
+
+.static-content-richtext tr:hover {
+  background-color: color-mix(in srgb, var(--color-primary, #3b82f6) 5%, transparent);
+}
+
+/* Mobile: ตารางเลื่อนซ้ายขวาได้ */
+@media (max-width: 768px) {
+  .static-content-richtext {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .static-content-richtext table {
+    min-width: 600px;
+  }
+}

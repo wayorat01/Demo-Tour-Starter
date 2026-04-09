@@ -1,0 +1,164 @@
+name: CI — Quality Gates
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main, develop]
+
+env:
+  NODE_OPTIONS: '--no-deprecation --max-old-space-size=8192'
+
+jobs:
+  # ─── Job 1: Build & Lint ─────────────────────────────────
+  build-and-lint:
+    name: 🔨 Build & Lint
+    runs-on: ubuntu-latest
+    services:
+      mongodb:
+        image: mongo:7
+        ports:
+          - 27017:27017
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'pnpm'
+
+      - run: pnpm install --frozen-lockfile
+
+      - name: Lint
+        run: pnpm lint
+
+      - name: Build
+        run: pnpm build
+        env:
+          MONGODB_URI: mongodb://localhost:27017/wowtour-ci
+          PAYLOAD_SECRET: ci-test-secret-key-32chars-long!
+          NEXT_PUBLIC_SERVER_URL: http://localhost:3000
+
+      - name: Upload build
+        uses: actions/upload-artifact@v4
+        with:
+          name: nextjs-build
+          path: |
+            .next/
+            public/
+          retention-days: 1
+
+  # ─── Job 2: Playwright Tests ─────────────────────────────
+  playwright:
+    name: 🎭 Playwright Tests
+    needs: build-and-lint
+    runs-on: ubuntu-latest
+    services:
+      mongodb:
+        image: mongo:7
+        ports:
+          - 27017:27017
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'pnpm'
+
+      - run: pnpm install --frozen-lockfile
+
+      - name: Download build
+        uses: actions/download-artifact@v4
+        with:
+          name: nextjs-build
+          path: .
+
+      - name: Install Playwright browsers
+        run: pnpm exec playwright install --with-deps chromium
+
+      - name: Run Playwright tests
+        run: pnpm test
+        env:
+          CI: true
+          MONGODB_URI: mongodb://localhost:27017/wowtour-ci
+          PAYLOAD_SECRET: ci-test-secret-key-32chars-long!
+          NEXT_PUBLIC_SERVER_URL: http://localhost:3000
+
+      - name: Upload test results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 7
+
+  # ─── Job 3: Lighthouse ──────────────────────────────────
+  lighthouse:
+    name: 🔦 Lighthouse
+    needs: build-and-lint
+    runs-on: ubuntu-latest
+    services:
+      mongodb:
+        image: mongo:7
+        ports:
+          - 27017:27017
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'pnpm'
+
+      - run: pnpm install --frozen-lockfile
+
+      - name: Download build
+        uses: actions/download-artifact@v4
+        with:
+          name: nextjs-build
+          path: .
+
+      - name: Run Lighthouse CI
+        run: pnpm test:lighthouse
+        env:
+          MONGODB_URI: mongodb://localhost:27017/wowtour-ci
+          PAYLOAD_SECRET: ci-test-secret-key-32chars-long!
+          NEXT_PUBLIC_SERVER_URL: http://localhost:3000
+          LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
+
+  # ─── Job 4: Security Audit ─────────────────────────────
+  security:
+    name: 🔒 Security Audit
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'pnpm'
+
+      - run: pnpm install --frozen-lockfile
+
+      - name: Audit dependencies
+        run: pnpm audit --audit-level=high
+        continue-on-error: true
+
+      - name: Check for critical vulnerabilities
+        run: |
+          RESULT=$(pnpm audit --audit-level=critical --json 2>/dev/null || true)
+          CRITICAL=$(echo "$RESULT" | grep -c '"severity":"critical"' || true)
+          if [ "$CRITICAL" -gt 0 ]; then
+            echo "❌ Found $CRITICAL critical vulnerabilities!"
+            exit 1
+          fi
+          echo "✅ No critical vulnerabilities found"

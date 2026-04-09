@@ -1,0 +1,111 @@
+
+> payblocks@2.11.0 lint /Users/admin/Documents/my_application/custom_payload/payblocks
+> cross-env NODE_OPTIONS=--no-deprecation eslint
+
+
+/Users/admin/Documents/my_application/custom_payload/payblocks/_scripts/bust_ticket_cache.ts
+  0:0  error  Parsing error: "parserOptions.project" has been provided for @typescript-eslint/parser.
+The file was not found in any of the provided project(s): _scripts/bust_ticket_cache.ts
+
+/Users/admin/Documents/my_application/custom_payload/payblocks/_scripts/convert_cruises_webp.ts
+  0:0  error  Parsing error: "parserOptions.project" has been provided for @typescript-eslint/parser.
+The file was not found in any of the provided project(s): _scripts/convert_cruises_webp.ts
+
+/Users/admin/Documents/my_application/custom_payload/payblocks/_scripts/convert_webp.ts
+  0:0  error  Parsing error: "parserOptions.project" has been provided for @typescript-eslint/parser.
+The file was not found in any of the provided project(s): _scripts/convert_webp.ts
+
+/Users/admin/Documents/my_application/custom_payload/payblocks/_scripts/fix_tickets.ts
+  0:0  error  Parsing error: "parserOptions.project" has been provided for @typescript-eslint/parser.
+The file was not found in any of the provided project(s): _scripts/fix_tickets.ts
+
+/Users/admin/Documents/my_application/custom_payload/payblocks/_scripts/fix_tickets_v4.ts
+  0:0  error  Parsing error: "parserOptions.project" has been provided for @typescript-eslint/parser.
+The file was not found in any of the provided project(s): _scripts/fix_tickets_v4.ts
+
+/Users/admin/Documents/my_application/custom_payload/payblocks/_scripts/force_db_update.ts
+  0:0  error  Parsing error: "parserOptions.project" has been provided for @typescript-eslint/parser.
+The file was not found in any of the provided project(s): _scripts/force_db_update.ts
+
+/Users/admin/Documents/my_application/custom_payload/payblocks/_scripts/mass_convert.ts
+  0:0  error  Parsing error: "parserOptions.project" has been provided for @typescript-eslint/parser.
+The file was not found in any of the provided project(s): _scripts/mass_convert.ts
+
+/Users/admin/Documents/my_application/custom_payload/payblocks/_scripts/overrides_scenic.ts
+  0:0  error  Parsing error: "parserOptions.project" has been provided for @typescript-eslint/parser.
+The file was not found in any of the provided project(s): _scripts/overrides_scenic.ts
+
+/Users/admin/Documents/my_application/custom_payload/payblocks/_scripts/query_draft_page.ts
+  0:0  error  Parsing error: "parserOptions.project" has been provided for @typescript-eslint/parser.
+The file was not found in any of the provided project(s): _scripts/query_draft_page.ts
+
+/Users/admin/Documents/my_application/custom_payload/payblocks/_scripts/replace_cars.ts
+  0:0  error  Parsing error: "parserOptions.project" has been provided for @typescript-eslint/parser.
+The file was not found in any of the provided project(s): _scripts/replace_cars.ts
+
+/Users/admin/Documents/my_application/custom_payload/payblocks/_scripts/resave_pages.ts
+  0:0  error  Parsing error: "parserOptions.project" has been provided for @typescript-eslint/parser.
+The file was not found in any of the provided project(s): _scripts/resave_pages.ts
+
+/Users/admin/Documents/my_application/custom_payload/payblocks/_scripts/s3_upload.ts
+  0:0  error  Parsing error: "parserOptions.project" has been provided for @typescript-eslint/parser.
+The file was not found in any of the provided project(s): _scripts/s3_upload.ts
+
+/Users/admin/Documents/my_application/custom_payload/payblocks/_scripts/s3_upload_all.ts
+  0:0  error  Parsing error: "parserOptions.project" has been provided for @typescript-eslint/parser.
+The file was not found in any of the provided project(s): _scripts/s3_upload_all.ts
+
+/Users/admin/Documents/my_application/custom_payload/payblocks/_scripts/script_mock_cars.ts
+  0:0  error  Parsing error: "parserOptions.project" has been provided for @typescript-eslint/parser.
+The file was not found in any of the provided project(s): _scripts/script_mock_cars.ts
+
+/Users/admin/Documents/my_application/custom_payload/payblocks/preview-email.ts
+  38:1  warning  Unexpected console statement. Only these console methods are allowed: warn, error  no-console
+
+/Users/admin/Documents/my_application/custom_payload/payblocks/script-payload-pages.ts
+  16:5   warning  Unexpected console statement. Only these console methods are allowed: warn, error  no-console
+  17:27  warning  Unexpected console statement. Only these console methods are allowed: warn, error  no-console
+
+/Users/admin/Documents/my_application/custom_payload/payblocks/script-test-pages.ts
+   6:3  warning  Unexpected console statement. Only these console methods are allowed: warn, error  no-console
+  11:3  warning  Unexpected console statement. Only these console methods are allowed: warn, error  no-console
+
+/Users/admin/Documents/my_application/custom_payload/payblocks/src/app/(frontend)/intertours/[slug]/[tourCode]/booking/page.tsx
+  69:3  warning  Unexpected console statement. Only these console methods are allowed: warn, error  no-console
+
+/Users/admin/Documents/my_application/custom_payload/payblocks/src/blocks/SearchTour/Component.tsx
+  30:5  warning  Unexpected console statement. Only these console methods are allowed: warn, error  no-console
+
+/Users/admin/Documents/my_application/custom_payload/payblocks/src/blocks/SearchTour/test.js
+  0:0  error  Parsing error: "parserOptions.project" has been provided for @typescript-eslint/parser.
+The file was not found in any of the provided project(s): src/blocks/SearchTour/test.js
+
+/Users/admin/Documents/my_application/custom_payload/payblocks/src/globals/Header/navbar/blocks/TourCategoryMenu.tsx
+  125:5  error  Compilation Skipped: Existing memoization could not be preserved
+
+React Compiler has skipped optimizing this component because the existing manual memoization could not be preserved. The inferred dependencies did not match the manually specified dependencies, which could cause the value to change more or less frequently than expected. The inferred dependency was `showCityHover`, but the source dependencies were []. Inferred dependency not present in source.
+
+/Users/admin/Documents/my_application/custom_payload/payblocks/src/globals/Header/navbar/blocks/TourCategoryMenu.tsx:125:5
+  123 |
+  124 |   const handleMouseEnter = useCallback(
+> 125 |     (countryId: string, hasTours: boolean, tour: any, el: HTMLElement) => {
+      |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 126 |       if (!hasTours || !showCityHover) return
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 127 |       if (leaveTimerRef.current) {
+      …
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 143 |       }, 50)
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 144 |     },
+      | ^^^^^^ Could not preserve existing manual memoization
+  145 |     [],
+  146 |   )
+  147 |  react-hooks/preserve-manual-memoization
+
+/Users/admin/Documents/my_application/custom_payload/payblocks/trigger-revalidate.ts
+  16:3  warning  Unexpected console statement. Only these console methods are allowed: warn, error  no-console
+
+✖ 24 problems (16 errors, 8 warnings)
+
+ ELIFECYCLE  Command failed with exit code 1.

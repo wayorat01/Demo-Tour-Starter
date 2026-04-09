@@ -1,0 +1,140 @@
+/* ============================================
+   Gallery Listing — CSS
+   ============================================ */
+
+/* Content */
+.gallery-listing-content {
+  padding: 48px 0 64px;
+}
+
+@media (min-width: 768px) {
+  .gallery-listing-content {
+    padding: 64px 0;
+  }
+}
+
+/* Albums Grid */
+.gallery-listing-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+@media (min-width: 768px) {
+  .gallery-listing-grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 24px;
+  }
+}
+
+/* Album Card */
+.gallery-listing-card {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: block;
+}
+
+.gallery-listing-card:hover {
+  transform: translateY(-4px);
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 8px 24px -6px;
+}
+
+.gallery-listing-card__image-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3/4;
+  overflow: hidden;
+}
+
+.gallery-listing-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.gallery-listing-card:hover .gallery-listing-card__image {
+  transform: scale(1.05);
+}
+
+/* Card Info Overlay */
+.gallery-listing-card__info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 16px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+  z-index: 2;
+}
+
+.gallery-listing-card__title {
+  color: white;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin: 0;
+  line-height: 1.4;
+}
+
+@media (min-width: 768px) {
+  .gallery-listing-card__title {
+    font-size: 1rem;
+  }
+}
+
+.gallery-listing-card__date {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.75rem;
+  margin-top: 4px;
+}
+
+/* Hover Overlay */
+.gallery-listing-card__hover {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--primary-70, rgba(26, 109, 212, 0.7));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 3;
+}
+
+.gallery-listing-card:hover .gallery-listing-card__hover {
+  opacity: 1;
+}
+
+.gallery-listing-card__hover-icon {
+  width: 48px;
+  height: 48px;
+  color: white;
+}
+
+/* Empty State */
+.gallery-listing-empty {
+  text-align: center;
+  padding: 64px 16px;
+  color: var(--muted-foreground);
+}
+
+.gallery-listing-empty__icon {
+  font-size: 3rem;
+  margin-bottom: 16px;
+}
+
+.gallery-listing-empty__title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--foreground);
+  margin: 0 0 8px;
+}
+
+.gallery-listing-empty__desc {
+  font-size: 0.9rem;
+  margin: 0;
+}

@@ -1,0 +1,256 @@
+/* ===== WowTour Navbar 4 ===== */
+
+/* ── Top Bar (Blue Gradient) ── */
+.wowtour-navbar4-topbar {
+  background: var(
+    --header-gradient-full,
+    linear-gradient(
+      135deg,
+      var(--header-gradient, #1976d2) 0%,
+      color-mix(in srgb, var(--header-gradient, #42a5f5) 80%, white) 50%,
+      color-mix(in srgb, var(--header-gradient, #26c6da) 70%, white) 100%
+    )
+  );
+  padding: 8px 0;
+  color: var(--header-top-text, #fff);
+  font-size: 13px;
+}
+
+.wowtour-navbar4-topbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+/* Left: Business Hours */
+.wowtour-navbar4-hours {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: inherit;
+}
+
+.wowtour-navbar4-hours svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+/* Right: Social Links */
+.wowtour-navbar4-socials {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.wowtour-navbar4-social-link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: inherit;
+  text-decoration: none;
+  font-size: 13px;
+  transition: opacity 0.2s;
+}
+
+.wowtour-navbar4-social-link:hover {
+  opacity: 0.8;
+}
+
+.wowtour-navbar4-social-link svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+/* ── Main Bar (White) — NO border/divider between top bar and main bar ── */
+.wowtour-navbar4-main {
+  background: var(--header-bg, var(--background));
+  padding: 0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Single row: Logo + Nav (center) + Hotline */
+.wowtour-navbar4-main-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 12px 0;
+}
+
+/* Logo */
+.wowtour-navbar4-logo {
+  flex-shrink: 0;
+}
+
+.wowtour-navbar4-logo img {
+  height: 48px !important;
+  width: auto !important;
+  object-fit: contain !important;
+}
+
+/* Center: Navigation */
+.wowtour-navbar4-nav {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  flex: 1;
+  justify-content: center;
+}
+
+.wowtour-navbar4-nav-link {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--header-menu-text, var(--foreground)) !important;
+  text-decoration: none;
+  transition: color 0.2s;
+  white-space: nowrap;
+  border: none;
+  background: transparent !important;
+  cursor: pointer;
+}
+
+.wowtour-navbar4-nav-link:hover,
+.wowtour-navbar4-nav-link[data-state='open'] {
+  color: var(--header-accent, var(--primary)) !important;
+}
+
+.wowtour-navbar4-nav-link.active {
+  color: var(--header-accent, var(--primary)) !important;
+  font-weight: 600;
+  position: relative;
+}
+
+/* Active underline indicator */
+.wowtour-navbar4-nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 20px;
+  right: 20px;
+  height: 3px;
+  background: var(--header-accent, var(--primary));
+  border-radius: 2px 2px 0 0;
+}
+
+/* Right: Hotline */
+.wowtour-navbar4-hotline {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  flex-shrink: 0;
+  transition: opacity 0.2s;
+}
+
+.wowtour-navbar4-hotline:hover {
+  opacity: 0.8;
+}
+
+.wowtour-navbar4-hotline-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--primary);
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.wowtour-navbar4-hotline-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.3;
+}
+
+.wowtour-navbar4-hotline-label {
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--muted-foreground);
+}
+
+.wowtour-navbar4-hotline-number {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--primary);
+}
+
+/* ── Sticky behavior ── */
+.wowtour-navbar4-sticky {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.wowtour-navbar4-sticky.is-stuck {
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* ── Mega Menu Dropdown ──
+   We change the positioning context from the NavigationMenu root (which is
+   off-center due to logo/hotline width difference) to .wowtour-navbar4-main
+   (which spans the full viewport width). This ensures the mega menu dropdown
+   has equal spacing on both sides. */
+
+/* Make .wowtour-navbar4-main the positioning context for the dropdown */
+.wowtour-navbar4-main {
+  position: relative;
+}
+
+/* Remove NavigationMenu root as positioning context + allow overflow */
+.wowtour-navbar4-nav nav[data-orientation='horizontal'] {
+  position: static !important;
+  overflow: visible;
+  max-width: none !important;
+}
+
+/* Viewport wrapper — now positioned relative to .wowtour-navbar4-main (full width) */
+.wowtour-navbar4-nav [data-nav-viewport-wrapper] {
+  left: 0 !important;
+  width: 100% !important;
+  transform: none !important;
+  margin-left: 0 !important;
+  display: flex !important;
+  justify-content: center;
+  z-index: 999;
+  padding: 0 16px;
+}
+
+/* Viewport element itself — constrained width with rounded corners */
+.wowtour-navbar4-nav [data-radix-navigation-menu-viewport] {
+  border-radius: 12px !important;
+  border: none !important;
+  width: 100% !important;
+  max-width: 1400px !important;
+  margin: 8px auto 0 !important;
+}
+
+.wowtour-navbar4-nav [data-radix-navigation-menu-viewport][data-state='open'] {
+  background-color: var(--background);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(0, 0, 0, 0.06) !important;
+}
+
+/* NavigationMenuContent & its children must fill the viewport */
+.wowtour-navbar4-nav [data-radix-navigation-menu-viewport] > div {
+  width: 100% !important;
+  min-width: 100% !important;
+}
+
+/* ── Mobile: hide desktop parts ── */
+@media (max-width: 1279px) {
+  .wowtour-navbar4-topbar {
+    display: none;
+  }
+  .wowtour-navbar4-main {
+    display: none;
+  }
+}

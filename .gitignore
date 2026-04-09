@@ -1,0 +1,101 @@
+# ============================================================
+# .gitignore — Next.js + Payload CMS + pnpm (2026 best practice)
+# ============================================================
+
+# ─── Dependencies ────────────────────────────────────────────
+node_modules/
+.pnpm-store/
+
+# ─── Build & Output ─────────────────────────────────────────
+.next/
+build/
+dist/
+out/
+*.tsbuildinfo
+
+# ─── Environment Variables ───────────────────────────────────
+.env
+.env.*
+!.env.example
+
+# ─── Payload CMS ─────────────────────────────────────────────
+src/payload-types.ts
+public/media/
+public/seed/
+
+# ─── Vercel ──────────────────────────────────────────────────
+.vercel/
+
+# ─── Logs ────────────────────────────────────────────────────
+*.log
+npm-debug.log*
+pnpm-debug.log*
+
+# ─── Archives & Compressed ──────────────────────────────────
+*.tar.gz
+*.tgz
+*.zip
+*.rar
+*.7z
+*.bz2
+
+# ─── Images (avoid bloating repo with binary assets) ────────
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.bmp
+*.tiff
+*.psd
+# webp/svg/ico are intentionally tracked (small, used in public/admin/previews)
+# Uncomment below if you also want to ignore those:
+# *.webp
+# *.svg
+# *.avif
+
+# ─── Video & Audio ──────────────────────────────────────────
+*.mp4
+*.mov
+*.avi
+*.mkv
+*.mp3
+*.wav
+*.flac
+
+# ─── Large / Scratch Files ──────────────────────────────────
+/about-us-page.html
+/collections.json
+/loadcountry.json
+*.sql
+*.csv
+
+# ─── OS Files ────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# ─── IDE / Editor ────────────────────────────────────────────
+.idea/
+*.swp
+*.swo
+*~
+
+# ─── Database & Backups ─────────────────────────────────────
+dump/
+
+# ─── AI Agent Directories ───────────────────────────────────
+.agent/
+# ψ transient directories (tracked dirs managed by ψ/.gitignore)
+ψ/active/
+ψ/memory/logs/
+ψ/learn/
+
+# ─── Test Artifacts ─────────────────────────────────────────
+playwright-report/
+test-results/
+.lighthouseci/
+blob-report/
+
+# ─── Lockfile Deduplication (keep only pnpm-lock.yaml) ──────
+package-lock.json
+yarn.lock

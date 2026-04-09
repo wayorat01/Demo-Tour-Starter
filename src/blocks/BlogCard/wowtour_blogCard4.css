@@ -1,0 +1,353 @@
+/* ============================================
+   WowTour Blog Card 4
+   Image(left) + Title(right)
+   Card overlaps at bottom of image, spanning full width
+   ============================================ */
+
+.blog-card4-section {
+  padding: 48px 0;
+  font-family: var(--font-body, var(--font-sans));
+  background: #fff;
+}
+
+@media (min-width: 768px) {
+  .blog-card4-section {
+    padding: 60px 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  .blog-card4-section {
+    padding: 72px 0;
+  }
+}
+
+/* ============================================
+   Layout: 2-column (image + title)
+   Wrapper needs relative for the card overlay
+   ============================================ */
+.blog-card4-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  .blog-card4-layout {
+    flex-direction: row;
+    align-items: stretch;
+  }
+}
+
+/* ============================================
+   Left: Image
+   ============================================ */
+.blog-card4-left {
+  position: relative;
+  flex-shrink: 0;
+  width: 100%;
+  overflow: visible;
+  border-radius: var(--card-radius, 12px);
+}
+
+@media (min-width: 768px) {
+  .blog-card4-left {
+    width: 50%;
+    border-radius: var(--card-radius, 12px) 0 0 var(--card-radius, 12px);
+  }
+}
+
+/* Image */
+.blog-card4-left__image {
+  width: 100%;
+  height: 100%;
+  min-height: 300px;
+  object-fit: cover;
+  object-position: var(--bg-position, center);
+  display: block;
+  border-radius: inherit;
+}
+
+@media (min-width: 768px) {
+  .blog-card4-left__image {
+    min-height: 420px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .blog-card4-left__image {
+    min-height: 480px;
+  }
+}
+
+.blog-card4-left__image--placeholder {
+  background: linear-gradient(135deg, var(--muted) 0%, var(--secondary) 100%);
+  min-height: 420px;
+}
+
+/* ============================================
+   Card — vertically centered on image,
+   overlapping only ~1/4 of the image width
+   ============================================ */
+
+/* Mobile: sits below image with negative margin */
+.blog-card4-card {
+  position: relative;
+  z-index: 3;
+  background: #fff;
+  border: 1px solid color-mix(in srgb, var(--border) 30%, transparent);
+  border-radius: var(--card-radius, 12px);
+  padding: 16px 14px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+  margin: -30px 8px 0;
+}
+
+/* Tablet: card overlaps ~1/4 of the image, extends to the right */
+@media (min-width: 768px) {
+  .blog-card4-card {
+    position: absolute;
+    top: 65%;
+    transform: translateY(-50%);
+    left: 32%;
+    right: 0;
+    width: auto;
+    margin: 0;
+    padding: 20px 24px 16px;
+    gap: 6px;
+  }
+}
+
+/* Desktop: fine-tuned positioning */
+@media (min-width: 1024px) {
+  .blog-card4-card {
+    left: 36%;
+    right: 0;
+    padding: 24px 32px 20px;
+    gap: 8px;
+  }
+}
+
+/* Large Desktop */
+@media (min-width: 1280px) {
+  .blog-card4-card {
+    left: 38%;
+    right: 0;
+    padding: 24px 36px 20px;
+  }
+}
+
+/* Post Title — left aligned */
+.blog-card4-card__title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--foreground);
+  margin: 0;
+  line-height: 1.4;
+  text-align: left;
+}
+
+.blog-card4-card__title a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.blog-card4-card__title a:hover {
+  color: var(--primary);
+}
+
+@media (min-width: 768px) {
+  .blog-card4-card__title {
+    font-size: 1.1rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .blog-card4-card__title {
+    font-size: 1.25rem;
+  }
+}
+
+/* Meta — left aligned */
+.blog-card4-card__meta {
+  display: block;
+  text-align: left;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--primary);
+  line-height: 1.4;
+}
+
+/* Excerpt — left aligned */
+.blog-card4-card__excerpt {
+  font-size: 0.875rem;
+  color: var(--muted-foreground);
+  line-height: 1.6;
+  margin: 2px 0 0;
+  text-align: left;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media (min-width: 768px) {
+  .blog-card4-card__excerpt {
+    font-size: 1rem;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+  }
+}
+
+@media (min-width: 1024px) {
+  .blog-card4-card__excerpt {
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+  }
+}
+
+/* Actions — right aligned */
+.blog-card4-card__actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 4px;
+}
+
+/* Button */
+.blog-card4-card__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 32px;
+  background: var(--btn-bg, var(--primary));
+  color: var(--btn-text, #fff);
+  border: none;
+  border-radius: var(--btn-radius, 9999px);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+@media (min-width: 768px) {
+  .blog-card4-card__btn {
+    padding: 10px 32px;
+    font-size: 0.9rem;
+  }
+}
+
+.blog-card4-card__btn:hover {
+  background: var(--btn-bg-hover, var(--primary));
+  color: var(--btn-text-hover, #fff);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* ============================================
+   Right: Section Title + Compass
+   ============================================ */
+.blog-card4-right {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  text-align: left;
+  padding: 28px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .blog-card4-right {
+    padding: 60px 28px 32px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .blog-card4-right {
+    padding: 80px 40px 40px;
+  }
+}
+
+.blog-card4-right__title {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--primary);
+  margin: 0 0 8px;
+  line-height: 1.3;
+  position: relative;
+  z-index: 2;
+}
+
+.blog-card4-right__desc {
+  font-size: 1rem;
+  color: var(--muted-foreground);
+  line-height: 1.6;
+  margin: 0;
+  position: relative;
+  z-index: 2;
+}
+
+@media (min-width: 768px) {
+  .blog-card4-right__desc {
+    font-size: 1rem;
+  }
+}
+
+/* Compass — position/size/opacity controlled by inline styles from CMS */
+.blog-card4-compass {
+  position: absolute;
+  color: var(--primary);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.blog-card4-compass__svg,
+.blog-card4-compass__img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* ============================================
+   Layout bottom spacing for card overflow
+   ============================================ */
+@media (min-width: 768px) {
+  .blog-card4-section {
+    padding-bottom: 48px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .blog-card4-section {
+    padding-bottom: 48px;
+  }
+}
+
+/* ============================================
+   Mobile adjustments
+   ============================================ */
+@media (max-width: 767px) {
+  .blog-card4-left {
+    border-radius: var(--card-radius, 12px) var(--card-radius, 12px) 0 0;
+    overflow: hidden;
+  }
+
+  .blog-card4-right {
+    padding: 20px 16px 12px;
+  }
+
+  .blog-card4-card {
+    margin: 0 12px;
+  }
+}

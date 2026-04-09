@@ -1,0 +1,117 @@
+/* ========================================
+   WowTour Gallery Album 1 — Vertical Cards
+   ======================================== */
+
+.gallery-album-card-wrap {
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.gallery-album-card-wrap:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+}
+
+.gallery-album-card {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+/* Cover Image */
+.gallery-album-card__image {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  position: relative;
+  overflow: hidden;
+}
+
+.gallery-album-card__image img {
+  transition: transform 0.5s ease;
+}
+
+.gallery-album-card:hover .gallery-album-card__image img {
+  transform: scale(1.05);
+}
+
+/* Info overlay (bottom) */
+.gallery-album-card__info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 16px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+  z-index: 4;
+  transition: opacity 0.3s ease;
+}
+
+.gallery-album-card__title {
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+  line-height: 1.3;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.gallery-album-card__title-icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.gallery-album-card__date {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.8rem;
+  margin-top: 4px;
+}
+
+/* Hover overlay (primary color) */
+.gallery-album-card__overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 3;
+  background-color: color-mix(in srgb, var(--primary) 70%, transparent);
+}
+
+.gallery-album-card:hover .gallery-album-card__overlay {
+  opacity: 1;
+}
+
+.gallery-album-card__search-icon {
+  width: 48px;
+  height: 48px;
+  color: white;
+}
+
+/* Dot indicators */
+.gallery-album-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.gallery-album-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+
+.gallery-album-dot--active {
+  width: 12px;
+  height: 12px;
+}

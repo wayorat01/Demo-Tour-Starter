@@ -1,0 +1,20 @@
+Brief Mapping-Multi-Wholesale API	ตารางแจกแจงรายละเอียด Task งาน สำหรับโปรเจกต์ Multi-Wholesale API Integration เพื่อระบุผู้รับผิดชอบ, Module, Actor และเชื่อมโยง Phase งาน					
+Brief ID	รายละเอียด	Task Owner	Module	Actor	Platform	CS Case Space ID
+MW-01	สร้าง Collection api-sources สำหรับเก็บข้อมูล Wholesale API หลายแหล่ง (ชื่อ, URL, API Key, Auth Type, Sync Interval, Active Status, Priority) แทนที่ Global api-setting เดิม	DEV	Multi-Source Infrastructure	Administrator, Admin(Agent)	Platform Backoffice	CS-MWS-001
+MW-02	เพิ่ม Source Tracking Fields ใน Collection program-tours (sourceId, sourceSlug, sourceProductCode, compositeKey) พร้อม Migration Script สำหรับ Backfill ข้อมูลเดิมเป็น sourceSlug='tourprox'	DEV	Data Schema Migration	Administrator	Platform Backoffice	CS-MWS-002
+MW-03	สร้าง Collection sync-logs สำหรับเก็บประวัติ Sync (source, startedAt, status, totalFetched, created, updated, skipped, errors, duration)	DEV	Sync Logging	Administrator	Platform Backoffice	CS-MWS-003
+MW-04	พัฒนา Adapter Pattern — สร้าง BaseAdapter Interface และย้าย logic จาก sync-program-tours เป็น TourProx Adapter ตัวแรก	DEV	Adapter Pattern	Administrator	Platform Backoffice	CS-MWS-004
+MW-05	พัฒนา Sync Engine (Orchestrator) ที่ดึง Active Sources → เรียก Adapter ที่ตรง → Normalize → Validate → Upsert ลง program-tours + บันทึก sync-logs	DEV	Sync Engine	Administrator	Platform Backoffice	CS-MWS-005
+MW-06	พัฒนา Data Normalizer — แปลง Raw Data จาก Adapter แต่ละตัวให้เป็น Unified Schema เดียวกันก่อน Save	DEV	Data Normalization	Administrator	Platform Backoffice	CS-MWS-006
+MW-07	พัฒนา Data Validator — ตรวจสอบ Required Fields (tourCode, title, country) และ Schema Validation ด้วย Zod ก่อน Upsert	DEV	Data Validation	Administrator	Platform Backoffice	CS-MWS-007
+MW-08	พัฒนา Web Scraper Adapter — รองรับ CSS Selector Config, Pagination, Rate Limiter, Proxy Support สำหรับดึงข้อมูลจากเว็บ Wholesale ที่ไม่มี API	DEV	Web Scraper Module	Administrator	Platform Backoffice	CS-MWS-008
+MW-09	พัฒนา Image Downloader — ดาวน์โหลดรูปภาพจากเว็บต้นทาง Upload ไปเก็บที่ S3/Media Collection พร้อมอัปเดต URL ใน program-tours	DEV	Image Processing	Administrator	Platform Backoffice	CS-MWS-009
+MW-10	พัฒนา Cron Scheduler — ตั้ง Schedule อัตโนมัติสำหรับ Sync แต่ละ Source (Vercel Cron / node-cron) ตามค่า syncInterval ที่ตั้งไว้	DEV	Sync Scheduling	Administrator	Platform Backoffice	CS-MWS-010
+MW-11	พัฒนา Admin UI: Sync Dashboard — แสดง Status ของทุก Source, ปุ่ม Manual Sync (เลือก Source), Test Connection, Sync Logs Viewer	UXUI, DEV	Admin Dashboard	Administrator, Admin(Agent)	Platform Backoffice	CS-MWS-011
+MW-12	พัฒนา Generic REST Adapter — Config-driven Adapter สำหรับ REST API ทั่วไป Admin กำหนด Field Mapping ผ่าน JSON Config โดยไม่ต้องเขียนโค้ดใหม่	DEV	Generic Adapter	Administrator	Platform Backoffice	CS-MWS-012
+MW-13	พัฒนา Conflict Resolution — ตรวจจับ Products ที่ซ้ำกันข้าม Source, แสดงใน Admin UI ให้เลือกว่าจะใช้ข้อมูลจากแหล่งไหน (ตาม Priority)	UXUI, DEV	Conflict Management	Administrator, Admin(Agent)	Platform Backoffice	CS-MWS-013
+MW-14	พัฒนา CSV Import Adapter — รองรับ Wholesale ที่ส่งข้อมูลเป็นไฟล์ CSV/Excel สามารถอัปโหลดและ Map ข้อมูลเข้า program-tours ได้	DEV	CSV Import	Administrator, Admin(Agent)	Platform Backoffice	CS-MWS-014
+MW-15	แก้ไข Booking Route — รองรับการจองข้าม Source (ส่งข้อมูลไปยัง API ต้นทางที่ถูกต้องตาม sourceSlug ของแต่ละ Product)	DEV	Booking Integration	End-User, Admin(Agent)	Front End, Platform Backoffice, Email	CS-MWS-015
+MW-16	แก้ไข Proxy Route /api/wowtour — รองรับ Multi-Source โดยรับ parameter source เพื่อเลือกยิง API ไปยัง Source ที่ต้องการ	DEV	API Proxy	End-User	Front End	CS-MWS-016
+MW-17	อัปเดต Frontend Search & Filter — เพิ่ม Filter by Source/Wholesale ในหน้า Search Results ให้ End-User สามารถกรองข้อมูลตามแหล่งได้	UXUI, DEV	Frontend Search	End-User	Front End	CS-MWS-017
+MW-18	ระบบ Backward Compatibility — คง Global api-setting และ Sync Routes เดิม (/api/sync-program-tours) ให้ทำงานได้ปกติระหว่าง Migration	DEV	Migration Safety	Administrator	Platform Backoffice	CS-MWS-018

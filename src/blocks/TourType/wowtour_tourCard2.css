@@ -1,0 +1,223 @@
+/* ================================================
+   wowtour_tourCard2 — Compact mobile card style
+   ================================================ */
+
+.tour2-card-wrap {
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+  height: 100%;
+}
+
+.tour2-card-wrap:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.tour2-card {
+  background: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Header / Image area */
+.tour2-header {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+}
+
+.tour2-header img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Tour Code — top left */
+.tour2-tour-code {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(4px);
+  color: #374151;
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 4px;
+  z-index: 2;
+}
+
+/* Recommended badge — top right */
+.tour2-recommended {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: linear-gradient(135deg, #f97316, #ef4444);
+  color: #ffffff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 6px;
+  z-index: 2;
+  box-shadow: 0 2px 8px rgba(239, 68, 68, 0.35);
+}
+
+/* Body */
+.tour2-body {
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+/* Country tag */
+.tour2-country {
+  display: inline-block;
+  background: #e0f2fe;
+  color: #0369a1;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 4px;
+  width: fit-content;
+}
+
+/* Title */
+.tour2-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #1e293b;
+  line-height: 1.4;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Info rows (duration, airline) */
+.tour2-info-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  color: #64748b;
+}
+
+.tour2-info-row svg {
+  flex-shrink: 0;
+  color: #94a3b8;
+}
+
+.tour2-info-row .tour2-airline-logo {
+  width: 28px;
+  height: 20px;
+  object-fit: contain;
+}
+
+/* Description */
+.tour2-desc {
+  font-size: 0.78rem;
+  color: #64748b;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin: 0;
+}
+
+/* Travel period */
+.tour2-period {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4px 5px;
+  font-size: 0.75rem;
+  color: #64748b;
+}
+
+.tour2-period svg {
+  flex-shrink: 0;
+  color: #94a3b8;
+}
+
+.tour2-period-count {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #94a3b8;
+  white-space: nowrap;
+}
+
+/* Divider */
+.tour2-divider {
+  display: none;
+}
+
+/* Footer: Price */
+.tour2-footer {
+  padding: 10px 16px 14px;
+  display: flex;
+  align-items: baseline;
+  justify-content: flex-end;
+  gap: 6px;
+  background: #f1f3f5;
+}
+
+.tour2-price-label {
+  font-size: 0.78rem;
+  color: #64748b;
+}
+
+.tour2-price {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--primary, #2563eb);
+}
+
+.tour2-price-unit {
+  font-size: 0.78rem;
+  color: #64748b;
+}
+
+.tour2-price-original {
+  font-size: 0.78rem;
+  color: #94a3b8;
+  text-decoration: line-through;
+  margin-right: 4px;
+}
+
+/* Grid layout */
+.tour2-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  padding: 8px;
+}
+
+@media (min-width: 768px) {
+  .tour2-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .tour2-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* ≤767px: Force 1 column */
+@media (max-width: 767px) {
+  .tour2-grid {
+    grid-template-columns: repeat(1, 1fr) !important;
+  }
+}
+

@@ -1,0 +1,74 @@
+.local-export-import {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: var(--theme-elevation-50);
+  border-radius: 8px;
+
+  h2 {
+    margin: 0 0 1rem 0;
+    font-size: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    .badge {
+      font-size: 0.75rem;
+      padding: 0.25rem 0.5rem;
+      background: var(--theme-success-500);
+      color: white;
+      border-radius: 4px;
+      font-weight: normal;
+    }
+  }
+
+  .description {
+    color: var(--theme-elevation-500);
+    margin-bottom: 1.5rem;
+    font-size: 0.875rem;
+  }
+
+  .export-section,
+  .import-section {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background: var(--theme-elevation-100);
+    border-radius: 6px;
+
+    h3 {
+      margin: 0 0 0.75rem 0;
+      font-size: 1rem;
+    }
+
+    .controls {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+  }
+
+  .include-media-toggle,
+  .merge-data-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    font-size: 0.875rem;
+
+    input[type='checkbox'] {
+      width: 16px;
+      height: 16px;
+      cursor: pointer;
+    }
+  }
+
+  .warning {
+    margin-top: 1rem;
+    padding: 0.75rem;
+    background: var(--theme-warning-100);
+    border: 1px solid var(--theme-warning-500);
+    border-radius: 4px;
+    font-size: 0.875rem;
+    color: var(--theme-warning-800);
+  }
+}

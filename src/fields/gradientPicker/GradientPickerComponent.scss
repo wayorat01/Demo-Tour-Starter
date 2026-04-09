@@ -1,0 +1,327 @@
+/* Gradient Picker Field — Admin UI */
+
+.gp-field {
+  margin-bottom: 1rem;
+  width: 100%;
+  flex: 1 1 0%;
+  min-width: 0;
+}
+
+/* Trigger button */
+.gp-trigger {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid var(--theme-elevation-150, #ddd);
+  border-radius: 4px;
+  background: var(--theme-input-bg, #fff);
+  color: var(--theme-text, #333);
+  font-size: 14px;
+  cursor: pointer;
+  text-align: left;
+}
+
+.gp-trigger:hover {
+  border-color: var(--theme-elevation-300, #bbb);
+}
+
+.gp-preview-dot {
+  width: 32px;
+  height: 18px;
+  border-radius: 4px;
+  flex-shrink: 0;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.12);
+}
+
+.gp-label {
+  font-size: 13px;
+}
+
+.gp-placeholder {
+  color: var(--theme-elevation-400, #999);
+  font-size: 13px;
+}
+
+.gp-trigger-right {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.gp-clear {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  font-size: 11px;
+  color: var(--theme-elevation-500, #777);
+  background: var(--theme-elevation-100, #eee);
+  cursor: pointer;
+  transition: all 0.15s;
+
+  &:hover {
+    background: var(--theme-error-500, #e74c3c);
+    color: #fff;
+  }
+}
+
+.gp-arrow {
+  font-size: 10px;
+  color: var(--theme-elevation-400, #999);
+}
+
+/* Dropdown panel */
+.gp-dropdown {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  background: var(--theme-bg, #fff);
+  border: 1px solid var(--theme-elevation-150, #ddd);
+  border-radius: 6px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  z-index: 100;
+  padding: 8px;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+/* Section labels */
+.gp-section-label {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--theme-elevation-400, #999);
+  padding: 6px 4px 4px;
+  margin-top: 4px;
+
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+/* Preset grid */
+.gp-presets-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 4px;
+  margin-bottom: 4px;
+}
+
+.gp-preset-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 8px;
+  border: none;
+  border-radius: 4px;
+  background: transparent;
+  color: var(--theme-text, #333);
+  font-size: 12px;
+  cursor: pointer;
+  transition: background-color 0.1s;
+  text-align: left;
+
+  &:hover {
+    background-color: var(--theme-elevation-50, #f5f5f5);
+  }
+
+  &.active {
+    background-color: var(--theme-elevation-100, #eee);
+    font-weight: 600;
+  }
+}
+
+.gp-preset-swatch {
+  width: 28px;
+  height: 16px;
+  border-radius: 3px;
+  flex-shrink: 0;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1);
+}
+
+.gp-preset-label {
+  font-size: 11px;
+  line-height: 1.2;
+}
+
+/* Custom gradient button */
+.gp-custom-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+  padding: 8px 10px;
+  border: none;
+  border-top: 1px solid var(--theme-elevation-100, #eee);
+  margin-top: 6px;
+  border-radius: 0 0 4px 4px;
+  background: transparent;
+  color: var(--theme-text, #333);
+  font-size: 13px;
+  cursor: pointer;
+  transition: background-color 0.1s;
+
+  &:hover {
+    background-color: var(--theme-elevation-50, #f5f5f5);
+  }
+
+  &.active {
+    background-color: var(--theme-elevation-100, #eee);
+    font-weight: 600;
+  }
+}
+
+/* Editor panel */
+.gp-editor {
+  padding: 12px;
+}
+
+.gp-editor-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.gp-back {
+  border: none;
+  background: none;
+  color: var(--theme-text, #555);
+  font-size: 13px;
+  cursor: pointer;
+  padding: 2px 6px;
+  border-radius: 4px;
+
+  &:hover {
+    background: var(--theme-elevation-50, #f5f5f5);
+  }
+}
+
+.gp-editor-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--theme-text, #333);
+}
+
+/* Live preview bar */
+.gp-live-preview {
+  width: 100%;
+  height: 40px;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1);
+}
+
+/* Color pickers row */
+.gp-color-row {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.gp-color-group {
+  flex: 1;
+  min-width: 0;
+}
+
+.gp-small-label {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--theme-elevation-500, #777);
+  margin-bottom: 4px;
+}
+
+.gp-color-input-wrap {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.gp-color-input {
+  width: 36px;
+  height: 32px;
+  border: 1px solid var(--theme-elevation-150, #ddd);
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 2px;
+  background: none;
+  flex-shrink: 0;
+}
+
+.gp-hex-input {
+  flex: 1;
+  min-width: 0;
+  padding: 5px 8px;
+  border: 1px solid var(--theme-elevation-150, #ddd);
+  border-radius: 4px;
+  font-size: 12px;
+  font-family: monospace;
+  color: var(--theme-text, #333);
+  background: var(--theme-input-bg, #fff);
+
+  &:focus {
+    outline: none;
+    border-color: var(--theme-success-500, #2cbcb6);
+  }
+}
+
+/* Direction grid */
+.gp-direction-group {
+  margin-bottom: 12px;
+}
+
+.gp-direction-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4px;
+}
+
+.gp-dir-btn {
+  padding: 6px 4px;
+  border: 1px solid var(--theme-elevation-150, #ddd);
+  border-radius: 4px;
+  background: transparent;
+  color: var(--theme-text, #333);
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.1s;
+  text-align: center;
+
+  &:hover {
+    background-color: var(--theme-elevation-50, #f5f5f5);
+    border-color: var(--theme-elevation-300, #bbb);
+  }
+
+  &.active {
+    background-color: var(--theme-success-500, #2cbcb6);
+    color: #fff;
+    border-color: var(--theme-success-500, #2cbcb6);
+  }
+}
+
+/* Apply button */
+.gp-apply {
+  width: 100%;
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+  background-color: var(--theme-success-500, #2cbcb6);
+  color: white;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.15s;
+
+  &:hover {
+    opacity: 0.9;
+  }
+}

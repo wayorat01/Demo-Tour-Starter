@@ -1,0 +1,14 @@
+/* Component Specific Styles for WowtourBannerSlide2 */
+.banner-slide2-card {
+  transition: all 0.3s ease;
+  box-shadow:
+    0 4px 6px -1px rgb(0 0 0 / 0.1),
+    0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+.banner-slide2-card:hover {
+  box-shadow:
+    0 10px 15px -3px rgb(0 0 0 / 0.1),
+    0 4px 6px -4px rgb(0 0 0 / 0.1);
+  transform: translateY(-2px);
+}

@@ -1,0 +1,94 @@
+/* /src/fields/NumberFormatField/numberFormatField.css */
+.field-type.number {
+  margin-bottom: 2rem;
+}
+
+.field-label {
+  display: flex;
+  margin-bottom: 4px;
+  font-size: 0.875rem;
+  line-height: normal;
+  color: var(--theme-elevation-800);
+}
+
+.field-label .required {
+  color: var(--theme-error-500);
+  margin-left: 0.25rem;
+}
+
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.number-format-input {
+  width: 100%;
+  padding: 10px 14px;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--theme-elevation-900);
+  background-color: var(--theme-elevation-50);
+  border: 1px solid var(--theme-elevation-200);
+  border-radius: 4px;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s,
+    background-color 0.2s;
+  font-family: inherit;
+  outline: none;
+}
+
+.number-format-input:hover {
+  border-color: var(--theme-elevation-400);
+}
+
+.number-format-input:focus {
+  border-color: var(--theme-elevation-900);
+  background-color: var(--theme-elevation-0);
+  box-shadow: 0 0 0 1px var(--theme-elevation-900);
+}
+
+.number-format-input::placeholder {
+  color: var(--theme-elevation-400);
+}
+
+/* Error State */
+.field-type.number.error .number-format-input {
+  border-color: var(--theme-error-500);
+  background-color: var(--theme-error-50);
+}
+
+.field-type.number.error .number-format-input:focus {
+  box-shadow: 0 0 0 1px var(--theme-error-500);
+}
+
+.field-error {
+  margin-top: 4px;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: var(--theme-error-500);
+}
+
+.field-description {
+  margin-top: 4px;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: var(--theme-elevation-500);
+}
+
+html[data-theme='dark'] .number-format-input {
+  background-color: var(--theme-elevation-100);
+  border-color: var(--theme-elevation-200);
+  color: var(--theme-elevation-900);
+}
+
+html[data-theme='dark'] .number-format-input:hover {
+  border-color: var(--theme-elevation-400);
+}
+
+html[data-theme='dark'] .number-format-input:focus {
+  border-color: var(--theme-elevation-800);
+  background-color: var(--theme-elevation-0);
+  box-shadow: 0 0 0 1px var(--theme-elevation-800);
+}

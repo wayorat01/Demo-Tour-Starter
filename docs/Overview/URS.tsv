@@ -1,0 +1,17 @@
+URS (User Requirement Specification) - User Story 							
+ตารางนี้เชื่อมโยงจาก Brief Mapping สู่ User Story พร้อมระบุ Functional Requirement							
+Module	Brief ID	CS Case ID	Feature	Actor	Functional  Requirement	Status	Note
+System Admin	BM-01	CS-SYS-001	CI/CD DevOps	Administrator	ระบบทำการ Build & Deploy โค้ด Antigravity + Payload ไปยัง Server อัตโนมัติเมื่อมีการอัปเดตโค้ดบน GitHub	To do	ใช้ GitHub Actions ช่วยจัดการเพื่อความรวดเร็ว
+System Admin	BM-02	CS-SYS-002	Package & Quota Management	Administrator	สร้างและกำหนดแพ็กเกจ (Starter Budget, Starter, Core Budget, Core, Plus) โดยจำกัดโควต้า Info Page (3, 5, 8, 15 หน้า) และ ทัวร์ดันขาย (1, 3, 5 รายการ)	To do	โควต้าเพจไม่นับรวมหน้า Home และหน้าเกี่ยวกับเรา (About Us)
+System Admin	BM-10	CS-SEC-001	Security & Logging	Administrator, End-User	มี Cookie Consent บน Frontend, เข้ารหัสข้อมูลลูกค้าใน Database และเก็บ Internal Log ทุก Action ของ Admin	To do	รองรับ PDPA มาตรฐาน
+Design and Page Structure	BM-03	CS-UI-001	Home Page Template Selection	Admin(Agent)	ระบบบังคับใช้ Template 1 แบบ สำหรับแพ็กเกจ Budget และเปิดให้ประกอบ Design Block ได้สำหรับแพ็กเกจ ปกติ/Plus	To do	Block Design ทำงานผ่าน Payload CMS Blocks
+Design and Page Structure	BM-09	CS-FRT-002	Dynamic Pages & Auto-hide	End-User	แสดงหน้า Listing Page (บัตรเข้าชม, เรือสำราญ, รถเช่า) และหน้า ทัวร์โปรโมชั่น/Hot Deal, ตั๋วเครื่องบิน(iFrame) ตามสิทธิ์แพ็กเกจ	To do	หาก API ไม่มีสินค้าในหมวดหมู่นั้น ระบบจะ Auto-hide เมนูออกจาก Frontend ทันที
+Design and Page Structure	BM-09	CS-FRT-003	Visa Page Management	Admin(Agent)	(เฉพาะ Plus) จัดการหน้าวีซ่า ใส่ราคา และอัปโหลดไฟล์ให้ลูกค้าดาวน์โหลดได้	To do	ไฟล์เก็บใน Media Collection ของ Payload CMS
+Performance	BM-04	CS-PERF-001	Core Web Vitals Optimization	End-User	หน้าเว็บโหลดเร็ว คะแนน PageSpeed > 70% และมีระบบ Invalidate Cache อัตโนมัติเมื่อข้อมูลมีการเปลี่ยนแปลง	To do	ต้องไม่มีปัญหาผู้ใช้กดเข้าเว็บแล้วเห็นข้อมูลเก่า
+Sync Data API	BM-05	CS-API-001	Multi-Tenant API Configuration	Admin(Agent)	สามารถตั้งค่า API End Point และ API Key ในหลังบ้านได้ด้วยตนเอง ระบบจะทำการ Sync Data ทัวร์เข้ามาเก็บในระบบ	To do	เป็น Background Job ไม่ทำให้เครื่องเซิร์ฟเวอร์หลักหน่วง
+API Data Mapping	BM-06	CS-FRT-001	Dynamic Search Box: Starter / Starter Budget	End-User	แสดงฟิลด์: ประเทศ, คำค้นหา (รหัส/โปรแกรม/คีย์เวิร์ด), เดือน, วันที่ไปกลับ, Wholesale	To do	ดึงตัวเลือก (Options) จากข้อมูลที่มีในระบบ
+API Data Mapping	BM-06	CS-FRT-004	Dynamic Search Box: Core / Core Budget	End-User	แสดงฟิลด์ทั้งหมดของ Starter + เพิ่มฟิลด์: สายการบิน, ช่วงราคา	To do	ดึงตัวเลือกจากข้อมูลที่มีในระบบ
+API Data Mapping	BM-06	CS-FRT-005	Dynamic Search Box: Plus	End-User	แสดงฟิลด์ทั้งหมดของ Core + เพิ่มฟิลด์: เมือง, ทัวร์เทศกาล	To do	ดึงตัวเลือกจากข้อมูลที่มีในระบบ
+Website Management	BM-07	CS-MGT-001	Manual Product & Display Toggle	Admin(Agent)	(เฉพาะแพ็กเกจ ปกติ/Plus) สามารถสร้างสินค้าทัวร์แบบ Manual ได้เอง และสามารถเปิด/ปิดการแสดงผลของทัวร์บนหน้าเว็บได้	To do	เมื่อเปิด/ปิด ต้องสั่งล้าง Cache หน้านั้นๆ ด้วย
+Booking	BM-08	CS-BKG-001	Lead Generation (Budget Packages)	End-User	(สำหรับ Starter Budget, Core Budget) ปุ่ม Action ในหน้าทัวร์จะเป็นการลิงก์ไปติดต่อผ่าน LINE หรือโทรศัพท์ ไม่มีตะกร้าจอง	To do	ต้องมีช่องให้ Admin ใส่เบอร์/ลิงก์ LINE
+Booking	BM-08	CS-BKG-002	Booking System (Normal/Plus Packages)	End-User, Admin(Agent)	End-User สามารถกดจองและกรอกข้อมูลได้, Admin สามารถเข้ามาดูและเปลี่ยน Status การจองในระบบหลังบ้านได้	To do	ไม่ใช้ PNR Code. (หมายเหตุ: การออก Invoice/Receipt จะให้ Agent ไปจัดการต่อที่แพลตฟอร์ม Tourprox)

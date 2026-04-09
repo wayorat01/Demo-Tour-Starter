@@ -1,0 +1,23 @@
+import payload from 'payload';
+import config from './src/payload.config';
+
+const check = async () => {
+    await payload.init({
+        config,
+        local: true,
+    });
+
+    const pages = await payload.find({
+        collection: 'pages',
+        limit: 100,
+    });
+
+    console.log("Pages available:");
+    pages.docs.forEach(doc => {
+        console.log(`- ${doc.title || doc.slug} (ID: ${doc.id})`);
+    });
+
+    process.exit(0);
+};
+
+check();

@@ -1,0 +1,12 @@
+Brief Mapping	ตารางแจกแจงรายละเอียด Task งาน เพื่อระบุผู้รับผิดชอบ, Module, Actor และเชื่อมโยงไปยัง URS					
+Brief ID	รายละเอียด	Task Owner	Module	Actor	Platform	CS Case Space ID
+BM-01	ตั้งค่าโครงสร้าง GitHub Repository, CI/CD Pipeline และการ Deploy  แบบ SaaS	DEV	System Admin	Administrator	Platform Backoffice	CS-SYS-001
+BM-02	พัฒนาระบบ Multi-Tenant สำหรับกั้นข้อมูลและจัดการ Package  Management (โควต้าต่างๆ)	DEV	System Admin	Administrator	Platform Backoffice	CS-SYS-002
+BM-03	ออกแบบ UI และพัฒนาโครงสร้าง Template หน้า Home  (Fix & Block Design) และ Info Page	UXUI, DEV	Design and Page Structure	End-User, Admin(Agent)	Front End, Platform Backoffice	CS-UI-001
+BM-04	พัฒนาระบบ Frontend Performance (Next.js, Image Optimization,  Cache Strategy)	DEV	Performance	End-User	Front End	CS-PERF-001
+BM-05	พัฒนาระบบ API Sync ดึงข้อมูลทัวร์จาก PM (รองรับ API End Point/Key รายบุคคล)	DEV	Sync Data API	Administrator, Admin(Agent)	Platform Backoffice	CS-API-001
+BM-06	พัฒนากล่องค้นหาทัวร์แบบ Dynamic (ปรับ Filter ตามแพ็กเกจ)	UXUI, DEV	API Data Mapping	End-User	Front End	CS-FRT-001
+BM-07	ระบบจัดการสินค้าสร้างเอง (Manual), เปิด/ปิดการแสดงผลทัวร์ และ ทัวร์ดันขาย	DEV	Website Management	Admin(Agent)	Platform Backoffice	CS-MGT-001
+BM-08	ระบบการจอง (Booking), การจัดการ Status และ Lead Contact (LINE/Call)  สำหรับ Budget	UXUI, DEV	Booking	End-User, Admin(Agent)	Front End, Platform Backoffice, Email	CS-BKG-001
+BM-09	ระบบ Dynamic Page (Auto-hide Menu) และ Visa Page พร้อมปุ่มดาวน์โหลด	UXUI, DEV	Design and Page Structure	End-User, Admin(Agent)	Front End, Platform Backoffice	CS-FRT-002
+BM-10	ระบบความปลอดภัย: PDPA, Cookie Consent, Data Encryption และ  Internal Log	UXUI, DEV	System Admin	End-User, Administrator	Front End, Platform Backoffice	CS-SEC-001

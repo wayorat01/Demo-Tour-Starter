@@ -1,0 +1,246 @@
+/* Color Select Field — Custom Dropdown with Swatches */
+
+.color-select-field {
+  margin-bottom: 1rem;
+  width: 100%;
+  flex: 1 1 0%;
+  min-width: 0;
+}
+
+/* Dropdown wrapper */
+.cs-dropdown {
+  position: relative;
+  width: 100%;
+}
+
+/* Trigger button */
+.cs-trigger {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid var(--theme-elevation-150, #ddd);
+  border-radius: 4px;
+  background: var(--theme-input-bg, #fff);
+  color: var(--theme-text, #333);
+  font-size: 14px;
+  cursor: pointer;
+  text-align: left;
+}
+
+.cs-trigger:hover {
+  border-color: var(--theme-elevation-300, #bbb);
+}
+
+.cs-trigger:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.cs-placeholder {
+  color: var(--theme-elevation-400, #999);
+}
+
+.cs-trigger-right {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.cs-clear {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  font-size: 11px;
+  line-height: 1;
+  color: var(--theme-elevation-500, #777);
+  background: var(--theme-elevation-100, #eee);
+  cursor: pointer;
+  transition: all 0.15s;
+
+  &:hover {
+    background: var(--theme-error-500, #e74c3c);
+    color: #fff;
+  }
+}
+
+.cs-arrow {
+  font-size: 10px;
+  color: var(--theme-elevation-400, #999);
+}
+
+/* Color dot swatch */
+.cs-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.12);
+}
+
+.cs-dot-empty {
+  background-color: transparent !important;
+  border: 1.5px dashed #999;
+  box-shadow: none;
+}
+
+.cs-dot-wide {
+  width: 32px;
+  border-radius: 4px;
+}
+
+.cs-label {
+  font-size: 13px;
+}
+
+/* Dropdown list */
+.cs-list {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  max-height: 280px;
+  overflow-y: auto;
+  background: var(--theme-bg, #fff);
+  border: 1px solid var(--theme-elevation-150, #ddd);
+  border-radius: 6px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  z-index: 100;
+  padding: 4px;
+}
+
+/* Option row */
+.cs-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 6px 10px;
+  border: none;
+  border-radius: 4px;
+  background: transparent;
+  color: var(--theme-text, #333);
+  font-size: 13px;
+  cursor: pointer;
+  text-align: left;
+  transition: background-color 0.1s ease;
+}
+
+.cs-option:hover {
+  background-color: var(--theme-elevation-50, #f5f5f5);
+}
+
+.cs-option.active {
+  background-color: var(--theme-elevation-100, #eee);
+  font-weight: 600;
+}
+
+/* Custom option separator */
+.cs-option-custom {
+  border-top: 1px solid var(--theme-elevation-100, #eee);
+  margin-top: 4px;
+  padding-top: 8px;
+}
+
+/* Custom color picker panel */
+.cs-picker {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  background: var(--theme-bg, #fff);
+  border: 1px solid var(--theme-elevation-150, #ddd);
+  border-radius: 6px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  z-index: 100;
+  padding: 12px;
+}
+
+.cs-picker-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.cs-picker-back {
+  border: none;
+  background: none;
+  color: var(--theme-text, #555);
+  font-size: 13px;
+  cursor: pointer;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.cs-picker-back:hover {
+  background: var(--theme-elevation-50, #f5f5f5);
+}
+
+.cs-picker-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--theme-text, #333);
+}
+
+.cs-picker-body {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.cs-color-input {
+  width: 48px;
+  height: 36px;
+  border: 1px solid var(--theme-elevation-150, #ddd);
+  border-radius: 6px;
+  cursor: pointer;
+  padding: 2px;
+  background: none;
+}
+
+.cs-hex-input {
+  flex: 1;
+  padding: 6px 10px;
+  border: 1px solid var(--theme-elevation-150, #ddd);
+  border-radius: 4px;
+  font-size: 14px;
+  font-family: monospace;
+  color: var(--theme-text, #333);
+  background: var(--theme-input-bg, #fff);
+}
+
+.cs-hex-input:focus {
+  outline: none;
+  border-color: var(--theme-success-500, #2cbcb6);
+}
+
+.cs-dot-preview {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+}
+
+.cs-picker-done {
+  width: 100%;
+  padding: 6px;
+  border: none;
+  border-radius: 4px;
+  background-color: var(--theme-success-500, #2cbcb6);
+  color: white;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+
+.cs-picker-done:hover {
+  opacity: 0.9;
+}

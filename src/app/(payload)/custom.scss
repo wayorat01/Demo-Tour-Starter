@@ -1,0 +1,166 @@
+// ============================================
+// Custom Payload Admin Overrides
+// ============================================
+
+// Make the Rich Text editor area in blocks display wider
+// by reducing excessive nested padding from collapsible wrappers
+
+// Reduce padding inside tabs content wrap (Content tab area)
+.tabs-field__content-wrap {
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+}
+
+// Reduce padding inside block rows (e.g. Static Content block)
+.blocks-field__row {
+  > .collapsible__content {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
+}
+
+// Reduce padding inside array field rows (e.g. Article Sections)
+.array-field__row {
+  > .collapsible__content {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
+}
+
+// Ensure rich text editor uses all available space
+.rich-text-lexical {
+  .editor-scroller {
+    max-width: 100%;
+  }
+
+  .ContentEditable__root {
+    max-width: 100%;
+  }
+}
+
+// ============================================
+// Lexical Table Upload Preview — show at natural size
+// ============================================
+// Make upload images inside table cells display at their natural
+// size instead of being stretched to fill the entire cell.
+
+.LexicalEditorTheme__tableCell,
+.LexicalEditorTheme__tableCellHeader {
+  .lexical-upload {
+    .lexical-upload__card {
+      .lexical-upload__media {
+        // Let the media container shrink to content
+        width: auto !important;
+        height: auto !important;
+        max-width: 100%;
+
+        .thumbnail {
+          width: auto !important;
+          height: auto !important;
+          max-width: 100%;
+          aspect-ratio: unset !important;
+
+          img {
+            width: auto !important;
+            height: auto !important;
+            max-width: 100%;
+            max-height: 200px;
+            object-fit: contain !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+// ============================================
+// Page Config — Larger section headings
+// ============================================
+// Make top-level group labels on the Page Config global
+// appear larger (22px bold) so they are easy to scan.
+// Uses .group-field--top-level to target only direct group fields.
+
+.global-edit--page-config {
+  .group-field--top-level {
+    > .group-field__header h3.group-field__title {
+      font-size: 22px !important;
+      font-weight: 700 !important;
+    }
+  }
+}
+
+// ============================================
+// Compact Group Labels (for Roles config)
+// ============================================
+.compact-group-label {
+  // Reset all borders and margins that cause bleeding
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  padding: 12px 10px !important;
+  border-radius: 0 !important;
+  border: none !important;
+  border-bottom: 1px solid var(--theme-elevation-100) !important;
+  background-color: transparent !important;
+
+  &:nth-child(even),
+  &:nth-child(odd) {
+    background-color: transparent !important;
+  }
+
+  > .group-field__wrap {
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+
+    // Create actual minimal inline row layout
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 30px !important; // space between header and checkboxes
+  }
+
+  // Target any heading inside the header
+  header {
+    border: none !important;
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+    width: 250px !important; // fixed width for headings so checkboxes align perfectly
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    .group-field__title {
+      font-size: 15px !important;
+      font-weight: 500 !important;
+      margin: 0 !important;
+      line-height: 1.2 !important;
+      color: var(--theme-elevation-800) !important;
+    }
+
+    // Hide descriptions inside header if any, to keep it minimal
+    .field-description {
+      display: none !important;
+    }
+  }
+
+  // Checkbox spacing
+  .render-fields,
+  .row-field {
+    margin: 0 !important;
+    padding: 0 !important;
+    column-gap: 20px !important;
+    flex-grow: 1 !important;
+    align-items: center !important;
+  }
+
+  // Checkbox inputs slightly softer
+  .checkbox-input {
+    margin-bottom: 0 !important;
+  }
+}

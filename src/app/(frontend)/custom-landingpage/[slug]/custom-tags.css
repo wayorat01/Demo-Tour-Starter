@@ -1,0 +1,109 @@
+/* ============================================
+ * Custom Tags Section — custom-landingpage
+ * ============================================ */
+
+/* Wrapper */
+.custom-tags-wrap {
+  position: relative;
+}
+
+/* Scrollable container */
+.custom-tags-container {
+  display: flex;
+  gap: 0.625rem;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding: 1.25rem 0.25rem;
+  cursor: grab;
+}
+
+.custom-tags-container::-webkit-scrollbar {
+  display: none;
+}
+
+.custom-tags-container:active {
+  cursor: grabbing;
+}
+
+.custom-tags-container:not(.custom-tags-slider) {
+  flex-wrap: wrap;
+}
+
+/* Arrow buttons */
+.custom-tags__arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: var(--background);
+  border: 1px solid var(--border);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--muted-foreground);
+  transition: all 0.2s ease;
+}
+
+.custom-tags__arrow:hover {
+  background: var(--primary);
+  color: var(--primary-foreground);
+  border-color: var(--primary);
+}
+
+.custom-tags__arrow--left {
+  left: 0;
+}
+
+.custom-tags__arrow--right {
+  right: 0;
+}
+
+/* Fade edges */
+.custom-tags__fade {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 4rem;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.custom-tags__fade--left {
+  left: 0;
+  background: linear-gradient(to right, var(--background) 50%, transparent);
+}
+
+.custom-tags__fade--right {
+  right: 0;
+  background: linear-gradient(to left, var(--background) 50%, transparent);
+}
+
+/* Tag button */
+.custom-tag-btn {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  border-radius: 9999px;
+  padding: 0.5rem 1.25rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  background: var(--primary);
+  color: var(--primary-foreground);
+  border: none;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  user-select: none;
+}
+
+.custom-tag-btn:hover {
+  filter: brightness(1.15);
+  opacity: 0.9;
+}

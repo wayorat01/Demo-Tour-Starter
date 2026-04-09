@@ -1,0 +1,413 @@
+/* ============================================
+   TourSidebarFilter — CSS
+   ============================================ */
+
+/* Sidebar Container */
+.tour-sidebar-filter {
+  width: 280px;
+  min-width: 280px;
+  max-height: calc(100vh - 100px);
+  overflow-y: auto;
+  background: var(--background);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  position: sticky;
+  top: 100px;
+}
+
+.tour-sidebar-filter::-webkit-scrollbar {
+  width: 4px;
+}
+
+.tour-sidebar-filter::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+
+/* Header */
+.tour-sidebar__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+.tour-sidebar__title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--foreground);
+}
+
+.tour-sidebar__clear-btn {
+  font-size: 13px;
+  color: var(--primary);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: opacity 0.2s;
+}
+
+.tour-sidebar__clear-btn:hover {
+  opacity: 0.7;
+}
+
+/* Section */
+.tour-sidebar__section {
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+.tour-sidebar__section:last-child {
+  border-bottom: none;
+}
+
+.tour-sidebar__section-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--foreground);
+  margin-bottom: 12px;
+}
+
+/* Checkbox List */
+.tour-sidebar__checkbox-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-height: 280px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.tour-sidebar__checkbox-list::-webkit-scrollbar {
+  width: 4px;
+}
+
+.tour-sidebar__checkbox-list::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+
+.tour-sidebar__checkbox-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.tour-sidebar__checkbox-item label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  cursor: pointer;
+  font-size: 14px;
+  color: var(--foreground);
+}
+
+.tour-sidebar__checkbox-item input[type='checkbox'] {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--primary);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.tour-sidebar__count {
+  font-size: 13px;
+  color: var(--muted-foreground);
+  white-space: nowrap;
+}
+
+/* Show more / less */
+.tour-sidebar__show-more {
+  margin-top: 4px;
+  font-size: 13px;
+  color: var(--primary);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px 0;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: opacity 0.2s;
+}
+
+.tour-sidebar__show-more:hover {
+  opacity: 0.7;
+}
+
+/* Search Input (for airlines) */
+.tour-sidebar__search {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  margin-bottom: 12px;
+  background: var(--background);
+}
+
+.tour-sidebar__search input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  background: transparent;
+  color: var(--foreground);
+}
+
+.tour-sidebar__search input::placeholder {
+  color: var(--muted-foreground);
+}
+
+.tour-sidebar__search svg {
+  width: 16px;
+  height: 16px;
+  color: var(--muted-foreground);
+  flex-shrink: 0;
+}
+
+/* Airline item with logo */
+.tour-sidebar__airline-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tour-sidebar__airline-logo {
+  width: 24px;
+  height: 18px;
+  object-fit: contain;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+/* Star Rating */
+.tour-sidebar__stars {
+  display: flex;
+  align-items: center;
+  gap: 1px;
+  color: #f59e0b;
+  font-size: 16px;
+}
+
+/* Price Range Slider */
+.tour-sidebar__price-range {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.tour-sidebar__price-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: var(--foreground);
+  font-weight: 500;
+}
+
+.tour-sidebar__price-slider-track {
+  position: relative;
+  height: 6px;
+  border-radius: 3px;
+  background: var(--border);
+}
+
+.tour-sidebar__price-slider-range {
+  position: absolute;
+  height: 100%;
+  border-radius: 3px;
+  background: var(--primary);
+}
+
+.tour-sidebar__price-slider-thumb {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: white;
+  border: 3px solid var(--primary);
+  cursor: grab;
+  z-index: 2;
+  touch-action: none;
+}
+
+.tour-sidebar__price-slider-thumb:active {
+  cursor: grabbing;
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+/* ============================================
+   Mobile Drawer
+   ============================================ */
+
+.tour-sidebar__mobile-trigger {
+  display: none;
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 40;
+  padding: 12px 20px;
+  background: var(--primary);
+  color: var(--primary-foreground);
+  border: none;
+  border-radius: 24px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  transition: all 0.2s;
+  align-items: center;
+  gap: 8px;
+}
+
+.tour-sidebar__mobile-trigger:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+}
+
+.tour-sidebar__mobile-trigger svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* Overlay */
+.tour-sidebar__overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 50;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.tour-sidebar__overlay--active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Drawer */
+.tour-sidebar__drawer {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 320px;
+  max-width: 85vw;
+  background: var(--background);
+  z-index: 51;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  overflow-y: auto;
+  pointer-events: none;
+}
+
+.tour-sidebar__drawer--active {
+  transform: translateX(0);
+  pointer-events: auto;
+}
+
+.tour-sidebar__drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  background: var(--background);
+  z-index: 1;
+}
+
+.tour-sidebar__drawer-close {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--background);
+  cursor: pointer;
+  color: var(--foreground);
+  transition: all 0.2s;
+}
+
+.tour-sidebar__drawer-close:hover {
+  background: var(--accent);
+}
+
+.tour-sidebar__drawer-footer {
+  position: sticky;
+  bottom: 0;
+  padding: 16px 20px;
+  background: var(--background);
+  border-top: 1px solid var(--border);
+}
+
+.tour-sidebar__drawer-apply-btn {
+  width: 100%;
+  padding: 12px;
+  background: var(--primary);
+  color: var(--primary-foreground);
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.tour-sidebar__drawer-apply-btn:hover {
+  opacity: 0.9;
+}
+
+/* ============================================
+   Responsive
+   ============================================ */
+
+@media (max-width: 1023px) {
+  .tour-sidebar-filter {
+    display: none;
+  }
+
+  .tour-sidebar__mobile-trigger {
+    display: flex;
+  }
+
+  .tour-sidebar__overlay {
+    display: block;
+  }
+
+  .tour-sidebar__drawer {
+    display: block;
+  }
+}
+
+/* Layout helper: sidebar + grid */
+.tour-listing-layout {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+.tour-listing-layout__content {
+  flex: 1;
+  min-width: 0;
+}
+
+@media (max-width: 1023px) {
+  .tour-listing-layout {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,341 @@
+/* ============================================
+   WowTour Blog Card 1 — CSS
+   ใช้ CSS Variables จาก Theme Config
+   ============================================ */
+
+/* Section Header */
+.blog-card-section {
+  padding: 60px 0;
+  font-family: var(--font-body, var(--font-sans));
+}
+
+.blog-card-header {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+@media (min-width: 768px) {
+  .blog-card-header {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+}
+
+.blog-card-header__left {
+  flex: 1;
+}
+
+.blog-card-header__title-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.blog-card-header__icon {
+  font-size: 1.75rem;
+  line-height: 1;
+}
+
+.blog-card-header__title {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--foreground);
+  margin: 0;
+  line-height: 1.3;
+}
+
+.blog-card-header__desc {
+  font-size: 0.9rem;
+  color: var(--muted-foreground);
+  margin: 8px 0 0;
+  line-height: 1.5;
+}
+
+.blog-card-header__right {
+  flex-shrink: 0;
+}
+
+.blog-card-viewall {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 20px;
+  background: var(--btn-bg);
+  color: var(--btn-text);
+  border: none;
+  border-radius: var(--btn-radius, 8px);
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.blog-card-viewall:hover {
+  background: var(--btn-bg-hover);
+  color: var(--btn-text-hover);
+  transform: translateY(-1px);
+}
+
+.blog-card-viewall svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* Carousel / Slider Container */
+.blog-card-carousel {
+  position: relative;
+}
+
+.blog-card-carousel__viewport {
+  overflow: hidden;
+}
+
+.blog-card-carousel__container {
+  display: flex;
+  gap: 20px;
+  touch-action: pan-y pinch-zoom;
+}
+
+.blog-card-carousel__slide {
+  flex: 0 0 calc(50% - 10px);
+  min-width: 0;
+}
+
+@media (min-width: 640px) {
+  .blog-card-carousel__slide {
+    flex: 0 0 calc(50% - 10px);
+  }
+}
+
+@media (min-width: 1024px) {
+  .blog-card-carousel__slide {
+    flex: 0 0 calc(25% - 15px);
+  }
+}
+
+/* Arrow Buttons — positioned at sides */
+.blog-card-carousel__btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 36px;
+  height: 36px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: var(--background);
+  color: var(--primary);
+  border: 1px solid color-mix(in srgb, var(--primary) 20%, transparent);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+@media (min-width: 768px) {
+  .blog-card-carousel__btn {
+    display: flex;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.blog-card-carousel__btn--prev {
+  left: -12px;
+}
+
+.blog-card-carousel__btn--next {
+  right: -12px;
+}
+
+@media (min-width: 1280px) {
+  .blog-card-carousel__btn--prev {
+    left: -20px;
+  }
+
+  .blog-card-carousel__btn--next {
+    right: -20px;
+  }
+}
+
+.blog-card-carousel__btn:hover:not(:disabled) {
+  background: var(--primary);
+  color: var(--primary-foreground);
+  border-color: var(--primary);
+}
+
+.blog-card-carousel__btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.blog-card-carousel__btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* Dots — centered below cards */
+.blog-card-carousel__dots {
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.blog-card-carousel__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: none;
+  padding: 0;
+  background: var(--border);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.blog-card-carousel__dot:hover {
+  background: var(--muted-foreground);
+}
+
+.blog-card-carousel__dot--active {
+  width: 24px;
+  border-radius: 4px;
+  background: var(--primary);
+}
+
+/* ---- Blog Post Card ---- */
+.blog-post-card {
+  background: var(--card);
+  color: var(--card-foreground);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 12px -2px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition:
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
+}
+
+.blog-post-card:hover {
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 8px 24px -6px;
+  transform: translateY(-3px);
+}
+
+/* Card Image */
+.blog-post-card__image-wrapper {
+  position: relative;
+  width: 100%;
+  padding-top: 75%;
+  /* 4:3 ratio */
+  overflow: hidden;
+}
+
+.blog-post-card__image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.blog-post-card:hover .blog-post-card__image {
+  transform: scale(1.05);
+}
+
+/* Card Content */
+.blog-post-card__content {
+  padding: 16px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.blog-post-card__date {
+  font-size: 0.75rem;
+  color: var(--muted-foreground);
+  font-weight: 400;
+}
+
+.blog-post-card__title {
+  font-size: 0.95rem;
+  font-weight: 500 !important;
+  color: var(--foreground);
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .blog-post-card__title {
+    font-size: 1rem;
+  }
+}
+
+.blog-post-card__excerpt {
+  font-size: 0.8rem;
+  color: var(--muted-foreground);
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin: 0;
+  flex: 1;
+}
+
+@media (min-width: 768px) {
+  .blog-post-card__excerpt {
+    font-size: 0.85rem;
+  }
+}
+
+/* Read More Button */
+.blog-post-card__readmore {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 16px;
+  background: transparent;
+  color: var(--primary);
+  border: 1px solid var(--primary);
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  align-self: flex-start;
+  margin-top: auto;
+}
+
+.blog-post-card__readmore:hover {
+  background: var(--primary);
+  color: var(--primary-foreground);
+}
+
+.blog-post-card__readmore svg {
+  width: 14px;
+  height: 14px;
+  transition: transform 0.2s ease;
+}
+
+.blog-post-card__readmore:hover svg {
+  transform: translateX(3px);
+}

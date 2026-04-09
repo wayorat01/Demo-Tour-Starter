@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>Email Preview — Customer + Company</title>
+  <style>
+    body { margin:0; background:#e2e8f0; font-family:system-ui,sans-serif; }
+    .tabs { display:flex; gap:0; position:sticky; top:0; z-index:10; background:#1e293b; padding:8px 24px 0; }
+    .tab { padding:12px 32px; cursor:pointer; color:#94a3b8; font-weight:600; border-radius:8px 8px 0 0; transition:all 0.2s; font-size:15px; }
+    .tab:hover { color:#fff; background:rgba(255,255,255,0.05); }
+    .tab.active { background:#e2e8f0; color:#1e293b; }
+    .panel { display:none; padding:24px; }
+    .panel.active { display:block; }
+    .badge { display:inline-block; padding:2px 10px; border-radius:999px; font-size:12px; font-weight:700; margin-left:8px; }
+    .badge-user { background:#dbeafe; color:#1e40af; }
+    .badge-co { background:#fef3c7; color:#92400e; }
+  </style>
+</head>
+<body>
+  <div class="tabs">
+    <div class="tab active" onclick="show('customer',this)">📧 Email ลูกค้า (End-user) <span class="badge badge-user">Customer</span></div>
+    <div class="tab" onclick="show('company',this)">📧 Email บริษัท (Agent) <span class="badge badge-co">Company</span></div>
+  </div>
+  <div id="customer" class="panel active">
+    
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <title>ยืนยันการจองทัวร์ - BK-20260404-0001</title>
+</head>
+<body style="margin:0;padding:0;background:#f1f5f9;font-family:'Kanit','Segoe UI','Helvetica Neue',Arial,sans-serif;">
+  <table width="100%" cellpadding="0" cellspacing="0" style="background:#f1f5f9;padding:32px 16px;">
+    <tr>
+      <td align="center">
+        <table width="640" cellpadding="0" cellspacing="0" style="background:#ffffff;border-radius:16px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,0.08);">
+          
+          <!-- Header with Primary Color -->
+          <tr>
+            <td style="background:#1e40af;padding:32px 40px;text-align:center;">
+              <h1 style="color:#ffffff;font-size:24px;margin:0 0 8px;font-family:'Kanit',sans-serif;">WOW. WE on WEB</h1>
+              <p style="color:rgba(255,255,255,0.85);font-size:14px;margin:0;font-family:'Kanit',sans-serif;">ยืนยันการจองทัวร์</p>
+            </td>
+          </tr>
+
+          <!-- Logo -->
+          
+          <tr>
+            <td style="padding:24px 40px 0;text-align:center;">
+              <img src="https://placehold.co/200x64/00bcd4/ffffff?text=LOGO" alt="WOW. WE on WEB" style="max-height:64px;" />
+            </td>
+          </tr>
+          
+
+          <!-- PNR Code -->
+          <tr>
+            <td style="padding:32px 40px 16px;">
+              <table width="100%" cellpadding="0" cellspacing="0" style="background:linear-gradient(135deg,#eff6ff,#f0f9ff);border-radius:12px;border:1px solid #bfdbfe;">
+                <tr>
+                  <td style="padding:20px;text-align:center;">
+                    <p style="margin:0 0 4px;font-size:13px;color:#64748b;text-transform:uppercase;letter-spacing:1px;font-family:'Kanit',sans-serif;">รหัสจอง (PNR)</p>
+                    <p style="margin:0;font-size:28px;font-weight:800;color:#1e40af;letter-spacing:3px;font-family:'Kanit',sans-serif;">BK-20260404-0001</p>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- Tour Info -->
+          <tr>
+            <td style="padding:16px 40px;">
+              <h2 style="font-size:16px;color:#1e293b;margin:0 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0;font-family:'Kanit',sans-serif;">รายละเอียดทัวร์</h2>
+              <table width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  
+                  <td valign="top" style="width:160px;padding-right:20px;">
+                    <img src="https://placehold.co/320x320/1e40af/ffffff?text=TOUR+COVER" alt="ทัวร์ยุโรป อิตาลี สวิตเซอร์แลนด์ ฝรั่งเศส" width="160" height="160" style="display:block;width:160px;height:160px;object-fit:cover;border-radius:12px;background:#e2e8f0;" />
+                  </td>
+                  
+                  <td valign="top">
+                    <h3 style="font-size:18px;color:#1e293b;margin:0 0 12px;line-height:1.4;font-family:'Kanit',sans-serif;">ทัวร์ยุโรป อิตาลี สวิตเซอร์แลนด์ ฝรั่งเศส</h3>
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td style="padding:4px 0;font-size:14px;color:#64748b;width:90px;font-family:'Kanit',sans-serif;">รหัสทัวร์</td>
+                        <td style="padding:4px 0;font-size:14px;color:#1e293b;font-weight:600;font-family:'Kanit',sans-serif;">EU-ITALY-001</td>
+                      </tr>
+                      <tr>
+                        <td style="padding:4px 0;font-size:14px;color:#64748b;font-family:'Kanit',sans-serif;">ประเทศ</td>
+                        <td style="padding:4px 0;font-size:14px;color:#1e293b;font-weight:600;font-family:'Kanit',sans-serif;">อิตาลี</td>
+                      </tr>
+                      <tr>
+                        <td style="padding:4px 0;font-size:14px;color:#64748b;font-family:'Kanit',sans-serif;">สายการบิน</td>
+                        <td style="padding:4px 0;font-size:14px;color:#1e293b;font-weight:600;font-family:'Kanit',sans-serif;">Thai Airways (TG)</td>
+                      </tr>
+                      <tr>
+                        <td style="padding:4px 0;font-size:14px;color:#64748b;font-family:'Kanit',sans-serif;">วันเดินทาง</td>
+                        <td style="padding:4px 0;font-size:14px;color:#1e293b;font-weight:600;font-family:'Kanit',sans-serif;">15 เม.ย. 2569 - 22 เม.ย. 2569</td>
+                      </tr>
+                      <tr>
+                        <td style="padding:4px 0;font-size:14px;color:#64748b;font-family:'Kanit',sans-serif;">ระยะเวลา</td>
+                        <td style="padding:4px 0;font-size:14px;color:#1e293b;font-weight:600;font-family:'Kanit',sans-serif;">8 วัน 5 คืน</td>
+                      </tr>
+                      
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- Price Table -->
+          <tr>
+            <td style="padding:16px 40px;">
+              <h2 style="font-size:16px;color:#1e293b;margin:0 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0;font-family:'Kanit',sans-serif;">รายละเอียดราคา</h2>
+              <table width="100%" cellpadding="0" cellspacing="0" style="border-radius:12px;overflow:hidden;border:1px solid #e2e8f0;">
+                <thead>
+                  <tr style="background:#f8fafc;">
+                    <th style="padding:12px 16px;text-align:left;font-size:13px;color:#64748b;font-weight:600;">ประเภท</th>
+                    <th style="padding:12px 16px;text-align:center;font-size:13px;color:#64748b;font-weight:600;">ราคา/ท่าน</th>
+                    <th style="padding:12px 16px;text-align:center;font-size:13px;color:#64748b;font-weight:600;">จำนวน</th>
+                    <th style="padding:12px 16px;text-align:right;font-size:13px;color:#64748b;font-weight:600;">รวม</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  
+      <tr>
+        <td style="padding:12px 16px;border-bottom:1px solid #f0f0f0;font-size:14px;color:#334155;">ผู้ใหญ่ (พักห้องคู่)</td>
+        <td style="padding:12px 16px;border-bottom:1px solid #f0f0f0;text-align:center;font-size:14px;color:#334155;">59,900</td>
+        <td style="padding:12px 16px;border-bottom:1px solid #f0f0f0;text-align:center;font-size:14px;color:#334155;">2</td>
+        <td style="padding:12px 16px;border-bottom:1px solid #f0f0f0;text-align:right;font-size:14px;font-weight:600;color:#1e40af;">119,800 บาท</td>
+      </tr>
+    
+      <tr>
+        <td style="padding:12px 16px;border-bottom:1px solid #f0f0f0;font-size:14px;color:#334155;">เด็ก (2-20 ปี)</td>
+        <td style="padding:12px 16px;border-bottom:1px solid #f0f0f0;text-align:center;font-size:14px;color:#334155;">49,900</td>
+        <td style="padding:12px 16px;border-bottom:1px solid #f0f0f0;text-align:center;font-size:14px;color:#334155;">1</td>
+        <td style="padding:12px 16px;border-bottom:1px solid #f0f0f0;text-align:right;font-size:14px;font-weight:600;color:#1e40af;">49,900 บาท</td>
+      </tr>
+    
+                </tbody>
+              </table>
+            </td>
+          </tr>
+
+          <!-- Summary -->
+          <tr>
+            <td style="padding:16px 40px;">
+              <table width="100%" cellpadding="0" cellspacing="0" style="background:#f8fafc;border-radius:12px;padding:20px;border:1px solid #e2e8f0;">
+                <tr>
+                  <td style="padding:8px 20px;font-size:14px;color:#64748b;">ค่าธรรมเนียมการจอง</td>
+                  <td style="padding:8px 20px;text-align:right;font-size:14px;color:#16a34a;font-weight:600;">ฟรี</td>
+                </tr>
+                <tr>
+                  <td style="padding:8px 20px;font-size:14px;color:#64748b;">เงินมัดจำ (10000 บ./คน)</td>
+                  <td style="padding:8px 20px;text-align:right;font-size:14px;color:#334155;font-weight:600;">30,000 บาท</td>
+                </tr>
+                <tr>
+                  <td style="padding:8px 20px;font-size:14px;color:#64748b;">ชำระเงินก่อนวันที่</td>
+                  <td style="padding:8px 20px;text-align:right;font-size:14px;color:#dc2626;font-weight:600;">5 เม.ย. 2569</td>
+                </tr>
+                <tr>
+                  <td colspan="2" style="padding:4px 20px;"><hr style="border:none;border-top:1px solid #e2e8f0;" /></td>
+                </tr>
+                <tr>
+                  <td style="padding:12px 20px;font-size:18px;color:#1e293b;font-weight:700;font-family:'Kanit',sans-serif;">รวมสุทธิ</td>
+                  <td style="padding:12px 20px;text-align:right;font-size:22px;color:#1e40af;font-weight:800;font-family:'Kanit',sans-serif;">169,700 บาท</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- Customer Info -->
+          <tr>
+            <td style="padding:16px 40px;">
+              <h2 style="font-size:16px;color:#1e293b;margin:0 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0;font-family:'Kanit',sans-serif;">ข้อมูลผู้จอง</h2>
+              <table width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td style="padding:6px 0;font-size:14px;color:#64748b;width:120px;">ชื่อ-นามสกุล</td>
+                  <td style="padding:6px 0;font-size:14px;color:#1e293b;font-weight:600;">สมชาย ใจดี</td>
+                </tr>
+                <tr>
+                  <td style="padding:6px 0;font-size:14px;color:#64748b;">อีเมล</td>
+                  <td style="padding:6px 0;font-size:14px;color:#1e293b;">somchai@example.com</td>
+                </tr>
+                <tr>
+                  <td style="padding:6px 0;font-size:14px;color:#64748b;">เบอร์โทร</td>
+                  <td style="padding:6px 0;font-size:14px;color:#1e293b;">081-234-5678</td>
+                </tr>
+                <tr>
+                  <td style="padding:6px 0;font-size:14px;color:#64748b;">หมายเหตุ</td>
+                  <td style="padding:6px 0;font-size:14px;color:#1e293b;">ขออาหารฮาลาล</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- Terms and Conditions -->
+          
+          <tr>
+            <td style="padding:16px 40px; text-align:left;">
+              <div style="background:#fff7ed;border-left:4px solid #f97316;padding:16px;border-radius:0 8px 8px 0;margin-bottom:16px;">
+                <h3 style="font-size:15px;color:#9a3412;margin:0 0 8px;font-family:'Kanit',sans-serif;">
+                  เงื่อนไขการสำรองที่นั่งกับ WOW. WE on WEB
+                </h3>
+                <ul style="margin:0;padding-left:20px;font-size:13px;line-height:1.6;color:#431407;font-family:'Kanit',sans-serif;">
+                  <li style="margin-bottom:4px">กรุณารอการตอบกลับจากทางบริษัท เพื่อยืนยันที่นั่งและการชำระเงิน โดยบริษัทจะทำการส่งใบแจ้งการชำระเงินให้ท่าน ทางอีเมล (อีเมลผู้จอง) ของท่านอีกครั้ง</li>
+                  <li style="margin-bottom:4px">การสำรองที่นั่งจะสมบูรณ์เมื่อบริษัทฯ ได้รับการชำระเงินตามเงื่อนไขข้อตกลงเรียบร้อยแล้ว</li>
+                  <li style="margin-bottom:4px">กรุณาชำระเงินโดยโอนเข้าบัญชีตามรายละเอียดในเอกสารแจ้งการชำระเงินเท่านั้น บริษัทขอตัดสิทธิ์ หากไม่มีการชำระเงินตามข้อตกลง</li>
+                  <li>หากท่านไม่ได้รับอีเมลกรุณาติดต่อสายด่วนของบริษัท เพื่ออำนวยความสะดวกให้ท่าน</li>
+                </ul>
+              </div>
+            </td>
+          </tr>
+          
+
+          <!-- Footer -->
+          <tr>
+            <td style="background:#1e293b;padding:32px 40px;text-align:center;">
+              <p style="color:#94a3b8;font-size:13px;margin:0 0 8px;">WOW. WE on WEB</p>
+              <p style="color:#64748b;font-size:12px;margin:0 0 8px;">ใบอนุญาต ททท. เลขที่ 11/12345</p>
+              <p style="color:#64748b;font-size:12px;margin:0 0 8px;">589/98 อาคารชุดทาวเวอร์ 1 ออฟฟิศ ชั้นที่ 18 ถนน เทพรัตน แขวงบางนาเหนือ เขตบางนา กทม. 10260</p>
+              <p style="color:#64748b;font-size:12px;margin:0;">
+                📞 02-123-4567
+                 | 
+                ✉️ info@wowtour.com
+              </p>
+              <p style="color:#64748b;font-size:12px;margin:8px 0 0;"><a href="https://www.weon.website/" style="color:#60a5fa;">https://www.weon.website/</a></p>
+              <p style="color:#64748b;font-size:12px;margin:4px 0 0;">LINE: @weonweb</p>
+            </td>
+          </tr>
+
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
+
+  </div>
+  <div id="company" class="panel">
+    
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <title>แจ้งเตือนการจองทัวร์ใหม่ - BK-20260404-0001</title>
+</head>
+<body style="margin:0;padding:0;background:#f1f5f9;font-family:'Kanit','Segoe UI','Helvetica Neue',Arial,sans-serif;">
+  <table width="100%" cellpadding="0" cellspacing="0" style="background:#f1f5f9;padding:32px 16px;">
+    <tr>
+      <td align="center">
+        <table width="640" cellpadding="0" cellspacing="0" style="background:#ffffff;border-radius:16px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,0.08);">
+          
+          <!-- Header with Primary Color -->
+          <tr>
+            <td style="background:#1e40af;padding:32px 40px;text-align:center;">
+              <h1 style="color:#ffffff;font-size:24px;margin:0 0 8px;font-family:'Kanit',sans-serif;">WOW. WE on WEB</h1>
+              <p style="color:rgba(255,255,255,0.85);font-size:14px;margin:0;font-family:'Kanit',sans-serif;">แจ้งเตือนมีรายการสั่งจองทัวร์ใหม่</p>
+            </td>
+          </tr>
+
+          <!-- Logo -->
+          
+          <tr>
+            <td style="padding:24px 40px 0;text-align:center;">
+              <img src="https://placehold.co/200x64/00bcd4/ffffff?text=LOGO" alt="WOW. WE on WEB" style="max-height:64px;" />
+            </td>
+          </tr>
+          
+
+          <!-- PNR Code -->
+          <tr>
+            <td style="padding:32px 40px 16px;">
+              <table width="100%" cellpadding="0" cellspacing="0" style="background:linear-gradient(135deg,#eff6ff,#f0f9ff);border-radius:12px;border:1px solid #bfdbfe;">
+                <tr>
+                  <td style="padding:20px;text-align:center;">
+                    <p style="margin:0 0 4px;font-size:13px;color:#64748b;text-transform:uppercase;letter-spacing:1px;font-family:'Kanit',sans-serif;">รหัสจอง (PNR)</p>
+                    <p style="margin:0;font-size:28px;font-weight:800;color:#1e40af;letter-spacing:3px;font-family:'Kanit',sans-serif;">BK-20260404-0001</p>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- Tour Info -->
+          <tr>
+            <td style="padding:16px 40px;">
+              <h2 style="font-size:16px;color:#1e293b;margin:0 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0;font-family:'Kanit',sans-serif;">รายละเอียดทัวร์</h2>
+              <table width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  
+                  <td valign="top" style="width:160px;padding-right:20px;">
+                    <img src="https://placehold.co/320x320/1e40af/ffffff?text=TOUR+COVER" alt="ทัวร์ยุโรป อิตาลี สวิตเซอร์แลนด์ ฝรั่งเศส" width="160" height="160" style="display:block;width:160px;height:160px;object-fit:cover;border-radius:12px;background:#e2e8f0;" />
+                  </td>
+                  
+                  <td valign="top">
+                    <h3 style="font-size:18px;color:#1e293b;margin:0 0 12px;line-height:1.4;font-family:'Kanit',sans-serif;">ทัวร์ยุโรป อิตาลี สวิตเซอร์แลนด์ ฝรั่งเศส</h3>
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td style="padding:4px 0;font-size:14px;color:#64748b;width:90px;font-family:'Kanit',sans-serif;">รหัสทัวร์</td>
+                        <td style="padding:4px 0;font-size:14px;color:#1e293b;font-weight:600;font-family:'Kanit',sans-serif;">EU-ITALY-001</td>
+                      </tr>
+                      <tr>
+                        <td style="padding:4px 0;font-size:14px;color:#64748b;font-family:'Kanit',sans-serif;">ประเทศ</td>
+                        <td style="padding:4px 0;font-size:14px;color:#1e293b;font-weight:600;font-family:'Kanit',sans-serif;">อิตาลี</td>
+                      </tr>
+                      <tr>
+                        <td style="padding:4px 0;font-size:14px;color:#64748b;font-family:'Kanit',sans-serif;">สายการบิน</td>
+                        <td style="padding:4px 0;font-size:14px;color:#1e293b;font-weight:600;font-family:'Kanit',sans-serif;">Thai Airways (TG)</td>
+                      </tr>
+                      <tr>
+                        <td style="padding:4px 0;font-size:14px;color:#64748b;font-family:'Kanit',sans-serif;">วันเดินทาง</td>
+                        <td style="padding:4px 0;font-size:14px;color:#1e293b;font-weight:600;font-family:'Kanit',sans-serif;">15 เม.ย. 2569 - 22 เม.ย. 2569</td>
+                      </tr>
+                      <tr>
+                        <td style="padding:4px 0;font-size:14px;color:#64748b;font-family:'Kanit',sans-serif;">ระยะเวลา</td>
+                        <td style="padding:4px 0;font-size:14px;color:#1e293b;font-weight:600;font-family:'Kanit',sans-serif;">8 วัน 5 คืน</td>
+                      </tr>
+                      
+                      <tr>
+                        <td style="padding:4px 0;font-size:14px;color:#64748b;font-family:'Kanit',sans-serif;">Supplier</td>
+                        <td style="padding:4px 0;font-size:14px;color:#1e293b;font-weight:600;font-family:'Kanit',sans-serif;">World Flight Travel (WFT)</td>
+                      </tr>
+                      
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- Price Table -->
+          <tr>
+            <td style="padding:16px 40px;">
+              <h2 style="font-size:16px;color:#1e293b;margin:0 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0;font-family:'Kanit',sans-serif;">รายละเอียดราคา</h2>
+              <table width="100%" cellpadding="0" cellspacing="0" style="border-radius:12px;overflow:hidden;border:1px solid #e2e8f0;">
+                <thead>
+                  <tr style="background:#f8fafc;">
+                    <th style="padding:12px 16px;text-align:left;font-size:13px;color:#64748b;font-weight:600;">ประเภท</th>
+                    <th style="padding:12px 16px;text-align:center;font-size:13px;color:#64748b;font-weight:600;">ราคา/ท่าน</th>
+                    <th style="padding:12px 16px;text-align:center;font-size:13px;color:#64748b;font-weight:600;">จำนวน</th>
+                    <th style="padding:12px 16px;text-align:right;font-size:13px;color:#64748b;font-weight:600;">รวม</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  
+      <tr>
+        <td style="padding:12px 16px;border-bottom:1px solid #f0f0f0;font-size:14px;color:#334155;">ผู้ใหญ่ (พักห้องคู่)</td>
+        <td style="padding:12px 16px;border-bottom:1px solid #f0f0f0;text-align:center;font-size:14px;color:#334155;">59,900</td>
+        <td style="padding:12px 16px;border-bottom:1px solid #f0f0f0;text-align:center;font-size:14px;color:#334155;">2</td>
+        <td style="padding:12px 16px;border-bottom:1px solid #f0f0f0;text-align:right;font-size:14px;font-weight:600;color:#1e40af;">119,800 บาท</td>
+      </tr>
+    
+      <tr>
+        <td style="padding:12px 16px;border-bottom:1px solid #f0f0f0;font-size:14px;color:#334155;">เด็ก (2-20 ปี)</td>
+        <td style="padding:12px 16px;border-bottom:1px solid #f0f0f0;text-align:center;font-size:14px;color:#334155;">49,900</td>
+        <td style="padding:12px 16px;border-bottom:1px solid #f0f0f0;text-align:center;font-size:14px;color:#334155;">1</td>
+        <td style="padding:12px 16px;border-bottom:1px solid #f0f0f0;text-align:right;font-size:14px;font-weight:600;color:#1e40af;">49,900 บาท</td>
+      </tr>
+    
+                </tbody>
+              </table>
+            </td>
+          </tr>
+
+          <!-- Summary -->
+          <tr>
+            <td style="padding:16px 40px;">
+              <table width="100%" cellpadding="0" cellspacing="0" style="background:#f8fafc;border-radius:12px;padding:20px;border:1px solid #e2e8f0;">
+                <tr>
+                  <td style="padding:8px 20px;font-size:14px;color:#64748b;">ค่าธรรมเนียมการจอง</td>
+                  <td style="padding:8px 20px;text-align:right;font-size:14px;color:#16a34a;font-weight:600;">ฟรี</td>
+                </tr>
+                <tr>
+                  <td style="padding:8px 20px;font-size:14px;color:#64748b;">เงินมัดจำ (10000 บ./คน)</td>
+                  <td style="padding:8px 20px;text-align:right;font-size:14px;color:#334155;font-weight:600;">30,000 บาท</td>
+                </tr>
+                <tr>
+                  <td style="padding:8px 20px;font-size:14px;color:#64748b;">ชำระเงินก่อนวันที่</td>
+                  <td style="padding:8px 20px;text-align:right;font-size:14px;color:#dc2626;font-weight:600;">5 เม.ย. 2569</td>
+                </tr>
+                <tr>
+                  <td colspan="2" style="padding:4px 20px;"><hr style="border:none;border-top:1px solid #e2e8f0;" /></td>
+                </tr>
+                <tr>
+                  <td style="padding:12px 20px;font-size:18px;color:#1e293b;font-weight:700;font-family:'Kanit',sans-serif;">รวมสุทธิ</td>
+                  <td style="padding:12px 20px;text-align:right;font-size:22px;color:#1e40af;font-weight:800;font-family:'Kanit',sans-serif;">169,700 บาท</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- Customer Info -->
+          <tr>
+            <td style="padding:16px 40px;">
+              <h2 style="font-size:16px;color:#1e293b;margin:0 0 16px;padding-bottom:8px;border-bottom:2px solid #e2e8f0;font-family:'Kanit',sans-serif;">ข้อมูลผู้จอง</h2>
+              <table width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td style="padding:6px 0;font-size:14px;color:#64748b;width:120px;">ชื่อ-นามสกุล</td>
+                  <td style="padding:6px 0;font-size:14px;color:#1e293b;font-weight:600;">สมชาย ใจดี</td>
+                </tr>
+                <tr>
+                  <td style="padding:6px 0;font-size:14px;color:#64748b;">อีเมล</td>
+                  <td style="padding:6px 0;font-size:14px;color:#1e293b;">somchai@example.com</td>
+                </tr>
+                <tr>
+                  <td style="padding:6px 0;font-size:14px;color:#64748b;">เบอร์โทร</td>
+                  <td style="padding:6px 0;font-size:14px;color:#1e293b;">081-234-5678</td>
+                </tr>
+                <tr>
+                  <td style="padding:6px 0;font-size:14px;color:#64748b;">หมายเหตุ</td>
+                  <td style="padding:6px 0;font-size:14px;color:#1e293b;">ขออาหารฮาลาล</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- Terms and Conditions -->
+          
+
+          <!-- Footer -->
+          <tr>
+            <td style="background:#1e293b;padding:32px 40px;text-align:center;">
+              <p style="color:#94a3b8;font-size:13px;margin:0 0 8px;">WOW. WE on WEB</p>
+              <p style="color:#64748b;font-size:12px;margin:0 0 8px;">ใบอนุญาต ททท. เลขที่ 11/12345</p>
+              <p style="color:#64748b;font-size:12px;margin:0 0 8px;">589/98 อาคารชุดทาวเวอร์ 1 ออฟฟิศ ชั้นที่ 18 ถนน เทพรัตน แขวงบางนาเหนือ เขตบางนา กทม. 10260</p>
+              <p style="color:#64748b;font-size:12px;margin:0;">
+                📞 02-123-4567
+                 | 
+                ✉️ info@wowtour.com
+              </p>
+              <p style="color:#64748b;font-size:12px;margin:8px 0 0;"><a href="https://www.weon.website/" style="color:#60a5fa;">https://www.weon.website/</a></p>
+              <p style="color:#64748b;font-size:12px;margin:4px 0 0;">LINE: @weonweb</p>
+            </td>
+          </tr>
+
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
+
+  </div>
+  <script>
+    function show(id, el) {
+      document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+      document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+      el.classList.add('active');
+    }
+  </script>
+</body>
+</html>

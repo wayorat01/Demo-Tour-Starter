@@ -1,0 +1,476 @@
+/* ================================================
+   wowtour_tourCard5 — Horizontal card with 
+   tab-based details / travel periods
+   ================================================ */
+
+.tour5-card-wrap {
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.07);
+  transition: box-shadow 0.2s ease;
+}
+
+.tour5-card-wrap:hover {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.tour5-card {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  width: 100%;
+  height: 220px;
+}
+
+/* Image — left side */
+.tour5-image-wrap {
+  overflow: hidden;
+  border-radius: 12px 0 0 12px;
+  aspect-ratio: 1 / 1;
+}
+
+.tour5-image-wrap > div {
+  height: 100%;
+  width: 100%;
+}
+
+.tour5-image-wrap img,
+.tour5-cover-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Right side content */
+.tour5-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow: hidden;
+  background: #ffffff;
+  border-radius: 0 12px 12px 0;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.07);
+  transition: box-shadow 0.2s ease;
+}
+
+/* Top body */
+.tour5-body {
+  padding: 10px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+  overflow-y: auto;
+  min-height: 0;
+}
+
+/* Title */
+.tour5-title {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #1e293b;
+  line-height: 1.3;
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  flex-shrink: 0;
+}
+
+/* Tour code */
+.tour5-code {
+  font-size: 0.75rem;
+  color: #64748b;
+  margin: 0;
+}
+
+.tour5-code strong {
+  color: #2563eb;
+  font-weight: 600;
+}
+
+/* ---- Tabs ---- */
+.tour5-tabs {
+  display: flex;
+  gap: 0;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px 6px 0 0;
+  overflow: hidden;
+  align-items: stretch;
+  margin-top: 4px;
+  width: fit-content;
+}
+
+.tour5-tab {
+  padding: 5px 28px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #94a3b8;
+  background: #f1f5f9;
+  border: none;
+  border-right: 1px solid #e2e8f0;
+  border-radius: 0;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 30px;
+}
+
+.tour5-tab:last-child {
+  border-right: none;
+}
+
+.tour5-tab:hover {
+  color: #1e293b;
+  background: #f8fafc;
+}
+
+.tour5-tab--active {
+  color: #1e293b;
+  background: #e9ecef;
+  font-weight: 600;
+  border-bottom: 2px solid #2563eb;
+}
+
+/* Tab content */
+.tour5-tab-content {
+  display: grid;
+  padding: 8px 0 0;
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.tour5-tab-panel {
+  grid-row: 1;
+  grid-column: 1;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+
+.tour5-tab-panel--active {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Description */
+.tour5-desc {
+  font-size: 0.82rem;
+  color: #475569;
+  line-height: 1.55;
+  margin: 0;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Travel period grid */
+.tour5-periods-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0 16px;
+  font-size: 0.82rem;
+  color: #475569;
+  line-height: 1.3;
+}
+
+.tour5-period-item {
+  white-space: nowrap;
+  padding: 1px 0;
+}
+
+.tour5-periods-empty {
+  font-size: 0.7rem;
+  color: #94a3b8;
+}
+
+/* ---- Footer ---- */
+.tour5-footer {
+  padding: 6px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  border-top: 1px solid #e2e8f0;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.tour5-footer-left {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex: 1;
+  min-width: 0;
+}
+
+.tour5-airline-logo {
+  width: 30px;
+  height: 18px;
+  position: relative;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.tour5-footer-duration {
+  font-size: 0.82rem;
+  color: #1e293b;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.tour5-footer-price-original {
+  font-size: 0.72rem;
+  color: #94a3b8;
+  text-decoration: line-through;
+  font-weight: 400;
+}
+
+.tour5-footer-price-wrap {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+.tour5-footer-price-label {
+  font-size: 0.7rem;
+  color: #94a3b8;
+  font-weight: 400;
+}
+
+.tour5-footer-price {
+  color: #2563eb;
+  font-weight: 600;
+  font-size: 1.15rem;
+}
+
+.tour5-footer-price-unit {
+  font-size: 0.72rem;
+  color: #64748b;
+  font-weight: 500;
+}
+
+/* Responsive — reduce text at ≤1400px */
+@media (max-width: 1400px) {
+  .tour5-desc {
+    font-size: 0.75rem;
+  }
+  .tour5-periods-grid {
+    font-size: 0.72rem;
+  }
+  .tour5-tab {
+    font-size: 0.7rem;
+    padding: 4px 16px;
+  }
+  .tour5-code {
+    font-size: 0.68rem;
+  }
+}
+
+/* Responsive — shrink image at ≤1280px */
+@media (max-width: 1280px) {
+  .tour5-card {
+    grid-template-columns: 190px 1fr;
+    height: 190px;
+  }
+  .tour5-body {
+    padding: 8px 10px;
+    gap: 3px;
+  }
+  .tour5-title {
+    font-size: 0.78rem;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+  }
+  .tour5-desc {
+    font-size: 0.7rem;
+  }
+  .tour5-periods-grid {
+    font-size: 0.68rem;
+  }
+  .tour5-tab {
+    font-size: 0.68rem;
+    padding: 3px 14px;
+    min-height: 24px;
+  }
+  .tour5-footer {
+    padding: 4px 10px;
+  }
+  .tour5-footer-duration {
+    font-size: 0.72rem;
+  }
+  .tour5-footer-price {
+    font-size: 0.95rem;
+  }
+}
+
+/* Responsive — further shrink at ≤1024px */
+@media (max-width: 1024px) {
+  .tour5-card {
+    grid-template-columns: 180px 1fr;
+    height: 180px;
+  }
+  .tour5-title {
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+  }
+  .tour5-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Mobile — keep horizontal but smaller */
+@media (max-width: 639px) {
+  .tour5-card {
+    grid-template-columns: 180px 1fr;
+    height: 180px;
+  }
+  .tour5-body {
+    padding: 6px 8px;
+    gap: 2px;
+  }
+  .tour5-title {
+    font-size: 0.72rem;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+  }
+  .tour5-code {
+    font-size: 0.62rem;
+  }
+  .tour5-tab {
+    font-size: 0.65rem;
+    padding: 3px 12px;
+    min-height: 20px;
+  }
+  .tour5-desc {
+    font-size: 0.68rem;
+  }
+  .tour5-footer {
+    padding: 4px 8px;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+  .tour5-footer-duration {
+    font-size: 0.65rem;
+  }
+  .tour5-footer-price {
+    font-size: 0.85rem;
+  }
+  .tour5-periods-grid {
+    font-size: 0.62rem;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Grid layout for card columns */
+.tour5-grid {
+  display: grid;
+  gap: 16px;
+  padding: 8px;
+}
+
+@media (max-width: 639px) {
+  .tour5-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ≤460px — footer breaks out as full-width row */
+@media (max-width: 460px) {
+  .tour5-card {
+    grid-template-columns: 140px 1fr;
+    grid-template-rows: 1fr auto;
+    height: auto;
+    min-height: 140px;
+  }
+  .tour5-content {
+    display: contents;
+  }
+  .tour5-body {
+    grid-column: 2;
+    grid-row: 1;
+    background: #ffffff;
+    border-radius: 0 12px 0 0;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.07);
+    max-height: 140px;
+    overflow-y: auto;
+  }
+  .tour5-image-wrap {
+    grid-row: 1;
+    border-radius: 12px 0 0 0;
+  }
+  .tour5-tab-panel {
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+  .tour5-tab-panel:not(.tour5-tab-panel--active) {
+    display: none;
+  }
+  .tour5-tab-content {
+    padding: 8px 6px 0;
+  }
+  .tour5-periods-grid {
+    gap: 0 12px;
+    padding: 0 4px;
+  }
+  .tour5-desc {
+    padding: 0 4px;
+  }
+  .tour5-footer {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    background: #ffffff;
+    border-top: 1px solid #e2e8f0;
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
+    padding: 6px 10px;
+  }
+  .tour5-footer-left {
+    justify-content: flex-start;
+  }
+}
+
+/* ≤360px — stacked layout: image on top */
+@media (max-width: 360px) {
+  .tour5-card {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+    height: auto;
+  }
+  .tour5-image-wrap {
+    grid-row: 1;
+    aspect-ratio: 1 / 1;
+    border-radius: 12px 12px 0 0;
+    width: 100%;
+  }
+  .tour5-tabs {
+    width: 100%;
+  }
+  .tour5-tab {
+    flex: 1;
+  }
+  .tour5-body {
+    grid-column: 1;
+    grid-row: 2;
+    border-radius: 0;
+    max-height: 160px;
+    overflow-y: auto;
+  }
+  .tour5-footer {
+    grid-column: 1;
+    grid-row: 3;
+    border-radius: 0 0 12px 12px;
+  }
+}

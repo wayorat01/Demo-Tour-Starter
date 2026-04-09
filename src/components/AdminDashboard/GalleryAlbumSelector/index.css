@@ -1,0 +1,184 @@
+/* Gallery Album Selector — Custom admin component */
+
+.gallery-album-selector__desc {
+  font-size: 13px;
+  color: var(--theme-elevation-500);
+  margin: 0 0 8px 0;
+}
+
+.gallery-album-selector__pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+  padding: 8px;
+  border: 1px solid var(--theme-elevation-150);
+  border-radius: 4px;
+  background: var(--theme-elevation-0);
+  min-height: 40px;
+}
+
+.gallery-album-selector__pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 6px 4px 10px;
+  background: var(--theme-elevation-100);
+  border-radius: 4px;
+  font-size: 13px;
+  line-height: 1.4;
+  transition: opacity 0.2s;
+}
+
+.gallery-album-selector__pill--hidden {
+  opacity: 0.45;
+  text-decoration: line-through;
+}
+
+.gallery-album-selector__pill-name {
+  white-space: nowrap;
+}
+
+.gallery-album-selector__eye-btn,
+.gallery-album-selector__edit-btn,
+.gallery-album-selector__remove-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 2px;
+  border-radius: 3px;
+  color: var(--theme-elevation-400);
+  transition:
+    color 0.15s,
+    background 0.15s;
+}
+
+.gallery-album-selector__eye-btn:hover {
+  color: var(--theme-elevation-800);
+  background: var(--theme-elevation-150);
+}
+
+.gallery-album-selector__pill--hidden .gallery-album-selector__eye-btn {
+  color: var(--theme-error-500, #e74c3c);
+}
+
+.gallery-album-selector__edit-btn:hover {
+  color: var(--theme-elevation-800);
+  background: var(--theme-elevation-150);
+}
+
+.gallery-album-selector__edit-btn {
+  text-decoration: none;
+}
+
+.gallery-album-selector__remove-btn {
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.gallery-album-selector__remove-btn:hover {
+  color: var(--theme-error-500, #e74c3c);
+  background: var(--theme-elevation-150);
+}
+
+.gallery-album-selector__add-wrapper {
+  position: relative;
+}
+
+.gallery-album-selector__add-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  background: var(--theme-elevation-100);
+  border: 1px dashed var(--theme-elevation-300);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 18px;
+  color: var(--theme-elevation-400);
+  transition: all 0.15s;
+}
+
+.gallery-album-selector__add-btn:hover {
+  background: var(--theme-elevation-150);
+  color: var(--theme-elevation-800);
+  border-color: var(--theme-elevation-400);
+}
+
+.gallery-album-selector__dropdown {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  z-index: 100;
+  min-width: 250px;
+  background: var(--theme-elevation-0);
+  border: 1px solid var(--theme-elevation-200);
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+}
+
+.gallery-album-selector__search {
+  width: 100%;
+  padding: 8px 12px;
+  border: none;
+  border-bottom: 1px solid var(--theme-elevation-150);
+  font-size: 13px;
+  outline: none;
+  background: var(--theme-elevation-0);
+  color: var(--theme-elevation-800);
+}
+
+.gallery-album-selector__dropdown-list {
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.gallery-album-selector__dropdown-item {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 8px 12px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 13px;
+  color: var(--theme-elevation-800);
+  transition: background 0.1s;
+}
+
+.gallery-album-selector__dropdown-item:hover {
+  background: var(--theme-elevation-100);
+}
+
+.gallery-album-selector__dropdown-empty {
+  padding: 12px;
+  text-align: center;
+  color: var(--theme-elevation-400);
+  font-size: 13px;
+}
+
+.gallery-album-selector__create-btn {
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 10px 12px;
+  border-top: 1px solid var(--theme-elevation-150);
+  background: none;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  color: #2cbcb6;
+  text-decoration: none;
+  transition: background 0.15s;
+}
+
+.gallery-album-selector__create-btn:hover {
+  background: var(--theme-elevation-50, #f8f8f8);
+  color: #1a8a85;
+}

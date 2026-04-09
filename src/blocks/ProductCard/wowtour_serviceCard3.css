@@ -1,0 +1,348 @@
+/* ================================================
+   wowtour_tourCard3 — Detailed card with airline logo,
+   travel period highlight, and pink price pill
+   ================================================ */
+
+.tour3-card-wrap {
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  height: 100%;
+}
+
+.tour3-card-wrap:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.tour3-card {
+  background: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Header / Image area */
+.tour3-header {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+}
+
+.tour3-header img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Gradient overlay at bottom of image */
+.tour3-header::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.55), transparent);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Country tag — bottom left on image */
+.tour3-country-tag {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(4px);
+  color: #1e293b;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 4px;
+  z-index: 2;
+}
+
+/* Recommended badge — top right on image */
+.tour3-recommended {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: linear-gradient(135deg, #f97316, #ef4444);
+  color: #ffffff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 6px;
+  z-index: 2;
+  box-shadow: 0 2px 8px rgba(239, 68, 68, 0.35);
+}
+
+/* Body */
+.tour3-body {
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+}
+
+/* Airline row */
+.tour3-airline {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.tour3-airline-logo-wrap {
+  width: 70px;
+  height: 28px;
+  position: relative;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.tour3-airline-logo-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: left center;
+}
+
+.tour3-airline-icon {
+  flex-shrink: 0;
+  color: #ec4899;
+}
+
+/* Title */
+.tour3-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #1e293b;
+  line-height: 1.3;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Travel period — pink highlight */
+.tour3-period {
+  font-size: 0.78rem;
+  color: #ec4899;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+/* Divider */
+.tour3-divider {
+  height: 1px;
+  background: #f1f5f9;
+}
+
+/* Description */
+.tour3-desc {
+  font-size: 0.78rem;
+  color: #64748b;
+  line-height: 1.35;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Footer: duration + price pill */
+.tour3-footer {
+  padding: 0;
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  border-top: 1px solid #f1f5f9;
+}
+
+.tour3-duration {
+  font-size: 0.8rem;
+  color: #64748b;
+  font-weight: 500;
+  white-space: nowrap;
+  flex-shrink: 1; /* Allow shrinking so price fits */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+}
+
+.tour3-price-pill {
+  display: inline-flex;
+  align-items: flex-end;
+  gap: 4px;
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 16px 0 0 0;
+  font-size: 0.8rem;
+  font-weight: 700;
+  box-shadow: none;
+  text-decoration: none;
+  white-space: nowrap;
+  margin-left: auto;
+}
+
+.tour3-price-pill-label {
+  font-weight: 500;
+  font-size: 0.72rem;
+}
+
+.tour3-price-pill-amount {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.tour3-price-pill-unit {
+  font-weight: 500;
+  font-size: 0.72rem;
+}
+
+.tour3-price-original {
+  font-size: 0.72rem;
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: line-through;
+  margin-left: 4px;
+}
+
+/* Discount pill: 2-line layout */
+.tour3-price-pill--discount {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  text-align: center;
+  padding: 6px 24px;
+  gap: 0;
+}
+
+.tour3-price-pill-row1 {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+}
+
+.tour3-price-pill-row2 {
+  display: flex;
+  align-items: baseline;
+  gap: 2px;
+  line-height: 1.1;
+}
+
+/* Grid layout */
+.tour3-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  padding: 8px;
+}
+
+.tour3-grid--2cols {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .tour3-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .tour3-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* ≤522px: Smaller title + tighter spacing */
+@media (max-width: 522px) {
+  .tour3-title {
+    font-size: 0.8rem;
+  }
+
+  .tour3-body {
+    padding: 10px 12px;
+    gap: 6px;
+  }
+
+  .tour3-price-pill {
+    padding: 8px 14px;
+    font-size: 0.72rem;
+    border-radius: 12px 0 0 0;
+  }
+
+  .tour3-price-pill-amount {
+    font-size: 0.95rem;
+  }
+
+  .tour3-price-pill--discount {
+    padding: 6px 14px;
+  }
+
+  .tour3-duration {
+    padding: 8px 10px;
+    font-size: 0.72rem;
+  }
+}
+
+/* 1025px–1280px: 5 columns → smaller title & price */
+@media (min-width: 1025px) and (max-width: 1280px) {
+  .tour3-grid--5cols {
+    gap: 10px;
+  }
+  .tour3-grid--5cols .tour3-title {
+    font-size: 0.78rem;
+  }
+
+  .tour3-grid--5cols .tour3-price-pill-amount {
+    font-size: 0.9rem;
+  }
+
+  .tour3-grid--5cols .tour3-price-pill {
+    padding: 8px 14px;
+    font-size: 0.72rem;
+  }
+
+  .tour3-grid--5cols .tour3-duration {
+    font-size: 0.72rem;
+  }
+}
+
+/* ≤1024px: 4-5 columns → fall back to 3 */
+@media (max-width: 1024px) {
+  .tour3-grid--many-cols {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+}
+
+/* ≤768px: 3-5 columns → fall back to 2 */
+@media (max-width: 768px) {
+  .tour3-grid--3plus-cols {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+/* ≤430px: Force 1 column */
+@media (max-width: 430px) {
+  .tour3-grid,
+  .tour3-grid--3plus-cols,
+  .tour3-grid--many-cols {
+    grid-template-columns: repeat(1, 1fr) !important;
+  }
+
+  .tour3-card {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+}

@@ -1,0 +1,103 @@
+/* ===== WowTour Navbar 5 ===== */
+/* 2-row layout: Info Top Bar → Logo + Nav (sticky) */
+
+/* ── Sticky behavior ── */
+.wowtour-navbar5-sticky {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+.wowtour-navbar5-sticky.is-stuck {
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
+}
+
+.wowtour-navbar5-topbar {
+  transition: all 0.3s ease-in-out;
+  max-height: 80px;
+  overflow: hidden;
+  opacity: 1;
+}
+
+.wowtour-navbar5-sticky.is-stuck .wowtour-navbar5-topbar {
+  max-height: 0;
+  opacity: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin: 0;
+  border: none;
+}
+
+/* ── Nav Links ── */
+.wowtour-navbar5-nav-link {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--header-menu-text, var(--foreground)) !important;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  border: none;
+  background: transparent !important;
+  cursor: pointer;
+  border-radius: 9999px !important;
+}
+
+.wowtour-navbar5-nav-link svg {
+  color: inherit !important;
+}
+
+.wowtour-navbar5-nav-link:hover {
+  color: var(--primary-foreground, #ffffff) !important;
+  background: var(--header-accent, var(--primary)) !important;
+}
+
+.wowtour-navbar5-nav-link:focus {
+  color: var(--primary-foreground, #ffffff) !important;
+  background: var(--header-accent, var(--primary)) !important;
+}
+
+.wowtour-navbar5-nav-link[data-state='open'] {
+  color: var(--primary-foreground, #ffffff) !important;
+  background: var(--header-accent, var(--primary)) !important;
+}
+
+.wowtour-navbar5-nav-link.active {
+  color: var(--primary-foreground, #ffffff) !important;
+  background: var(--header-accent, var(--primary)) !important;
+  font-weight: 600;
+}
+
+/* ── Mega Menu alignment ── */
+.wowtour-navbar5-sticky nav[data-orientation='horizontal'] {
+  position: static !important;
+  overflow: visible;
+  max-width: none !important;
+}
+
+.wowtour-navbar5-sticky .z-\[999\] {
+  left: 0 !important;
+  width: 100% !important;
+  transform: none !important;
+  margin-left: 0 !important;
+  display: flex !important;
+  justify-content: center;
+  z-index: 999;
+}
+
+@media (min-width: 1280px) {
+  .wowtour-navbar5-nav-link {
+    font-size: 15px;
+    padding: 8px 16px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .wowtour-navbar5-nav-link {
+    font-size: 15px;
+    padding: 8px 20px;
+  }
+}

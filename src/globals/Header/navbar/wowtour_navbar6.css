@@ -1,0 +1,191 @@
+/* ===== WowTour Navbar 7 ===== */
+/* 3-row layout: Info Bar → Centered Logo → Centered Nav Links */
+
+/* ── Row 1: Info Bar (gray background) ── */
+.wowtour-navbar6-topbar,
+.wowtour-navbar6-infobar {
+  background: var(--header-gradient-full, var(--header-gradient, #f5f5f5));
+  padding: 8px 0;
+  font-size: 13px;
+  color: var(--header-top-text, inherit);
+  border-bottom: 1px solid var(--border);
+}
+
+.wowtour-navbar6-infobar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+/* Info items (left side) */
+.wowtour-navbar6-info-items {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.wowtour-navbar6-info-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+}
+
+.wowtour-navbar6-info-item svg {
+  flex-shrink: 0;
+}
+
+.wowtour-navbar6-info-label {
+  font-weight: 600;
+  margin-right: 4px;
+}
+
+/* Social icons (right side) */
+.wowtour-navbar6-socials {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.wowtour-navbar6-social-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: white;
+  transition: opacity 0.2s;
+  text-decoration: none;
+}
+
+.wowtour-navbar6-social-btn:hover {
+  opacity: 0.85;
+}
+
+/* ── Row 2: Logo (centered, white bg) ── */
+.wowtour-navbar6-logo-bar {
+  background: var(--header-bg, var(--background));
+  padding: 16px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid var(--border);
+}
+
+.wowtour-navbar6-logo-bar img {
+  height: 48px !important;
+  width: auto !important;
+  object-fit: contain !important;
+}
+
+/* ── Row 3: Nav Links (centered) ── */
+.wowtour-navbar6-navstrip {
+  background: var(--header-nav-bg, var(--background));
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  position: relative;
+  z-index: 1;
+}
+
+.wowtour-navbar6-navstrip-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wowtour-navbar6-nav-link {
+  display: inline-flex;
+  align-items: center;
+  padding: 12px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--header-menu-text, var(--foreground));
+  text-decoration: none;
+  transition: color 0.2s;
+  white-space: nowrap;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  position: relative;
+}
+
+.wowtour-navbar6-nav-link:hover {
+  color: var(--header-accent, var(--primary));
+}
+
+.wowtour-navbar6-nav-link.active {
+  color: var(--header-accent, var(--primary));
+  font-weight: 600;
+}
+
+/* Active underline indicator */
+.wowtour-navbar6-nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 16px;
+  right: 16px;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--header-accent, var(--primary));
+}
+
+/* ── Sticky behavior ── */
+.wowtour-navbar6-sticky-wrapper {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.wowtour-navbar6-sticky-wrapper.is-stuck {
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* ── Mega Menu Dropdown ── */
+.wowtour-navbar6-navstrip {
+  position: relative;
+}
+
+.wowtour-navbar6-nav nav[data-orientation='horizontal'] {
+  position: static !important;
+  overflow: visible;
+  max-width: none !important;
+}
+
+.wowtour-navbar6-nav .z-\[999\] {
+  left: 0 !important;
+  width: 100% !important;
+  transform: none !important;
+  margin-left: 0 !important;
+  display: flex !important;
+  justify-content: center;
+  z-index: 999;
+}
+
+.wowtour-navbar6-nav [data-radix-navigation-menu-viewport] {
+  border-radius: 0 !important;
+  border: none !important;
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+.wowtour-navbar6-nav [data-radix-navigation-menu-viewport][data-state='open'] {
+  background-color: var(--background);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  border-bottom: 1px solid #e5e7eb !important;
+}
+
+/* ── Mobile: hide desktop parts ── */
+@media (max-width: 1279px) {
+  .wowtour-navbar6-infobar {
+    display: none;
+  }
+  .wowtour-navbar6-logo-bar {
+    display: none;
+  }
+  .wowtour-navbar6-navstrip {
+    display: none;
+  }
+}

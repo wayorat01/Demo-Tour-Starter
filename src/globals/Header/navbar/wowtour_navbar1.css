@@ -1,0 +1,279 @@
+/* ===== WowTour Navbar 1 — Top Bar + Gradient + Clean Nav ===== */
+
+/* Top Bar */
+.wowtour-navbar1-topbar {
+  background: var(--header-bg, var(--background));
+  padding: 12px 0;
+}
+
+.wowtour-navbar1-topbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+/* Logo in top bar */
+.wowtour-navbar1-logo {
+  flex-shrink: 0;
+}
+
+.wowtour-navbar1-logo img {
+  height: 40px;
+  width: auto;
+}
+
+/* Contact info section (right side) */
+.wowtour-navbar1-contact {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+}
+
+.wowtour-navbar1-contact-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.wowtour-navbar1-contact-row:first-child {
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border);
+}
+
+/* Individual contact item */
+.wowtour-navbar1-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--foreground);
+  text-decoration: none;
+  transition: opacity 0.2s;
+  white-space: nowrap;
+}
+
+.wowtour-navbar1-contact-item:hover {
+  opacity: 0.8;
+}
+
+/* Icon circle */
+.wowtour-navbar1-icon-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.wowtour-navbar1-icon-circle.facebook {
+  background-color: #1877f2;
+}
+
+.wowtour-navbar1-icon-circle.email {
+  background-color: var(--primary);
+}
+
+.wowtour-navbar1-icon-circle.line {
+  background-color: #06c755;
+}
+
+.wowtour-navbar1-icon-circle.instagram {
+  background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+}
+
+.wowtour-navbar1-icon-circle.tiktok {
+  background-color: #000;
+}
+
+.wowtour-navbar1-icon-circle.youtube {
+  background-color: #ff0000;
+}
+
+.wowtour-navbar1-icon-circle.twitter {
+  background-color: #000;
+}
+
+.wowtour-navbar1-icon-circle.whatsapp {
+  background-color: #25d366;
+}
+
+.wowtour-navbar1-icon-circle.default {
+  background-color: #888;
+}
+
+.wowtour-navbar1-icon-circle.clock {
+  background-color: var(--primary);
+}
+
+.wowtour-navbar1-icon-circle.phone {
+  background-color: var(--primary);
+}
+
+.wowtour-navbar1-contact-item .label {
+  font-weight: 500;
+  color: var(--foreground);
+}
+
+/* Hotline special styling */
+.wowtour-navbar1-contact-item.hotline .label-group {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.3;
+}
+
+.wowtour-navbar1-contact-item.hotline .hotline-label {
+  font-size: 11px;
+  color: var(--muted-foreground);
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.wowtour-navbar1-contact-item.hotline .hotline-number {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--primary);
+}
+
+/* Business hours special styling */
+.wowtour-navbar1-contact-item.hours .label-group {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.3;
+}
+
+.wowtour-navbar1-contact-item.hours .hours-label {
+  font-size: 11px;
+  color: var(--muted-foreground);
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.wowtour-navbar1-contact-item.hours .hours-value {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--primary);
+}
+
+/* Divider */
+.wowtour-navbar1-gradient {
+  height: 1px;
+  background-color: var(--border);
+}
+
+/* Navigation Bar */
+.wowtour-navbar1-nav {
+  background: var(--header-nav-bg, var(--background));
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.wowtour-navbar1-nav-inner {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.wowtour-navbar1-nav.is-stuck {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.wowtour-navbar1-nav.is-stuck .wowtour-navbar1-nav-inner {
+  justify-content: center;
+}
+
+.wowtour-navbar1-nav.is-stuck .wowtour-navbar1-menu-content {
+  animation: fadeInMenu 0.5s ease-out forwards;
+}
+
+@keyframes fadeInMenu {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Megamenu dropdown viewport spanning — handle natively without forcing NavigationMenu width */
+.wowtour-navbar1-nav-inner [data-radix-navigation-menu-viewport] {
+  width: 100vw !important;
+  max-width: 100vw !important;
+  position: absolute;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  margin: 0 !important;
+  display: flex;
+  justify-content: center;
+}
+
+/* When sticky, make NavigationMenu ancestors static so viewport wrapper's absolute positioning
+   references .wowtour-navbar1-nav (full-width) instead of centered NavigationMenu parent */
+.wowtour-navbar1-nav.is-stuck .wowtour-navbar1-menu-content {
+  position: static !important;
+}
+
+.wowtour-navbar1-nav.is-stuck [data-nav-viewport-wrapper] {
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  width: 100vw !important;
+}
+
+.wowtour-navbar1-nav-link {
+  display: inline-flex;
+  align-items: center;
+  padding: 14px 18px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--header-menu-text, var(--muted-foreground));
+  text-decoration: none;
+  transition:
+    color 0.2s,
+    background-color 0.2s;
+  white-space: nowrap;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.wowtour-navbar1-nav-link:hover {
+  color: var(--header-accent, var(--primary));
+  background-color: color-mix(in srgb, var(--header-accent, var(--primary)) 5%, transparent);
+}
+
+.wowtour-navbar1-nav-link.active {
+  color: var(--header-accent, var(--primary));
+  border-bottom: 3px solid var(--header-accent, var(--primary));
+}
+
+/* Hide top bar on mobile */
+@media (max-width: 1279px) {
+  .wowtour-navbar1-topbar {
+    display: none;
+  }
+  .wowtour-navbar1-gradient {
+    display: none;
+  }
+  .wowtour-navbar1-nav-inner {
+    display: none;
+  }
+}
+
+
+/* Fix for city hover popup clipping in Mega Menu without breaking relative layout */
+.wowtour-navbar1-nav nav[data-orientation='horizontal'],
+.wowtour-navbar1-nav [data-radix-navigation-menu-viewport] {
+  overflow: visible !important;
+}

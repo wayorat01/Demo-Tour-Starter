@@ -1,0 +1,20 @@
+/* Custom Admin Styles for Page Config */
+
+/* Make top-level group labels in global page-config larger */
+[id='field-siteIdentity']
+  > .group-field__wrap
+  > .render-fields
+  > .field-type.group
+  > .group-field__wrap
+  > .group-field__header
+  > h3,
+.global-edit.global-page-config
+  > .gutter--left
+  > .render-fields
+  > .field-type.group
+  > .group-field__wrap
+  > .group-field__header
+  > h3 {
+  font-size: 22px !important;
+  font-weight: 700 !important;
+}

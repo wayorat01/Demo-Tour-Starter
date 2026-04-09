@@ -1,0 +1,7 @@
+scripts/**/*.js
+scripts/update-price.ts
+patch_navbars.js
+lighthouserc.cjs
+*.config.js
+*.config.mjs
+*.config.cjs

@@ -1,0 +1,328 @@
+/* ============================================
+   Sticky Social (Speed Dial / FAB) — CSS
+   ============================================ */
+
+.sticky-fab-container {
+  position: fixed;
+  bottom: 24px;
+  z-index: 100;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  gap: 12px;
+}
+
+.sticky-fab--right {
+  right: 24px;
+}
+
+.sticky-fab--left {
+  left: 24px;
+}
+
+/* Base FAB button (Main Trigger) */
+.sticky-fab-trigger {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #06c755; /* Modern bright green similar to Messenger/Line */
+  color: white;
+  border: none;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+    background-color 0.2s,
+    box-shadow 0.3s;
+  position: relative;
+  z-index: 10;
+}
+
+.sticky-fab-trigger:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(6, 199, 85, 0.3);
+}
+
+.sticky-fab-trigger--active {
+  background-color: #010101; /* Dark background when opened */
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.sticky-fab-trigger--active:hover {
+  background-color: #333;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.sticky-fab-icons-wrapper {
+  position: relative;
+  width: 28px;
+  height: 28px;
+}
+
+.sticky-fab-icon-chat,
+.sticky-fab-icon-close {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition:
+    transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.3s;
+}
+
+/* Icon toggle animation */
+.sticky-fab-icon-chat.sticky-fab-icon-hidden {
+  opacity: 0;
+  transform: rotate(90deg) scale(0.5);
+  pointer-events: none;
+}
+
+.sticky-fab-icon-close {
+  opacity: 0;
+  transform: rotate(-90deg) scale(0.5);
+  pointer-events: none;
+}
+
+.sticky-fab-trigger--active .sticky-fab-icon-close {
+  opacity: 1;
+  transform: rotate(0) scale(1);
+  pointer-events: auto;
+}
+
+/* Dropdown Menu (Items) Container */
+.sticky-fab-menu {
+  position: absolute;
+  bottom: 60px; /* Right above the FAB */
+  padding-bottom: 16px; /* Transparent hitbox to prevent mouseleave in gap */
+  display: flex;
+  flex-direction: column-reverse; /* Items stack upwards */
+  gap: 12px;
+  align-items: center;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.sticky-fab--right .sticky-fab-menu {
+  right: 4px; /* Align slightly off the exact edge to center it with 60px triggger (48px internal) */
+  align-items: center;
+}
+
+.sticky-fab--left .sticky-fab-menu {
+  left: 4px;
+  align-items: center;
+}
+
+.sticky-fab-menu--open {
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* Individual Social Items */
+.sticky-fab-item {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  color: #fff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  position: relative;
+
+  /* Animation state when hidden */
+  opacity: 0;
+  transform: translateY(20px) scale(0.8);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Open Animation staggering (inline delay sets --item-index) */
+.sticky-fab-menu--open .sticky-fab-item {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  transition-delay: calc(var(--item-index, 0) * 30ms);
+}
+
+.sticky-fab-item svg {
+  width: 24px;
+  height: 24px;
+}
+
+.sticky-fab-item:hover {
+  transform: scale(1.1) translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Name Tooltip (Optional, for desktop) */
+.sticky-fab-item-tooltip {
+  position: absolute;
+  right: 64px; /* Offset to the left of the button */
+  background: rgba(0, 0, 0, 0.85);
+  color: white;
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-size: 13.5px;
+  font-weight: 500;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(10px);
+  transition: all 0.2s;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Tooltip triangle pointer */
+.sticky-fab-item-tooltip::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: -5px;
+  transform: translateY(-50%);
+  border-width: 5px 0 5px 5px;
+  border-style: solid;
+  border-color: transparent transparent transparent rgba(0, 0, 0, 0.85);
+}
+
+.sticky-fab--left .sticky-fab-item-tooltip {
+  right: auto;
+  left: 64px;
+  transform: translateX(-10px);
+}
+
+.sticky-fab--left .sticky-fab-item-tooltip::after {
+  right: auto;
+  left: -5px;
+  border-width: 5px 5px 5px 0;
+  border-color: transparent rgba(0, 0, 0, 0.85) transparent transparent;
+}
+
+.sticky-fab-item:hover .sticky-fab-item-tooltip {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Existing Platform Colors */
+.sticky-social__bg-facebook {
+  background: #1877f2;
+}
+.sticky-social__bg-line {
+  background: #06c755;
+}
+.sticky-social__bg-email {
+  background: #f5a623;
+}
+.sticky-social__bg-phone {
+  background: #ff6b81;
+}
+.sticky-social__bg-tiktok {
+  background: #010101;
+}
+.sticky-social__bg-instagram {
+  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+}
+.sticky-social__bg-youtube {
+  background: #ff0000;
+}
+.sticky-social__bg-twitter {
+  background: #1da1f2;
+}
+.sticky-social__bg-website {
+  background: #6c63ff;
+}
+
+/* Mobile Enhancements */
+@media (max-width: 767px) {
+  .sticky-fab-container {
+    bottom: 20px;
+  }
+
+  .sticky-fab--right {
+    right: 20px;
+  }
+
+  .sticky-fab--left {
+    left: 20px;
+  }
+
+  .sticky-fab-trigger {
+    width: 56px;
+    height: 56px;
+  }
+
+  .sticky-fab-item {
+    width: 48px;
+    height: 48px;
+  }
+
+  .sticky-fab-item svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .sticky-fab-item-tooltip {
+    display: none; /* Hide tooltips on mobile since there is no hover */
+  }
+}
+
+/* Back to Top Button */
+.back-to-top-btn {
+  position: fixed;
+  z-index: 49; /* Behind sticky social z-index 50 */
+  bottom: 24px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--primary, #000);
+  color: white;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(20px);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.back-to-top-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  /* Inverted slightly for hover */
+  filter: brightness(1.1);
+}
+
+.back-to-top-btn--visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.back-to-top-btn--left {
+  left: 96px; /* 24px spacing + 60px button + 12px gap = 96px */
+}
+
+.back-to-top-btn--right {
+  right: 96px;
+}
+
+@media (max-width: 767px) {
+  .back-to-top-btn {
+    bottom: 20px;
+    width: 50px;
+    height: 50px;
+  }
+
+  .back-to-top-btn--left {
+    left: 82px; /* 20px edge + 50px width + 12px gap */
+  }
+
+  .back-to-top-btn--right {
+    right: 82px;
+  }
+}

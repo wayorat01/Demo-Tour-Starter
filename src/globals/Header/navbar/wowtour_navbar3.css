@@ -1,0 +1,321 @@
+/* ===== WowTour Navbar 3 ===== */
+
+/* ── Top Bar ── */
+.wowtour-navbar3-topbar {
+  background: var(--header-bg, var(--background));
+  padding: 10px 0;
+}
+
+.wowtour-navbar3-topbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  position: relative;
+}
+
+/* Logo */
+.wowtour-navbar3-logo {
+  flex-shrink: 0;
+  padding-left: 56px;
+}
+
+.wowtour-navbar3-logo img {
+  height: 48px !important;
+  width: auto !important;
+  object-fit: contain !important;
+}
+
+/* Center: Business Hours */
+.wowtour-navbar3-hours {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--foreground);
+}
+
+.wowtour-navbar3-hours-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--muted-foreground);
+  flex-shrink: 0;
+}
+
+.wowtour-navbar3-hours-icon svg {
+  width: 28px;
+  height: 28px;
+}
+
+.wowtour-navbar3-hours-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.4;
+}
+
+.wowtour-navbar3-hours-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--foreground);
+}
+
+.wowtour-navbar3-hours-value {
+  font-size: 13px;
+  color: var(--muted-foreground);
+}
+
+/* Right section: Hotline + Social */
+.wowtour-navbar3-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Hotline */
+.wowtour-navbar3-hotline {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.wowtour-navbar3-hotline:hover {
+  opacity: 0.8;
+}
+
+.wowtour-navbar3-hotline-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background-color: var(--primary);
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.wowtour-navbar3-hotline-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.3;
+}
+
+.wowtour-navbar3-hotline-label {
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--muted-foreground);
+}
+
+.wowtour-navbar3-hotline-number {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--primary);
+}
+
+/* Social Icons */
+.wowtour-navbar3-socials {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.wowtour-navbar3-social-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition:
+    transform 0.2s,
+    opacity 0.2s;
+  flex-shrink: 0;
+}
+
+.wowtour-navbar3-social-icon:hover {
+  transform: scale(1.1);
+  opacity: 0.85;
+}
+
+.wowtour-navbar3-social-icon svg {
+  width: 40px;
+  height: 40px;
+}
+
+/* ── Gradient Divider (Blue) ── */
+.wowtour-navbar3-gradient {
+  height: 6px;
+  background: var(
+    --header-gradient-full,
+    linear-gradient(
+      90deg,
+      var(--header-gradient, #1976d2) 0%,
+      color-mix(in srgb, var(--header-gradient, #2196f3) 80%, white) 50%,
+      color-mix(in srgb, var(--header-gradient, #42a5f5) 60%, white) 100%
+    )
+  );
+}
+
+/* Top gradient — two containers curving toward each other */
+.wowtour-navbar3-gradient-top {
+  display: flex;
+  width: 100%;
+}
+
+.wowtour-navbar3-gradient-top-left {
+  flex: 1;
+  height: 10px;
+  background: var(--header-gradient, #2196f3);
+  border-radius: 0 0 4% 0 / 0 0 100% 0;
+}
+
+.wowtour-navbar3-gradient-top-right {
+  flex: 1;
+  height: 10px;
+  background: var(--header-gradient, #2196f3);
+  border-radius: 0 0 0 4% / 0 0 0 100%;
+}
+
+/* ── Sticky Wrapper ── */
+.wowtour-navbar3-sticky {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+/* Navigation Bar */
+.wowtour-navbar3-nav {
+  background: var(--header-nav-bg, #f5f5f5);
+  border-bottom: 1px solid var(--border);
+  position: relative;
+  z-index: 40;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Nav bar inner layout */
+.wowtour-navbar3-nav-inner {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+/* Skip NavigationMenu root as positioning context →
+   wrapper references .wowtour-navbar3-nav (full-width, position: relative) instead */
+.wowtour-navbar3-nav-inner > [data-orientation='horizontal'] {
+  position: static !important;
+}
+
+/* Viewport wrapper — full width so flexbox centering works properly */
+.wowtour-navbar3-nav [data-nav-viewport-wrapper] {
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
+}
+
+/* When sticky (scrolled) — center nav items + add shadow */
+.wowtour-navbar3-sticky.is-stuck .wowtour-navbar3-nav-inner {
+  justify-content: center;
+  animation: fadeInMenu 0.5s ease-out forwards;
+}
+
+@keyframes fadeInMenu {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.wowtour-navbar3-sticky.is-stuck .wowtour-navbar3-nav {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Home icon link */
+.wowtour-navbar3-home-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 16px;
+  margin-right: 16px;
+  color: var(--header-menu-text, var(--foreground));
+  text-decoration: none;
+  transition:
+    color 0.2s,
+    background-color 0.2s,
+    border-color 0.2s;
+  border-right: 1px solid
+    color-mix(in srgb, var(--header-menu-text, var(--foreground)) 20%, transparent);
+}
+
+.wowtour-navbar3-home-link:hover {
+  color: var(--header-accent, var(--primary));
+  background-color: rgba(0, 0, 0, 0.04);
+  border-right-color: color-mix(in srgb, var(--header-accent, var(--primary)) 20%, transparent);
+}
+
+/* Nav links */
+.wowtour-navbar3-nav-link {
+  display: inline-flex;
+  align-items: center;
+  padding: 12px 24px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--header-menu-text, var(--foreground));
+  text-decoration: none;
+  transition:
+    color 0.2s,
+    background-color 0.2s;
+  white-space: nowrap;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.wowtour-navbar3-nav-link:hover {
+  color: var(--header-accent, var(--primary));
+  background-color: rgba(0, 0, 0, 0.04);
+}
+
+.wowtour-navbar3-nav-link.active {
+  color: var(--header-accent, var(--primary));
+  border-bottom: 3px solid var(--header-accent, var(--primary));
+}
+
+/* ── Mobile: hide desktop parts ── */
+@media (max-width: 1279px) {
+  .wowtour-navbar3-topbar {
+    display: none;
+  }
+  .wowtour-navbar3-gradient {
+    display: none;
+  }
+  .wowtour-navbar3-gradient-top {
+    display: none;
+  }
+  .wowtour-navbar3-nav-inner {
+    display: none;
+  }
+  .wowtour-navbar3-nav {
+    background: transparent;
+    border-bottom: none;
+  }
+}
+
+/* Mobile logo — override inline styles from Payload Media */
+.block.xl\:hidden img {
+  height: 32px !important;
+  width: auto !important;
+  object-fit: contain !important;
+}
+

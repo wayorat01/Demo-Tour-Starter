@@ -1,0 +1,155 @@
+/* ========================================
+   WowTour Gallery Album 3 — Card Grid
+   ======================================== */
+
+/* Grid: --cols CSS variable, default 4 */
+.gallery-cards {
+  display: grid;
+  grid-template-columns: repeat(var(--cols, 4), 1fr);
+  gap: 12px;
+}
+
+/* Card shadow wrapper */
+.gallery-cards__card-wrap {
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  transition: box-shadow 0.3s ease;
+}
+
+.gallery-cards__card-wrap:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Card */
+.gallery-cards__card {
+  overflow: hidden;
+  cursor: pointer;
+  border-radius: 8px;
+  background: #fff;
+}
+
+/* Image wrapper — 4:3 aspect ratio for more image visibility */
+.gallery-cards__image {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+
+.gallery-cards__image img {
+  transition: transform 0.5s ease;
+}
+
+.gallery-cards__card:hover .gallery-cards__image img {
+  transform: scale(1.08);
+}
+
+/* Hover overlay — magnifying glass icon */
+.gallery-cards__overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 3;
+}
+
+.gallery-cards__card:hover .gallery-cards__overlay {
+  opacity: 1;
+}
+
+.gallery-cards__search-icon {
+  width: 36px;
+  height: 36px;
+  color: white;
+}
+
+/* Title bar overlaying bottom of image — always visible */
+.gallery-cards__title-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 28px 12px 12px;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.6) 0%,
+    rgba(0, 0, 0, 0.25) 60%,
+    transparent 100%
+  );
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+}
+
+.gallery-cards__title {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #fff;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+  text-align: center;
+}
+
+/* "ดูแกลลอรี่ทั้งหมด" pill button */
+.gallery-cards__button-wrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 24px;
+}
+
+.gallery-cards__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 32px;
+  border-radius: 9999px;
+  background: var(--primary, #2bb5a0);
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.gallery-cards__button:hover {
+  opacity: 0.85;
+}
+
+/* ======== Responsive ======== */
+@media (max-width: 1024px) {
+  .gallery-cards {
+    --cols: 3 !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .gallery-cards {
+    --cols: 2 !important;
+    gap: 12px;
+  }
+}
+
+@media (max-width: 430px) {
+  .gallery-cards {
+    --cols: 2 !important;
+    gap: 8px;
+  }
+
+  .gallery-cards__title {
+    font-size: 0.75rem;
+    padding: 8px 10px;
+  }
+
+  .gallery-cards__button {
+    font-size: 0.8rem;
+    padding: 8px 24px;
+  }
+}

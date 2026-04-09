@@ -1,0 +1,42 @@
+/* ============================================
+   Country Page Custom CSS
+   ============================================ */
+
+/* ============================================
+   Country Tags — pill badges
+   ============================================ */
+
+.country-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  margin-bottom: 25px;
+  padding: 0;
+}
+
+.country-tag-pill {
+  display: inline-flex;
+  align-items: center;
+  height: 28px;
+  padding: 0 1.25rem;
+  font-size: var(--text-xs);
+  font-weight: 500;
+  color: #1a1a1a !important;
+  background-color: #fff !important;
+  border-style: solid !important;
+  border-width: 1.5px !important;
+  border-color: var(--primary) !important;
+  border-radius: 999px;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+  line-height: 1.4;
+  text-decoration: none !important;
+  cursor: pointer;
+}
+
+.country-tag-pill:hover {
+  background-color: var(--primary) !important;
+  border-color: var(--primary) !important;
+  color: #fff !important;
+}

@@ -1,0 +1,16 @@
+#!/bin/sh
+
+# ป้องกันไฟล์ .env หลุดเข้า Git
+STAGED_ENV=$(git diff --cached --name-only | grep -E '^\.(env)$|^\.(env)\.' | grep -v '.env.example' || true)
+
+if [ -n "$STAGED_ENV" ]; then
+  echo ""
+  echo "🚨 ห้าม commit ไฟล์ .env เข้า Git!"
+  echo "   ไฟล์ที่ตรวจพบ: $STAGED_ENV"
+  echo ""
+  echo "   วิธีแก้: git reset HEAD .env"
+  echo ""
+  exit 1
+fi
+
+pnpm lint-staged

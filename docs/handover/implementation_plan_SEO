@@ -1,0 +1,251 @@
+# แผน SEO เต็มรูปแบบ — เว็บไซต์ทัวร์
+
+## สถานะปัจจุบัน (ก่อนแก้ไข)
+
+| หัวข้อ SEO | สถานะ | หมายเหตุ |
+|---|---|---|
+| SSR (Server-Side Rendering) | ✅ ทำแล้ว | หน้าทุกหน้าดึงข้อมูลฝั่ง Server — Googlebot อ่านได้ทันที |
+| Meta Title / Description | ✅ ทำแล้ว | ทุกหน้ามี `generateMetadata()` ดึงจาก CMS |
+| Open Graph (แชร์ลิงก์ Facebook/LINE) | ✅ ทำแล้ว | มีทั้ง OG title, description, image |
+| Twitter Card | ⚠️ บางหน้า | ดูรายละเอียดด้านล่าง |
+| OG Image Generator (รูปปกอัตโนมัติ) | ✅ ทำแล้ว | `/next/og?title=...` วาดรูปหน้าปกให้อัตโนมัติ |
+| Clean URL | ✅ ทำแล้ว | `/intertours/japan/JP001` ไม่ใช่ `?id=123` |
+| Redirect เก่า → ใหม่ | ✅ ทำแล้ว | `/tour/` → `/intertours/` (301 permanent) |
+| **`sitemap.xml`** | ❌ ไม่มี | **ไม่มีไฟล์ `sitemap.ts` ในโปรเจกต์** |
+| **`robots.txt`** | ❌ ไม่มี | **ไม่มีไฟล์ `robots.ts` ในโปรเจกต์** |
+| **JSON-LD (Schema Markup)** | ❌ ไม่มี | ไม่มี Structured Data — ดูตัวอย่างด้านล่าง |
+| **Canonical URL** | ⚠️ ตรวจสอบ | ดูคำอธิบายด้านล่าง |
+| **`mergeOpenGraph` default** | ⚠️ ค่าเก่า | ยังเขียนว่า `"Payload Website Template"` — จะเปลี่ยนเป็นดึงจาก field "ชื่อเว็บไซต์" |
+
+---
+
+## ตอบคำถามจาก User Review
+
+---
+
+### 📌 เรื่อง sitemap.xml — เว็บอื่นก็ใช้ path เดียวกันใช่ไหม?
+
+**ใช่ครับ `/sitemap.xml` เป็น path มาตรฐานสากลที่เว็บไซต์ทั่วโลกใช้เหมือนกันหมด** ไม่ว่าจะ Facebook, Agoda, Klook ก็ใช้ path นี้ทั้งนั้น
+
+เมื่อเราสร้างไฟล์ `sitemap.ts` ใน `src/app/` Next.js จะ serve ให้ที่ `/sitemap.xml` อัตโนมัติ — ไม่ต้องตั้ง route เอง
+
+---
+
+### 📌 เรื่อง Twitter Card — หน้าไหนไม่มี? สำคัญแค่ไหน?
+
+**หน้าที่มี Twitter Card แล้ว:**
+- ✅ `/intertours/[slug]/[tourCode]` (หน้ารายละเอียดทัวร์)
+
+**หน้าที่ยังไม่มี:**
+- ❌ `/inbound-tours/[slug]` (หน้าทัวร์ในประเทศ)
+- ❌ `/intertours/[slug]` (หน้าทัวร์ต่างประเทศ)
+- ❌ `/blog/[slug]` (หน้าบทความ)
+- ❌ `/search-tour` (หน้าค้นหาทัวร์)
+- ❌ `/custom-landingpage/[slug]` (หน้า Landing Page)
+
+**ความสำคัญ: ต่ำ — ไม่ต้องรีบแก้ก็ได้ครับ** เพราะ Twitter (X) และ LINE จะ fallback ไปใช้ Open Graph แทนอยู่แล้ว ตราบใดที่เรามี OG tag ก็เพียงพอ ผมจะรวมเพิ่มให้ในแผนนี้เลยเพราะแก้ได้ง่ายมาก (แค่เพิ่ม 5 บรรทัดใน metadata ของแต่ละหน้า)
+
+---
+
+### 📌 เรื่อง Canonical URL — คืออะไร?
+
+**Canonical URL** คือ tag ที่บอก Google ว่า "ลิงก์จริงๆ ของหน้านี้คือตัวนี้นะ"
+
+**ทำไมต้องมี?** สมมติมีคนเข้าเว็บเราผ่านลิงก์ 2 แบบ:
+- `https://เว็บ.com/intertours/japan`
+- `https://เว็บ.com/intertours/japan?sort=price&page=2`
+
+ถ้าไม่มี canonical, Google จะมองว่า 2 ลิงก์นี้เป็น **2 หน้าเว็บแยกกัน** ที่มีเนื้อหาซ้ำ → ทำให้ทั้ง 2 หน้าถูกหารอันดับ SEO กันเอง (เรียกว่า duplicate content)
+
+แต่ถ้าเรามี `<link rel="canonical" href="https://เว็บ.com/intertours/japan">` Google ก็จะรู้ว่า "อ๋อ หน้านี้คือหน้าเดียวกัน ให้นับ SEO รวมกัน"
+
+**ข่าวดี:** Next.js 15 สร้าง canonical ให้อัตโนมัติจาก `metadataBase` ที่ตั้งไว้ใน layout ซึ่งเราทำเรียบร้อยแล้ว — ผมจะตรวจสอบยืนยันอีกทีว่ามันสร้างจริง
+
+---
+
+### 📌 เรื่อง JSON-LD — ตัวอย่าง Schema + กระทบ Design หรือไม่?
+
+> [!IMPORTANT]
+> **ไม่กระทบ Design เลยแม้แต่ 1 pixel ครับ** JSON-LD เป็น `<script>` ที่ซ่อนอยู่ใน HTML เพื่อให้ **Google Bot อ่านเท่านั้น** ผู้ใช้งานไม่มีทางมองเห็นบนหน้าจอเลย
+
+#### ตัวอย่าง 1: หน้ารายละเอียดทัวร์ (`/intertours/japan/JP001`)
+
+Google จะอ่านข้อมูลนี้ และอาจแสดง **ราคา + ระยะเวลา** บนผลค้นหา:
+
+```json
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "ทัวร์ญี่ปุ่น โตเกียว ฟูจิ 6 วัน 4 คืน",
+  "description": "เที่ยวญี่ปุ่น ภูเขาไฟฟูจิ ชมดอกซากุระ ช้อปปิ้งชินจูกุ",
+  "image": "https://cdn.example.com/tour-japan.jpg",
+  "brand": {
+    "@type": "Organization",
+    "name": "WOW Tour"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "25900",
+    "priceCurrency": "THB",
+    "availability": "https://schema.org/InStock",
+    "url": "https://เว็บ.com/intertours/japan/JP001"
+  },
+  "additionalProperty": [
+    { "@type": "PropertyValue", "name": "ระยะเวลา", "value": "6 วัน 4 คืน" },
+    { "@type": "PropertyValue", "name": "สายการบิน", "value": "Thai Airways" }
+  ]
+}
+```
+
+ผลลัพธ์บน Google Search จะเห็นประมาณนี้:
+```
+ทัวร์ญี่ปุ่น โตเกียว ฟูจิ 6 วัน 4 คืน — WOW Tour
+https://เว็บ.com/intertours/japan/JP001
+฿25,900 · 6 วัน 4 คืน
+เที่ยวญี่ปุ่น ภูเขาไฟฟูจิ ชมดอกซากุระ ช้อปปิ้งชินจูกุ
+```
+
+#### ตัวอย่าง 2: หน้าบทความ (`/blog/...`)
+
+```json
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "10 สถานที่เที่ยวในโตเกียว ที่ต้องไป!",
+  "image": "https://cdn.example.com/blog-tokyo.jpg",
+  "datePublished": "2026-03-15",
+  "author": {
+    "@type": "Organization",
+    "name": "WOW Tour"
+  }
+}
+```
+
+#### ตัวอย่าง 3: Organization (ทุกหน้า)
+
+```json
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "ชื่อบริษัท",
+  "url": "https://เว็บ.com",
+  "logo": "https://cdn.example.com/logo.png",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+66-xxx-xxxx",
+    "contactType": "customer service"
+  }
+}
+```
+
+#### ตัวอย่าง 4: หน้ารวมทัวร์ในประเทศ (`/inbound-tours/[slug]`)
+
+```json
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "ทัวร์พิษณุโลก",
+  "description": "ดูโปรแกรมทัวร์พิษณุโลกทั้งหมด",
+  "numberOfItems": 15,
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "url": "https://เว็บ.com/intertours/phitsanulok/PL001"
+    }
+  ]
+}
+```
+
+> **ย้ำอีกครั้ง: JSON-LD ทั้งหมดเป็นโค้ด `<script>` ซ่อนใน HTML ห้ามแสดงผล ไม่กระทบหน้าตาเว็บ 100%**
+
+---
+
+## Proposed Changes (อัปเดตแล้ว)
+
+---
+
+### 1. สร้าง `sitemap.ts` (Dynamic Sitemap)
+
+#### [NEW] [sitemap.ts](file:///c:/Users/SOFTSQ-2314/Desktop/Tour/wowtour-gig/src/app/sitemap.ts)
+
+สร้างไฟล์ `sitemap.ts` ใน `src/app/` (root level ของ App Router) เพื่อให้ Next.js สร้าง `/sitemap.xml` อัตโนมัติ (เป็น path มาตรฐานสากลเดียวกันกับทุกเว็บ)
+
+**วิธีทำงาน:**
+- ทุกครั้งที่มีคนเข้า `/sitemap.xml` ตัว function จะดึงข้อมูลจากฐานข้อมูลสดๆ
+- URL ทัวร์ทุกโปรแกรม ทุกประเทศ ทุกบทความ จะถูกรวมอยู่ในแผนที่นี้
+- ตั้ง `revalidate = 86400` (อัปเดตทุก 24 ชม.)
+
+**Collections ที่จะดึง:**
+| Collection | URL Pattern | Priority |
+|---|---|---|
+| `pages` | `/{slug}` | 0.8 |
+| `posts` | `/blog/{slug}` | 0.6 |
+| `intertours` | `/intertours/{slug}` | 0.9 |
+| `inbound-tours` | `/inbound-tours/{slug}` | 0.9 |
+| `program-tours` | `/intertours/{countrySlug}/{productCode}` | 1.0 |
+| `custom-landing-pages` | `/custom-landingpage/{slug}` | 0.7 |
+
+---
+
+### 2. สร้าง `robots.ts`
+
+#### [NEW] [robots.ts](file:///c:/Users/SOFTSQ-2314/Desktop/Tour/wowtour-gig/src/app/robots.ts)
+
+บอก Googlebot ว่า:
+- ✅ ให้เก็บข้อมูลทุกหน้า
+- ❌ **ห้ามเข้า** `/admin`, `/api`, `/next/preview`, `/next/exit-preview`
+- 🗺️ ชี้ทาง Sitemap: `{SERVER_URL}/sitemap.xml`
+
+---
+
+### 3. เพิ่ม JSON-LD Structured Data (**ไม่กระทบ Design**)
+
+#### [NEW] [JsonLd.tsx](file:///c:/Users/SOFTSQ-2314/Desktop/Tour/wowtour-gig/src/components/SEO/JsonLd.tsx)
+
+สร้าง Component สำหรับฝัง JSON-LD ลงในหน้าเว็บ (เป็น `<script>` ซ่อน ไม่แสดงผลบนหน้าจอ)
+
+| ประเภท | ใช้ในหน้า | ผลลัพธ์บน Google |
+|---|---|---|
+| **`Product`** | `/intertours/[slug]/[tourCode]` | แสดงราคาทัวร์ ระยะเวลา บนผลค้นหา |
+| **`BlogPosting`** | `/blog/[slug]` | แสดงวันที่เผยแพร่ รูปปก |
+| **`Organization`** | Layout (ทุกหน้า) | แสดงชื่อบริษัท โลโก้ เบอร์โทร |
+| **`ItemList`** | `/inbound-tours/[slug]` | แสดงรายการทัวร์ |
+
+#### [MODIFY] [page.tsx](file:///c:/Users/SOFTSQ-2314/Desktop/Tour/wowtour-gig/src/app/(frontend)/intertours/[slug]/[tourCode]/page.tsx)
+- แทรก `<TourJsonLd>` (ซ่อนใน HTML)
+
+#### [MODIFY] [page.tsx](file:///c:/Users/SOFTSQ-2314/Desktop/Tour/wowtour-gig/src/app/(frontend)/blog/[slug]/page.tsx)
+- แทรก `<ArticleJsonLd>` (ซ่อนใน HTML)
+
+#### [MODIFY] [layout.tsx](file:///c:/Users/SOFTSQ-2314/Desktop/Tour/wowtour-gig/src/app/(frontend)/layout.tsx)
+- แทรก `<OrganizationJsonLd>` (ซ่อนใน HTML — ดึงข้อมูลจาก Company Info)
+
+---
+
+### 4. แก้ไข Open Graph Defaults
+
+#### [MODIFY] [mergeOpenGraph.ts](file:///c:/Users/SOFTSQ-2314/Desktop/Tour/wowtour-gig/src/utilities/mergeOpenGraph.ts)
+- เปลี่ยน `siteName` จาก `"Payload Website Template"` → ดึงจาก field **"ชื่อเว็บไซต์ — th"** ในอัตลักษณ์เว็บไซต์ (`pageConfig.siteIdentity.siteName`)
+- เปลี่ยน `description` จาก `"An open-source website..."` → ดึงจาก Tagline
+
+---
+
+### 5. ตรวจสอบ Canonical URL
+
+ตรวจว่า Next.js สร้าง `<link rel="canonical">` ให้อัตโนมัติจาก `metadataBase` ที่ตั้งไว้
+
+---
+
+## Verification Plan
+
+### Automated Tests
+1. เข้า `http://localhost:3000/sitemap.xml` — ต้องเห็น XML ที่มีลิงก์ทัวร์ทั้งหมด
+2. เข้า `http://localhost:3000/robots.txt` — ต้องมี `Disallow: /admin` และ `Sitemap: .../sitemap.xml`
+3. เปิด View Source หน้าทัวร์ — ต้องเจอ `<script type="application/ld+json">` (ซ่อนอยู่ ไม่แสดงบนหน้าจอ)
+4. ตรวจสอบว่า OG default ไม่มีคำว่า "Payload Website Template" อีกต่อไป
+
+### Manual Verification (หลัง Deploy)
+- ใช้ [Google Rich Results Test](https://search.google.com/test/rich-results) ทดสอบ Schema
+- ใช้ [Facebook Sharing Debugger](https://developers.facebook.com/tools/debug/) ทดสอบ OG Image
+- ส่ง sitemap ใน Google Search Console

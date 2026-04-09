@@ -1,0 +1,132 @@
+/* ========================================
+   WowTour Gallery Album 2 — Photo Grid
+   ======================================== */
+
+/* Grid uses --cols CSS variable, set via inline style */
+.gallery-mosaic {
+  display: grid;
+  grid-template-columns: repeat(var(--cols, 5), 1fr);
+  gap: 3px;
+}
+
+/* Card */
+.gallery-mosaic__card {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+}
+
+.gallery-mosaic__card img {
+  transition: transform 0.5s ease;
+}
+
+.gallery-mosaic__card:hover img {
+  transform: scale(1.08);
+}
+
+/* Image wrapper — square aspect ratio */
+.gallery-mosaic__image {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+}
+
+/* Hover overlay */
+.gallery-mosaic__overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 3;
+  background-color: rgba(0, 0, 0, 0.55);
+}
+
+.gallery-mosaic__card:hover .gallery-mosaic__overlay {
+  opacity: 1;
+}
+
+.gallery-mosaic__search-icon {
+  width: 32px;
+  height: 32px;
+  color: white;
+}
+
+.gallery-mosaic__overlay-title {
+  color: white;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-align: center;
+  padding: 0 8px;
+  line-height: 1.3;
+}
+
+.gallery-mosaic__overlay-date {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.7rem;
+}
+
+/* "ดูภาพทั้งหมด" card */
+.gallery-mosaic__viewall {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background: var(--primary);
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.gallery-mosaic__viewall:hover {
+  opacity: 0.85;
+}
+
+.gallery-mosaic__viewall-text {
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+@media (max-width: 600px) {
+  .gallery-mosaic__viewall-text {
+    font-size: 0.7rem;
+  }
+}
+
+/* ======== Responsive ======== */
+/* 1024px ลงมา: ลด 1 column (max 5) */
+@media (max-width: 1024px) {
+  .gallery-mosaic[style] {
+    grid-template-columns: repeat(var(--cols-md, 5), 1fr) !important;
+  }
+}
+
+/* 768px ลงมา: ลด 2 columns (max 4) */
+@media (max-width: 768px) {
+  .gallery-mosaic[style] {
+    grid-template-columns: repeat(var(--cols-sm, 4), 1fr) !important;
+    gap: 2px;
+  }
+}
+
+/* 430px ลงมา: 2 columns เสมอ */
+@media (max-width: 430px) {
+  .gallery-mosaic[style] {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 2px;
+  }
+  .gallery-mosaic__viewall-text {
+    font-size: 0.9rem;
+  }
+}

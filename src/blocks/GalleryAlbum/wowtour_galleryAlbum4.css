@@ -1,0 +1,160 @@
+/* ========================================
+   WowTour Gallery Album 4 — Filmstrip
+   ======================================== */
+
+/* Header: heading left, button right */
+.gallery-filmstrip__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.gallery-filmstrip__heading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.gallery-filmstrip__heading h2 {
+  font-size: 1.875rem;
+  font-weight: 600;
+  margin: 0;
+  color: #222;
+}
+
+.gallery-filmstrip__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 20px;
+  border-radius: var(--btn-radius, 9999px);
+  background: var(--btn-bg, linear-gradient(135deg, #f97316, #ef4444));
+  color: var(--btn-text, #fff);
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.gallery-filmstrip__btn:hover {
+  background: var(--btn-bg-hover, var(--btn-bg));
+  color: var(--btn-text-hover, var(--btn-text, #fff));
+  opacity: 0.9;
+}
+
+.gallery-filmstrip__btn-arrow {
+  font-size: 1rem;
+}
+
+/* Grid strip: equal columns, no gap */
+.gallery-filmstrip__strip {
+  display: grid;
+  grid-template-columns: repeat(var(--cols, 4), 1fr);
+  gap: 4px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* Card */
+.gallery-filmstrip__card {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.gallery-filmstrip__image {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+}
+
+.gallery-filmstrip__image img {
+  transition: transform 0.5s ease;
+}
+
+.gallery-filmstrip__card:hover .gallery-filmstrip__image img {
+  transform: scale(1.08);
+}
+
+/* Hover overlay */
+.gallery-filmstrip__overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  gap: 2px;
+  padding: 12px;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 3;
+}
+
+.gallery-filmstrip__card:hover .gallery-filmstrip__overlay {
+  opacity: 1;
+}
+
+.gallery-filmstrip__search-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 32px;
+  height: 32px;
+  color: white;
+}
+
+.gallery-filmstrip__overlay-title {
+  color: white;
+  font-size: 1.05rem;
+  font-weight: 600;
+  text-align: left;
+  line-height: 1.3;
+}
+
+.gallery-filmstrip__overlay-date {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.75rem;
+}
+
+/* ======== Responsive ======== */
+@media (max-width: 1024px) {
+  .gallery-filmstrip__strip {
+    --cols: 3 !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .gallery-filmstrip__strip {
+    --cols: 2 !important;
+    gap: 3px;
+  }
+
+  .gallery-filmstrip__wrapper {
+    padding: 16px;
+    border-radius: 12px;
+  }
+
+  .gallery-filmstrip__heading h2 {
+    font-size: 1.05rem;
+  }
+
+  .gallery-filmstrip__btn {
+    font-size: 0.75rem;
+    padding: 6px 14px;
+  }
+}
+
+@media (max-width: 430px) {
+  .gallery-filmstrip__strip {
+    --cols: 2 !important;
+    gap: 2px;
+  }
+}

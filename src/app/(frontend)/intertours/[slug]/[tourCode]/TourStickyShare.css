@@ -1,0 +1,146 @@
+.tour-sticky-share {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 50;
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+}
+
+.tour-sticky-share--hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(20px);
+}
+
+.tour-sticky-share__panel {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow:
+    0 10px 25px -5px rgba(0, 0, 0, 0.1),
+    0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+  border: 1px solid var(--border);
+  min-width: 160px;
+}
+
+.tour-sticky-share__close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: var(--muted);
+  border: none;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--muted-foreground);
+  transition:
+    background 0.2s,
+    color 0.2s;
+}
+
+.tour-sticky-share__close:hover {
+  background: var(--destructive);
+  color: var(--destructive-foreground);
+}
+
+.tour-sticky-share__heading {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--foreground);
+  margin: 0;
+  text-align: center;
+}
+
+.tour-sticky-share__icons {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.tour-sticky-share__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  color: #ffffff;
+  transition:
+    transform 0.2s,
+    filter 0.2s;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+}
+
+.tour-sticky-share__btn:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.1);
+}
+
+.tour-sticky-share__btn--facebook {
+  background: linear-gradient(135deg, #1877f2, #0d5bbd);
+  box-shadow: 0 3px 8px rgba(24, 119, 242, 0.35);
+}
+
+.tour-sticky-share__btn--line {
+  background: linear-gradient(135deg, #00c300, #009900);
+  box-shadow: 0 3px 8px rgba(0, 195, 0, 0.35);
+}
+
+.tour-sticky-share__btn--twitter {
+  background: linear-gradient(135deg, #1da1f2, #0d8ddb);
+  box-shadow: 0 3px 8px rgba(29, 161, 242, 0.35);
+}
+
+.tour-sticky-share__btn--copy {
+  background: linear-gradient(135deg, #43e97b, #38f9d7);
+  color: #fff;
+  box-shadow: 0 3px 8px rgba(56, 249, 215, 0.3);
+}
+
+.tour-sticky-share__btn--copy-info {
+  background: linear-gradient(135deg, #a855f7, #6366f1);
+  color: #ffffff;
+  box-shadow: 0 3px 8px rgba(168, 85, 247, 0.35);
+}
+
+.tour-sticky-share__btn--copied {
+  background: #22c55e !important;
+  animation: copyPulse 0.3s ease;
+}
+
+@keyframes copyPulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 768px) {
+  .tour-sticky-share {
+    bottom: 16px;
+    right: 16px;
+  }
+
+  .tour-sticky-share__panel {
+    padding: 12px;
+    min-width: 140px;
+  }
+}
